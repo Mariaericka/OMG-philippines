@@ -5,6 +5,8 @@
    --black:#000000;
    --light-color:#666;
    --box-shadow:0 .5rem 1.5rem rgba(0,0,0, .1);
+   --red:rgb(155 8 8);
+   --white:#ffff;
 }
 
 .second ul  {
@@ -857,8 +859,8 @@ section .container .owl-navigation {
 
 footer.footer{
    height: 100%;
-   color:tomato;
-   background: white;
+   color:yellow;
+   background: var(--red);
    position: relative;
 }
 
@@ -874,7 +876,7 @@ footer.footer .container > div {
 }
 
 footer.footer .container p {
-   color: gray;
+   color: var(--white);
    width: 100%;
    font-size: 10px;
    text-align: left;
