@@ -939,7 +939,8 @@ footer.footer .move-up span:hover{
 
 
 *{
-   font-family: 'Open Sans', sans-serif;
+   font-family: 'Inter', sans-serif;
+  font-weight: 700;
    margin: 0; padding: 0;
    box-sizing: border-box;
    text-decoration: none;
@@ -1097,7 +1098,6 @@ section{
    position: sticky;
    top:0; left:0; right:0;
    z-index: 1000;
-   background-color:var(--red);
    border-bottom: var(--border);
 }
 
@@ -1116,24 +1116,24 @@ section{
 .header .flex .navbar a{
     font-size: 1.7rem;
     border-radius: .5rem;
-    color: white;
+    color: black;
    margin:0 1rem;
 }
 
 .header .flex .navbar a:hover{
-   color:var(--yellow);
+   color:red;
    text-decoration: underline;
 }
 
 .header .flex .icons > *{
    margin-left: 1.5rem;
    font-size: 2.5rem;
-   color:white;
+   color:black;
    cursor: pointer;
 }
 
 .header .flex .icons > *:hover{
-   color: var(--yellow);
+   color: red;
 }
 
 .header .flex .icons span{

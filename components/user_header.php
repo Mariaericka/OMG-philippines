@@ -18,7 +18,8 @@ if(isset($message)){
    <a href="../index.php" class="logo"><img src="images/omg-logo.png" image style="    position: absolute;
     width: 117px;
     height: 115px;
-    top: 0px;"></a>
+    top: 0px;
+    left:-1px;"></a>
 
       <nav class="navbar">
          <a href="index.php">HOME</a>
