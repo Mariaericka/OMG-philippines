@@ -1099,6 +1099,7 @@ section{
    top:0; left:0; right:0;
    z-index: 1000;
    border-bottom: var(--border);
+   background-color: white;
 }
 
 .header .flex{
