@@ -77,9 +77,9 @@ include 'components/add_cart.php';
             <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
             <a href="#" class="btn">Franchise now!</a>
-          
+           
         </div>
-     
+        <a href="https://www.vecteezy.com/free-vector/philippines-map"></a>
     </div>
 
 </section>
