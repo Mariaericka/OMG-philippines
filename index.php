@@ -55,7 +55,7 @@ include 'components/add_cart.php';
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style1.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -73,11 +73,12 @@ include 'components/add_cart.php';
     <div class="container">
 
         <div class="content1">
+        
             <h1>OPEN FOR FRANCHISE NATIONWIDE!</h1>
             <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
             <a href="#" class="btn">Franchise now!</a>
-           
+       
         </div>
         <a href="https://www.vecteezy.com/free-vector/philippines-map"></a>
     </div>
