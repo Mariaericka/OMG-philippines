@@ -119,13 +119,18 @@ include 'components/add_cart.php';
 
 <section class="hero">
    
-
 <div class="babyruth">
 </div>
     <div class="event"></div>
-    <div class="series"></div>
+    <div class="series"></div> 
+   
 </section>
 
+<section class="hero">
+<a href="#" class="button11">Buy 1 and Take 1</a>
+<a href="#" class="button12">Event Packages</a>
+<a href="#" class="button13">Cheescake series</a>
+</section>
 
 <section class="hero">
 
