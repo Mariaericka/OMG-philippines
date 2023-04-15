@@ -56,6 +56,8 @@ include 'components/add_cart.php';
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
+   
+
 
 </head>
 <body>
@@ -87,7 +89,7 @@ include 'components/add_cart.php';
 
 
 
-
+   <!-- custom css file link  
             <section class="hero">
 
 <div class="swiper hero-slider">
@@ -113,58 +115,17 @@ include 'components/add_cart.php';
          </div>
       </div>
    </div>
-
-   <div class="swiper-pagination"></div>
-
-</div>
-
-</section>
+-->
 
 <section class="hero">
+   
 
-   <div class="swiper hero-slider">
-
-      <div class="swiper-wrapper">
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Yogurt Series</span>
-               <h3>Creamy Fruity Melon</h3>
-               <a href="menu.html" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/creamy fruit melon1.png" alt="">
-            </div>
-         </div>
-
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Choco Series</span>
-               <h3>Choco Kisses</h3>
-               <a href="menu.html" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/kisses choco1.png" alt="">
-            </div>
-         </div>
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Choco Series</span>
-               <h3>Twix Choco</h3>
-               <a href="menu.html" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/twix choco.png" alt="">
-            </div>
-         </div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-
-   </div>
-
+<div class="babyruth">
+</div>
+    <div class="event"></div>
+    <div class="series"></div>
 </section>
+
 
 <section class="hero">
 
@@ -217,7 +178,58 @@ include 'components/add_cart.php';
 </section>
 
 
+<section>
+   <div class="swiper-pagination"></div>
 
+</div>
+
+
+
+<section class="hero">
+
+   <div class="swiper hero-slider">
+
+      <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Yogurt Series</span>
+               <h3>Creamy Fruity Melon</h3>
+               <a href="menu.html" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/creamy fruit melon1.png" alt="">
+            </div>
+         </div>
+
+
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Choco Series</span>
+               <h3>Choco Kisses</h3>
+               <a href="menu.html" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/kisses choco1.png" alt="">
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Choco Series</span>
+               <h3>Twix Choco</h3>
+               <a href="menu.html" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/twix choco.png" alt="">
+            </div>
+         </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+   </div>
+
+</section>
 
 
 
