@@ -63,13 +63,12 @@ include 'components/add_cart.php';
 <body>
 
 <?php include 'components/user_header.php'; ?>
-<section class="hero">
 
         <h3>Creamy goodness in a cup</h3>
         <p>Taste that would definitely make you go OMG!</p>
         <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
 
-</section>
+
 <section class="franchise" id="franchise">
 
     <div class="container">
