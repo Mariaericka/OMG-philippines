@@ -760,7 +760,7 @@ section .container .owl-navigation {
 }
 
 .child1{
-   background:linear-gradient(rgba(10, 9, 9, 0.7), rgba(230, 17, 17, 0.7)), url(../images/omg-logo.png);
+   background:orange;
    background-size:580px;
    background-repeat: no-repeat;
    display:flex;
@@ -782,6 +782,7 @@ section .container .owl-navigation {
    flex-direction:column;
    justify-content:space-around;
    align-items:center;
+   background: orange;
 }
 .inside-contact{
    width:90%;
@@ -801,7 +802,7 @@ section .container .owl-navigation {
 
 .inside-contact input, .inside-contact textarea{
    width:100%;
-   background-color:#eee;
+   background-color:lightgoldenrodyellow;
    border:1px solid rgba(0,0,0,0.48);
    padding:5px 10px;
    margin-bottom:20px;
