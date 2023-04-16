@@ -1957,10 +1957,9 @@ right: 62px;
 }
 .button11{
   
-position: absolute;
-width: 350px;
-height: 50px;
-
+position: relative;
+padding: 1rem 3rem;
+left: 67px;
 background: #FF1607;
 border-radius: 25px;
 font-style: normal;
@@ -1976,10 +1975,7 @@ border: 1px solid #000000;
 
 .button12{
   
-   position: absolute;
-   width: 350px;
-   height: 50px;
-   
+   position: relative;
    background: #FF1607;
    border-radius: 25px;
    font-style: normal;
@@ -1987,18 +1983,15 @@ border: 1px solid #000000;
    font-size: 17px;
    line-height: 58px;
    text-align: center;
-   
    color: #FFFFFF;
-   
    border: 1px solid #000000;
+   padding: 1rem 3rem;
+    left: 221px;
    }
 
    .button13{
   
-      position: absolute;
-      width: 350px;
-      height: 50px;
-      
+      position: relative; 
       background: #FF1607;
       border-radius: 25px;
       font-style: normal;
@@ -2006,10 +1999,10 @@ border: 1px solid #000000;
       font-size: 17px;
       line-height: 58px;
       text-align: center;
-      
       color: #FFFFFF;
-      
       border: 1px solid #000000;
+      padding: 1rem 3rem;
+      left: 404px;
       }
 
 
