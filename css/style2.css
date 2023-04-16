@@ -752,6 +752,7 @@ section .container .owl-navigation {
    background: #fff;
    display:flex;
    margin:80px 0;
+   border:3px solid #000;
 }
 .contact-child{
    display:flex;
@@ -770,13 +771,13 @@ section .container .owl-navigation {
    padding:100px 0;
 }
 .child1 p{
-   padding-left:20%;
+   padding-left:37px;
    font-size:20px;
-   text-shadow:0px 0px 2px #000;
+   
 }
 .child1 p span{
    font-size:16px;
-   color:#e4e009;
+   color:black;
 }
 .child2{
    flex-direction:column;
@@ -809,11 +810,10 @@ section .container .owl-navigation {
 }
 
 .inside-contact input[type=submit]{
-   background-color:#000;
+   background-color:red;
    color:#fff;
    transition:0.2s;
-   border:2px solid #000;
-   margin:30px 0;
+   
 }
 
 .inside-contact input[type=submit]:hover{
@@ -1874,10 +1874,6 @@ h3 {
     text-align: center;
     font-size: 20px;
 }
-p {
-    text-align: center;
-    font-size: 2rem;
-}
 
 
 
@@ -1970,10 +1966,13 @@ line-height: 58px;
 text-align: center;
 color: #FFFFFF;
 border: 1px solid #000000;
-
+ transition: 0.2s;
 }
-
-
+.button11:hover{
+   background-color:yellow;
+   color:#000;
+   transition:0.2s;
+}
 .button12{
   
    position: relative;
@@ -1989,7 +1988,11 @@ border: 1px solid #000000;
    padding: 1rem 3rem;
     left: 221px;
    }
-
+   .button12:hover{
+      background-color:yellow;
+      color:#000;
+      transition:0.2s;
+   }
    .button13{
   
       position: relative; 
@@ -2005,7 +2008,11 @@ border: 1px solid #000000;
       padding: 1rem 3rem;
       left: 404px;
       }
-
+      .button13:hover{
+         background-color:yellow;
+         color:#000;
+         transition:0.2s;
+      }
 
 
 

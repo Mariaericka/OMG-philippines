@@ -63,12 +63,12 @@ include 'components/add_cart.php';
 <body>
 
 <?php include 'components/user_header.php'; ?>
-
-        <h3>Creamy goodness in a cup</h3>
-        <p>Taste that would definitely make you go OMG!</p>
+<h3>Creamy goodness in a cup</h3>
+        <h3>Taste that would definitely make you go OMG!</h3>
+       
         <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
 
-
+        
 <section class="franchise" id="franchise">
 
     <div class="container">
@@ -78,7 +78,7 @@ include 'components/add_cart.php';
             <h1>OPEN FOR FRANCHISE NATIONWIDE!</h1>
             <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
-            <a href="#" class="btn">Franchise now!</a>
+            <br><a href="#" class="button11">Franchise Now!</a>
        
         </div>
         <a href="https://www.vecteezy.com/free-vector/philippines-map"></a>
@@ -156,7 +156,7 @@ include 'components/add_cart.php';
                 <input id="txt_subject" type="text" Required="required" name="subject">
                 <p>Message *</p>
                 <textarea id="txt_message" rows="4" cols="20" Required="required" name="msg" ></textarea>
-                <input type="submit" id="btn_send" value="send" name="send">
+                <input type="submit" id="btn_send" value="SUBMIT" name="send">
             </div>
         </div>
         <div class="contact-child child1">
