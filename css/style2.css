@@ -540,7 +540,7 @@ section .blog-content .btn-blog {
 
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: var(--light-color);
+    color: black;
 }
 
 section .blog-content span {
@@ -773,7 +773,7 @@ section .container .owl-navigation {
 .child1 p{
    padding-left:37px;
    font-size:20px;
-   
+   color: red;
 }
 .child1 p span{
    font-size:16px;
