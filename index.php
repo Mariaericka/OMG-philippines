@@ -139,23 +139,7 @@ include 'components/add_cart.php';
 
     <div class="container">
         <div class="contact-parent">
-        <div class="contact-child child1">
-            <p>
-                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
-                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
-                <br />
-                Laguna (Plaza, Near Munisipyo Of Alaminos)
-                </span>
-            </p>
-            <p>
-                <i class="fas fa-phone-alt"></i> Contact us <br />
-                <span> 09171675592</span>
-            </p>
-            <p>
-                <i class=" far fa-envelope"></i> Email <br />
-                <span>omgfranchising@gmail.com</span>
-            </p>
-        </div>
+        
         <div class="contact-child child2">
             <div class="inside-contact">
                 <h2>Contact Us</h2>
@@ -174,6 +158,23 @@ include 'components/add_cart.php';
                 <textarea id="txt_message" rows="4" cols="20" Required="required" name="msg" ></textarea>
                 <input type="submit" id="btn_send" value="send" name="send">
             </div>
+        </div>
+        <div class="contact-child child1">
+            <p>
+                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
+                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
+                <br />
+                Laguna (Plaza, Near Munisipyo Of Alaminos)
+                </span>
+            </p>
+            <p>
+                <i class="fas fa-phone-alt"></i> Contact us <br />
+                <span> 09171675592</span>
+            </p>
+            <p>
+                <i class=" far fa-envelope"></i> Email <br />
+                <span>omgfranchising@gmail.com</span>
+            </p>
         </div>
         </div>
     </div>   
@@ -236,7 +237,7 @@ include 'components/add_cart.php';
 </section>
 
 
-
+</section>
 
 
 
