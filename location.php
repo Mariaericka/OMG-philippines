@@ -32,12 +32,13 @@ if(isset($_SESSION['user_id'])){
 
 </head>
 <body><?php include 'components/user_header.php'; ?>
+<br><br>
 
-<h1> Branch Location</h1> <br>
     
 
 
     <div class="second"><ul>
+    <h1> Branch Location</h1> <br>
         <li><a  href="#alaminos">Alaminos Laguna</a></li>
         <li><a href="#losbanos">Los Banos Laguna</a></li>
         <li><a href="#kalinga">Tabuk Kalinga</a></li>
@@ -45,8 +46,8 @@ if(isset($_SESSION['user_id'])){
         <li><a href="#stotomas">Sto. Tomas Batangas</a></li>
       </ul>
     </div>
-
-    <div class="container" style="margin-left:25%;padding:1px 16px;height:500px; " id="alaminos">
+<section>
+    <div class="container" style="margin-left:25%; " id="alaminos">
         <ul class="column">
             <h2>Alaminos Laguna Branch</h2>
          <h3>JP Rizal St. Brgy I- Poblacion, Alaminos, Laguna (Plaza, Near Munisipyo of Alaminos)</h3>
@@ -55,10 +56,13 @@ if(isset($_SESSION['user_id'])){
         <div class="column">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123857.6625681424!2d121.17941868960693!3d14.044552059086897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd68306a6d54d1%3A0xef3ccbe688f795d0!2sAlaminos%2C%20Laguna!5e0!3m2!1sen!2sph!4v1648655970731!5m2!1sen!2sph" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-            
-        
+          
     </div>
-    <div class="container" style="margin-left:25%;padding:1px 16px;height:500px;" id="losbanos">
+    </section>    
+        
+    <section>
+
+    <div class="container" style="margin-left:25%;padding:1px 16px;" id="losbanos">
     <ul class="column">
             <h2>Los Banos Laguna</h2>
          <h3>Kalye Ekis Batong Malake Los Banos ,Laguna</h3>
@@ -68,10 +72,10 @@ if(isset($_SESSION['user_id'])){
 
         </div>
     </div>
-        
+            </section>    
 
-
-    <div class="container" style="margin-left:25%;padding:1px 16px;height:500px;" id="kalinga">
+<section>
+    <div class="container" style="margin-left:25%;padding:1px 16px;" id="kalinga">
         <ul class="column">
             <h2>Tabuk Kalinga</h2>
          <h3>Purok 6 Bulanao Tabuk City, Kalinga</h3>
@@ -80,8 +84,9 @@ if(isset($_SESSION['user_id'])){
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243643.7478208925!2d121.27383625607227!3d17.41497585935995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338f99c3d1c5399b%3A0xc919e747c62ce9f4!2sTabuk%2C%20Kalinga!5e0!3m2!1sen!2sph!4v1648654542995!5m2!1sen!2sph" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
             </div></div>
-
- <div class="container" style="margin-left:25%;padding:1px 16px;height:500px;" id="sanpablo">
+            </section>
+            <section>
+ <div class="container" style="margin-left:25%;padding:1px 16px;" id="sanpablo">
     <ul class="column">
             <h2>San Pablo Laguna</h2>
          <h3>Rizal Avenue Brgy.VII-D San Pablo,Laguna</h3>
@@ -92,8 +97,9 @@ if(isset($_SESSION['user_id'])){
             </div>
 </div>
 
-
-<div class="container" style="margin-left:25%;padding:1px 16px;height:500px;"id="stotomas">
+            </section>
+            <section>
+<div class="container" style="margin-left:25%;padding:1px 16px;"id="stotomas">
         <ul class="column">
             <h2>Sto. Tomas Batangas</h2>
          <h3>8 Governor A. Carpio Ave, Brgy San Pedro. Sto. Tomas City, Batangas</h3>
@@ -101,5 +107,5 @@ if(isset($_SESSION['user_id'])){
         <div class="column">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15479.431960389144!2d121.16956461969174!3d14.085559154744246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6601e5f94371%3A0x6ef189aab0e81333!2sSan%20Pedro%2C%20Santo%20Tomas%2C%20Batangas!5e0!3m2!1sen!2sph!4v1648655318698!5m2!1sen!2sph" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
-            </div></div>
+            </div></div></section>
     <script src="js/script.js"></script>

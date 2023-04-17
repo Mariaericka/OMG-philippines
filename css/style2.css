@@ -19,6 +19,7 @@
    height:500px;
    overflow:visible;
    font-size: large;
+   top: 204px;
  }
  .second li a{
    display: block;
@@ -31,7 +32,7 @@
    color: rgb(7, 6, 6);
  }
 .second li:hover:not(:active){
-   background-color:red;
+   background-color:orange;
    color: white;
 }
 
@@ -543,6 +544,7 @@ p {
     color: black;
 }
 
+
 section .blog-content span {
     display: block;
 }
@@ -647,9 +649,9 @@ section .container .owl-navigation {
  }
  
  li {
-   /* padding-left: 10px; */
-   /* font-size: 18px; */
-   /* display: inline; */
+   padding-left: 10px; 
+    font-size: 18px;
+    display: inline;
    text-align: left;
    text-transform: uppercase;
    padding-right: 10px;
@@ -951,6 +953,7 @@ footer.footer .move-up span:hover{
    text-decoration: none;
    outline: none; border: none;
    transition: all .2s linear;
+  
 }
 
 *::selection{
@@ -964,11 +967,11 @@ footer.footer .move-up span:hover{
 }
 
 ::-webkit-scrollbar-track{
-   background-color: transparent;
+   background-color: red;
 }
 
 ::-webkit-scrollbar-thumb{
-   background-color: var(--yellow);
+   background-color: yellow;
 }
 
 html{
