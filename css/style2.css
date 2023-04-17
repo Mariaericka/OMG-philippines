@@ -23,8 +23,8 @@
  }
  .second li a{
    display: block;
-   color: #000;
-   padding: 8px 16px;
+   color: white;
+   
    text-decoration: none;
  }
  .second li a.active{
@@ -32,8 +32,8 @@
    color: rgb(7, 6, 6);
  }
 .second li:hover:not(:active){
-   background-color:orange;
-   color: white;
+   background-color:transparent;
+   color: red;
 }
 
 svg  {
@@ -2017,7 +2017,26 @@ border: 1px solid #000000;
          transition:0.2s;
       }
 
-
+      .button14{
+  
+         position: relative;
+     
+         background: #FF1607;
+         border-radius: 25px;
+         font-style: normal;
+         font-weight: 800;
+         font-size: 17px;
+         line-height: 43px;
+         text-align: center;
+         color: #FFFFFF;
+         border: 1px solid #000000;
+          transition: 0.2s;
+         }
+         .button14:hover{
+            background-color:yellow;
+            color:#000;
+            transition:0.2s;
+         }
 
 /* media queries  */
 

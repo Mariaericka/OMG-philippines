@@ -39,11 +39,11 @@ if(isset($_SESSION['user_id'])){
 
     <div class="second"><ul>
     <h1> Branch Location</h1> <br>
-        <li><a  href="#alaminos">Alaminos Laguna</a></li>
-        <li><a href="#losbanos">Los Banos Laguna</a></li>
-        <li><a href="#kalinga">Tabuk Kalinga</a></li>
-        <li><a href="#sanpablo">San Pablo Laguna</a></li>
-        <li><a href="#stotomas">Sto. Tomas Batangas</a></li>
+        <li><a  href="#alaminos" class="button14">Alaminos Laguna</a></li>
+        <li><a href="#losbanos" class="button14">Los Banos Laguna</a></li>
+        <li><a href="#kalinga"class="button14">Tabuk Kalinga</a></li>
+        <li><a href="#sanpablo" class="button14">San Pablo Laguna</a></li>
+        <li><a href="#stotomas" class="button14">Sto. Tomas Batangas</a></li>
       </ul>
     </div>
 <section>
