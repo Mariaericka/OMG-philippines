@@ -49,7 +49,7 @@ if(isset($_SESSION['user_id'])){
 <section>
     <div class="container" style="margin-left:25%; " id="alaminos">
         <ul class="column">
-            <h2>Alaminos Laguna Branch</h2>
+            <h2 style="color:red;">Alaminos Laguna Branch</h2>
          <h3>JP Rizal St. Brgy I- Poblacion, Alaminos, Laguna (Plaza, Near Munisipyo of Alaminos)</h3>
         
         </ul>
@@ -64,7 +64,7 @@ if(isset($_SESSION['user_id'])){
 
     <div class="container" style="margin-left:25%;padding:1px 16px;" id="losbanos">
     <ul class="column">
-            <h2>Los Banos Laguna</h2>
+    <h2 style="color:red;">Los Banos Laguna</h2>
          <h3>Kalye Ekis Batong Malake Los Banos ,Laguna</h3>
     </ul>
         <div class="column">
@@ -77,7 +77,7 @@ if(isset($_SESSION['user_id'])){
 <section>
     <div class="container" style="margin-left:25%;padding:1px 16px;" id="kalinga">
         <ul class="column">
-            <h2>Tabuk Kalinga</h2>
+        <h2 style="color:red;">Tabuk Kalinga</h2>
          <h3>Purok 6 Bulanao Tabuk City, Kalinga</h3>
         </ul>
         <div class="column">
@@ -88,7 +88,7 @@ if(isset($_SESSION['user_id'])){
             <section>
  <div class="container" style="margin-left:25%;padding:1px 16px;" id="sanpablo">
     <ul class="column">
-            <h2>San Pablo Laguna</h2>
+    <h2 style="color:red;">San Pablo Laguna</h2>
          <h3>Rizal Avenue Brgy.VII-D San Pablo,Laguna</h3>
         </ul>
         <div class="column">
@@ -101,7 +101,7 @@ if(isset($_SESSION['user_id'])){
             <section>
 <div class="container" style="margin-left:25%;padding:1px 16px;"id="stotomas">
         <ul class="column">
-            <h2>Sto. Tomas Batangas</h2>
+        <h2 style="color:red;">Sto. Tomas Batangas</h2>
          <h3>8 Governor A. Carpio Ave, Brgy San Pedro. Sto. Tomas City, Batangas</h3>
         </ul>
         <div class="column">
