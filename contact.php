@@ -55,7 +55,7 @@ if(isset($_POST['send'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -63,10 +63,10 @@ if(isset($_POST['send'])){
 <!-- header section starts  -->
 <?php include 'components/user_header.php'; ?>
 <!-- header section ends -->
-
+<!--
 <div class="heading">
    <h3>contact us</h3>
-</div>
+</div>-->
 
 <!-- contact section starts  -->
 <section class="hero">
@@ -77,23 +77,7 @@ if(isset($_POST['send'])){
 
     <div class="container">
         <div class="contact-parent">
-        <div class="contact-child child1">
-            <p>
-                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
-                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
-                <br />
-                Laguna (Plaza, Near Munisipyo Of Alaminos)
-                </span>
-            </p>
-            <p>
-                <i class="fas fa-phone-alt"></i> Contact us <br />
-                <span> 09171675592</span>
-            </p>
-            <p>
-                <i class=" far fa-envelope"></i> Email <br />
-                <span>omgfranchising@gmail.com</span>
-            </p>
-        </div>
+       
         <div class="contact-child child2">
             <div class="inside-contact">
                 <h2>Contact Us</h2>
@@ -112,6 +96,23 @@ if(isset($_POST['send'])){
                 <textarea id="txt_message" rows="4" cols="20" Required="required" name="msg" ></textarea>
                 <input type="submit" id="btn_send" value="send" name="send">
             </div>
+        </div>
+        <div class="contact-child child1">
+            <p>
+                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
+                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
+                <br />
+                Laguna (Plaza, Near Munisipyo Of Alaminos)
+                </span>
+            </p>
+            <p>
+                <i class="fas fa-phone-alt"></i> Contact us <br />
+                <span> 09171675592</span>
+            </p>
+            <p>
+                <i class=" far fa-envelope"></i> Email <br />
+                <span>omgfranchising@gmail.com</span>
+            </p>
         </div>
         </div>
     </div>   
