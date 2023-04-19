@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="container">
         <div class="about-us">
-            <h2>About US</h2>
+            <h2>About us</h2>
 <p>Creamy Goodness in Every Cup. Taste that would definitely make you go OMG!</p>
         </div>
         <div class="newsletter">
