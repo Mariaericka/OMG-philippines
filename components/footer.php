@@ -13,7 +13,7 @@
             <h2>FOLLOW US</h2>
             
             <a href="https://www.facebook.com/omgmainbranch/" class="logo"><img src="images/fb.png"></a>    
-            <a href="https://www.instagram.com/omg_talavera_nuevaecija/" class="logo"><img src="images/ig.png"></a>    
+            <a href="https://www.instagram.com/omgmain.ph/" class="logo"><img src="images/ig.png"></a>    
             </div>
         </div>
     </div>
