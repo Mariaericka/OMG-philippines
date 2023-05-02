@@ -867,8 +867,8 @@ section .container .owl-navigation {
 /*---------------- footer starts here -----------------*/
 footer.footer{
    height: 100%;
-   color:yellow;
-   background: var(--red);
+   color:black;
+   background-color: rgba(252, 199, 6, 0.916);
    position: relative;
 }
 
