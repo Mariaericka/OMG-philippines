@@ -37,7 +37,7 @@
 
     <div class="rights flex-row">
         <h4 class="text-gray">
-            OMG Milktea, Milkshake, and coffee copyright &copy; 2022
+            OMG Milktea, Milkshake, and Coffee Copyright &copy; 2022
         </h4>
     </div>
     <div class="move-up">

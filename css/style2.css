@@ -537,6 +537,7 @@ section .blog-content .btn-blog {
 
 .text-gray {
     color: var(--text gray);
+    font-weight: 200;
 }
 
 p {
