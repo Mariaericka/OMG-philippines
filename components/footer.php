@@ -28,7 +28,7 @@
         <div class="Follow">
             <h2>Follow us</h2>
             <p>Let us be social</p>
-            <div>
+            <div><a target="_blank" href="https://icons8.com/icon/118562/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-instagram"></i>
             </div>
