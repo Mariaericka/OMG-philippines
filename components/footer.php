@@ -4,7 +4,7 @@
         <div class="about-us">
             <h2>OUR DELIVERY PARTNERS</h2>
             <a href="https://www.foodpanda.ph/" class="logo"><img src="images/foodpanda.png" style="   
-     width: 174px;
+     width: 153px;
     height: 123px;"></a>    
         </div>
       
