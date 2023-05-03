@@ -536,8 +536,8 @@ section .blog-content .btn-blog {
 }
 
 .text-gray {
-    color: var(--text gray);
-    font-weight: 200;
+    color: grey;
+   font-size: larger;
 }
 
 p {
@@ -873,8 +873,7 @@ footer.footer{
 }
 
 footer.footer .container {
-   display: grid;
-   grid-template-columns: 25% 25% 25% 25%;
+  display:flex ;
 }
 
 footer.footer .container > div {
