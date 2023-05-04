@@ -73,7 +73,7 @@ if(isset($_GET['delete'])){
      <th><span>₱</span><?= $fetch_products['price']; ?></th>
         
      <th> <?= $fetch_products['category']; ?></td>
-     <th><img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="" width="100px"></th>
+     <th><img src="../images/<?= $fetch_products['image']; ?>" alt="" width="100px"></th>
      <th>
      <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="btn-secondary">update</a>
          <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="btn-danger" onclick="return confirm('delete this drink?');">delete</a>

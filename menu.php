@@ -26,7 +26,7 @@ include 'components/add_cart.php';
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/stylez.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -35,44 +35,63 @@ include 'components/add_cart.php';
 <?php include 'components/user_header.php'; ?>
 <!-- header section ends -->
 
-<div class="heading">
-   <h3>OMG DRINKS</h3>
-</div>
 
 <!-- menu section starts  -->
-<section class="category">
+<div class="second"><ul>
+    <h1>Categories</h1> <br>
+        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
+        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
+        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
+        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
+        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
+      </ul>
+    </div>
+    <section>
+    <div class="container2" style="box-sizing: border-box;
+background: #FFBE00;
+border: 5px solid #000000;
+border-radius: 50px;
+height: 1000px;
+margin-left: 25%;">
+       
+       <div class="omg-menu">     
+        <div class="omg-menu-box1">
+        <div class="omg-menu-img"> <img src="images/caramel macchiato1.png" img class="img1"></div>
+       <h2 class="omg-menu-desc">Caramel Macchiato </h2> </div>
+       <div class="omg-menu-box1">
+           <div class="omg-menu-img"> <img src="images/cappucino2.png" img class="img1"></a></div>
+            <h2 class="omg-menu-desc">Cappucino </h2></div>
 
-   <h3 >Categories</h3>
+            <div class="omg-menu-box1">
+           <div class="omg-menu-img"> <img src="images/mocha3.png" img class="img1"></a></div>
+            <h2 class="omg-menu-desc">Mocha</h2></div>
 
-   <div class="box-container">
+            <div class="omg-menu-box1">
+            <div class="omg-menu-img"> <img src="images/coffee crumble4.png" img class="img1"></a></div>
+             <h2 class="omg-menu-desc">Coffee Crumble</h2></div>
 
-      <a href="category.php?category=coffee series" class="box">
-         <img src="images/drinks/caramel macchiato1.png" alt="">
-         <h3>Coffee Series</h3>
-      </a>
+             <div class="omg-menu-box1">
+        <div class="omg-menu-img"> <img src="images/bluebery yogurt1.png" img class="img1"></a></div>
+         <h2 class="omg-menu-desc">Blueberry Yogurt </h2></div>
 
-      <a href="category.php?category=yogurt" class="box">
-         <img src="images/strawberry yogurt2.png" alt="">
-         <h3>Yogurt Series</h3>
-      </a>
+         <div class="omg-menu-box1">
+        <div class="omg-menu-img"> <img src="images/strawberry yogurt2.png" img class="img1"></a></div>
+         <h2 class="omg-menu-desc">Strawberry Yogurt </h2> </div>
+          <div class="omg-menu-box1">
+        <div class="omg-menu-img"> <img src="images/mango fruit yogurt3.png" img class="img1"></a></div>
+         <h2 class="omg-menu-desc">Mango Fruit Yogurt</h2></div>
 
-      <a href="category.php?category=choco" class="box">
-         <img src="images/kisses choco1.png" alt="">
-         <h3>Choco Series</h3>
-      </a>
+            </div>
 
-      <a href="category.php?category=milktea" class="box">
-         <img src="images/okinawa milktea.png" alt="">
-         <h3>Milktea Series</h3>
-      </a>
-      <a href="category.php?category=mango" class="box">
-         <img src="images/mango fruit yogurt3.png" alt="">
-         <h3>Mango Series</h3>
-      </a>
 
-   </div>
+    </div>
+    </section>  
 
-</section>
+
+
+
+
+
 
 
 <section class="products">
@@ -97,7 +116,7 @@ include 'components/add_cart.php';
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
 
-         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
          <a href="category.php?category=<?= $fetch_products['category']; ?>" ><?= $fetch_products['category']; ?></a>
 

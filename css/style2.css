@@ -19,7 +19,7 @@
    height:500px;
    overflow:visible;
    font-size: large;
-   top: 204px;
+   top: 130px;
  }
  .second li a{
    display: block;
@@ -568,7 +568,7 @@ section .container .owl-navigation {
 }
 
 .omg-menu-box1{
-   width: 25%;
+   width: 31%;
    margin: 1%;
    padding: 0%;
    float: left;
@@ -2037,6 +2037,7 @@ border: 1px solid #000000;
             color:#000;
             transition:0.2s;
          }
+
 
 /* media queries  */
 
