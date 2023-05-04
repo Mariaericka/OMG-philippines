@@ -26,7 +26,7 @@ include 'components/add_cart.php';
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -56,7 +56,7 @@ include 'components/add_cart.php';
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
 
-         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
          <h4><?= $fetch_products['name']; ?></h4>
          
