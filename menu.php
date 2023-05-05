@@ -80,7 +80,74 @@ margin-left: 25%;">
           <div class="omg-menu-box1">
         <div class="omg-menu-img"> <img src="images/mango fruit yogurt3.png" img class="img1"></a></div>
          <h2 class="omg-menu-desc">Mango Fruit Yogurt</h2></div>
+         <div class="omg-menu-box1">
+         <div class="omg-menu-img"> <img src="images/passion fruit0.png" img class="img1"></a></div>
+          <h2 class="omg-menu-desc">Passion Fruit</h2> </div>
+          <div class="omg-menu-box1">
+         <div class="omg-menu-img"> <img src="images/creamy fruit melon1.png" img class="img1"></a></div>
+          <h2 class="omg-menu-desc">Creamy Fruit Melon</h2></div>
+          <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/twix choco.png" img class="img1"></a></div>
+     <h2 class="omg-menu-desc">Twix Choco </h2></div>
+     <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/m&m choco.png" img class="img1"></a></div>
+     <h2 class="omg-menu-desc">M&M Choco </h2></div>
+     <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/mars choco.png" img class="img1"></a></div>
+     <h2 class="omg-menu-desc">Mars Choco</h2></div>
+     <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/kisses choco1.png" img class="img1"></a></div>
+      <h2 class="omg-menu-desc">Kisses Choco</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/magnum choco.png" img class="img1"></a></div>
+      <h2 class="omg-menu-desc">Magnum Choco</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/kitkat choco.png" img class="img1"></a></div>
+      <h2 class="omg-menu-desc">Kitkat Choco</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/snickers choco.png" img class="img1"></a></div>
+      <h2 class="omg-menu-desc">Snickers Choco</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/mini oreo choco.png" img class="img1"></a></div>
+      <h2 class="omg-menu-desc">Mini Oreo Choco</h2></div>
+      <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/wintermelon milktea.png" img class="img1" img style="object-fit: contain;"></div>
+     <h2 class="omg-menu-desc">Wintermelon Milktea </h2></div>
+     <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/okinawa milktea.png" img class="img1" img style="height: 30%;"></a></div>
+     <h2 class="omg-menu-desc">Okinawa Milktea  </h2></div>
+     <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/hokkaido milktea.png" img class="img1" img style="height: 30%;"></a></div>
+     <h2 class="omg-menu-desc">Hokkaido Milktea</h2></div>
+     <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/classic milkteaq.png" img class="img1" img style="height: 30%;"></a></div>
+      <h2 class="omg-menu-desc">Classic Milktea</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/oreo milktea.png" img class="img1" img style="height: 30%;"></a></div>
+      <h2 class="omg-menu-desc">Oreo Milktea</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/nutella milktea.png" img class="img1" img style="height: 30%;"></a></div>
+      <h2 class="omg-menu-desc">Nutella Milktea</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/milo overload milktea.png" img class="img1" img style="height: 30%;"></a></div>
+      <h2 class="omg-menu-desc">Milo Overload Milktea</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/meiji milktea.png" img class="img1" img style="height: 30%;"></a></div>
+      <h2 class="omg-menu-desc">Meiji Milktea</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/hershey's milktea.png" img class="img1" img style="height: 30%;"></a></div>
+      <h2 class="omg-menu-desc">Hershey Milktea</h2>
 
+
+
+
+
+
+
+
+
+
+      
             </div>
 
 
