@@ -561,7 +561,7 @@ section .container .owl-navigation {
 .omg-menu-box{
    width: 40.5%;
    margin: 1%;
-   padding-top: 0%;
+   padding-top: 0%; 
    float: left;
    background-color: rgb(250, 235, 100);
    border-radius: 15px;
@@ -572,7 +572,7 @@ section .container .owl-navigation {
    margin: 1%;
    padding: 0%;
    float: left;
-   background-color: rgb(250, 235, 100);
+  
    border-radius: 15px;
 }
 
