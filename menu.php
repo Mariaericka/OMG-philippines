@@ -51,7 +51,7 @@ include 'components/add_cart.php';
 background: #FFBE00;
 border: 5px solid #000000;
 border-radius: 50px;
-height: 1000px;
+height: 1080px;
 margin-left: 25%;">
        
        <div class="omg-menu">     
@@ -136,8 +136,30 @@ margin-left: 25%;">
       <h2 class="omg-menu-desc">Meiji Milktea</h2></div>
       <div class="omg-menu-box1">
      <div class="omg-menu-img"> <img src="images/hershey's milktea.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Hershey Milktea</h2>
+      <h2 class="omg-menu-desc">Hershey Milktea</h2></div>
 
+
+      <div class="omg-menu-box1">
+    <div class="omg-menu-img"> <img src="images/almondmango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+     <h2 class="omg-menu-desc">Almond Mango</h2></div>
+     <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/caramelmango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Caramel Mango</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/chocomangooreo1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Choco Oreo Mango</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/eggpudding1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Egg Pudding Mango</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/mangocheesecake1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Mango Cheesecake</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/mangograham1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Mango Graham</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/mangosago1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Mango Sago</h2></div>
 
 
 
