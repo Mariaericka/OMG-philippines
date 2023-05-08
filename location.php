@@ -109,5 +109,10 @@ if(isset($_SESSION['user_id'])){
             
             </div></div></section>
     <script src="js/script.js"></script>
+    
+<div class="loader">
+   <img src="images/loading.gif" alt="">
+</div>
+
     <?php include 'components/footer.php'; ?>
 

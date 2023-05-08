@@ -26,7 +26,7 @@ include 'components/add_cart.php';
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -59,25 +59,40 @@ include 'components/add_cart.php';
          if($select_products->rowCount() > 0){
             while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
       ?>
-      <form action="" method="post" class="box">
+  <form action="" method="post" class="box">
          <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
          <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
+         <input type="hidden" name="priceR" value="<?= $fetch_products['description']; ?>">
+
+    <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+         <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
+         <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
+         <input type="hidden" name="priceR" value="<?= $fetch_products['description']; ?>">
+
+
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-         <a href="quick_view.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
-         <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
+         <div class="omg-menu-img">
+
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
-         <div class="name"><?= $fetch_products['name']; ?></div>
-         <div class="flex">
-            <div class="price"><span>$</span><?= $fetch_products['price']; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-         </div>
+         <h4><?= $fetch_products['name']; ?></h4>
+         
+            <div class="cat"><span>₱</span><?= $fetch_products['price']; ?></div>
+           Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+            <p class="omg-detail">
+                            <div class="omg-menu-desc">
+                            <?= $fetch_products['description']; ?>
+                                    </p></div>
+                 
+        <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button>
+
+         
       </form>
       <?php
             }
          }else{
-            echo '<p class="empty">no products added yet!</p>';
+            echo '<p class="empty">No results found</p>';
          }
       }
       ?>

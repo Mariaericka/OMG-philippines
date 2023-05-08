@@ -42,7 +42,6 @@ if(isset($message)){
             $total_cart_items = $count_cart_items->rowCount();
          ?>
          <a href="search.php"><i class="fas fa-search"></i></a>
-         <a href="https://www.facebook.com/omgmainbranch/"><i class="fa-brands fa-facebook-f" id="facebook"></i></a>
          <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_cart_items; ?>)</span></a>
          <div id="user-btn" class="fas fa-user"></div>
          <div id="menu-btn" class="fas fa-bars"></div>
