@@ -130,6 +130,10 @@ if(isset($_POST['send'])){
 
 
 
+<div class="loader">
+   <img src="images/loading.gif" alt="">
+</div>
+
 
 
 <!-- footer section starts  -->

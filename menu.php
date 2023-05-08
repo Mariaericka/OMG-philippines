@@ -39,6 +39,7 @@ include 'components/add_cart.php';
 <!-- menu section starts  -->
 <div class="second"><ul>
     <h1>Categories</h1> <br>
+    <li> <a href="menu.php" class="button14">Back To Main Menu</a></li>
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
         <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
         <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
@@ -253,7 +254,9 @@ margin-left: 25%;">
 
 
 
-
+<div class="loader">
+   <img src="images/loading.gif" alt="">
+</div>
 
 
 

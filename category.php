@@ -32,6 +32,26 @@ include 'components/add_cart.php';
 <body>
    
 <?php include 'components/user_header.php'; ?>
+<div class="second"><ul>
+    <h1>Categories</h1> <br>
+    <li> <a href="menu.php" class="button14">Back To Main Menu</a></li>
+        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
+        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
+        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
+        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
+        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
+      </ul>
+    </div>
+    <section>
+    <div class="container2" style="box-sizing: border-box;
+background: #FFBE00;
+border: 5px solid #000000;
+border-radius: 50px;
+height: 800px;
+margin-left: 25%;">
+
+
+
 
 <section class="products">
 
@@ -79,15 +99,15 @@ include 'components/add_cart.php';
       ?>
 
    </div>
-
+   </div>
 </section>
 
 
+    
 
 
 
-
-
+     
 
 
 
