@@ -613,8 +613,7 @@ section .container .owl-navigation {
    height: 575px;
    width: 430px;
    background: linear-gradient(
-     rgb(18 17 17),
-     rgb(155 8 8)),
+      #ffd700, #ff1607),
      url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
    background-size: cover;
    margin-left: auto;

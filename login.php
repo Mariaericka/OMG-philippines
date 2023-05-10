@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -76,8 +76,12 @@ if(isset($_POST['submit'])){
    </form>
    <!-- Login Form Ends HEre -->
 
-   <p>You don't have account? <a href="register.php">SIGN UP </a></p>
+  <center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
 </div>
+     </div>
+
+
+
      </div>
 
 
@@ -85,11 +89,7 @@ if(isset($_POST['submit'])){
 
 
 
-
-
 <?php include 'components/footer.php'; ?>
-
-
 
 
 
