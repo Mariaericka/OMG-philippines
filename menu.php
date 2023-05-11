@@ -52,7 +52,7 @@ include 'components/add_cart.php';
 background: #FFBE00;
 border: 5px solid #000000;
 border-radius: 50px;
-height: 1080px;
+height: 1150px;
 margin-left: 25%;">
        
        <div class="omg-menu">     
@@ -161,7 +161,12 @@ margin-left: 25%;">
       <div class="omg-menu-box1">
      <div class="omg-menu-img"> <img src="images/mangosago1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
       <h2 class="omg-menu-desc">Mango Sago</h2></div>
-
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/Peachmango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Peach Mango</h2></div>
+      <div class="omg-menu-box1">
+     <div class="omg-menu-img"> <img src="images/strawberrymango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
+      <h2 class="omg-menu-desc">Strawberry Mango</h2></div>
 
 
 
