@@ -69,13 +69,13 @@ $select_categories->execute();
 </html>
 <script>
 function selectCategory(id) {
-            console.log(id);
-            $.ajax({
-         type: "POST",
-         url: "product_list.php",
-         data: {"id": id},
-         success: function(result){
-            console.log(result);
+         console.log(id);
+         $.ajax({
+            type: "POST",
+            url: "product_list.php",
+            data: {"id": id},
+            success: function(result){
+               console.log(result);
          }
       });	
    }
