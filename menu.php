@@ -54,14 +54,6 @@ $select_categories->execute();
     </div>
     </div>
 <div>
-
-
-
-
-
-
-
-
 </div>
 
 <div class="loader">
