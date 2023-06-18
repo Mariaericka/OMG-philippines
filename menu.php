@@ -47,7 +47,7 @@ include 'components/add_cart.php';
         <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
       </ul>
     </div>
-    <section>
+    <!-- <section>
     <div class="container2" style="box-sizing: border-box;
 background: #FFBE00;
 border: 5px solid #000000;
@@ -180,7 +180,7 @@ margin-left: 25%;">
 
 
     </div>
-    </section>  
+    </section>   -->
 
 
 
