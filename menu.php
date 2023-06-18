@@ -48,45 +48,12 @@ include 'components/add_cart.php';
       </ul>
     </div>
 
-
-<!-- menu section ends -->
-
-
-
-
-
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="loader">
    <img src="images/loading.gif" alt="">
 </div>
-
-
-
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
-
-
-
-
-
-
-
-
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 
