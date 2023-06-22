@@ -1169,9 +1169,9 @@ section{
 }
 
 .header .flex .profile.active{
-   display: inline-block;
+   display:grid;
    width: 20rem;
-   height: 20rem;
+   
 
 }
 
