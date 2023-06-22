@@ -952,6 +952,7 @@ footer.footer .move-up span:hover{
    text-decoration: none;
    outline: none; border: none;
    transition: all .2s linear;
+   background-color: #F6F1E9;
   
 }
 
@@ -1901,7 +1902,7 @@ h3 {
 .loader{
    position: fixed;
    top:0; left:0; right:0; bottom: 0;
-   background-color: white;
+   
    z-index: 10000;
    display: flex;
    align-items: center;
