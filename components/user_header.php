@@ -27,10 +27,6 @@ if(isset($message)){
 
          <a href="blog.php">BLOG</a>
          <a href="franchise.php">FRANCHISE</a>
-         <a href="career.php">CAREER</a>
-
-
-
          <a href="location.php">LOCATION</a>
          <a href="contact.php">CONTACT US</a>
       </nav>
