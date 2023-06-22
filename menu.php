@@ -37,22 +37,54 @@ $select_categories->execute();
 <?php include 'components/user_header.php'; ?>
 <!-- header section ends -->
 
+<section class="category">
 
+   <h3 >Categories</h3>
+
+   <div class="box-container">
+
+      <a href="category.php?category=coffee series" class="box">
+         <img src="images/caramel macchiato1.png" alt="">
+         <h3>Coffee Series</h3>
+      </a>
+
+      <a href="category.php?category=yogurt" class="box">
+         <img src="images/strawberry yogurt2.png" alt="">
+         <h3>Yogurt Series</h3>
+      </a>
+
+      <a href="category.php?category=choco" class="box">
+         <img src="images/kisses choco1.png" alt="">
+         <h3>Choco Series</h3>
+      </a>
+
+      <a href="category.php?category=milktea" class="box">
+         <img src="images/okinawa milktea.png" alt="">
+         <h3>Milktea Series</h3>
+      </a>
+      <a href="category.php?category=mango" class="box">
+         <img src="images/mango fruit yogurt3.png" alt="">
+         <h3>Mango Series</h3>
+      </a>
+
+   </div>
+
+</section>
 <!-- menu section starts  -->
-<div class="second"><ul>
+<!-- <div class="second"><ul>
     <h1>Categories</h1> <br>
     <div class="flex-container">
     <?php
     // Fetch the results using a while loop
-    while ($row = $select_categories->fetch(PDO::FETCH_ASSOC)) {
-        $category_name = $row['category_name'];
-        $category_image = $row['category_img'];
-        $category_id = $row['category_id'];
-        echo '<div><img src="images/category/sample.jpg" height="100px" width="100px" onclick="selectCategory('.$category_id.')"/><br>'.$category_name.'</div>';
-    }
+   //  while ($row = $select_categories->fetch(PDO::FETCH_ASSOC)) {
+   //      $category_name = $row['category_name'];
+   //      $category_image = $row['category_img'];
+   //      $category_id = $row['category_id'];
+   //      echo '<div><img src="images/category/sample.jpg" height="100px" width="100px" onclick="selectCategory('.$category_id.')"/><br>'.$category_name.'</div>';
+   //  }
     ?>
     </div>
-    </div>
+    </div> -->
 <div>
 </div>
 
@@ -68,15 +100,4 @@ $select_categories->execute();
 </body>
 </html>
 <script>
-function selectCategory(id) {
-         console.log(id);
-         $.ajax({
-            type: "POST",
-            url: "product_list.php",
-            data: {"id": id},
-            success: function(result){
-               console.log(result);
-         }
-      });	
-   }
 </script>
