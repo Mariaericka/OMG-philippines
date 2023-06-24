@@ -612,9 +612,7 @@ section .container .owl-navigation {
  .frame {
    height: 575px;
    width: 430px;
-   background: linear-gradient(
-      #ffd700, #ff1607),
-     url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+   background:#FFD93D;
    background-size: cover;
    margin-left: auto;
    margin-right: auto;
@@ -660,7 +658,7 @@ section .container .owl-navigation {
  
  .signin-active a {
    padding-bottom: 10px;
-   color: #ffffff;
+   color: #4F200D;
    text-decoration: none;
    border-bottom: solid 2px #1059FF;
    transition: all .25s ease;
@@ -735,7 +733,7 @@ section .container .owl-navigation {
    font-size: 13px;
    padding-left: 15px;
    padding-bottom: 10px;
-   color: rgba(255,255,255,.7);
+   color: black;
    display: block;
  }
  
@@ -763,7 +761,7 @@ section .container .owl-navigation {
 }
 
 .child1{
-   background:orange;
+   background:#FFD93D;
    background-size:580px;
    background-repeat: no-repeat;
    display:flex;
@@ -785,7 +783,7 @@ section .container .owl-navigation {
    flex-direction:column;
    justify-content:space-around;
    align-items:center;
-   background: orange;
+   background: #FFD93D;
 }
 .inside-contact{
    width:90%;
@@ -812,15 +810,15 @@ section .container .owl-navigation {
 }
 
 .inside-contact input[type=submit]{
-   background-color:red;
-   color:#fff;
+   background-color:#FF8400;
+   color:#000;
    transition:0.2s;
    
 }
 
 .inside-contact input[type=submit]:hover{
-   background-color:#fff;
-   color:#000;
+   background-color:#4F200D;
+   color:#fff;
    transition:0.2s;
 }
 
@@ -849,7 +847,7 @@ section .container .owl-navigation {
    margin-top: 2rem;
    font-size: 3rem;
    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-   color: red;
+   color: #FF8400;
 }
 
 
@@ -867,7 +865,7 @@ section .container .owl-navigation {
 footer.footer{
    height: 100%;
    color:black;
-   background-color: rgba(252, 199, 6, 0.916);
+   background-color: #FFD93D;
    position: relative;
 }
 
@@ -962,15 +960,15 @@ footer.footer .move-up span:hover{
 
 ::-webkit-scrollbar{
    height: .5rem;
-   width: 1rem;
+   width: 10px;
 }
 
 ::-webkit-scrollbar-track{
-   background-color: red;
+   background-color: #F6F1E9;
 }
 
 ::-webkit-scrollbar-thumb{
-   background-color: yellow;
+   background-color: #4F200D;
 }
 
 html{
@@ -1038,7 +1036,7 @@ section{
 }
 
 .btn{
-   background-color: red;
+   background-color: #FF8400;
    color:white;
    border-radius: 30px;
    width: 185px;
@@ -1169,9 +1167,9 @@ section{
 }
 
 .header .flex .profile.active{
-   display: inline-block;
+   display:grid;
    width: 20rem;
-   height: 20rem;
+   
 
 }
 
@@ -1901,9 +1899,9 @@ h3 {
 .loader{
    position: fixed;
    top:0; left:0; right:0; bottom: 0;
-   background-color: white;
    z-index: 10000;
    display: flex;
+   background-color: white;
    align-items: center;
    justify-content: center;
 }
@@ -1918,7 +1916,7 @@ position:relative;
 width: 324px;
  height: 300px;
 background-image: url(../images/babyruth.jpg);
-border: 5px solid #FF1607;
+border: 5px solid #FF8400;
 box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
@@ -1932,7 +1930,7 @@ position:relative;
 width: 324px;
  height: 416px;
 background-image: url(../images/event.jpg);
-border: 5px solid #FF1607;
+border: 5px solid #FF8400;
 box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
@@ -1946,7 +1944,7 @@ position:relative;
 width: 400px;
  height: 300px;
 background-image: url(../images/cheescakeseries.jpg);
-border: 5px solid #FF1607;
+border: 5px solid #FF8400;
 box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
@@ -1959,60 +1957,60 @@ right: 62px;
 position: relative;
 padding: 1rem 3rem;
 left: 67px;
-background: #FF1607;
+background: yellow;
 border-radius: 25px;
 font-style: normal;
 font-weight: 800;
 font-size: 17px;
 line-height: 58px;
 text-align: center;
-color: #FFFFFF;
+color: black;
 border: 1px solid #000000;
  transition: 0.2s;
 }
 .button11:hover{
-   background-color:yellow;
-   color:#000;
+   background-color:#4F200D;
+   color:white;
    transition:0.2s;
 }
 .button12{
   
    position: relative;
-   background: #FF1607;
+   background: yellow;
    border-radius: 25px;
    font-style: normal;
    font-weight: 800;
    font-size: 17px;
    line-height: 58px;
    text-align: center;
-   color: #FFFFFF;
+   color: black;
    border: 1px solid #000000;
    padding: 1rem 3rem;
     left: 221px;
    }
    .button12:hover{
-      background-color:yellow;
-      color:#000;
+      background-color:#4F200D;
+      color:white;
       transition:0.2s;
    }
    .button13{
   
       position: relative; 
-      background: #FF1607;
+      background: yellow;
       border-radius: 25px;
       font-style: normal;
       font-weight: 800;
       font-size: 17px;
       line-height: 58px;
       text-align: center;
-      color: #FFFFFF;
+      color:black;
       border: 1px solid #000000;
       padding: 1rem 3rem;
       left: 404px;
       }
       .button13:hover{
-         background-color:yellow;
-         color:#000;
+         background-color:#4F200D;
+         color:white;
          transition:0.2s;
       }
 
@@ -2020,20 +2018,20 @@ border: 1px solid #000000;
   
          position: relative;
      
-         background: #FF1607;
+         background:#FF8400;
          border-radius: 25px;
          font-style: normal;
          font-weight: 800;
          font-size: 17px;
          line-height: 43px;
          text-align: center;
-         color: #FFFFFF;
+         color: black;
          border: 1px solid #000000;
           transition: 0.2s;
          }
          .button14:hover{
-            background-color:yellow;
-            color:#000;
+            background-color:#4F200D;
+            color:white;
             transition:0.2s;
          }
 
