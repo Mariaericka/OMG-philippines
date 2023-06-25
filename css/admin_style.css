@@ -8,14 +8,14 @@
 }
 
 body {
-    font-family: "Gill Sans", sans-serif;
+   font-family: "Gill Sans", sans-serif;
    margin: auto; padding: inherit;
    box-sizing: border-box;
    text-decoration: none;
    outline: none; border: none;
    text-transform: capitalize;
    transition: all .2s linear;
-   color: #F6F1E9;
+   color: black;
    background-color: #F6F1E9;
 }
 .html {
@@ -61,9 +61,13 @@ body {
    border-radius: 25px;
    text-align: center;
    font-size: large;
-   background-color: #FF8400;
+   background-color: #ffd324;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
 }
+.text-center:hover{
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+} 
 .btn-primary{
    background-color: yellow;
    padding: 1%;
@@ -123,7 +127,7 @@ body {
 }
 
 .btn{
-   background-color: red;
+   background-color: #FF8400;
 }
 
 .delete-btn{
@@ -176,10 +180,14 @@ body {
 .heading{
    
    text-align: center;
+   margin-top: .8rem;
    margin-bottom: 3rem;
    text-transform: capitalize;
-   color:#FF8400;
+   color:black;
    font-size: 3rem;
+   padding: 1rem;
+   background-color: #ffd324;
+   margin-right: 2rem;
 
 }
 
@@ -245,7 +253,7 @@ body {
 .header{
    position: sticky;
    top:0; left:0; right:0;
-   background-color: #FFD93D;
+   background-color: #F6F1E9;
    box-shadow: var(--box-shadow);
    z-index: 1000;
    border-bottom: var(--border);
@@ -276,7 +284,11 @@ body {
 }
 
 .header .flex .navbar a:hover{
-   color:var(--main-color);
+   background-color: #FFD93D;
+   border-radius: .5rem;
+   padding: 1rem;
+   transition: all .1s ease-in-out;
+   transform: scale(1.5);
 }
 
 .header .flex .icons > *{
@@ -289,6 +301,8 @@ body {
 
 .header .flex .icons > *:hover{
    color:var(--main-color);
+   transition: all .2s ease-in-out;
+   transform: scale(1.5);
 }
 
 .header .flex .profile{
