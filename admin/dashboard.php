@@ -36,9 +36,6 @@ if(!isset($admin_id)){
 <div class="main-content">
 <div class="wrapper">
    <h1 class="heading">dashboard</h1>
-
-
-
    <div class="col-4 text-center">
       <?php
          $total_pendings = 0;
@@ -88,10 +85,6 @@ if(!isset($admin_id)){
       <p>beverages added</p>
       <a href="products.php" class="btn">see products</a>
    </div>
-
-  
-
-
    <div class="col-4 text-center">
       <?php
          $select_messages = $conn->prepare("SELECT * FROM `messages`");
@@ -106,18 +99,6 @@ if(!isset($admin_id)){
    
       </div>
       </div>
-
-<!-- admin dashboard section ends -->
-
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
 <script src="../js/admin_script.js"></script>
 
 </body>
