@@ -8,16 +8,15 @@
 }
 
 body {
-   font-family: 'Andada Pro', serif;
+   font-family: "Gill Sans", sans-serif;
    margin: auto; padding: inherit;
    box-sizing: border-box;
    text-decoration: none;
    outline: none; border: none;
    text-transform: capitalize;
    transition: all .2s linear;
-   background-image:  linear-gradient(to right, #e32411, transparent);;
-   color: ghostwhite;
-   background-color: gold;
+   color: black;
+   background-color: #F6F1E9;
 }
 .html {
    font-size: 70%;
@@ -59,10 +58,16 @@ body {
 }
 
 .text-center{
+   border-radius: 25px;
    text-align: center;
    font-size: large;
-   background-color: #ff560d;
+   background-color: #ffd324;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
 }
+.text-center:hover{
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+} 
 .btn-primary{
    background-color: yellow;
    padding: 1%;
@@ -71,8 +76,9 @@ body {
    font-weight: bold;
 }
 .main-content{
-   background-color: rgb(219, 26, 26);
+   background-color: #F6F1E9;
    padding: 3% 0;
+   margin-left: 2.5rem;
 }
 
 .btn-secondary{
@@ -121,7 +127,7 @@ body {
 }
 
 .btn{
-   background-color: red;
+   background-color: #FF8400;
 }
 
 .delete-btn{
@@ -172,11 +178,17 @@ body {
 }
 
 .heading{
+   
    text-align: center;
-   margin-bottom: 2rem;
+   margin-top: .8rem;
+   margin-bottom: 3rem;
    text-transform: capitalize;
-   color:white;
+   color:black;
    font-size: 3rem;
+   padding: 1rem;
+   background-color: #ffd324;
+   margin-right: 2rem;
+
 }
 
 .empty{
@@ -241,7 +253,7 @@ body {
 .header{
    position: sticky;
    top:0; left:0; right:0;
-   background-color: darkred;
+   background-color: #F6F1E9;
    box-shadow: var(--box-shadow);
    z-index: 1000;
    border-bottom: var(--border);
@@ -264,25 +276,33 @@ body {
 }
 
 .header .flex .navbar a{
-   margin:0 1rem;
+   margin:0 .5rem;
    font-size: 20px;
-   color:orange;
+   color:black;
    text-decoration: none;
+   
 }
 
 .header .flex .navbar a:hover{
-   color:var(--main-color);
+   background-color: #FFD93D;
+   border-radius: .5rem;
+   padding: 1rem;
+   transition: all .1s ease-in-out;
+   transform: scale(1.5);
 }
 
 .header .flex .icons > *{
    font-size:20px;
    cursor: pointer;
-   color:orange;
-   margin-left: 1.7rem;
+   color:black;
+   margin-left: 2rem;
+   margin-right: 2rem;
 }
 
 .header .flex .icons > *:hover{
    color:var(--main-color);
+   transition: all .2s ease-in-out;
+   transform: scale(1.5);
 }
 
 .header .flex .profile{
@@ -605,7 +625,7 @@ body {
       top:99%; left:0; right:0;
       border-top: var(--border);
       border-bottom: var(--border);
-      background-color: darkred;
+      background-color: #FF8400;
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
       transition: .2s linear;
    }
