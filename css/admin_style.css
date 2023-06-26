@@ -60,7 +60,7 @@ body {
    border-radius: 25px;
    text-align: center;
    font-size: large;
-   background-color: #ffd324;
+   background-color: rgb(247, 230, 177);
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
 }
 .text-center:hover{
@@ -68,6 +68,7 @@ body {
     transform: scale(1.1);
 } 
 .btn-primary a{
+   margin-top: .2rem; 
    background-color: #FF8400;
    padding: .5rem;
    color: black;
@@ -200,12 +201,14 @@ body {
    
    text-align: center;
    margin-top: -1rem;
-   margin-bottom: 3rem;
+   margin-bottom: 4rem;
    text-transform: capitalize;
    color:black;
    font-size: 3rem;
    padding: 1rem;
-   background-color: #ffd324;
+   padding-left: .3rem;
+   padding-right: .3rem;
+   background-color: #ffd83e;
    margin-right: 2rem;
 
 }

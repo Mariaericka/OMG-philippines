@@ -49,7 +49,7 @@ if(isset($_GET['delete'])){
 <section>
    <div class="main-content">
    <div class="wrapper">
-   <h1><center>Manage Beverages</center></h1>
+   <h1 class="heading">Manage Beverages</h1>
    <div class="col-4 btn-primary"><a href="products.php">ADD DRINK</a></div>
    <table class="tbl-full">
    <tr>
