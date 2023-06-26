@@ -427,6 +427,10 @@ body {
    object-fit: contain;
    margin-bottom: 1rem;
 }
+.dashboardicons img{
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
 
 .show-products .box-container .box .name{
    font-size: 2rem;
@@ -586,23 +590,6 @@ body {
 .messages .box-container .box p span{
    color:white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* media queries  */
 
