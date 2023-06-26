@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:home.php');
+   header('location:index.php');
 };
 
 if(isset($_POST['submit'])){
@@ -64,7 +64,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
@@ -74,13 +74,11 @@ if(isset($_POST['submit'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>checkout</h3>
-   <p><a href="home.php">home</a> <span> / checkout</span></p>
+   <h3>Order Summary</h3>
+   <p><a href="index.php">Home</a> <span> / checkout</span></p>
 </div>
 
 <section class="checkout">
-
-   <h1 class="title">order summary</h1>
 
 <form action="" method="post">
 
@@ -97,15 +95,15 @@ if(isset($_POST['submit'])){
                $total_products = implode($cart_items);
                $grand_total += ($fetch_cart['price'] * $fetch_cart['quantity']);
       ?>
-      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">$<?= $fetch_cart['price']; ?> x <?= $fetch_cart['quantity']; ?></span></p>
+      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">₱<?= $fetch_cart['price']; ?> x <?= $fetch_cart['quantity']; ?></span></p>
       <?php
             }
          }else{
             echo '<p class="empty">your cart is empty!</p>';
          }
       ?>
-      <p class="grand-total"><span class="name">grand total :</span><span class="price">$<?= $grand_total; ?></span></p>
-      <a href="cart.php" class="btn">veiw cart</a>
+      <p class="grand-total"><span class="name">grand total :</span><span class="price">₱<?= $grand_total; ?></span></p>
+      <a href="cart.php" class="btn">view cart</a>
    </div>
 
    <input type="hidden" name="total_products" value="<?= $total_products; ?>">
@@ -127,9 +125,8 @@ if(isset($_POST['submit'])){
       <select name="method" class="box" required>
          <option value="" disabled selected>select payment method --</option>
          <option value="cash on delivery">cash on delivery</option>
-         <option value="credit card">credit card</option>
-         <option value="paytm">paytm</option>
-         <option value="paypal">paypal</option>
+         <option value="credit card">gcash</option>
+         <option value="paytm">in-store </option>
       </select>
       <input type="submit" value="place order" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background:var(--red); color:var(--white);" name="submit">
    </div>

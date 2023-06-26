@@ -1000,7 +1000,7 @@ section{
    justify-content: center;
    gap:1rem;
    flex-flow: column;
-   background-color: orangered;
+   background-color: #FF8400;
    min-height: 20rem;
 }
    
@@ -1032,7 +1032,6 @@ section{
    padding:1rem 3rem;
    cursor: pointer;
    text-transform: capitalize;
-   transition: .2s linear;
 }
 
 .btn{
@@ -1153,6 +1152,21 @@ section{
    display: none;
 }
 
+.btnheader{
+   background-color: #FF8400;
+   color: white;
+   width: 100px;
+   margin-top: 1rem;
+   display: inline-block;
+   font-size: 1rem;
+   padding:1rem 3rem;
+   cursor: pointer;
+   text-transform: capitalize;
+
+}
+
+
+
 .header .flex .profile{
    background-color:white;
    border:var(--border);
@@ -1168,8 +1182,9 @@ section{
 
 .header .flex .profile.active{
    display:grid;
+   align-content: space-evenly;
    width: 20rem;
-   
+   height: 14rem;
 
 }
 
@@ -1637,7 +1652,7 @@ section{
 }
 
 .checkout form .cart-items{
-   background-color: var(--black);
+   background-color:#FFD93D;
    padding:2rem;
    padding-top: 0;
 }
@@ -1727,6 +1742,7 @@ section{
    max-width: 50rem;
    padding:2rem;
    text-align: center;
+   background-color: beige;
 }
 
 .form-container form h3{
@@ -1740,7 +1756,7 @@ section{
    margin:.7rem 0;
    width: 100%;
    border:var(--border);
-   padding:1.4rem;
+   padding:0.4rem;
    font-size: 1.8rem;
    color:var(--black);
 }
@@ -1764,11 +1780,12 @@ section{
    margin:0 auto;
    border:var(--border);
    padding:2rem;
+   background-color: beige;
 }
 
 .user-details .user img{
    width: 100%;
-   height: 20rem;
+   height: 16rem;
    object-fit: contain;
    margin-bottom: 1rem;
 }
