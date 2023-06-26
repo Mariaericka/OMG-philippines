@@ -1000,7 +1000,7 @@ section{
    justify-content: center;
    gap:1rem;
    flex-flow: column;
-   background-color: orangered;
+   background-color: #FF8400;
    min-height: 20rem;
 }
    
@@ -1652,7 +1652,7 @@ section{
 }
 
 .checkout form .cart-items{
-   background-color: var(--black);
+   background-color:#FFD93D;
    padding:2rem;
    padding-top: 0;
 }
@@ -1756,7 +1756,7 @@ section{
    margin:.7rem 0;
    width: 100%;
    border:var(--border);
-   padding:1.4rem;
+   padding:0.4rem;
    font-size: 1.8rem;
    color:var(--black);
 }

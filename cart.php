@@ -60,14 +60,13 @@ $grand_total = 0;
 <!-- header section ends -->
 
 <div class="heading">
-   <h3> OMGPH Cart</h3>
+   <h3> Your Cart</h3>
 </div>
 
 <!-- shopping cart section starts  -->
 
 <section class="products">
 
-   <h1 class="title">your cart</h1>
 
    <div class="box-container">
 
@@ -81,9 +80,8 @@ $grand_total = 0;
       ?>
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <a href="quick_view.php?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
          <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('delete this item?');"></button>
-         <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
+         <img src="images/<?= $fetch_cart['image']; ?>" alt="">
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
             <div class="price"><span>₱</span><?= $fetch_cart['price']; ?></div>
