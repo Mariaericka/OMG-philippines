@@ -1195,7 +1195,6 @@ section{
    align-content: space-evenly;
    width: 20rem;
    height: 14rem;
-
 }
 
 @keyframes fadeIn {
@@ -2045,6 +2044,7 @@ border: 1px solid #000000;
   
          position: relative;
      
+
          background:#FF8400;
          border-radius: 25px;
          font-style: normal;
