@@ -27,10 +27,6 @@ if(isset($message)){
 
          <a href="blog.php">BLOG</a>
          <a href="franchise.php">FRANCHISE</a>
-         <a href="career.php">CAREER</a>
-
-
-
          <a href="location.php">LOCATION</a>
          <a href="contact.php">CONTACT US</a>
       </nav>
@@ -56,7 +52,7 @@ if(isset($message)){
          ?>
          <p class="name"><?= $fetch_profile['name']; ?></p>
          <div class="flex">
-            <a href="profile.php" class="btn">profile</a>
+            <a href="profile.php" class="btnheader">profile</a>
             <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
          </div>
          <p class="account">

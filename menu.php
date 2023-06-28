@@ -11,7 +11,8 @@ if(isset($_SESSION['user_id'])){
 };
 
 include 'components/add_cart.php';
-
+$select_categories = $conn->prepare("SELECT * FROM `omg_categories`");
+$select_categories->execute();
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ include 'components/add_cart.php';
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
@@ -35,249 +37,67 @@ include 'components/add_cart.php';
 <?php include 'components/user_header.php'; ?>
 <!-- header section ends -->
 
+<section class="category">
 
-<!-- menu section starts  -->
-<div class="second"><ul>
-    <h1>Categories</h1> <br>
-    <li> <a href="menu.php" class="button14">Back To Main Menu</a></li>
-        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
-        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
-        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
-        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
-        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
-      </ul>
-    </div>
-    <section>
-    <div class="container2" style="box-sizing: border-box;
-background: #FFBE00;
-border: 5px solid #000000;
-border-radius: 50px;
-height: 1150px;
-margin-left: 25%;">
-       
-       <div class="omg-menu">     
-        <div class="omg-menu-box1">
-        <div class="omg-menu-img"> <img src="images/caramel macchiato1.png" img class="img1"></div>
-       <h2 class="omg-menu-desc">Caramel Macchiato </h2> </div>
-       <div class="omg-menu-box1">
-           <div class="omg-menu-img"> <img src="images/cappucino2.png" img class="img1"></a></div>
-            <h2 class="omg-menu-desc">Cappucino </h2></div>
-
-            <div class="omg-menu-box1">
-           <div class="omg-menu-img"> <img src="images/mocha3.png" img class="img1"></a></div>
-            <h2 class="omg-menu-desc">Mocha</h2></div>
-
-            <div class="omg-menu-box1">
-            <div class="omg-menu-img"> <img src="images/coffee crumble4.png" img class="img1"></a></div>
-             <h2 class="omg-menu-desc">Coffee Crumble</h2></div>
-
-             <div class="omg-menu-box1">
-        <div class="omg-menu-img"> <img src="images/bluebery yogurt1.png" img class="img1"></a></div>
-         <h2 class="omg-menu-desc">Blueberry Yogurt </h2></div>
-
-         <div class="omg-menu-box1">
-        <div class="omg-menu-img"> <img src="images/strawberry yogurt2.png" img class="img1"></a></div>
-         <h2 class="omg-menu-desc">Strawberry Yogurt </h2> </div>
-          <div class="omg-menu-box1">
-        <div class="omg-menu-img"> <img src="images/mango fruit yogurt3.png" img class="img1"></a></div>
-         <h2 class="omg-menu-desc">Mango Fruit Yogurt</h2></div>
-         <div class="omg-menu-box1">
-         <div class="omg-menu-img"> <img src="images/passion fruit0.png" img class="img1"></a></div>
-          <h2 class="omg-menu-desc">Passion Fruit</h2> </div>
-          <div class="omg-menu-box1">
-         <div class="omg-menu-img"> <img src="images/creamy fruit melon1.png" img class="img1"></a></div>
-          <h2 class="omg-menu-desc">Creamy Fruit Melon</h2></div>
-          <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/twix choco.png" img class="img1"></a></div>
-     <h2 class="omg-menu-desc">Twix Choco </h2></div>
-     <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/m&m choco.png" img class="img1"></a></div>
-     <h2 class="omg-menu-desc">M&M Choco </h2></div>
-     <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/mars choco.png" img class="img1"></a></div>
-     <h2 class="omg-menu-desc">Mars Choco</h2></div>
-     <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/kisses choco1.png" img class="img1"></a></div>
-      <h2 class="omg-menu-desc">Kisses Choco</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/magnum choco.png" img class="img1"></a></div>
-      <h2 class="omg-menu-desc">Magnum Choco</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/kitkat choco.png" img class="img1"></a></div>
-      <h2 class="omg-menu-desc">Kitkat Choco</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/snickers choco.png" img class="img1"></a></div>
-      <h2 class="omg-menu-desc">Snickers Choco</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/mini oreo choco.png" img class="img1"></a></div>
-      <h2 class="omg-menu-desc">Mini Oreo Choco</h2></div>
-      <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/wintermelon milktea.png" img class="img1" img style="object-fit: contain;"></div>
-     <h2 class="omg-menu-desc">Wintermelon Milktea </h2></div>
-     <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/okinawa milktea.png" img class="img1" img style="height: 30%;"></a></div>
-     <h2 class="omg-menu-desc">Okinawa Milktea  </h2></div>
-     <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/hokkaido milktea.png" img class="img1" img style="height: 30%;"></a></div>
-     <h2 class="omg-menu-desc">Hokkaido Milktea</h2></div>
-     <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/classic milkteaq.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Classic Milktea</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/oreo milktea.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Oreo Milktea</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/nutella milktea.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Nutella Milktea</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/milo overload milktea.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Milo Overload Milktea</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/meiji milktea.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Meiji Milktea</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/hershey's milktea.png" img class="img1" img style="height: 30%;"></a></div>
-      <h2 class="omg-menu-desc">Hershey Milktea</h2></div>
-
-
-      <div class="omg-menu-box1">
-    <div class="omg-menu-img"> <img src="images/almondmango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-     <h2 class="omg-menu-desc">Almond Mango</h2></div>
-     <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/caramelmango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Caramel Mango</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/chocomangooreo1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Choco Oreo Mango</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/eggpudding1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Egg Pudding Mango</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/mangocheesecake1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Mango Cheesecake</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/mangograham1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Mango Graham</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/mangosago1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Mango Sago</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/Peachmango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Peach Mango</h2></div>
-      <div class="omg-menu-box1">
-     <div class="omg-menu-img"> <img src="images/strawberrymango1.png" img class="img1" img style="height: 30%; width: 76%;"></a></div>
-      <h2 class="omg-menu-desc">Strawberry Mango</h2></div>
-
-
-
-
-
-
-
-
-      
-            </div>
-
-
-    </div>
-    </section>  
-
-
-
-
-
-
-
-
-<section class="products">
-
-   <h3>Latest Beverage</h3>
+   <h3 >Categories</h3>
 
    <div class="box-container">
 
-      <?php
-         $select_products = $conn->prepare("SELECT * FROM `products`");
-         $select_products->execute();
-         if($select_products->rowCount() > 0){
-            while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
-      ?>
-      <form action="" method="post" class="box">
-         <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-         <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
-         <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
-         <input type="hidden" name="priceR" value="<?= $fetch_products['description']; ?>">
+      <a href="category.php?category=coffee series" class="box">
+         <img src="images/caramel macchiato1.png" alt="">
+         <h3>Coffee Series</h3>
+      </a>
 
+      <a href="category.php?category=yogurt" class="box">
+         <img src="images/strawberry yogurt2.png" alt="">
+         <h3>Yogurt Series</h3>
+      </a>
 
-         <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-         <div class="omg-menu-img">
+      <a href="category.php?category=choco" class="box">
+         <img src="images/kisses choco1.png" alt="">
+         <h3>Choco Series</h3>
+      </a>
 
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
-         <div class="cat"><?= $fetch_products['name']; ?></div>
-         <a href="category.php?category=<?= $fetch_products['category']; ?>" ><?= $fetch_products['category']; ?></a>
-
-            <div class="cat"><span>₱</span><?= $fetch_products['price']; ?></div>
-           Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-            <p class="omg-detail">
-                            <div class="omg-menu-desc">
-                            <?= $fetch_products['description']; ?>
-                                    </p></div>
-     <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button>
-    
-
-         
-      </form>
-      <?php
-            }
-         }else{
-            echo '<p class="empty">no drinks added yet!</p>';
-         }
-      ?>
+      <a href="category.php?category=milktea" class="box">
+         <img src="images/okinawa milktea.png" alt="">
+         <h3>Milktea Series</h3>
+      </a>
+      <a href="category.php?category=mango" class="box">
+         <img src="images/mango fruit yogurt3.png" alt="">
+         <h3>Mango Series</h3>
+      </a>
 
    </div>
 
 </section>
-
-
-<!-- menu section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- menu section starts  -->
+<!-- <div class="second"><ul>
+    <h1>Categories</h1> <br>
+    <div class="flex-container">
+    <?php
+    // Fetch the results using a while loop
+   //  while ($row = $select_categories->fetch(PDO::FETCH_ASSOC)) {
+   //      $category_name = $row['category_name'];
+   //      $category_image = $row['category_img'];
+   //      $category_id = $row['category_id'];
+   //      echo '<div><img src="images/category/sample.jpg" height="100px" width="100px" onclick="selectCategory('.$category_id.')"/><br>'.$category_name.'</div>';
+   //  }
+    ?>
+    </div>
+    </div> -->
+<div>
+</div>
 
 <div class="loader">
    <img src="images/loading.gif" alt="">
 </div>
-
-
-
 <!-- footer section starts  -->
-<?php include 'components/footer.php'; ?>
+<!-- <?php include 'components/footer.php'; ?> -->
 <!-- footer section ends -->
-
-
-
-
-
-
-
-
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 
 </body>
 </html>
+<script>
+</script>
