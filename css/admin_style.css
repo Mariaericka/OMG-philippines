@@ -51,7 +51,6 @@ body {
 
 .col-4{
    width: 18%;
-   background-color: rgb(219, 26, 26);
    margin: 1%;
    padding: 2%;
    float: left;
@@ -61,19 +60,26 @@ body {
    border-radius: 25px;
    text-align: center;
    font-size: large;
-   background-color: #ffd324;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+   background-color: rgb(247, 230, 177);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
 }
 .text-center:hover{
     transition: all .3s ease-in-out;
     transform: scale(1.1);
 } 
-.btn-primary{
-   background-color: yellow;
-   padding: 1%;
+.btn-primary a{
+   margin-top: .2rem; 
+   background-color: #FF8400;
+   padding: .5rem;
    color: black;
    text-decoration: none;
    font-weight: bold;
+   border-radius: 25px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.btn-primary:hover{
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
 }
 .main-content{
    background-color: #F6F1E9;
@@ -81,34 +87,48 @@ body {
    margin-left: 2.5rem;
 }
 
-.btn-secondary{
-   background-color: #7bed9f;
-   padding: 1%;
-   color: black;
-   text-decoration: none;
-   font-weight: bold;
-}
-.btn-secondary:hover{
-   background-color: #2ed573;
-}
-
-.btn-danger{
-   background-color: #ff6b81;
-   padding: 1%;
-   color: white;
-   text-decoration: none;
-   font-weight: bold;
-}
-.btn-danger:hover{
-   background-color: #ff4757;
-}
-
 .wrapper{
    align-items: center;
 }
 .tbl-full{
-   width: 100%;
-  
+   width: 97%;
+   margin-right: 3rem;
+   text-align: center;
+
+}
+.headers{
+    text-align: center;
+    background-color: #ffd324;
+    padding: .5rem;
+    border-radius: 5px;
+}
+.table-content{
+    background-color: rgb(247, 230, 177);
+}
+.manage-drink-icons-update{
+    width: 2rem ;
+    height: 2rem ;
+    padding: .2rem ;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    background-color: #ece7d6;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+.manage-drink-icons-delete{
+    width: 2rem ;
+    height: 2rem ;
+    padding: .2rem ;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    background-color: #ece7d6;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+.manage-drink-icons-delete:hover, 
+.manage-drink-icons-update:hover{
+    transition: all .3s ease-in-out;
+    transform: scale(1.2);
 }
 .btn,
 .delete-btn,
@@ -180,14 +200,17 @@ body {
 .heading{
    
    text-align: center;
-   margin-top: .8rem;
-   margin-bottom: 3rem;
+   margin-top: -1rem;
+   margin-bottom: 4rem;
    text-transform: capitalize;
    color:black;
    font-size: 3rem;
    padding: 1rem;
-   background-color: #ffd324;
+   padding-left: .3rem;
+   padding-right: .3rem;
+   background-color: #ffd83e;
    margin-right: 2rem;
+   border-radius: .6rem;
 
 }
 
