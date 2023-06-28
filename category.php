@@ -27,7 +27,7 @@ include 'components/add_cart.php';
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
-
+   <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
    
@@ -76,18 +76,18 @@ margin-left: 25%;">
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
 
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1"></div>
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal()"></div>
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
          <h4><?= $fetch_products['name']; ?></h4>
          
             <div class="cat"><span>₱</span><?= $fetch_products['price']; ?></div>
-           Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+           <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
             <p class="omg-detail">
                             <div class="omg-menu-desc">
                             <?= $fetch_products['description']; ?>
                                     </p></div>
                  
-        <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button>
+        <!-- <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button> -->
 
          
       </form>
@@ -114,7 +114,45 @@ margin-left: 25%;">
 
 
 
+<!-- The Modal -->
+<div id="costumizeOrderModal" class="backdrop">
 
+  <!-- Modal content -->
+  <div class="modal">
+      <div class="modal-header">
+         <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+         <table>
+            <tr>
+               <td>
+                  <span class="modal-label">Size:</span>
+               </td>
+               <td>
+                  <select class="input" id="size-dropdown">
+                     <option value="small" selected>Small</option>
+                     <option value="medium">Medium</option>
+                     <option value="large">Large</option>
+                  </select>
+               </td>
+               <tr>
+               <td>
+                  <span class="modal-label">Quantity:</span>
+               </td>
+               <td>
+                  <input class="input" type="number"/>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div class="modal-footer">
+         <button class="btn confirm-btn">ADD TO CART</button>
+         <button class="btn close-btn">CANCEL</button>
+      </div>
+  </div>
+
+
+</div>
 
 
 
@@ -125,7 +163,6 @@ margin-left: 25%;">
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
-
+<script src="js/modal.js"></script>
 </body>
 </html>

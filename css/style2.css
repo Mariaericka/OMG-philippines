@@ -1037,6 +1037,16 @@ section{
    transition: .2s linear;
 }
 
+.btn.close-btn{
+   background-color: black;
+   color:white;
+   border-radius: 30px;
+   width: 185px;
+   margin: 10px 5px;
+}
+.btn.confirm-btn{
+   margin: 10px 5px;
+}
 .btn{
    background-color: red;
    color:white;
