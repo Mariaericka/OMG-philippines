@@ -1034,6 +1034,16 @@ section{
    text-transform: capitalize;
 }
 
+.btn.close-btn{
+   background-color: black;
+   color:white;
+   border-radius: 30px;
+   width: 185px;
+   margin: 10px 5px;
+}
+.btn.confirm-btn{
+   margin: 10px 5px;
+}
 .btn{
    background-color: #FF8400;
    color:white;
