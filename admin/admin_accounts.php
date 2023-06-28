@@ -50,12 +50,7 @@ if(isset($_GET['delete'])){
 
 
 
-   <?php
-      $select_account = $conn->prepare("SELECT * FROM `admin`");
-      $select_account->execute();
-      if($select_account->rowCount() > 0){
-         while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
-   ?>
+ 
    
       <table class="tbl-full">
    <tr>
@@ -65,6 +60,13 @@ if(isset($_GET['delete'])){
          <th class="headers">USERNAME</th>
          <th class="headers last" ></th>          
          </tr>
+
+         <?php
+      $select_account = $conn->prepare("SELECT * FROM `admin`");
+      $select_account->execute();
+      if($select_account->rowCount() > 0){
+         while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
+   ?>
  <tr class="table-content">
 <th> <?= $fetch_accounts['id']; ?></th>
 <th> <?= $fetch_accounts['fullname']; ?></th>
