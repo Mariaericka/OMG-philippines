@@ -44,8 +44,8 @@ if(isset($_GET['delete'])){
 
 <div class="main-content">
    <div class="wrapper">
-   <h1><center>Manage Admin</center></h1>
-   <a href="register_admin.php" class="btn-primary">ADD ADMIN</a>   <br><br><br>
+   <h1 class="heading">Manage Admin</h1>
+  <div class="col-4 btn-primary"> <a href="register_admin.php" >ADD ADMIN</a> </div>
 
 
 
@@ -56,39 +56,39 @@ if(isset($_GET['delete'])){
       if($select_account->rowCount() > 0){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
    ?>
-   <br><br><br>
+   
       <table class="tbl-full">
    <tr>
                        
-                        <th >ID</th>
-                        <th style="display: flex;" >FULLNAME</th>
+          <th class="headers" >ID</th>
+          <th class="headers" >FULLNAME</th>
+         <th class="headers">USERNAME</th>
+         <th class="headers last" ></th>          
+         </tr>
+ <tr class="table-content">
+<th> <?= $fetch_accounts['id']; ?></th>
+<th> <?= $fetch_accounts['fullname']; ?></th>
 
-                        <th>USERNAME</th>
-                    
-                    </tr>
-<tr>
-<td> <?= $fetch_accounts['id']; ?></td>
-<td> <?= $fetch_accounts['fullname']; ?></td>
-
-<td><?= $fetch_accounts['name']; ?></td>
+<th><?= $fetch_accounts['name']; ?></th>
     
-<td> <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="btn-danger" onclick="return confirm('delete this account?');">delete</a>
+<th> <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="btn-danger" onclick="return confirm('delete this account?');"><img src="../images/icons/delete.png" class="manage-drink-icons-delete"/></a>
          <?php
             if($fetch_accounts['id'] == $admin_id){
-               echo '<a href="update_profile.php" class="btn-secondary">update</a>';
+               echo '<a href="update_profile.php" class="btn-secondary"><img src="../images/icons/update.png"/ class="manage-drink-icons-update"/></a>';
             }
          ?>
-      </td>
+      </th>
     </tr>
         </div>
       
-         </table>
+        
    <?php
       }
    }else{
       echo '<p class="empty">no accounts available</p>';
    }
    ?>
+   </table>
   </div>
     </div>
 
