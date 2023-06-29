@@ -577,8 +577,7 @@ section .container .owl-navigation {
 }
 
 .omg-menu-img{
-   width: 50%;
-   float: left;
+   width: 80%;
    direction:ltr;
 }
 
@@ -603,9 +602,8 @@ section .container .owl-navigation {
  }
  .img1{
    border-radius: 1px;
-   width: 100%  ;
    height: 100%;
-   float: left;
+  
    }
    
  
@@ -1220,7 +1218,7 @@ section{
 }
 
 .header .flex .profile .account a:hover{
-   color:var(--yellow);
+   color:var(--yellow); 
    text-decoration: underline;
 }
 
@@ -1316,9 +1314,9 @@ section{
 }
 
 .products .box-container .box img{
-   height: 11rem;
+   
    width: 100%;
-   object-fit: contain;
+   
    margin-bottom: 1rem;
 }
 
@@ -2049,11 +2047,10 @@ border: 1px solid #000000;
          border-radius: 25px;
          font-style: normal;
          font-weight: 800;
-         font-size: 17px;
+         font-size: 12px;
          line-height: 43px;
          text-align: center;
          color: black;
-         border: 1px solid #000000;
           transition: 0.2s;
          }
          .button14:hover{

@@ -34,19 +34,20 @@ include 'components/add_cart.php';
 <?php include 'components/user_header.php'; ?>
 <div class="second"><ul>
     <h1>Categories</h1> <br>
-    <li> <a href="menu.php" class="button14">Back To Main Menu</a></li>
-        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
-        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
-        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
-        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
-        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
+    <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
+
+        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
       </ul>
     </div>
     <section>
     <div class="container2" style="box-sizing: border-box;
-background: #FFBE00;
-border: 5px solid #000000;
-border-radius: 50px;
+
+border: 2px solid #000000;
+
 height: 800px;
 margin-left: 25%;">
 
