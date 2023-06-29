@@ -36,9 +36,6 @@ if(!isset($admin_id)){
 <div class="main-content">
 <div class="wrapper">
    <h1 class="heading">dashboard</h1>
-
-
-
    <div class="col-4 text-center">
       <?php
          $total_pendings = 0;
@@ -48,8 +45,8 @@ if(!isset($admin_id)){
             $total_pendings += $fetch_pendings['total_price'];
          }
       ?>
-      <h3><span>₱</span><?= $total_pendings; ?><span>/-</span></h3>
-      <p>total pendings</p>
+      <h3><span>₱</span><?= $total_pendings; ?><span></span></h3>
+      <div class="dashboardicons"><img src="../images/icons/pending.png"><p>total pendings</p></div>
       <a href="placed_orders.php" class="btn">see orders</a>
    </div>
 
@@ -62,8 +59,8 @@ if(!isset($admin_id)){
             $total_completes += $fetch_completes['total_price'];
          }
       ?>
-      <h3><span>₱</span><?= $total_completes; ?><span>/-</span></h3>
-      <p>total completes</p>
+      <h3><span>₱</span></span><?=$total_completes; ?><span></span></h3>
+      <div class="dashboardicons"><img src="../images/icons/completed.png"><p>total completes</p></div>
       <a href="placed_orders.php" class="btn">see orders</a>
    </div>
 
@@ -74,7 +71,7 @@ if(!isset($admin_id)){
          $numbers_of_orders = $select_orders->rowCount();
       ?>
       <h3><?= $numbers_of_orders; ?></h3>
-      <p>total orders</p>
+      <div class="dashboardicons"><img src="../images/icons/total_order.png"><p>total orders</p></div>
       <a href="placed_orders.php" class="btn">see orders</a>
    </div>
 
@@ -85,13 +82,9 @@ if(!isset($admin_id)){
          $numbers_of_products = $select_products->rowCount();
       ?>
       <h3><?= $numbers_of_products; ?></h3>
-      <p>beverages added</p>
+      <div class="dashboardicons"><img src="../images/icons/beverage.png"><p>beverages added</p></div>
       <a href="products.php" class="btn">see products</a>
    </div>
-
-  
-
-
    <div class="col-4 text-center">
       <?php
          $select_messages = $conn->prepare("SELECT * FROM `messages`");
@@ -99,25 +92,13 @@ if(!isset($admin_id)){
          $numbers_of_messages = $select_messages->rowCount();
       ?>
       <h3><?= $numbers_of_messages; ?></h3>
-      <p>new messages</p>
+      <div class="dashboardicons"><img src="../images/icons/messages.png"><p>new messages</p></div>
       <a href="messages.php" class="btn">see messages</a>
    </div>
 
    
       </div>
       </div>
-
-<!-- admin dashboard section ends -->
-
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
 <script src="../js/admin_script.js"></script>
 
 </body>

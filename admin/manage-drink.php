@@ -49,50 +49,41 @@ if(isset($_GET['delete'])){
 <section>
    <div class="main-content">
    <div class="wrapper">
-   <h1><center>Manage Beverages</center></h1>
-   <a href="products.php" class="btn-primary">ADD DRINK</a>
-
-
+   <h1 class="heading">Manage Beverages</h1>
+   <div class="col-4 btn-primary"><a href="products.php">ADD DRINK</a></div>
+   <table class="tbl-full">
+   <tr>
+      <th class="headers">NAME</th>
+      <th class="headers">PRICE </th>
+      <th class="headers">CATEGORY</th>
+      <th class="headers">IMAGE</th>
+      <th class="headers last" ></th>
+   </tr>
    <?php
       $show_products = $conn->prepare("SELECT * FROM `products`");
       $show_products->execute();
       if($show_products->rowCount() > 0){
          while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){  
    ?>   <br><br><br>
-
-   <table class="tbl-full">
-   <tr>
-                       
-                        <th >NAME</th>
-                        <th>PRICE </th>
-                        <th >CATEGORY</th>
-                        <th >IMAGE</th>
-                    </tr>
-     <tr>
+     <tr class="table-content">
      <th><?= $fetch_products['name']; ?></th>
      <th><span>₱</span><?= $fetch_products['price']; ?></th>
         
      <th> <?= $fetch_products['category']; ?></td>
      <th><img src="../images/<?= $fetch_products['image']; ?>" alt="" width="100px"></th>
      <th>
-     <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="btn-secondary">update</a>
-         <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="btn-danger" onclick="return confirm('delete this drink?');">delete</a>
+         <a href="update_product.php?update=<?= $fetch_products['id']; ?>"><img src="../images/icons/update.png"/ class="manage-drink-icons-update"/></a>
+         <a href="products.php?delete=<?= $fetch_products['id']; ?>" onclick="return confirm('delete this drink?');"><img src="../images/icons/delete.png"/ class="manage-drink-icons-delete"/></a>
      </th>
-       
-      
-      
-         
          </tr>
         </div>
-      
-         </table>
    <?php
          }
       }else{
          echo '<p class="empty">no products added yet!</p>';
       }
    ?>
-
+</table>
    </div>
     </div>
 
