@@ -586,6 +586,7 @@ section .container .owl-navigation {
 .omg-menu-desc{
   
    text-align: left;
+   background-color: #FFD93D;
   
 }
 
@@ -1368,11 +1369,11 @@ section{
 .products .box-container .box .cat{
    font-size: 1.8rem;
    color:var(--light-color);
+   background-color: #FFD93D;
 }
 
 .products .box-container .box .cat:hover{
    color:var(--black);
-   text-decoration: underline;
 }
 
 .products .box-container .box .name{
