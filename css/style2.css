@@ -23,7 +23,7 @@
  }
  .second li a{
    display: block;
-   color: white;
+   color: black;
    
    text-decoration: none;
  }
@@ -275,7 +275,9 @@ svg  {
    font-size: 5rem;
 }
 
-
+.second ul h1 {
+   text-align: center;
+}
 
 
 
@@ -1100,7 +1102,6 @@ section{
    text-align: center;
    width: 100%;
    font-size: 2rem;
-   text-transform: capitalize;
    color:var(--red);
 }
 
@@ -1281,12 +1282,13 @@ section{
 .category .box-container .box h3{
    font-size: 2rem;
    margin-top: 1.5rem;
-   color:red;
+   color:black;
    text-transform: capitalize;
 }
 
 .category .box-container .box:hover{
-   background-color: orange;
+   background-color: beige;
+   
 }
 
 .category .box-container .box:hover img{
@@ -1294,7 +1296,7 @@ section{
 }
 
 .category .box-container .box:hover h3{
-   color:var(--white);
+   color:black;
 }
 
 .products .box-container{
@@ -1311,6 +1313,11 @@ section{
    position: relative;
    overflow: hidden;
   
+}
+.products .box-container .box:hover{
+   transition: all .3s ease-in-out;
+      transform: scale(1.1)
+   
 }
 
 .products .box-container .box img{
@@ -2041,14 +2048,10 @@ border: 1px solid #000000;
       .button14{
   
          position: relative;
-     
-
-         background:#FF8400;
-         border-radius: 25px;
          font-style: normal;
          font-weight: 800;
-         font-size: 12px;
-         line-height: 43px;
+         font-size: 15px;
+         line-height: 30px;
          text-align: center;
          color: black;
           transition: 0.2s;

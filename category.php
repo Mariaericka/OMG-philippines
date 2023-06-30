@@ -33,7 +33,7 @@ include 'components/add_cart.php';
    
 <?php include 'components/user_header.php'; ?>
 <div class="second"><ul>
-    <h1>Categories</h1> <br>
+    <br> <h1>Categories</h1>
     <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
 
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
@@ -94,7 +94,7 @@ margin-left: 25%;">
       <?php
             }
          }else{
-            echo '<p class="empty">no drinks added yet!</p>';
+            echo '<p class="empty">No drinks added yet!</p>';
          }
       ?>
 
