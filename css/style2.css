@@ -1312,8 +1312,9 @@ section{
    border:var(--border);
    padding:1.5rem;
    position: relative;
+   background-color: beige;
    overflow: hidden;
-  
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
 }
 .products .box-container .box:hover{
    transition: all .3s ease-in-out;

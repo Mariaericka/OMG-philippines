@@ -45,9 +45,6 @@ include 'components/add_cart.php';
     </div>
     <section>
     <div class="container2" style="box-sizing: border-box;
-
-border: 2px solid #000000;
-
 height: 800px;
 margin-left: 25%;">
 
@@ -56,7 +53,7 @@ margin-left: 25%;">
 
 <section class="products">
 
-   <h3> Beverages</h3>
+  
 
    <div class="box-container">
 
