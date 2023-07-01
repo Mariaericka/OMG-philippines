@@ -23,7 +23,7 @@
  }
  .second li a{
    display: block;
-   color: white;
+   color: black;
    
    text-decoration: none;
  }
@@ -275,7 +275,9 @@ svg  {
    font-size: 5rem;
 }
 
-
+.second ul h1 {
+   text-align: center;
+}
 
 
 
@@ -577,15 +579,15 @@ section .container .owl-navigation {
 }
 
 .omg-menu-img{
-   width: 50%;
-   float: left;
+   width: 80%;
    direction:ltr;
 }
 
 .omg-menu-desc{
   
    text-align: left;
-   margin-left: 8%;
+   background-color: #FFD93D;
+  
 }
 
 .omg-price{
@@ -603,9 +605,8 @@ section .container .owl-navigation {
  }
  .img1{
    border-radius: 1px;
-   width: 100%  ;
    height: 100%;
-   float: left;
+  
    }
    
  
@@ -1102,7 +1103,6 @@ section{
    text-align: center;
    width: 100%;
    font-size: 2rem;
-   text-transform: capitalize;
    color:var(--red);
 }
 
@@ -1220,7 +1220,7 @@ section{
 }
 
 .header .flex .profile .account a:hover{
-   color:var(--yellow);
+   color:var(--yellow); 
    text-decoration: underline;
 }
 
@@ -1283,12 +1283,13 @@ section{
 .category .box-container .box h3{
    font-size: 2rem;
    margin-top: 1.5rem;
-   color:red;
+   color:black;
    text-transform: capitalize;
 }
 
 .category .box-container .box:hover{
-   background-color: orange;
+   background-color: beige;
+   
 }
 
 .category .box-container .box:hover img{
@@ -1296,7 +1297,7 @@ section{
 }
 
 .category .box-container .box:hover h3{
-   color:var(--white);
+   color:black;
 }
 
 .products .box-container{
@@ -1311,14 +1312,20 @@ section{
    border:var(--border);
    padding:1.5rem;
    position: relative;
+   background-color: beige;
    overflow: hidden;
-  
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+}
+.products .box-container .box:hover{
+   transition: all .3s ease-in-out;
+      transform: scale(1.1)
+   
 }
 
 .products .box-container .box img{
-   height: 11rem;
+   
    width: 100%;
-   object-fit: contain;
+   
    margin-bottom: 1rem;
 }
 
@@ -1363,11 +1370,11 @@ section{
 .products .box-container .box .cat{
    font-size: 1.8rem;
    color:var(--light-color);
+   background-color: #FFD93D;
 }
 
 .products .box-container .box .cat:hover{
    color:var(--black);
-   text-decoration: underline;
 }
 
 .products .box-container .box .name{
@@ -2043,17 +2050,12 @@ border: 1px solid #000000;
       .button14{
   
          position: relative;
-     
-
-         background:#FF8400;
-         border-radius: 25px;
          font-style: normal;
          font-weight: 800;
-         font-size: 17px;
-         line-height: 43px;
+         font-size: 15px;
+         line-height: 30px;
          text-align: center;
          color: black;
-         border: 1px solid #000000;
           transition: 0.2s;
          }
          .button14:hover{
