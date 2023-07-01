@@ -40,7 +40,6 @@ if(isset($_SESSION['user_id'])){
 <!--------------------- Franchising 1 ------------------>
 
 <div class="video">
-    <h2>Franchise now!</h2>
     <video src="images/OMG-video.mp4" autoplay muted loop height="90%" width="100%"></video>
     <h3>OMG milktea, milkshake, and coffee started last two years, just when pandemic 2020 started.
         <br>

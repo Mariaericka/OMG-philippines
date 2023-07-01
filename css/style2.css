@@ -1,4 +1,8 @@
+/* Font links */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap');
+/* Font links */
 
 :root{
    --green:#27ae60;
@@ -212,20 +216,19 @@ svg  {
 }
 
 .video video {
-   top: 0;
-   left: 10rem;
-   padding: 10%;
+   margin-top: 50px;
+   padding: 100px 100px 200px 100px;
    align-items: center;
    justify-items: center;
-   background: tomato;
+   border: 2px solid #000;
+   background: #FFBE00; /* Franchise changes */
 }
 
 .video h3 {
-   font-size: 2rem;
-   justify-content: center;
-   align-items:center;
+   font-size: 25px;
+   align-items: left;
    padding: 5rem;
-   background: gold;
+   background: red;
 }
 
 .grid {
@@ -491,41 +494,7 @@ main .site-title h3 h1{
    text-align: center;
 }
 
-section .blog {
-   background: url('../images/abstract.png');
-   background-repeat: no-repeat;
-   background-position: right;
-   background-size: 100%;
-   height: 100vh;
-   width: 100%;
-}
 
-section .blog .blog-post {
-   padding-top: 6rem;
-}
-
-section .blog .blog-content {
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   width: 80%;
-   margin: 3rem 2rem;
-   box-shadow: 0 15px 20px rgba(0,0,0, 0.2);
-}
-
-section .blog-content .blog-title {
-   padding: 2rem 0;
-}
-
-section .blog-content .btn-blog {
-   display: inline-block;
-   font-size: 1.3rem;
-   color: #fff;
-   background: black;
-   border-radius: 10rem;
-   cursor: pointer;
-   padding: .8rem 3rem;
-}
 
 .btn:hover {
    background: red;
@@ -547,18 +516,268 @@ p {
     color: black;
 }
 
+/* BLOG START*/
 
-section .blog-content span {
-    display: block;
+.header h1 {
+   color: rgb(255, 191, 0);
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #000;
+   font-size: 150px;
+   font-family: 'Inter', sans serif;
+   font-weight: 800;
+   position: absolute;
+   top: 150px;
+   left: 160px;
 }
 
-section .container .owl-navigation {
-    position: absolute;
-    top: 0%;
-    margin: 0 auto;
-    width: 100%;
-
+.header h2 {
+   color: red;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #000;
+   font-size: 70px;
+   font-family: 'Inter', sans serif;
+   font-weight: bold;
+   text-shadow: 2px 2px 2px rgb(165, 164, 164);
+   position: absolute;
+   top: 320px;
+   left: 33px;
 }
+
+.header p {
+   background-color: #000;
+   color: white;
+   font-family: 'Inter', sans serif;
+   font-size: 30px;
+   text-align: center;
+   padding: 20px 60px 20px 60px;
+   border-radius: 40px;
+   word-spacing: 10px;
+   letter-spacing: 2px;
+   position: absolute;
+   top: 430px;
+   left: 60px;
+}
+
+.OMG-main img {
+   width: 800px;
+   height: 600px;
+   position: absolute;
+   top: 130px;
+   left: 700px;
+   border: 5px solid black;
+   border-radius: 20px;
+   box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.25);
+}
+
+.Price-rollback img {
+   height: 350px;
+   width: 350px;
+   border-radius: 20px;
+   box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+   position: absolute;
+   top: 800px;
+   left: 150px;
+}
+
+.Price-rollback .From {
+   font-size: 23px;
+   font-family: 'Inter', sans serif;
+   font-weight: bold;
+   position: absolute;
+   top: 1200px;
+   left: 245px;
+}
+
+.Price-rollback .Now {
+   color: red;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #000;
+   font-size: 30px;
+   font-weight: bold;
+   position: absolute;
+   top: 1240px;
+   left: 222px;
+}
+
+.Buy-1-take-1 img{
+   height: 350px;
+   width: 350px;
+   border-radius: 20px;
+   box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+   position: absolute;
+   top: 800px;
+   left: 615px;
+}
+
+.Buy-1-take-1 .Enjoy {
+   font-size: 23px;
+   font-family: 'Inter', sans serif;
+   font-weight: bold;
+   position: absolute;
+   top: 1200px;
+   left: 695px;
+}
+
+.Buy-1-take-1 .Only {
+   color: red;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #000;
+   font-size: 30px;
+   font-weight: bold;
+   position: absolute;
+   top: 1240px;
+   left: 660px;
+}
+
+.Fruity-yogurt img{
+   height: 350px;
+   width: 350px;
+   border-radius: 20px;
+   box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+   position: absolute;
+   top: 800px;
+   left: 1080px;
+}
+
+.Fruity-yogurt .Get {
+   font-size: 23px;
+   font-family: 'Inter', sans serif;
+   font-weight: bold;
+   position: absolute;
+   top: 1200px;
+   left: 1180px;
+}
+
+.Fruity-yogurt .April {
+   color: red;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #000;
+   font-size: 30px;
+   font-weight: bold;
+   position: absolute;
+   top: 1240px;
+   left: 1190px;
+}
+
+.background img {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 800px;
+}
+
+.Coming-soon img {
+   height: 380px;
+   width: 350px;
+   position: absolute;
+   border: 3px solid black;
+   border-radius: 20px;
+   top: 1750px;
+   left: 60px;
+}
+
+.Coming-soon .Likes {
+   background-color: red;
+   color: white;
+   font-family: 'Inter', sans serif;
+   font-size: 20px;
+   text-align: left;
+   border-radius: 40px;
+   border: 2px solid black;
+   padding: 15px 70px 15px 95px;
+   position: absolute;
+   top: 2200px;
+   left: 95px;
+   transition: padding;
+}
+
+#Heart-icon {
+   height: 25px;
+   width: 25px;
+   position: absolute;
+   top: 2200px;
+   left: 150px;
+   cursor: pointer;
+}
+
+#Heart-icon:active {
+   box-shadow: none;
+}
+
+.Opening-soon img {
+   height: 380px;
+   width: 350px;
+   position: absolute;
+   border: 3px solid black;
+   border-radius: 20px;
+   top: 1750px;
+   left: 433px;
+}
+
+.Opening-soon .Likes {
+   background-color: rgb(255, 191, 0);
+   color: white;
+   font-family: 'Inter', sans serif;
+   font-size: 20px;
+   text-align: center;
+   border-radius: 40px;
+   border: 2px solid black;
+   padding: 15px 70px 15px 70px;
+   position: absolute;
+   top: 2200px;
+   left: 480px;
+}
+
+.Customers img {
+   height: 380px;
+   width: 350px;
+   position: absolute;
+   border: 3px solid black;
+   border-radius: 20px;
+   top: 1750px;
+   left: 807px;
+}
+
+.Customers  .Likes {
+   background-color: red;
+   color: white;
+   font-family: 'Inter', sans serif;
+   font-size: 20px;
+   text-align: center;
+   border-radius: 40px;
+   border: 2px solid black;
+   padding: 15px 70px 15px 70px;
+   position: absolute;
+   top: 2200px;
+   left: 853px;
+}
+
+.New-branch img {
+   height: 380px;
+   width: 350px;
+   position: absolute;
+   border: 3px solid black;
+   border-radius: 20px;
+   top: 1750px;
+   left: 1180px;
+}
+
+.New-branch  .Likes {
+   background-color:  rgb(255, 191, 0);
+   color: white;
+   font-family: 'Inter', sans serif;
+   font-size: 20px;
+   text-align: center;
+   border-radius: 40px;
+   border: 2px solid black;
+   padding: 15px 70px 15px 70px;
+   position: absolute;
+   top: 2200px;
+   left: 1230px;
+}
+
+/* BLOG END*/
+
 
 .omg-menu-box{
    width: 40.5%;

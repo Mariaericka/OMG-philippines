@@ -87,35 +87,6 @@ include 'components/add_cart.php';
 </section>
 
 
-
-   <!-- custom css file link  
-            <section class="hero">
-
-<div class="swiper hero-slider">
-
-   <div class="swiper-wrapper">
-
-      <div class="swiper-slide slide">
-      
-         <div class="image">
-         
-    <img src="images/cheescakeseries.jpg" alt="" style=" width: 100%;
-    height: 30%;">
-         </div>
-      </div>
-
-
-
-      <div class="swiper-slide slide">
-        
-         <div class="image">
-         <img src= "images/babyruth.jpg" alt=""style=" width: 100%;
-    height: 30%;">
-         </div>
-      </div>
-   </div>
--->
-
 <section class="hero">
    
 <div class="babyruth">

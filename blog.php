@@ -35,280 +35,72 @@ if(isset($_SESSION['user_id'])){
 <body>
 
 <?php include 'components/user_header.php'; ?>
+]
 
-<main>
-    
-    <section class="site-title">
-        <div class="site-background">
-            <h3>OMG is the perfect choice</h3>
-            <h1>OVERLOAD GOODNESS IN EVERY CUP</h1>
-        </div>
-    </section>
+<!-- BLOG NEW start-->
 
-</main>
+<div class="header">
+    <h1>OMG</h1>
+    <h2>is the best choice!</h2>
+    <p>Overload goodness in cup</p>
+</div>
 
-<section>
-        <div class="blog">
-            <div class="container">
-                <div class="owl-carousel owl-theme blog-post">
-                    <div class="blog-content">
-                        <img src="images/blog-post-1.jpg" alt="post-1">
-                        <div class="blog-title">
-                            <h3>Buy one take one milk shake for only 88 pesos!</h3>
-                            <button class="btn btn-blog">Milkshakes</button>
-                            <span>2 minutes ago</span>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <img src="images/blog-post-2.jpg" alt="post-2">
-                        <div class="blog-title">
-                            <h3>Price rollback sale from P69 to P45!</h3>
-                            <button class="btn btn-blog">Coffees</button>
-                            <span>2 minutes ago</span>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <img src="images/blog-post-3.jpg" alt="post-3">
-                        <div class="blog-title">
-                            <h3>Yogurt for only P88!</h3>
-                            <button class="btn btn-blog">Yogurts</button>
-                            <span>2 minutes ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-navigation">
-                    <span class="owl-nav-prev"><i class="fa-solid fa-circle-chevron-left"></i></span>
-                    <span class="owl-nav-next"><i class="fa-solid fa-circle-chevron-right"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="OMG-main">
+    <img src="./images/OMG.jpg" alt="OMG-main">
+</div>
 
-<!------------------- Site Content ----------------->
+<div class="background">
+   <img src="./images/Background (2).png" alt="Background">
+</div>
 
+<div class="Price-rollback">
+   <img src="./images/Price rollback sale.jpg" alt="Price rollback sale">
+   <h2 class="From">From 69 pesos</h2>
+   <h2 class="Now">Now 45 pesos</h2>
+</div>
 
-<section class="container">
-        <div class="site-content">
-            <div class="posts">
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="images/franchise-1.jpg" alt="franchise-1"  >
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fa-solid fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 21, 2022</span>
-                            <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;2 comments</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#">OMG Quezon City will open soon!</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores reprehenderit, veniam nisi recusandae modi eius vel dolore odio ut a suscipit sint neque beatae. Facilis tempore iure vitae, eveniet voluptatibus nam suscipit perspiciatis accusamus quaerat maxime minus voluptate nisi eius.</p>
-                        <button class="btn post-btn">Read more &nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                </div>
-                <hr>
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="images/likes.png" alt="franchise-1"  >
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fa-solid fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 20, 2022</span>
-                            <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;5 comments</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#">OMG has now reached 10k followers on facebook!</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores reprehenderit, veniam nisi recusandae modi eius vel dolore odio ut a suscipit sint neque beatae. Facilis tempore iure vitae, eveniet voluptatibus nam suscipit perspiciatis accusamus quaerat maxime minus voluptate nisi eius.</p>
-                        <button class="btn post-btn">Read more &nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                </div>
-                <hr>
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="images/newest.jpg" alt="franchise-1"  >
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fa-solid fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 21, 2022</span>
-                            <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;15 comments</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#">Premium drinks is the best seller! Here's why..</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores reprehenderit, veniam nisi recusandae modi eius vel dolore odio ut a suscipit sint neque beatae. Facilis tempore iure vitae, eveniet voluptatibus nam suscipit perspiciatis accusamus quaerat maxime minus voluptate nisi eius.</p>
-                        <button class="btn post-btn">Read more &nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                </div>
-                <hr>
-                <div class="post-content">
-                    <div class="post-image">
-                        <div>
-                            <img src="images/customers.jpg" alt="franchise-1"  >
-                        </div>
-                        <div class="post-info flex-row">
-                            <span><i class="fa-solid fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                            <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 21, 2022</span>
-                            <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;20 comments</span>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <a href="#">Reasons why OMG is the perfect choice</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores reprehenderit, veniam nisi recusandae modi eius vel dolore odio ut a suscipit sint neque beatae. Facilis tempore iure vitae, eveniet voluptatibus nam suscipit perspiciatis accusamus quaerat maxime minus voluptate nisi eius.</p>
-                        <button class="btn post-btn">Read more &nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                </div>
-                <div class="pagination flex-row">
-                    <a href="#"><i class="fa-solid fa-angle-left"></i></a>
-                    <a href="#" class="pages">1</a>
-                    <a href="#" class="pages">2</a>
-                    <a href="#" class="pages">3</a>
-                    <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-                </div>
-            </div>
-            <aside class="sidebar">
-                <div class="category">
-                    <h2>category</h2>
-                    <ul class="category-list">
-                        <li class="list-items">
-                            <a href="#">Bevarages</a>
-                            <span>(05)</span>
-                            <li class="list-items">
-                                <a href="#">Franchise</a>
-                                <span>(07)</span>
-                                <li class="list-items">
-                                    <a href="#">Favourites</a>
-                                    <span>(08)</span>
-                                    <li class="list-items">
-                                        <a href="#">History</a>
-                                        <span>(09)</span>
+<div class="Buy-1-take-1">
+   <img src="./images/Buy 1 take 1.jpg" alt="Buy 1 take 1">
+   <h2 class="Enjoy">Enjoy two drinks</h2>
+   <h2 class="Only">for only 88 pesos</h2>
+</div>
 
-                        </li>
-                    </ul>
-                </div>
-                <div class="popular-post">
-                    <h2>Popular post</h2>
-                    <div class="post-content">
-                        <div class="post-image">
-                            <div>
-                                <img src="images//blog-post-4.jpg">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 21, 2022</span>
-                                <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;2 comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">3 days april fools sale!</a>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-image">
-                            <div>
-                                <img src="images/image 1.png"  >
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 21, 2022</span>
-                                <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;2 comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">New beverages are coming!</a>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-image">
-                            <div>
-                                <img src="images//image 3.png" alt="franchise-1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 18, 2022</span>
-                                <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;3 comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">Milkteas for kids are avaible for only 49!</a>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-image">
-                            <div>
-                                <img src="images/image 7.png" alt="franchise-1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 18, 2022</span>
-                                <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp;3 comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">Overload chocolate shake is people's choice!</a>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-image">
-                            <div>
-                                <img src="images/image 9.png" alt="franchise-1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 15, 2022</span>
-                                <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp; 90 comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">Milkshakes perfect for this summer</a>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-image">
-                            <div>
-                                <img src="images/image 2.png" alt="franchise-1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-calendar-days text-gray"></i>&nbsp;&nbsp;April 10, 2022</span>
-                                <span><i class="fa-solid fa-comments"></i>&nbsp;&nbsp; 16 comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">Try our newest frappe!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="newsletter">
-                    <h2>Newsletter</h2>
-                    <div class="form-elemet">
-                        <input type="text" class="inout-element" placeholder="email">
-                        <button class="btn form-btn">Subscribe</button>
-                    </div>
-                </div>
-                <div class="popular-tags">
-                    <h2>Popular tags</h2>
-                    <div class="tags flex-row">
-                        <span class="tag">OMG-Alaminos Laguna</span>
-                        <span class="tag">Overload milkshakes</span>
-                        <span class="tag">Premium drinks</span>
-                        <span class="tag">Branches</span>
-                        <span class="tag">Prices</span>
-                    </div>
-                </div>
+<div class="Fruity-yogurt">
+   <img src="./images/Fruity yogurt.jpg" alt="Fruity yogurt">
+   <h2 class="Get">Get only from</h2>
+   <h2 class="April">April 4-9</h2>
+</div>
 
-            </aside>
-        </div>
-    </section>
+<div class="Coming-soon">
+      <img src="./images/picture 1.jpg" alt="Coming soon">
+      <p class="Likes">Likes<br>Comments</p>
 
-    <!----------x--------- Site Content --------x--------->
+   <div class="Coming-soon-icons">
+      <img src="./images/icons/heart.png" id="Heart-icon" alt="Heart-icon">
+      <img src="./images/icons/comment.png" id="Comment-icon" alt="Comment-icon">
 
+   </div>
 
+</div>
 
-    </body>
-    <?php include 'components/footer.php'; ?>
+<div class="Opening-soon">
+   <img src="./images/picture 2.jpg" alt="Opening soon">
+   <p class="Likes">Likes<br>Comments</p>
+</div>
 
-     <!-- Owl Carousel -->
-    <script src="js/Jquery3.6.0.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/script2.js"></script>
+<div class="Customers">
+   <img src="./images/picture 3.jpg" alt="Customers">
+   <p class="Likes">Likes<br>Comments</p>
+</div>
+
+<div class="New-branch">
+   <img src="./images/picture 4.jpg" alt="New branch">
+   <p class="Likes">Likes<br>Comments</p>
+</div>
+
+</body>
+
+<!-- BLOG NEW end-->
+
 
 
