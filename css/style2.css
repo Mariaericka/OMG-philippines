@@ -215,21 +215,39 @@ svg  {
    font-size: 1.5rem;
 }
 
+/* Franchise changes stars here*/
 .video video {
    margin-top: 50px;
    padding: 100px 100px 200px 100px;
    align-items: center;
    justify-items: center;
    border: 2px solid #000;
-   background: #FFBE00; /* Franchise changes */
+   background: #FFBE00; 
 }
 
-.video h3 {
+#OMG-brief-history {
+   height: 300px;
+   width: 700px;
+   text-align: left;
+   font-family: 'Inter', sans serif;
    font-size: 25px;
-   align-items: left;
-   padding: 5rem;
-   background: red;
+   border: 10px solid red;
+   border-radius: 50px;
 }
+
+Franchise-Now h4 {
+   color: #FF1607;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #000;
+   text-align: center;
+   font-size: 96px;
+   font-family: Inter;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+}
+
+/* Franchise changes ends here*/
 
 .grid {
    display: grid;
