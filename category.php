@@ -75,9 +75,8 @@ margin-left: 25%;">
          <div class="omg-menu-img">
 
          <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal()"></div>
-         <h4 style="font-size: initial; background-color: #FFD93D;"><?= $fetch_products['name']; ?></h4>
-         
-            <div class="cat"><span>₱</span><?= $fetch_products['price']; ?></div>
+         <div class="cat"><?= $fetch_products['name']; ?></div>
+         <h4 style="font-size: initial; background-color: #FFD93D;"> Starts at <span>₱</span><?= $fetch_products['price']; ?>.00</h4>
            <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
             <p class="omg-detail">
                             <div class="omg-menu-desc">
