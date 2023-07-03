@@ -143,7 +143,7 @@ margin-left: 25%;">
       </div>
       <div class="modal-footer">
          <button class="btn confirm-btn">ADD TO CART</button>
-         <button class="btn close-btn">CANCEL</button>
+         <button class="btn close-btn" onclick="closeModal()">CANCEL</button>
       </div>
   </div>
 
