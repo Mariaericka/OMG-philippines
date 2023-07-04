@@ -78,7 +78,7 @@ include 'components/add_cart.php';
             <h1>OPEN FOR FRANCHISE NATIONWIDE!</h1>
             <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
-            <br><a href="#" class="button11">Franchise Now!</a>
+            <br><a href="franchise.php" class="button11">Franchise Now!</a>
        
         </div>
         <a href="https://www.vecteezy.com/free-vector/philippines-map"></a>
@@ -97,9 +97,9 @@ include 'components/add_cart.php';
 </section>
 
 <section class="hero">
-<a href="#" class="button11">Buy 1 and Take 1</a>
-<a href="#" class="button12">Event Packages</a>
-<a href="#" class="button13">Cheescake series</a>
+<a href="menu.php" class="button11">Buy 1 and Take 1</a>
+<a href="franchise.php" class="button12">Event Packages</a>
+<a href="menu.php" class="button13">Cheescake series</a>
 </section>
 
 <section class="hero">
