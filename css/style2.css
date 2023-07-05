@@ -1123,6 +1123,9 @@ footer.footer .container p {
    font-size: 10px;
    text-align: left;
 }
+footer.footer .container .about-us  a {
+   color: #4F200D;
+}
 
 footer.footer .newsletter .form-element{
    display: inline-block;
