@@ -2389,4 +2389,24 @@ border: 1px solid #000000;
    .form-signin {
       padding-left: 2px;
    }
+a.button11{
+   display:none;
+}
+a.button12{
+   display:none;
+}
+a.button13{
+   display:none;
+}
+.event {
+   left:25px;
+   top:20px;}
+.series{
+   left: 25px;
+   top:38px;
+   width: 346px;
+}
+
+
+
 }
