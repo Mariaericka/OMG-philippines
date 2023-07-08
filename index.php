@@ -89,10 +89,10 @@ include 'components/add_cart.php';
 
 <section class="hero">
    
-<div class="babyruth">
-</div>
-    <div class="event"></div>
-    <div class="series"></div> 
+<a href="menu.php"><div class="babyruth">
+</div></a>
+<a href="franchise.php"> <div class="event"></div></a>
+<a href="menu.php">  <div class="series"></div> </a>
    
 </section>
 
