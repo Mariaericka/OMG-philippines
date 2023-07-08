@@ -2399,13 +2399,18 @@ a.button13{
    display:none;
 }
 .event {
-   left:25px;
+   left:-18px;
    top:20px;}
 .series{
-   left: 25px;
+   left: -18px;
    top:38px;
    width: 346px;
 }
+.babyruth{
+   left:-18px;
+
+}
+
 
 
 
