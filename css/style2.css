@@ -2346,6 +2346,26 @@ border: 1px solid #000000;
       display: none;
    }
 
+   a.button11{
+      display:none;
+   }
+   a.button12{
+      display:none;
+   }
+   a.button13{
+      display:none;
+   }
+   .event {
+      left:21px;
+      top:20px;}
+   .series{
+      left:  20px;
+      top:30px;
+      width: 335px;
+   }
+   
+   
+
 }
 
 @media (max-width:450px) {
