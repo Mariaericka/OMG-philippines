@@ -2332,8 +2332,8 @@ border: 1px solid #000000;
       font-size: 12px;
    }
    .franchise .container .content1 {
-      background: none;
-      height: 400px;
+    
+      height: 261px;
    }
    #menu-btn{
       display: inline-block;
@@ -2437,22 +2437,27 @@ a.button13{
    display:none;
 }
 .event {
-   left:-18px;
+   width: 229px;
+   height: 309px;
    top:20px;}
 .series{
-   left: -18px;
+   width: 239px;
+    height: 237px;
    top:38px;
-   width: 346px;
 }
 .babyruth{
-   left:-18px;
-
+   width: 259px;
+   height: 309px;
 }
+
 
 .logoup{
    width: 85px;
  height: 72px;
 }
-
+.franchise .container .content1 { 
+   height: 327px;
+   background: none;
+}
 
 }
