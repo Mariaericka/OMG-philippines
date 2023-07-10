@@ -2303,7 +2303,13 @@ border: 1px solid #000000;
             transition:0.2s;
          }
 
-
+.logoup{
+   position: absolute;
+   width: 117px;
+   height: 115px;
+   top: 0px;
+    left:-1px;
+}
 /* media queries  */
 
 @media (max-width:991px) {
@@ -2316,6 +2322,15 @@ border: 1px solid #000000;
 
 @media (max-width:768px){
 
+   .contact-child.child1{
+      width: 199px;
+   }
+   .child1 p{
+      padding-left: 19px;
+   }
+   .child1 p span{
+      font-size: 12px;
+   }
    .franchise .container .content1 {
       background: none;
       height: 400px;
@@ -2363,7 +2378,10 @@ border: 1px solid #000000;
       top:30px;
       width: 335px;
    }
-   
+   .logoup{
+      width: 85px;
+    height: 72px;
+   }
    
 
 }
@@ -2431,7 +2449,10 @@ a.button13{
 
 }
 
-
+.logoup{
+   width: 85px;
+ height: 72px;
+}
 
 
 }
