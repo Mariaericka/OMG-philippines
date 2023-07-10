@@ -127,8 +127,7 @@ margin-left: 25%;">
                </td>
                <td>
                   <select class="input" id="size-dropdown">
-                     <option value="small" selected>Small</option>
-                     <option value="medium">Medium</option>
+                     <option value="small" selected>Regular</option>
                      <option value="large">Large</option>
                   </select>
                </td>
