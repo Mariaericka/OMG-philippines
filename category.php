@@ -21,6 +21,7 @@ include 'components/add_cart.php';
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMGPH BEVERAGE</title>
+   <link rel="icon"  href="images/omg-logo.png">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -33,20 +34,18 @@ include 'components/add_cart.php';
    
 <?php include 'components/user_header.php'; ?>
 <div class="second"><ul>
-    <h1>Categories</h1> <br>
-    <li> <a href="menu.php" class="button14">Back To Main Menu</a></li>
-        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
-        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
-        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
-        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
-        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
+    <br> <h1>Categories</h1>
+    <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
+
+        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
       </ul>
     </div>
     <section>
     <div class="container2" style="box-sizing: border-box;
-background: #FFBE00;
-border: 5px solid #000000;
-border-radius: 50px;
 height: 800px;
 margin-left: 25%;">
 
@@ -55,7 +54,7 @@ margin-left: 25%;">
 
 <section class="products">
 
-   <h3> Beverages</h3>
+  
 
    <div class="box-container">
 
@@ -77,10 +76,8 @@ margin-left: 25%;">
          <div class="omg-menu-img">
 
          <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal()"></div>
-         <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
-         <h4><?= $fetch_products['name']; ?></h4>
-         
-            <div class="cat"><span>₱</span><?= $fetch_products['price']; ?></div>
+         <div class="cat"><?= $fetch_products['name']; ?></div>
+         <h4 style="font-size: initial; background-color: #FFD93D;"> Starts at <span>₱</span><?= $fetch_products['price']; ?>.00</h4>
            <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
             <p class="omg-detail">
                             <div class="omg-menu-desc">
@@ -94,7 +91,7 @@ margin-left: 25%;">
       <?php
             }
          }else{
-            echo '<p class="empty">no drinks added yet!</p>';
+            echo '<p class="empty">No drinks added yet!</p>';
          }
       ?>
 
@@ -147,7 +144,7 @@ margin-left: 25%;">
       </div>
       <div class="modal-footer">
          <button class="btn confirm-btn">ADD TO CART</button>
-         <button class="btn close-btn">CANCEL</button>
+         <button class="btn close-btn" onclick="closeModal()">CANCEL</button>
       </div>
   </div>
 

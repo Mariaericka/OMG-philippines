@@ -15,11 +15,7 @@ if(isset($message)){
 
    <section class="flex">
 
-   <a href="../index.php" class="logo"><img src="images/omg-logo.png" image style="    position: absolute;
-    width: 117px;
-    height: 115px;
-    top: 0px;
-    left:-1px;"></a>
+   <a href="index.php" class="logo"><img src="images/omg-logo.png" class="logoup"></a>
 
       <nav class="navbar">
          <a href="index.php">HOME</a>
@@ -53,6 +49,7 @@ if(isset($message)){
          <p class="name"><?= $fetch_profile['name']; ?></p>
          <div class="flex">
             <a href="profile.php" class="btnheader">profile</a>
+            <a href="orders.php" class="btnheader">order</a>
             <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
          </div>
          <p class="account">
