@@ -136,13 +136,13 @@ margin-left: 25%;">
                   <span class="modal-label">Quantity:</span>
                </td>
                <td>
-                  <input class="input" type="number"/>
-               </td>
+           <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+           </td>
             </tr>
          </table>
       </div>
       <div class="modal-footer">
-         <button class="btn confirm-btn">ADD TO CART</button>
+         <button class="btn confirm-btn" name="add_to_cart">ADD TO CART</button>
          <button class="btn close-btn" onclick="closeModal()">CANCEL</button>
       </div>
   </div>
