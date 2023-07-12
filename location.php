@@ -101,7 +101,7 @@ if(isset($_SESSION['user_id'])){
 
             </section>
             <section>
-<div class="container" style="margin-left:25%;padding:1px 16px;"id="stotomas">
+<div class="containerloc2" id="stotomas">
         <ul class="column">
         <h2 style="color:red;">Sto. Tomas Batangas</h2>
          <h3>8 Governor A. Carpio Ave, Brgy San Pedro. Sto. Tomas City, Batangas</h3>
