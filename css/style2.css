@@ -2310,6 +2310,32 @@ border: 1px solid #000000;
    top: 0px;
     left:-1px;
 }
+
+/*location*/
+.containerloc{
+   margin: 0 5vw;
+   font-size: 1.5rem;
+   margin-left:25%;
+}
+
+.containerloc2{
+   margin: 0 5vw;
+   font-size: 1.5rem;
+   margin-left:25%;
+   padding:1px 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* media queries  */
 
 @media (max-width:991px) {
