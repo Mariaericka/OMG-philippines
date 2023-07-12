@@ -2459,5 +2459,11 @@ a.button13{
    height: 327px;
    background: none;
 }
-
+.second ul h1 {
+   font-size: larger;
+ }
+ .button14{
+   font-size: 11px;
+   line-height: 18px;
+ }
 }
