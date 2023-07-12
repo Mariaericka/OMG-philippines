@@ -110,11 +110,15 @@ if(isset($_SESSION['user_id'])){
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15479.431960389144!2d121.16956461969174!3d14.085559154744246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6601e5f94371%3A0x6ef189aab0e81333!2sSan%20Pedro%2C%20Santo%20Tomas%2C%20Batangas!5e0!3m2!1sen!2sph!4v1648655318698!5m2!1sen!2sph" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
             </div></div></section>
-    <script src="js/script.js"></script>
-    
-<div class="loader">
+            <div class="loader">
    <img src="images/loading.gif" alt="">
 </div>
+<?php include 'components/footer.php'; ?>
 
-    <?php include 'components/footer.php'; ?>
+    <script src="js/script.js"></script>
+    
 
+
+
+    </body>
+</html>
