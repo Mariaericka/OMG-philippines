@@ -564,15 +564,10 @@ p {
 .header p {
    color: white;
    font-family: 'Inter', sans serif;
-   font-size: 30px;
    text-align: center;
-   padding: 20px 60px 20px 60px;
-   border-radius: 40px;
-   word-spacing: 10px;
    letter-spacing: 2px;
    position: absolute;
-   top: 430px;
-   left: 60px;
+   left: 10px;
 }
 
 .OMG-main img {
