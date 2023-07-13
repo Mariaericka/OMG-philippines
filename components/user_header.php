@@ -61,7 +61,7 @@ if(isset($message)){
          ?>
             <a href="profile.php" class="name">PROFILE</a>
         <a href="#" class="name">ORDERS</a>
-        <a href="login.php" class="btn">LOGIN</a></div>         <?php
+        <a href="login.php" class="btn">LOGIN</a></div> <?php
           }
          ?>
       </div>

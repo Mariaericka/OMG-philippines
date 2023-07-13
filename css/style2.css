@@ -562,7 +562,6 @@ p {
 }
 
 .header p {
-   background-color: #000;
    color: white;
    font-family: 'Inter', sans serif;
    font-size: 30px;
@@ -1404,15 +1403,16 @@ section{
 .btnheader{
    background-color: #FF8400;
    color: white;
-   width: 100px;
+   width: 50px;
    margin-top: 1rem;
    display: inline-block;
    font-size: 1rem;
-   padding:1rem 3rem;
+   padding:1rem 0rem;
    cursor: pointer;
    text-transform: capitalize;
 
 }
+
 
 
 
@@ -1448,6 +1448,7 @@ section{
    margin-bottom: .5rem;
 }
 
+ 
 .header .flex .profile .account{
    margin-top: 1.5rem;
    font-size: 2rem;
@@ -2347,7 +2348,9 @@ border: 1px solid #000000;
    html{
       font-size: 55%;
    }
-
+   .header .flex .profile .account{
+      display: none;
+   }
 }
 
 @media (max-width:768px){
