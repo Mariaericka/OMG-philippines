@@ -22,6 +22,7 @@ $select_categories->execute();
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>menu</title>
+   <link rel="icon"  href="images/omg-logo.png">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -92,7 +93,7 @@ $select_categories->execute();
    <img src="images/loading.gif" alt="">
 </div>
 <!-- footer section starts  -->
-<!-- <?php include 'components/footer.php'; ?> -->
+ <?php include 'components/footer.php'; ?> 
 <!-- footer section ends -->
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
