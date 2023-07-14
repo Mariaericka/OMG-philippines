@@ -1964,10 +1964,11 @@ section{
 }
 
 .orders .box-container{
-   display: flex;
-   flex-wrap: wrap;
-   gap:1.5rem;
-   align-items: flex-start;
+   max-width: 50rem;
+   margin:0 auto;
+   border:var(--border);
+   padding:2rem;
+   background-color: beige;
 }
 
 .orders .box-container .box{
@@ -1978,7 +1979,7 @@ section{
 
 .orders .box-container .box p{
    line-height: 1.5;
-   margin:1rem 0;
+   padding:1rem 0;
    font-size: 2rem;
    color:var(--light-color);
 }
