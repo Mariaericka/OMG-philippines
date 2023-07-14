@@ -78,6 +78,9 @@ if(isset($_POST['submit'])){
    <!-- Login Form Ends HEre -->
 
   <center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
+  <center> <p> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
+
+
 </div>
      </div>
 
