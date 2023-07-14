@@ -562,18 +562,12 @@ p {
 }
 
 .header p {
-   background-color: #000;
    color: white;
    font-family: 'Inter', sans serif;
-   font-size: 30px;
    text-align: center;
-   padding: 20px 60px 20px 60px;
-   border-radius: 40px;
-   word-spacing: 10px;
    letter-spacing: 2px;
    position: absolute;
-   top: 430px;
-   left: 60px;
+   left: 10px;
 }
 
 .OMG-main img {
@@ -848,7 +842,7 @@ p {
    
  
  .frame {
-   height: 575px;
+   height: 603px;
    width: 430px;
    background:#FFD93D;
    background-size: cover;
@@ -1404,15 +1398,16 @@ section{
 .btnheader{
    background-color: #FF8400;
    color: white;
-   width: 100px;
+   width: 50px;
    margin-top: 1rem;
    display: inline-block;
    font-size: 1rem;
-   padding:1rem 3rem;
+   padding:1rem 0rem;
    cursor: pointer;
    text-transform: capitalize;
 
 }
+
 
 
 
@@ -1448,6 +1443,7 @@ section{
    margin-bottom: .5rem;
 }
 
+ 
 .header .flex .profile .account{
    margin-top: 1.5rem;
    font-size: 2rem;
@@ -1968,10 +1964,11 @@ section{
 }
 
 .orders .box-container{
-   display: flex;
-   flex-wrap: wrap;
-   gap:1.5rem;
-   align-items: flex-start;
+   max-width: 50rem;
+   margin:0 auto;
+   border:var(--border);
+   padding:2rem;
+   background-color: beige;
 }
 
 .orders .box-container .box{
@@ -1982,7 +1979,7 @@ section{
 
 .orders .box-container .box p{
    line-height: 1.5;
-   margin:1rem 0;
+   padding:1rem 0;
    font-size: 2rem;
    color:var(--light-color);
 }
@@ -2310,6 +2307,36 @@ border: 1px solid #000000;
    top: 0px;
     left:-1px;
 }
+
+/*location*/
+.containerloc{
+   margin: 0 5vw;
+   font-size: 1.5rem;
+   margin-left:25%;
+}
+
+.containerloc2{
+   margin: 0 5vw;
+   font-size: 1.5rem;
+   margin-left:25%;
+   padding:1px 16px;
+}
+.map{
+   width:600px;
+    height:200px; 
+    border:0;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* media queries  */
 
 @media (max-width:991px) {
@@ -2317,7 +2344,9 @@ border: 1px solid #000000;
    html{
       font-size: 55%;
    }
-
+   .header .flex .profile .account{
+      display: none;
+   }
 }
 
 @media (max-width:768px){
@@ -2459,5 +2488,29 @@ a.button13{
    height: 327px;
    background: none;
 }
+.second ul h1 {
+   font-size: larger;
+ }
+ .button14{
+   font-size: 11px;
+   line-height: 18px;
+ }
+.containerloc2 h3{
+   font-size: small;
+}
+.containerloc h3{
+   font-size: small;
+}
+.map{
+width:300px;
+height:200px; 
+  
+}
+
+
+
+
+
+
 
 }
