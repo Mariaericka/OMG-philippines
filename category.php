@@ -113,7 +113,13 @@ margin-left: 25%;">
 
 <!-- The Modal -->
 <div id="costumizeOrderModal" class="backdrop">
-
+<?php
+         $category = $_GET['category'];
+         $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
+         $select_products->execute([$category]);
+         if($select_products->rowCount() > 0){
+            while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
+      ?>
   <!-- Modal content -->
   <div class="modal">
       <div class="modal-header">
@@ -126,9 +132,10 @@ margin-left: 25%;">
                   <span class="modal-label">Size:</span>
                </td>
                <td>
-                  <select class="input" id="size-dropdown">
-                     <option value="small" selected>Regular</option>
-                     <option value="large">Large</option>
+                  <select class="input" id="size-dropdown" >
+                     <option value="regular" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
+
+                     <option value="large">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
                   </select>
                </td>
                <tr>
@@ -146,7 +153,12 @@ margin-left: 25%;">
          <button class="btn close-btn" onclick="closeModal()">CANCEL</button>
       </div>
   </div>
-
+  <?php
+            }
+         }else{
+            echo '<p class="empty">No drinks added yet!</p>';
+         }
+      ?>
 
 </div>
 
