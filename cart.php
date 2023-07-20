@@ -67,38 +67,39 @@ $grand_total = 0;
 <!-- shopping cart section starts  -->
 
 <section class="products">
-
-
    <div class="box-container">
 
       <?php
-         $grand_total = 0;
          $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
          $select_cart->execute([$user_id]);
-      
-         if($select_cart->rowCount() > 0){
-            while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
+
+         if ($select_cart->rowCount() > 0) {
+            while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+               // Calculate the price based on the selected size
+
+               $price = ($fetch_cart['size'] === 'large' && $fetch_cart['priceR'] !== '0.00') ? $fetch_cart['priceR'] : $fetch_cart['price'];
+               $sub_total = ($price * $fetch_cart['quantity']);
+               $grand_total += $sub_total;
       ?>
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('delete this item?');"></button>
+         <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('Delete this item?');"></button>
          <img src="images/<?= $fetch_cart['image']; ?>" alt="">
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
-            <div class="price"><span>₱</span><?= $fetch_cart['price']; ?></div>
-
+            <div class="price"><span>₱</span><?= $price; ?></div>
             <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
             <button type="submit" class="fas fa-edit" name="update_qty"></button>
          </div>
-         <div class="sub-total"> sub total : <span>₱<?= $sub_total = ($fetch_cart['price']*$fetch_cart['quantity']); ?>/-</span> </div>
+         <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?>/-</span></div>
       </form>
       <?php
-               $grand_total += $sub_total;
             }
-         }else{
-            echo '<p class="empty">your cart is empty</p>';
+         } else {
+            echo '<p class="empty">Your cart is empty</p>';
          }
       ?>
+
 
    </div>
 
@@ -140,6 +141,7 @@ $grand_total = 0;
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script src="js/modal.js"></script>
 
 </body>
 </html>

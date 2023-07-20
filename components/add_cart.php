@@ -23,6 +23,7 @@ if (isset($_POST['add_to_cart'])) {
                 $priceR = filter_var($pricesR[$i], FILTER_SANITIZE_STRING);
                 $image = filter_var($images[$i], FILTER_SANITIZE_STRING);
                 $qty = filter_var($qtys[$i], FILTER_SANITIZE_STRING);
+                $size = filter_var($sizes[$i], FILTER_SANITIZE_STRING); // Add this line to fetch the size
 
                 $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
                 $check_cart_numbers->execute([$name, $user_id]);
@@ -30,8 +31,9 @@ if (isset($_POST['add_to_cart'])) {
                 if ($check_cart_numbers->rowCount() > 0) {
                     $message[] = 'Product "' . $name . '" already added to cart!';
                 } else {
-                    $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price, priceR, quantity, image) VALUES(?,?,?,?,?,?,?)");
-                    $insert_cart->execute([$user_id, $pid, $name, $price, $priceR, $qty, $image]);
+                    $insert_cart = $conn->prepare("INSERT INTO `cart` (user_id, pid, name, price, priceR, quantity, image, size) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                    $insert_cart->execute([$user_id, $pid, $name, $price, $priceR, $qty, $image, $size]); // Add 'size' to the query
+        
                     $message[] = 'Product "' . $name . '" added to cart!';
                 }
             }
