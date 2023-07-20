@@ -1,73 +1,43 @@
 <?php
+if (isset($_POST['add_to_cart'])) {
 
-if(isset($_POST['add_to_cart'])){
+    if ($user_id == '') {
+        header('location:login.php');
+    } else {
 
-   if($user_id == ''){
-      header('location:login.php');
-   }else{
+        $pids = $_POST['pid'];
+        $names = $_POST['name'];
+        $prices = $_POST['price'];
+        $pricesR = $_POST['priceR'];
+        $images = $_POST['image'];
+        $qtys = $_POST['qty'];
 
-      $pid = $_POST['pid'];
-      $pid = filter_var($pid, FILTER_SANITIZE_STRING);
-      $name = $_POST['name'];
-      $name = filter_var($name, FILTER_SANITIZE_STRING);
-      $price = $_POST['price'];
-      $price = filter_var($price, FILTER_SANITIZE_STRING);
-      $priceR = $_POST['priceR'];
-      $priceR = filter_var($priceR, FILTER_SANITIZE_STRING);
-      $image = $_POST['image'];
-      $image = filter_var($image, FILTER_SANITIZE_STRING);
-      $qty = $_POST['qty'];
-      $qty = filter_var($qty, FILTER_SANITIZE_STRING);
+        // Check if the arrays are not empty and countable
+        if (!empty($pids) && is_array($pids) && count($pids) > 0) {
 
-      $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
-      $check_cart_numbers->execute([$name, $user_id]);
+            // Loop through the arrays to insert each product into the cart
+            for ($i = 0; $i < count($pids); $i++) {
+                $pid = filter_var($pids[$i], FILTER_SANITIZE_STRING);
+                $name = filter_var($names[$i], FILTER_SANITIZE_STRING);
+                $price = filter_var($prices[$i], FILTER_SANITIZE_STRING);
+                $priceR = filter_var($pricesR[$i], FILTER_SANITIZE_STRING);
+                $image = filter_var($images[$i], FILTER_SANITIZE_STRING);
+                $qty = filter_var($qtys[$i], FILTER_SANITIZE_STRING);
 
-      if($check_cart_numbers->rowCount() > 0){
-         $message[] = 'already added to cart!';
-      }else{
-         $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price,priceR, quantity, image) VALUES(?,?,?,?,?,?,?)");
-         $insert_cart->execute([$user_id, $pid, $name, $price,$priceR, $qty, $image]);
-         $message[] = 'added to cart!';
-         
-      }
+                $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
+                $check_cart_numbers->execute([$name, $user_id]);
 
-   }
-
+                if ($check_cart_numbers->rowCount() > 0) {
+                    $message[] = 'Product "' . $name . '" already added to cart!';
+                } else {
+                    $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price, priceR, quantity, image) VALUES(?,?,?,?,?,?,?)");
+                    $insert_cart->execute([$user_id, $pid, $name, $price, $priceR, $qty, $image]);
+                    $message[] = 'Product "' . $name . '" added to cart!';
+                }
+            }
+        } else {
+            $message[] = 'No products selected!';
+        }
+    }
 }
-
-
-if(isset($_POST['reg'])){
-
-   if($user_id == ''){
-      header('location:login.php');
-   }else{
-
-      $pid = $_POST['pid'];
-      $pid = filter_var($pid, FILTER_SANITIZE_STRING);
-      $name = $_POST['name'];
-      $name = filter_var($name, FILTER_SANITIZE_STRING);
-     
-      $priceR = $_POST['priceR'];
-      $priceR = filter_var($priceR, FILTER_SANITIZE_STRING);
-      $image = $_POST['image'];
-      $image = filter_var($image, FILTER_SANITIZE_STRING);
-      $qty = $_POST['qty'];
-      $qty = filter_var($qty, FILTER_SANITIZE_STRING);
-
-      $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
-      $check_cart_numbers->execute([$name, $user_id]);
-
-      if($check_cart_numbers->rowCount() > 0){
-         $message[] = 'already added to cart!';
-      }else{
-         $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name,priceR, quantity, image) VALUES(?,?,?,?,?,?,)");
-         $insert_cart->execute([$user_id, $pid, $name, $price,$priceR, $qty, $image]);
-         $message[] = 'added to cart!';
-         
-      }
-
-   }
-
-}
-
 ?>

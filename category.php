@@ -101,9 +101,6 @@ margin-left: 25%;">
 </section>
 
 
-    
-
-
 
      
 <!-- The Modal -->
@@ -114,6 +111,7 @@ $select_products->execute([$category]);
 if ($select_products->rowCount() > 0) {
     while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
         ?>
+     
         <div id="costumizeOrderModal<?= $fetch_products['id']; ?>" class="backdrop">
             <!-- Modal content -->
             <div class="modal">
@@ -143,12 +141,31 @@ if ($select_products->rowCount() > 0) {
                         </tr>
                     </table>
                 </div>
+    
+                <form action="" method="post" class="box">
+        <?php while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)): ?>
+
+<input type="hidden" name="category" value="<?= $category; ?>">
+<input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
+        <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
+        <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
+        <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
+        <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
+        <input type="number" name="qty[]" class="qty" min="1" max="99" value="1" maxlength="2">
+
+
+         <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+
+
+         
                 <div class="modal-footer">
                     <button class="btn confirm-btn" name="add_to_cart">ADD TO CART</button>
                     <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
                 </div>
             </div>
         </div>
+        <?php endwhile; ?>
+    
         <?php
     }
 } else {
@@ -158,7 +175,7 @@ if ($select_products->rowCount() > 0) {
 
 
 
-
+</form>
 <?php include 'components/footer.php'; ?>
 
 
