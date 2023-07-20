@@ -74,7 +74,7 @@ margin-left: 25%;">
 
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal()">
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)">
 
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
@@ -106,63 +106,57 @@ margin-left: 25%;">
 
 
      
-
-
-
-
-
-
 <!-- The Modal -->
-<div id="costumizeOrderModal" class="backdrop" >
 <?php
-         $category = $_GET['category'];
-         $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
-         $select_products->execute([$category]);
-         if($select_products->rowCount() > 0){
-            while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
-      ?>
-  <!-- Modal content -->
-  <div class="modal">
-      <div class="modal-header">
-         <span class="close" onclick="closeModal()">&times;</span>
-      </div>
-      <div class="modal-body">
-         <table>
-            <tr>
-               <td>
-                  <span class="modal-label">Size:</span>
-               </td>
-               <td>
-                  <select class="input" id="size-dropdown" >
-                     <option value="regular" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
+$category = $_GET['category'];
+$select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
+$select_products->execute([$category]);
+if ($select_products->rowCount() > 0) {
+    while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+        ?>
+        <div id="costumizeOrderModal<?= $fetch_products['id']; ?>" class="backdrop">
+            <!-- Modal content -->
+            <div class="modal">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal(<?= $fetch_products['id']; ?>)">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="modal-label">Size:</span>
+                            </td>
+                            <td>
+                                <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>">
+                                    <option value="regular" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
+                                    <option value="large">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="modal-label">Quantity:</span>
+                            </td>
+                            <td>
+                                <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn confirm-btn" name="add_to_cart">ADD TO CART</button>
+                    <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+} else {
+    echo '<p class="empty">No drinks added yet!</p>';
+}
+?>
 
-                     <option value="large">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
-                  </select>
-               </td>
-               <tr>
-               <td>
-                  <span class="modal-label">Quantity:</span>
-               </td>
-               <td>
-           <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-           </td>
-            </tr>
-         </table>
-      </div>
-      <div class="modal-footer">
-         <button class="btn confirm-btn" name="add_to_cart">ADD TO CART</button>
-         <button class="btn close-btn" onclick="closeModal()">CANCEL</button>
-      </div>
-  </div>
-  
-  <?php
-            }
-         }else{
-            echo '<p class="empty">No drinks added yet!</p>';
-         }
-      ?>
 
-</div>
 
 
 <?php include 'components/footer.php'; ?>
