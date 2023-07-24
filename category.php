@@ -79,7 +79,8 @@ margin-left: 25%;">
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
          <h4 style="font-size: initial; background-color: #FFD93D;"> Starts at <span>₱</span><?= $fetch_products['price']; ?>.00</h4>
-           <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
+          
+         <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
             <p class="omg-detail">
                             <div class="omg-menu-desc">
                             <?= $fetch_products['description']; ?>
@@ -128,10 +129,15 @@ if ($select_products->rowCount() > 0) {
                                 <span class="modal-label">Size:</span>
                             </td>
                             <td>
-                                <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>"name="size">
-                                    <option value="regular" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
-                                    <option value="large">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
-                                </select>
+                                
+                            <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"
+        data-price-regular="<?= $fetch_products['price']; ?>"
+        data-price-large="<?= $fetch_products['priceR']; ?>"
+        onchange="updatePrice(<?= $fetch_products['id']; ?>)">
+    <option value="regular" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
+    <option value="large">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
+</select>
+
                             </td>
                         </tr>
                         <tr>
@@ -150,6 +156,7 @@ if ($select_products->rowCount() > 0) {
            
 
                 <div class="modal-footer">
+
                         <input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
                         <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
                         <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">

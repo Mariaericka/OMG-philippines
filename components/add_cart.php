@@ -11,6 +11,7 @@ if (isset($_POST['add_to_cart'])) {
         $pricesR = $_POST['priceR'];
         $images = $_POST['image'];
         $qtys = $_POST['qty'];
+        $sizes = $_POST['size'];
 
         // Check if the arrays are not empty and countable
         if (!empty($pids) && is_array($pids) && count($pids) > 0) {
@@ -23,8 +24,7 @@ if (isset($_POST['add_to_cart'])) {
                 $priceR = filter_var($pricesR[$i], FILTER_SANITIZE_STRING);
                 $image = filter_var($images[$i], FILTER_SANITIZE_STRING);
                 $qty = filter_var($qtys[$i], FILTER_SANITIZE_STRING);
-                $size = filter_var($sizes[$i], FILTER_SANITIZE_STRING); // Add this line to fetch the size
-
+                $size = filter_var($sizes[$i], FILTER_SANITIZE_STRING); 
                 $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
                 $check_cart_numbers->execute([$name, $user_id]);
 
