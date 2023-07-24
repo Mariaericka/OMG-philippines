@@ -77,9 +77,10 @@ $grand_total = 0;
             while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
                // Calculate the price based on the selected size
 
-               $price = ($fetch_cart['size'] === 'large' && $fetch_cart['priceR'] !== '0.00') ? $fetch_cart['priceR'] : $fetch_cart['price'];
-               $sub_total = ($price * $fetch_cart['quantity']);
+               $price = $fetch_cart['size'] === 'large' ? $fetch_cart['priceR'] : $fetch_cart['price'];
+               $sub_total = $price * $fetch_cart['quantity'];
                $grand_total += $sub_total;
+
       ?>
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
