@@ -15,7 +15,11 @@ function submitForm(id) {
   form.submit();
 }
 // JavaScript function to update the price based on the selected size
-
+function updateSize(id) {
+  const sizeDropdown = document.getElementById(`size-dropdown${id}`);
+  const sizeInput = document.getElementById(`size${id}`);
+  sizeInput.value = sizeDropdown.value;
+}
 function updatePrice(id) {
   const sizeDropdown = document.getElementById(`size-dropdown${id}`);
   const priceRegular = parseFloat(sizeDropdown.dataset.priceRegular);

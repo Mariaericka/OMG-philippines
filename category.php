@@ -69,6 +69,8 @@ margin-left: 25%;">
          <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
          <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
+         <input type="hidden" name="size" value="<?= $fetch_products['size']; ?>">
+
          <input type="hidden" name="priceR" value="<?= $fetch_products['description']; ?>">
 
 
@@ -130,16 +132,17 @@ if ($select_products->rowCount() > 0) {
                             </td>
                             <td>
                                 
-                            <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]">
+                            <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
     <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
     <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
 </select>
 
 
 
+
                             </td>
                         </tr>
-                        <tr>
+                        <tr> 
                             <td>
                                 <span class="modal-label">Quantity:</span>
                             </td>
@@ -161,7 +164,7 @@ if ($select_products->rowCount() > 0) {
 
                         <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
                         <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
-                        <input type="hidden" name="size[]" value="<?= $fetch_products['size']; ?>">
+                        <input type="hidden" name="size[]" id="size<?= $fetch_products['id']; ?>" value="regular">
                         <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
                         <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>

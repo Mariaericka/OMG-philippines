@@ -70,16 +70,20 @@ $grand_total = 0;
    <div class="box-container">
 
       <?php
-         $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-         $select_cart->execute([$user_id]);
-
+      $select_cart = $conn->prepare("SELECT c.*, p.priceR FROM `cart` c INNER JOIN `products` p ON c.pid = p.id WHERE c.user_id = ?");
+      $select_cart->execute([$user_id]);
+      
+       
          if ($select_cart->rowCount() > 0) {
             while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
-               // Calculate the price based on the selected size
-
-               $price = $fetch_cart['size'] === 'large' ? $fetch_cart['priceR'] : $fetch_cart['price'];
+               $size = $fetch_cart['size'];
+               $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
+               $select_product_price->execute([$fetch_cart['pid']]);
+               $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
+               $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
                $sub_total = $price * $fetch_cart['quantity'];
                $grand_total += $sub_total;
+               
 
       ?>
       <form action="" method="post" class="box">
