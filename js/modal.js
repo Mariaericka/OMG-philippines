@@ -15,20 +15,21 @@ function submitForm(id) {
   form.submit();
 }
 // JavaScript function to update the price based on the selected size
+
 function updatePrice(id) {
-  const sizeDropdown = document.getElementById('size-dropdown' + id);
-  const priceRegular = parseFloat(sizeDropdown.getAttribute('data-price-regular'));
-  const priceLarge = parseFloat(sizeDropdown.getAttribute('data-price-large'));
+  const sizeDropdown = document.getElementById(`size-dropdown${id}`);
+  const priceRegular = parseFloat(sizeDropdown.dataset.priceRegular);
+  const priceLarge = parseFloat(sizeDropdown.dataset.priceLarge);
   const selectedSize = sizeDropdown.value;
 
-  // Update the displayed price based on the selected size
+  const priceElement = document.getElementById(`price${id}`);
+
   if (selectedSize === 'regular') {
-    document.getElementById('price-display' + id).innerText = 'Regular ₱' + priceRegular + '.00';
-  } else {
-    document.getElementById('price-display' + id).innerText = 'Large ₱' + priceLarge + '.00';
+    priceElement.textContent = `₱${priceRegular.toFixed(2)}`;
+  } else if (selectedSize === 'large') {
+    priceElement.textContent = `₱${priceLarge.toFixed(2)}`;
   }
 }
-
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
