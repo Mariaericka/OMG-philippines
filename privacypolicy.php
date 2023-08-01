@@ -65,26 +65,26 @@ if(isset($_SESSION['user_id'])){
 <p>Our website may use "cookies" to enhance user experience. Cookies are small text files that are placed on your device when you access and use our website. You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent. However, if you do so, some parts of our website may not function properly.</p>
 
 <h2>6. Location Limit for Delivery:</h2>
-Please note that our delivery service is limited to the Laguna area only. If you are located far away from our delivery zone, we encourage you to visit our stores or other OMG Milkshake Milktea and Coffee franchise branches for your milktea needs.
+<p>Please note that our delivery service is limited to the Laguna area only. If you are located far away from our delivery zone, we encourage you to visit our stores or other OMG Milkshake Milktea and Coffee franchise branches for your milktea needs.</p>
 
-7. Mode of Payment:
-We offer two modes of payment: "In-Store Pick Up" and "GCash." For "In-Store Pick Up," you can make your payment when you pick up your order at our physical store. For "GCash," you can conveniently pay through the GCash platform during the checkout process.
+<h2>7. Mode of Payment:</h2>
+<p>We offer two modes of payment: "In-Store Pick Up" and "GCash." For "In-Store Pick Up," you can make your payment when you pick up your order at our physical store. For "GCash," you can conveniently pay through the GCash platform during the checkout process.<p>
 
-8. Changes to this Privacy Policy:
-We may update this Privacy Policy at any time. When we do, we will revise the "last updated" date at the top of this page. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting the personal information we collect.
+<h2>8. Changes to this Privacy Policy:</h2>
+<p>We may update this Privacy Policy at any time. When we do, we will revise the "last updated" date at the top of this page. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting the personal information we collect.</p>
 
-9. Contact Us:
-If you have any questions about this Privacy Policy or the practices of our website, please contact us at [Your Contact Information].
+<h2>9. Contact Us:</h2>
+If you have any questions about this Privacy Policy or the practices of our website, </p>
+<p>please contact us at 0917 167 5592.</p>
 
-Thank you for visiting OMG Milkshake Milktea and Coffee. Enjoy your milktea experience!
+<p>Thank you for visiting OMG Milkshake Milktea and Coffee. Enjoy your milktea experience!</p>
 
-[Your Company Name]
-[Your Address]
-[City, Province]
-[Contact Information]
-Email: [Your Email Address]
+<p>OMG MILKSHAKE,MILKTEA AND COFFEE</p>
+<p>Rizal St, Alaminos</p>
+<p>Laguna Philippines</p>
+<p>0917 167 5592</p>
+<p>Email: omgfranchising@gmail.com</p>
 
-Note: Please replace [Date], [Your Contact Information], [Your Company Name], [Your Address], [City, Province], and [Your Email Address] with the appropriate details for your business.
 </div>
 </section>
 
