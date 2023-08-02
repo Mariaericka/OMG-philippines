@@ -31,7 +31,8 @@ include 'components/add_cart.php';
    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-   
+
+
 <?php include 'components/user_header.php'; ?>
 <div class="second"><ul>
     <br> <h1>Categories</h1>
@@ -48,7 +49,24 @@ include 'components/add_cart.php';
     <div class="container2" style="box-sizing: border-box;
 height: 800px;
 margin-left: 25%;">
+   <!-- Modal -->
+   <div id="locationModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+  <span class="close" onclick="closeModal">&times;</span>
 
+    <h2>Order or Visit</h2>
+    <p>Are you in the Laguna area?</p>
+    <p>If yes, you can proceed to place your order.</p>
+    <p>If not, you can visit one of our other franchise branches:</p>
+    <ul>
+      <li>Alaminos Branch</li>
+      <li>Branch 2</li>
+      <li>Branch 3</li>
+      <!-- Add more branches as needed -->
+    </ul>
+  </div>
+</div>
 
 
 
