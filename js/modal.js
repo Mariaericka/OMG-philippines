@@ -41,3 +41,7 @@ window.onclick = function(event) {
       event.target.style.display = "none";
   }
 };
+// Show the locationModal when the page loads
+window.onload = function() {
+  openModal('locationModal');
+};
