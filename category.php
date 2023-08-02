@@ -45,30 +45,7 @@ include 'components/add_cart.php';
         <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
       </ul>
     </div>
-      
-<!-- The Modal -->
-<div id="locationModal" class="backdrop" style="display: none;">
-  <!-- Modal content -->
-  <div class="modal">
-    <div class="modal-header">
-      <span class="close" onclick="closeModal('locationModal')">&times;</span>
-    </div>
-    <div class="modal-body">
-      <p>
-        Warning: OMG Milkshake Milktea and Coffee delivers only within the Laguna area. If you are outside the delivery range, please visit our Alaminos branch or other franchise branches.
-      </p>
-      <h3>Franchise Branches:</h3>
-      <ul>
-        <li>Branch 1 - Address 1</li>
-        <li>Branch 2 - Address 2</li>
-        <!-- Add more franchise branches as needed -->
-      </ul>
-    </div>
-    <div class="modal-footer">
-      <button class="btn close-btn" onclick="closeModal('locationModal')">CLOSE</button>
-    </div>
-  </div>
-</div>
+ 
     <section>
  
     <div class="container2" style="box-sizing: border-box;
@@ -220,13 +197,7 @@ if ($select_products->rowCount() > 0) {
 
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script>
-  // Show the warning pop-up when the user clicks "ADD TO CART"
-  function showWarningModal() {
-    var modal = document.getElementById('locationModal');
-    modal.style.display = 'block';
-  }
-</script>
+
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
