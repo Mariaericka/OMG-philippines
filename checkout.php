@@ -148,11 +148,14 @@ if(isset($_POST['submit'])){
       <h3>delivery address</h3>
       <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
       <a href="update_address.php" class="btn">update address</a>
+      <div class="delivery-info">
+            <h3>Delivery Information</h3>
+            <p><strong>Note:</strong> Delivery is available within the Laguna area only. If you are outside the delivery range, please choose "In-store Pick-up" or "GCash" as your payment method and visit our stores or other franchise branches.</p>
+         </div>
       <select name="method" class="box" required>
          <option value="" disabled selected>select payment method --</option>
-         <option value="cash on delivery">cash on delivery</option>
-         <option value="credit card">gcash</option>
-         <option value="paytm">in-store </option>
+         <option value="gcash">gcash</option>
+         <option value="instore">in-store </option>
       </select>
       <input type="submit" value="place order" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background:var(--red); color:var(--white);" name="submit">
    </div>
