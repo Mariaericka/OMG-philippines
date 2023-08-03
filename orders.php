@@ -53,11 +53,30 @@ if(isset($_SESSION['user_id'])){
          $select_orders->execute([$user_id]);
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
+      // Retrieve the order details from the `orders` table
+      $order_id = $fetch_orders['id'];
+      $order_total_products = $fetch_orders['total_products'];
+
+      // Calculate the total price for the current order
+      $order_total_price = 0;
+      $order_products = explode(' - ', $order_total_products); // Convert total products string to an array
+      foreach ($order_products as $product) {
+         // Split the product string to get the price and quantity
+         $product_parts = explode(' (', $product);
+         if (count($product_parts) === 2) {
+            list($product_name, $product_price_quantity) = $product_parts;
+            list($product_price, $product_quantity) = explode(' x ', $product_price_quantity);
+
+            // Calculate and accumulate the total price for the current order
+            $order_total_price += intval($product_price) * intval($product_quantity);
+         }
+      }
+
    ?>
    <div class="box">
       <p>placed on : <span><?= $fetch_orders['placed_on']; ?></span></p>
       <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
-      <p>total price : <span>₱<?= $fetch_orders['total_price']; ?>/-</span></p>
+      <p>total price : <span>₱<?= number_format($order_total_price, 2); ?>/-</span></p>
       <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
 <br>
       <p>name : <span><?= $fetch_orders['name']; ?></span></p>
