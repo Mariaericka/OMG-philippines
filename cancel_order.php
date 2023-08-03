@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
       <h2>Cancel Order</h2>
       <form action="" method="post">
          <textarea name="cancel_reason" placeholder="Reason for cancellation" required></textarea>
-         <input type="submit" name="submit" value="Submit">
+         <input type="submit" name="submit" value="Submit" class="btn">
       </form>
    </div>
 </div>
