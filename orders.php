@@ -67,7 +67,13 @@ if(isset($_SESSION['user_id'])){
       <p>payment method : <span><?= $fetch_orders['method']; ?></span></p>
       <p>address : <span><?= $fetch_orders['address']; ?></span></p>
 
-    
+      <?php if ($fetch_orders['status'] == 'Cancelled'): ?>
+                     <p>Status: <span style="color: red;">Cancelled</span></p>
+                     <p>Reason for Cancellation: <?= $fetch_orders['cancel_reason']; ?></p>
+                  <?php else: ?>
+                     <a href="cancel_order.php?order_id=<?= $fetch_orders['id']; ?>" class="btn">Cancel Order</a>
+                  <?php endif; ?>
+         _______________________________________________________________________________
    </div>
    <?php
       }
@@ -76,7 +82,6 @@ if(isset($_SESSION['user_id'])){
       }
       }
    ?>
-      <a href="#" class="btn">cancel order</a>
 
    </div>
 
