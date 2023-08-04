@@ -67,7 +67,10 @@ $select_categories->execute();
          <img src="images/mango fruit yogurt3.png" alt="">
          <h3>Mango Series</h3>
       </a>
-
+      <a href="category.php?category=promo" class="box">
+         <img src="images/Buy 1 Take 1.jpg" alt="">
+         <h3>Promos</h3>
+      </a>
    </div>
 
 </section>

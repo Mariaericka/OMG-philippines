@@ -106,7 +106,9 @@ if(isset($_GET['delete'])){
          <option value="yogurt">Yogurt series</option>
          <option value="choco">Choco series</option>
          <option value="milktea">Milktea series</option>
-         <option value="milktea">Mango series</option>
+         <option value="mango">Mango series</option>
+         <option value="promo">Promo series</option>
+
 
       </select>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
