@@ -122,6 +122,21 @@ if(isset($_POST['submit'])){
    <?php
          }
          $total_products = implode(' - ', $cart_items);
+          // Insert the order into the database without the order ID
+        $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?,?)");
+        $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
+
+        // Generate the order ID
+        $order_id = generate_unique_order_id(); // Replace this with your actual method for generating the order ID
+
+        // Update the order with the generated order ID
+        $update_order_id = $conn->prepare("UPDATE `orders` SET order_id = ? WHERE user_id = ? AND total_price = ?");
+        $update_order_id->execute([$order_id, $user_id, $total_price]);
+
+        $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+        $delete_cart->execute([$user_id]);
+
+        $message[] = 'order placed successfully!';
       } else {
          echo '<p class="empty">your cart is empty!</p>';
       }
