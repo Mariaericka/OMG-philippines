@@ -2,14 +2,25 @@
 
 include 'components/connect.php';
 
-session_start();
 
-if(isset($_SESSION['user_id'])){
-   $user_id = $_SESSION['user_id'];
-}else{
-   $user_id = '';
-   header('location:index.php');
-};?>
+// Retrieve the order ID from the URL query parameter
+if (isset($_GET['order_id'])) {
+   $order_id = $_GET['order_id'];
+
+   // Fetch the order details from the database using the order ID
+   $fetch_order = $conn->prepare("SELECT * FROM `orders` WHERE order_id = ?");
+   $fetch_order->execute([$order_id]);
+
+   if ($fetch_order->rowCount() > 0) {
+       $order_data = $fetch_order->fetch(PDO::FETCH_ASSOC);
+       // Extract the order details
+       $name = $order_data['name'];
+       $total_products = $order_data['total_products'];
+       $method = $order_data ['method'];
+       $total_price = $order_data['total_price'];
+;?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,30 +53,16 @@ if(isset($_SESSION['user_id'])){
 <section class="checkout">
 
 <div class="receipt">
-   <h2>Order Receipt</h2>
-   <p>Order ID: <?php echo $order_id; ?></p>
-   <p>Date: <?php echo date("Y-m-d H:i:s"); ?></p>
-   <p>Name: <?php echo $name; ?></p>
-   <p>Email: <?php echo $email; ?></p>
-   <p>Delivery Address: <?php echo $address; ?></p>
-   <p>Payment Method: <?php echo $method; ?></p>
-   <hr>
+ 
+<h2>Order Receipt</h2>
+   <p><strong>Order ID:</strong> <?= $order_id; ?></p>
+   <p><strong>Name:</strong> <?= $name; ?></p>
+   <p><strong>Total Products:</strong> <?= $total_products; ?></p>
+   <p><strong>Total Price:</strong> ₱<?= $total_price+= $sub_total; ?></p>
+   <p><strong>Payment Method</strong> <?= $method; ?></p>
+
    <h3>Order Details</h3>
-   <?php
-      // Loop through the cart items to display order details
-      while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
-         $size = $fetch_cart['size'];
-         $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
-         $select_product_price->execute([$fetch_cart['pid']]);
-         $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
-         $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
-   ?>
-   <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">₱<?= $price; ?> x <?= $fetch_cart['quantity']; ?></span></p>
-   <?php
-      }
-   ?>
-   <hr>
-   <p class="total">Total Price: ₱<?php echo $grand_total; ?>/-</p>
+ 
    <p class="message">Thank you for placing your order. It will be delivered to the provided address soon!</p>
 </div>
    
@@ -80,3 +77,13 @@ if(isset($_SESSION['user_id'])){
 
 </body>
 </html>
+<?php
+    } else {
+        // Handle the case when the order ID is not found in the database
+        echo "Order not found.";
+    }
+} else {
+    // Handle the case when the order ID is not provided in the URL
+    echo "Order ID not provided.";
+}
+?>

@@ -1,5 +1,4 @@
 <?php
-
 include 'components/connect.php';
 
 session_start();
@@ -10,7 +9,14 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
    header('location:index.php');
 };
+function generate_unique_order_id($user_id)
+{ // Generate a timestamp (current UNIX timestamp)
+   $timestamp = time();
 
+   // Combine the user ID and timestamp to create the order ID
+   $order_id = $user_id . '-' . $timestamp;
+
+   return $order_id;}
 if(isset($_POST['submit'])){
 
    $name = $_POST['name'];
@@ -47,9 +53,14 @@ if(isset($_POST['submit'])){
                $cart_items[] = $fetch_cart['name'] . ' (' . $price . ' x ' . $fetch_cart['quantity'] . ')';
            }
            $total_products = implode(' - ', $cart_items);
+   // Generate the order ID
+   $order_id = generate_unique_order_id($user_id); // Replace this with your actual method for generating the order ID
+  
+    // Insert the order into the database with the generated order ID
+    $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
 
-           $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?,?)");
-           $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
+
 
            $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
            $delete_cart->execute([$user_id]);
@@ -122,21 +133,6 @@ if(isset($_POST['submit'])){
    <?php
          }
          $total_products = implode(' - ', $cart_items);
-          // Insert the order into the database without the order ID
-        $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?,?)");
-        $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
-
-        // Generate the order ID
-        $order_id = generate_unique_order_id(); // Replace this with your actual method for generating the order ID
-
-        // Update the order with the generated order ID
-        $update_order_id = $conn->prepare("UPDATE `orders` SET order_id = ? WHERE user_id = ? AND total_price = ?");
-        $update_order_id->execute([$order_id, $user_id, $total_price]);
-
-        $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
-        $delete_cart->execute([$user_id]);
-
-        $message[] = 'order placed successfully!';
       } else {
          echo '<p class="empty">your cart is empty!</p>';
       }
