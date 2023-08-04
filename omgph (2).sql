@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 01:44 AM
+-- Generation Time: Aug 04, 2023 at 09:35 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -80,16 +80,21 @@ CREATE TABLE `cart` (
   `price` int(10) NOT NULL,
   `priceR` int(10) NOT NULL,
   `quantity` int(10) NOT NULL,
-  `image` varchar(100) NOT NULL
+  `image` varchar(100) NOT NULL,
+  `size` enum('regular','large') NOT NULL DEFAULT 'regular'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `priceR`, `quantity`, `image`) VALUES
-(2, 2, 1, 'caramel macchiato', 120, 95, 1, 'caramel macchiato1.png'),
-(3, 2, 2, 'regular caramel macchiato', 120, 0, 1, 'caramel macchiato1.png');
+INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `priceR`, `quantity`, `image`, `size`) VALUES
+(2, 2, 1, 'caramel macchiato', 120, 95, 1, 'caramel macchiato1.png', 'regular'),
+(3, 2, 2, 'regular caramel macchiato', 120, 0, 1, 'caramel macchiato1.png', 'regular'),
+(62, 3, 1, 'caramel macchiato', 120, 0, 2, 'caramel macchiato1.png', 'regular'),
+(63, 3, 6, 'Coffee Crumble', 80, 0, 2, 'coffee crumble4.png', 'regular'),
+(64, 3, 3, 'Mocha', 80, 0, 1, 'mocha3.png', 'regular'),
+(65, 3, 2, 'Cappucino', 80, 0, 1, 'cappucino2.png', 'large');
 
 -- --------------------------------------------------------
 
@@ -117,6 +122,29 @@ INSERT INTO `messages` (`id`, `user_id`, `subject`, `name`, `email`, `number`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `omg_categories`
+--
+
+CREATE TABLE `omg_categories` (
+  `category_id` int(200) NOT NULL,
+  `category_name` varchar(250) NOT NULL,
+  `category_img` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `omg_categories`
+--
+
+INSERT INTO `omg_categories` (`category_id`, `category_name`, `category_img`) VALUES
+(1, 'coffee series', ''),
+(2, 'yogurt', ''),
+(3, 'choco', ''),
+(4, 'milktea', ''),
+(5, 'mango', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
@@ -132,8 +160,23 @@ CREATE TABLE `orders` (
   `total_products` varchar(1000) NOT NULL,
   `total_price` int(100) NOT NULL,
   `placed_on` date NOT NULL DEFAULT current_timestamp(),
-  `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
+  `payment_status` varchar(20) NOT NULL DEFAULT 'pending',
+  `status` varchar(255) DEFAULT 'Pending',
+  `cancel_reason` text DEFAULT NULL,
+  `order_id` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `qty`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`, `status`, `cancel_reason`, `order_id`) VALUES
+(35, 3, 'monkey d luffy', '0922222222', 'parkerericka5@gmail.com', 0, 'gcash', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300', 'caramel macchiato (120 x 2) - Cappucino (80 x 1)', 640, '2023-08-04', 'pending', 'Cancelled', 'kasi malayo', '3-1691120285'),
+(36, 3, 'monkey d luffy', '0922222222', 'parkerericka5@gmail.com', 0, 'gcash', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300', 'caramel macchiato (120 x 2) - Cappucino (80 x 1)', 640, '2023-08-04', 'pending', 'Pending', NULL, NULL),
+(37, 3, 'monkey d luffy', '0922222222', 'parkerericka5@gmail.com', 0, 'gcash', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300', 'caramel macchiato (120 x 2) - Cappucino (80 x 1)', 640, '2023-08-04', 'pending', 'Pending', NULL, NULL),
+(38, 3, 'monkey d luffy', '0922222222', 'parkerericka5@gmail.com', 0, 'gcash', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300', 'caramel macchiato (120 x 1)', 240, '2023-08-04', 'pending', 'Pending', NULL, NULL),
+(39, 3, 'monkey d luffy', '0922222222', 'parkerericka5@gmail.com', 0, 'gcash', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300', 'caramel macchiato (120 x 1)', 240, '2023-08-04', 'pending', 'Pending', NULL, NULL),
+(40, 3, 'monkey d luffy', '0922222222', 'parkerericka5@gmail.com', 0, 'gcash', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300', 'caramel macchiato (120 x 1)', 240, '2023-08-04', 'pending', 'Pending', NULL, '3-1691122916');
 
 -- --------------------------------------------------------
 
@@ -148,6 +191,7 @@ CREATE TABLE `products` (
   `price` int(10) NOT NULL,
   `priceR` int(10) NOT NULL,
   `description` text NOT NULL,
+  `size` varchar(50) NOT NULL DEFAULT 'Regular',
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -155,9 +199,11 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category`, `price`, `priceR`, `description`, `image`) VALUES
-(1, 'caramel macchiato', 'coffee series', 120, 95, 'large caramel goodness', 'caramel macchiato1.png'),
-(2, 'regular caramel macchiato', 'coffee series', 120, 95, 'regular ', 'caramel macchiato1.png');
+INSERT INTO `products` (`id`, `name`, `category`, `price`, `priceR`, `description`, `size`, `image`) VALUES
+(1, 'caramel macchiato', 'coffee series', 120, 120, 'large caramel goodness', 'Regular', 'caramel macchiato1.png'),
+(2, 'Cappucino', 'coffee series', 80, 95, 'regular ', 'Regular', 'cappucino2.png'),
+(3, 'Mocha', 'coffee series', 80, 110, 'Creamy Mocha ', 'Regular', 'mocha3.png'),
+(6, 'Coffee Crumble', 'coffee series', 80, 110, 'divine fusion of rich coffee flavors and delightful cookie crunch', 'Regular', 'coffee crumble4.png');
 
 -- --------------------------------------------------------
 
@@ -180,7 +226,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `number`, `password`, `address`) VALUES
 (1, 'admin', 'pipi123@gmail.com', '0999999999', 'c22b5f9178342609428d6f51b2c5af4c0bde6a42', ''),
-(2, 'Maria Ericka Toledo', 'ericka.toledo123@gmail.com', '0995782041', 'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d', '');
+(2, 'Maria Ericka Toledo', 'ericka.toledo123@gmail.com', '0995782041', 'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d', ''),
+(3, 'monkey d luffy', 'parkerericka5@gmail.com', '0922222222', '466f24c901815ee277161f3c74282cd26e780794', '604 16 de agosto, 131, pasay, metro manila, metro manila, philippines , 1300');
 
 --
 -- Indexes for dumped tables
@@ -211,10 +258,17 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `omg_categories`
+--
+ALTER TABLE `omg_categories`
+  ADD PRIMARY KEY (`category_id`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `order_id` (`order_id`);
 
 --
 -- Indexes for table `products`
@@ -248,7 +302,7 @@ ALTER TABLE `applicants`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -257,22 +311,28 @@ ALTER TABLE `messages`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `omg_categories`
+--
+ALTER TABLE `omg_categories`
+  MODIFY `category_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

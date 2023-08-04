@@ -73,12 +73,22 @@ if(isset($_GET['delete'])){
       <p> total products : <span><?= $fetch_orders['total_products']; ?></span> </p>
       <p> total price : <span>$<?= $fetch_orders['total_price']; ?>/-</span> </p>
       <p> payment method : <span><?= $fetch_orders['method']; ?></span> </p>
+      <p> payment status : <span style="color:<?php if ($fetch_orders['payment_status'] == 'pending') {
+                  echo 'red';
+               } else {
+                  echo 'green';
+               }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
+               <p> cancellation reason : <span><?= $fetch_orders['cancel_reason']; ?></span> </p>
       <form action="" method="POST">
          <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
          <select name="payment_status" class="drop-down">
             <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
             <option value="pending">pending</option>
             <option value="completed">completed</option>
+            <option value="to be deliver">to be delivered</option>
+
+
+
          </select>
          <div class="flex-btn">
             <input type="submit" value="update" class="btn" name="update_payment">

@@ -55,7 +55,9 @@ if(isset($_GET['delete'])){
    <table class="tbl-full">
    <tr>
       <th class="headers">NAME</th>
-      <th class="headers">PRICE </th>
+      <th class="headers">REG PRICE </th>
+      <th class="headers">LARGE PRICE </th>
+
       <th class="headers">CATEGORY</th>
       <th class="headers">IMAGE</th>
       <th class="headers last" ></th>
@@ -69,6 +71,8 @@ if(isset($_GET['delete'])){
      <tr class="table-content">
      <th><?= $fetch_products['name']; ?></th>
      <th><span>₱</span><?= $fetch_products['price']; ?></th>
+     <th><span>₱</span><?= $fetch_products['priceR']; ?></th>
+
         
      <th> <?= $fetch_products['category']; ?></td>
      <th><img src="../images/<?= $fetch_products['image']; ?>" alt="" width="100px"></th>

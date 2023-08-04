@@ -93,12 +93,15 @@ if(isset($_POST['submit'])){
    <input type="cpassword"  class="form-styling" name="cpass"maxlength="8" placeholder="Confirm Password" required="required" style="background-color: white;background-image: none; color: black;">
      
    <input type="submit" name="submit" value="Sign-up" class="btn" >
- 
+
    </form>
    <!-- Login Form Ends HEre -->
+   <center><br><br><br><br><br><br><br><br><br><br> <p> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
 
 </div>
+
      </div>
+
 
 
 

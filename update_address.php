@@ -13,7 +13,7 @@ if(isset($_SESSION['user_id'])){
 
 if(isset($_POST['submit'])){
 
-   $address = $_POST['number'] .', '.$_POST['building'].', '.$_POST['area'].', '.$_POST['town'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
+   $address = $_POST['number'] .' '.$_POST['street'].', '.$_POST['brgy'].', '.$_POST['city'] .', '. $_POST['province'] .', '. $_POST['region'] .', '. $_POST['country'] .' , '. $_POST['postal'];
    $address = filter_var($address, FILTER_SANITIZE_STRING);
 
    $update_address = $conn->prepare("UPDATE `users` set address = ? WHERE id = ?");
@@ -51,10 +51,10 @@ if(isset($_POST['submit'])){
       <h3>your address</h3>
       <input type="text" class="box" placeholder="unit no/house no./building no." required maxlength="50" name="number">
       <input type="text" class="box" placeholder="street name" required maxlength="50" name="street">
-      <input type="text" class="box" placeholder="barangay" required maxlength="50" name="area">
-      <input type="text" class="box" placeholder="province" required maxlength="50" name="town">
+      <input type="text" class="box" placeholder="barangay" required maxlength="50" name="brgy">
+      <input type="text" class="box" placeholder="province" required maxlength="50" name="province">
       <input type="text" class="box" placeholder="city" required maxlength="50" name="city">
-      <input type="text" class="box" placeholder="region" required maxlength="50" name="state">
+      <input type="text" class="box" placeholder="region" required maxlength="50" name="region">
       <input type="number" class="box" placeholder="postal code" required max="999999" min="0" maxlength="6" name="postal">
       <input type="text" class="box" placeholder="country" required maxlength="50" name="country">
       <input type="submit" value="save address" name="submit" class="btn">

@@ -1,5 +1,4 @@
 <?php
-
 include 'components/connect.php';
 
 session_start();
@@ -10,7 +9,14 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
    header('location:index.php');
 };
+function generate_unique_order_id($user_id)
+{ // Generate a timestamp (current UNIX timestamp)
+   $timestamp = time();
 
+   // Combine the user ID and timestamp to create the order ID
+   $order_id = $user_id . '-' . $timestamp;
+
+   return $order_id;}
 if(isset($_POST['submit'])){
 
    $name = $_POST['name'];
@@ -34,14 +40,32 @@ if(isset($_POST['submit'])){
       if($address == ''){
          $message[] = 'please add your address!';
       }else{
-         
-         $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?,?)");
-         $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
+           // Loop through the cart items to create the total products string and calculate the total price
+           $cart_items = array();
+           while ($fetch_cart = $check_cart->fetch(PDO::FETCH_ASSOC)) {
+               $size = $fetch_cart['size'];
+               $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
+               $select_product_price->execute([$fetch_cart['pid']]);
+               $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
+               $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
+               $sub_total = $price * $fetch_cart['quantity'];
+               $total_price += $sub_total; // Accumulate the total price
+               $cart_items[] = $fetch_cart['name'] . ' (' . $price . ' x ' . $fetch_cart['quantity'] . ')';
+           }
+           $total_products = implode(' - ', $cart_items);
+   // Generate the order ID
+   $order_id = generate_unique_order_id($user_id); // Replace this with your actual method for generating the order ID
+  
+    // Insert the order into the database with the generated order ID
+    $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
 
-         $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
-         $delete_cart->execute([$user_id]);
 
-         $message[] = 'order placed successfully!';
+
+           $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+           $delete_cart->execute([$user_id]);
+
+           $message[] = 'order placed successfully!';
       }
       
    }else{
@@ -83,27 +107,39 @@ if(isset($_POST['submit'])){
 
 <form action="" method="post">
 
-   <div class="cart-items">
-      <h3>cart items</h3>
-      <?php
-         $grand_total = 0;
-         $cart_items[] = '';
-         $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-         $select_cart->execute([$user_id]);
-         if($select_cart->rowCount() > 0){
-            while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
-               $cart_items[] = $fetch_cart['name'].' ('.$fetch_cart['price'].' x '. $fetch_cart['quantity'].') - ';
-               $total_products = implode($cart_items);
-               $grand_total += ($fetch_cart['price'] * $fetch_cart['quantity']);
-      ?>
-      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">₱<?= $fetch_cart['price']; ?> x <?= $fetch_cart['quantity']; ?></span></p>
-      <?php
-            }
-         }else{
-            echo '<p class="empty">your cart is empty!</p>';
+<div class="cart-items">
+   <h3>cart items</h3>
+   <?php
+      $grand_total = 0;
+      $cart_items = array(); // Initialize cart_items array
+
+      $select_cart = $conn->prepare("SELECT c.*, p.priceR FROM `cart` c INNER JOIN `products` p ON c.pid = p.id WHERE c.user_id = ?");
+      $select_cart->execute([$user_id]);
+
+      if ($select_cart->rowCount() > 0) {
+         while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+            $size = $fetch_cart['size'];
+            $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
+            $select_product_price->execute([$fetch_cart['pid']]);
+            $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
+            $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
+            $sub_total = $price * $fetch_cart['quantity'];
+            $grand_total += $sub_total;
+
+            // Add the cart item to the cart_items array with the correct price
+            $cart_items[] = $fetch_cart['name'] . ' (' . $price . ' x ' . $fetch_cart['quantity'] . ')';
+   ?>
+      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">₱<?= $price; ?> x <?= $fetch_cart['quantity']; ?></span></p>
+   <?php
          }
-      ?>
-      <p class="grand-total"><span class="name">grand total :</span><span class="price">₱<?= $grand_total; ?></span></p>
+         $total_products = implode(' - ', $cart_items);
+      } else {
+         echo '<p class="empty">your cart is empty!</p>';
+      }
+   ?>
+   <p class="grand-total"><span class="name">grand total :</span><span class="price">₱<?= $grand_total; ?></span></p>
+</div>
+
       <a href="cart.php" class="btn">view cart</a>
    </div>
 
@@ -123,11 +159,14 @@ if(isset($_POST['submit'])){
       <h3>delivery address</h3>
       <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
       <a href="update_address.php" class="btn">update address</a>
+      <div class="delivery-info">
+            <h3>Delivery Information</h3>
+            <p><strong>Note:</strong> Delivery is available within the Laguna area only. If you are outside the delivery range, please choose "In-store Pick-up" or "GCash" as your payment method and visit our stores or other franchise branches.</p>
+         </div>
       <select name="method" class="box" required>
          <option value="" disabled selected>select payment method --</option>
-         <option value="cash on delivery">cash on delivery</option>
-         <option value="credit card">gcash</option>
-         <option value="paytm">in-store </option>
+         <option value="gcash">gcash</option>
+         <option value="instore">in-store </option>
       </select>
       <input type="submit" value="place order" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background:var(--red); color:var(--white);" name="submit">
    </div>
@@ -152,6 +191,7 @@ if(isset($_POST['submit'])){
 
 
 
+<script src="js/modal.js"></script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

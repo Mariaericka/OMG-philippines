@@ -19,6 +19,8 @@ if(isset($_POST['add_product'])){
    $desc = filter_var($desc, FILTER_SANITIZE_STRING);
    $price = $_POST['price'];
    $price = filter_var($price, FILTER_SANITIZE_STRING);
+   $priceR = $_POST['priceR'];
+   $priceR = filter_var($priceR, FILTER_SANITIZE_STRING);
   
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
@@ -40,8 +42,8 @@ if(isset($_POST['add_product'])){
       }else{
          move_uploaded_file($image_tmp_name, $image_folder);
 
-         $insert_product = $conn->prepare("INSERT INTO `products`(name,description, category, price, image) VALUES(?,?,?,?,?)");
-         $insert_product->execute([$name,$desc, $category, $price, $image]);
+         $insert_product = $conn->prepare("INSERT INTO `products`(name,description, category, price,priceR, image) VALUES(?,?,?,?,?,?)");
+         $insert_product->execute([$name,$desc, $category, $price,$priceR, $image]);
 
          $message[] = 'new drink added!';
       }
@@ -94,8 +96,10 @@ if(isset($_GET['delete'])){
    <form action="" method="POST" enctype="multipart/form-data">
       <h3>add product</h3>
       <input type="text" required placeholder="enter drink name" name="name" maxlength="100" class="box">
-      <input type="number" min="0" max="9999999999" required placeholder="drink price " name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
-      <input type="text" min="0" max="9999999999" required placeholder="regular or large" name="description" onkeypress="if(this.value.length == 25) return false;" class="box">
+      <input type="number" min="0" max="9999999999" required placeholder=" regular drink price " name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
+      <input type="number" min="0" max="9999999999" required placeholder=" large drink price " name="priceR" onkeypress="if(this.value.length == 10) return false;" class="box">
+
+      <input type="text" min="0" max="9999999999" required placeholder="description" name="description" onkeypress="if(this.value.length == 25) return false;" class="box">
       <select name="category" class="box" required>
          <option value="" disabled selected>select category --</option>
          <option value="coffee series">Coffee series</option>
