@@ -51,7 +51,7 @@ include 'components/add_cart.php';
     <section>
  
     <div class="container2" style="box-sizing: border-box;
-height: 800px;
+
 margin-left: 25%;">
    
 
@@ -159,10 +159,48 @@ if ($select_products->rowCount() > 0) {
                             <input type="number" name="qty[]" class="qty" min="1" max="99" value="1" maxlength="2">
                             </td>
                         </tr>
+
+
+
+                        
                     </table>
                 </div>
 
-           
+  <!-- Add-ons section -->
+  <div class="modal-body">
+                   
+  <tr>
+    <td>
+    <span class="modal-label">Add-ons:</span>
+    </td>
+    <td>
+         <label>
+            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_fruit_jelly">
+            Extra Fruit Jelly (+₱10)
+         </label>
+    </td>
+    <td>
+         <label>
+            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="crushed_oreos">
+            Crushed Oreo (+₱10)
+         </label>
+    </td>
+    <td>
+         <label>
+            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_pearls">
+            Extra Pearls (+₱10)
+         </label>
+    </td>
+    <td>
+
+         <label>
+            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_ice_cream">
+            Extra Ice Cream (+₱10)
+         </label>
+    </td>
+    </tr>
+   
+    </div>
 
                 <div class="modal-footer">
 
