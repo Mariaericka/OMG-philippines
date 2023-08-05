@@ -10,25 +10,25 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
-if(isset($_POST['submit'])){
+// if(isset($_POST['submit'])){
 
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $password = sha1($_POST['password']);
-   $password = filter_var($password, FILTER_SANITIZE_STRING);
+//    $email = $_POST['email'];
+//    $email = filter_var($email, FILTER_SANITIZE_STRING);
+//    $password = sha1($_POST['password']);
+//    $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-   $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-   $select_user->execute([$email, $password]);
-   $row = $select_user->fetch(PDO::FETCH_ASSOC);
+//    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+//    $select_user->execute([$email, $password]);
+//    $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-   if($select_user->rowCount() > 0){
-      $_SESSION['user_id'] = $row['id'];
-      header('location:index.php');
-   }else{
-      $message[] = 'incorrect username or password!';
-   }
+//    if($select_user->rowCount() > 0){
+//       $_SESSION['user_id'] = $row['id'];
+//       header('location:index.php');
+//    }else{
+//       $message[] = 'incorrect username or password!';
+//    }
 
-}
+// }
 
 ?>
 
@@ -43,6 +43,7 @@ if(isset($_POST['submit'])){
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
@@ -50,57 +51,65 @@ if(isset($_POST['submit'])){
 </head>
 <body>
    
-<!-- header section starts  -->
+
 <?php include 'components/user_header.php'; ?>
-<!-- header section ends -->
 
-
-
-
-     <!-- Login Form Starts HEre -->
-     <div class="container1">
 
 <div class="frame">
 <div class="nav1">
 <li class="signin-active"><a class="btn1">Sign in</a></li>
-
-<form action="" method="POST" class="form-signin">
+<div class="form-signin">
 <label for="Email">Email</label>            
-<input type="text" class="form-styling" name="email" placeholder="Enter Email" maxlength="30"required="required" style="background-color: white;background-image: none; color: black;">
+<input type="text" class="form-styling" id="email" name="email" placeholder="Enter Email" maxlength="30"required="required" style="background-color: white;background-image: none; color: black;">
 <br><br>
-
-   <label for="Password">Password</label>  
-   <input type="password"  class="form-styling" name="password" placeholder="Enter Password" maxlength="8" required="required" style="background-color: white;background-image: none; color: black;"><br><br>
-     
-   <input type="submit" name="submit" value="Sign-in" class="btn" >
- 
-   </form>
-   <!-- Login Form Ends HEre -->
-
-  <center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
-  <center> <p> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
-
+<label for="Password">Password</label>  
+<input type="password"  class="form-styling" id="password" name="password" placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;"><br><br>   
+<input type="submit" onclick="LoginBtn()" name="submit" value="Sign-in" class="btn" >
+</div>
+<center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
+<center> <p> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
 
 </div>
-     </div>
-
-
-
-     </div>
-
-
-
-
-
-
+</div>
+</div>
 <?php include 'components/footer.php'; ?>
-
-
-
-
-<!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script>
+function LoginBtn() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const formData = new FormData();
+        formData.append("email", email);
+        formData.append("password", password);
 
+        const xhr = new XMLHttpRequest();
+        const url = "loginValidation.php"; // Replace with the correct path to loginValidation.php
+
+        xhr.open("POST", url, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const response = xhr.responseText;
+                    if (response === "success") {
+                        // Login success, redirect to the dashboard or any other page
+                        window.location.href = "index.php";
+                    } else if (response === "failed") {
+                        window.alert("Account is not Activated!!");
+                    }
+                    else {
+                        // Login failed, show an alert with the error message
+                        window.alert("Invalid email or password.");
+                    }
+                } else {
+                    // Error occurred while validating login
+                    window.alert("Error occurred while validating login.");
+                }
+            }
+        };
+        xhr.send(formData);
+    }
+
+</script>
 </body>
 </html>
 
