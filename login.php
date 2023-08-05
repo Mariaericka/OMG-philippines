@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMGPH LOGIN</title>
+   <link rel="icon"  href="images/omg-logo.png">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -77,6 +78,9 @@ if(isset($_POST['submit'])){
    <!-- Login Form Ends HEre -->
 
   <center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
+  <center> <p> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
+
+
 </div>
      </div>
 

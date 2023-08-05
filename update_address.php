@@ -13,7 +13,7 @@ if(isset($_SESSION['user_id'])){
 
 if(isset($_POST['submit'])){
 
-   $address = $_POST['flat'] .', '.$_POST['building'].', '.$_POST['area'].', '.$_POST['town'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
+   $address = $_POST['number'] .' '.$_POST['street'].', '.$_POST['brgy'].', '.$_POST['city'] .', '. $_POST['province'] .', '. $_POST['region'] .', '. $_POST['country'] .' , '. $_POST['postal'];
    $address = filter_var($address, FILTER_SANITIZE_STRING);
 
    $update_address = $conn->prepare("UPDATE `users` set address = ? WHERE id = ?");
@@ -31,7 +31,8 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>update address</title>
+   <title>Update Address</title>
+   <link rel="icon"  href="images/omg-logo.png">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -50,10 +51,10 @@ if(isset($_POST['submit'])){
       <h3>your address</h3>
       <input type="text" class="box" placeholder="unit no/house no./building no." required maxlength="50" name="number">
       <input type="text" class="box" placeholder="street name" required maxlength="50" name="street">
-      <input type="text" class="box" placeholder="barangay" required maxlength="50" name="area">
-      <input type="text" class="box" placeholder="province" required maxlength="50" name="town">
+      <input type="text" class="box" placeholder="barangay" required maxlength="50" name="brgy">
+      <input type="text" class="box" placeholder="province" required maxlength="50" name="province">
       <input type="text" class="box" placeholder="city" required maxlength="50" name="city">
-      <input type="text" class="box" placeholder="region" required maxlength="50" name="state">
+      <input type="text" class="box" placeholder="region" required maxlength="50" name="region">
       <input type="number" class="box" placeholder="postal code" required max="999999" min="0" maxlength="6" name="postal">
       <input type="text" class="box" placeholder="country" required maxlength="50" name="country">
       <input type="submit" value="save address" name="submit" class="btn">

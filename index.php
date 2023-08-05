@@ -48,7 +48,7 @@ include 'components/add_cart.php';
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMG Philippines</title>
-
+<link rel="icon"  href="images/omg-logo.png">
    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
    <!-- font awesome cdn link  -->
@@ -78,7 +78,7 @@ include 'components/add_cart.php';
             <h1>OPEN FOR FRANCHISE NATIONWIDE!</h1>
             <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
-            <br><a href="#" class="button11">Franchise Now!</a>
+            <br><a href="franchise.php" class="button11">Franchise Now!</a>
        
         </div>
         <a href="https://www.vecteezy.com/free-vector/philippines-map"></a>
@@ -87,48 +87,19 @@ include 'components/add_cart.php';
 </section>
 
 
-
-   <!-- custom css file link  
-            <section class="hero">
-
-<div class="swiper hero-slider">
-
-   <div class="swiper-wrapper">
-
-      <div class="swiper-slide slide">
-      
-         <div class="image">
-         
-    <img src="images/cheescakeseries.jpg" alt="" style=" width: 100%;
-    height: 30%;">
-         </div>
-      </div>
-
-
-
-      <div class="swiper-slide slide">
-        
-         <div class="image">
-         <img src= "images/babyruth.jpg" alt=""style=" width: 100%;
-    height: 30%;">
-         </div>
-      </div>
-   </div>
--->
-
 <section class="hero">
    
-<div class="babyruth">
-</div>
-    <div class="event"></div>
-    <div class="series"></div> 
+<a href="menu.php"><div class="babyruth">
+</div></a>
+<a href="franchise.php"> <div class="event"></div></a>
+<a href="menu.php">  <div class="series"></div> </a>
    
 </section>
 
 <section class="hero">
-<a href="#" class="button11">Buy 1 and Take 1</a>
-<a href="#" class="button12">Event Packages</a>
-<a href="#" class="button13">Cheescake series</a>
+<a href="menu.php" class="button11">Buy 1 and Take 1</a>
+<a href="franchise.php" class="button12">Event Packages</a>
+<a href="menu.php" class="button13">Cheescake series</a>
 </section>
 
 <section class="hero">

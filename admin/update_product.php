@@ -20,12 +20,13 @@ if(isset($_POST['update'])){
    $desc = filter_var($desc, FILTER_SANITIZE_STRING);
    $price = $_POST['price'];
    $price = filter_var($price, FILTER_SANITIZE_STRING);
-   
+   $priceR = $_POST['priceR'];
+   $priceR = filter_var($priceR, FILTER_SANITIZE_STRING);
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
 
-   $update_product = $conn->prepare("UPDATE `products` SET name = ?, category = ?, price = ? , description = ? WHERE id = ?");
-   $update_product->execute([$name, $category, $price,$desc, $pid]);
+   $update_product = $conn->prepare("UPDATE `products` SET name = ?, category = ?, price = ? ,priceR = ? , description = ? WHERE id = ?");
+   $update_product->execute([$name, $category, $price,$priceR,$desc, $pid]);
 
    $message[] = 'product updated!';
 
@@ -59,6 +60,7 @@ if(isset($_POST['update'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMGPH | ADMIN</title>
+   <link rel="icon"  href="images/omg-logo.png">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -91,11 +93,16 @@ if(isset($_POST['update'])){
       <span style="color:black;font-size: 15px;">update name</span>
       <input type="text" required placeholder="enter beverage name" name="name" maxlength="100" class="box" value="<?= $fetch_products['name']; ?>">
      
-      <span style="color:black;font-size: 15px;">update price </span>
-      <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_products['price']; ?>">
-      <span style="color:black;font-size: 15px;">update regular or large</span>
+      <span style="color:black;font-size: 15px;">update regular size price </span>
 
-      <input type="text" min="0" max="9999999999" required placeholder="description" name="description" onkeypress="if(this.value.length == 25) return false;" class="box"value="<?= $fetch_products['description']; ?>">>
+      <input type="number" min="0" max="9999999999" required placeholder="enter regular size price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_products['price']; ?>">
+     
+      <span style="color:black;font-size: 15px;">update large size price </span>
+      <input type="number" min="0" max="9999999999" required placeholder="enter large size price" name="priceR" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_products['priceR']; ?>">
+      
+      <span style="color:black;font-size: 15px;">update description</span>
+
+      <input type="text" min="0" max="9999999999" required placeholder="description" name="description" onkeypress="if(this.value.length == 25) return false;" class="box"value="<?= $fetch_products['description']; ?>">
 
       <span style="color:black;font-size: 15px;">update category</span>
       <select name="category" class="box" required>
