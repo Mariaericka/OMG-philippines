@@ -97,12 +97,13 @@ if (isset($_POST['resend'])) {
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 </head>
-<body style="background: #e17db7;padding:10% 39%;">
+
+<body style="background: #FFD93D;padding:10% 39%;">
     <?php
         include("navbar.php");
     ?>
     
-        <div class="centered-div" style="box-shadow: 1px 2px 9px 0px #7b2c60;border-radius: 20px;background: rgba(111,66,193,0.33);color: var(--bs-dark); padding:20px;width:350px;">
+        <div class="centered-div" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px;background: rgba(111,66,193,0.33);color: var(--bs-dark); padding:20px;width:350px;">
         <center>
             <h4>OTP code will expire in</h4> 
             <h1 id="countdown">2:00</h1>
@@ -110,10 +111,10 @@ if (isset($_POST['resend'])) {
             
             <form action="" method="post">
                 <input class="form-control" style="border-radius: 20px;" type="text" name="code">
-                <button type="submit" class="btn d-block w-100" name="submit" style="border-radius: 20px;background: #ff8dc5;margin:10px 0px;">Verify</button>
+                <button type="submit" class="btn d-block w-100" name="submit" style="border-radius: 20px;background: orange;margin:10px 0px;">Verify</button>
             </form>
             <form action='' method='post'>
-            <button class="btn d-block w-100 resend" name="resend" type="submit" style="border-radius: 20px;background: #ff8dc5;margin:10px 0px;">Resend OTP</button>
+            <button class="btn " name="resend" type="submit" style="border-radius: 20px;background: orange;margin:10px 0px;">Resend OTP</button>
             </form>
         </div>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
@@ -121,6 +122,7 @@ if (isset($_POST['resend'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     
     <script src="../../assets/js/bs-init.js"></script>
+  
     <script>
         // Set the countdown duration in minutes
         var countdownDuration = 2;
@@ -157,5 +159,6 @@ if (isset($_POST['resend'])) {
             }
         }
     </script>
+    
 </body>
 </html>

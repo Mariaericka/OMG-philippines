@@ -233,7 +233,8 @@ if ($select_products->rowCount() > 0) {
 
 </form>
 
-<?php include 'components/footer.php'; ?>
+
+
 
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
@@ -242,4 +243,5 @@ if ($select_products->rowCount() > 0) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
+<?php include 'components/footer.php'; ?>
 </html>
