@@ -167,7 +167,7 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <div class="modal-body">
+  <div class="modal-body" style="flex-direction: column;">
                    
   <tr>
     <td>
