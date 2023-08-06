@@ -50,7 +50,7 @@ include 'components/add_cart.php';
  
     <section>
  
-    <div class="container2" style="box-sizing: border-box;
+    <div class="container2" style="box-sizing: border-box; height:900px;
 
 margin-left: 25%;">
    
@@ -224,7 +224,7 @@ if ($select_products->rowCount() > 0) {
         <?php
     }
 } else {
-    echo '<p class="empty">No drinks added yet!</p>';
+   
 }
 ?>
       
@@ -236,6 +236,7 @@ if ($select_products->rowCount() > 0) {
 
 
 
+<?php include 'components/footer.php'; ?>
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
@@ -243,5 +244,4 @@ if ($select_products->rowCount() > 0) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
-<?php include 'components/footer.php'; ?>
 </html>
