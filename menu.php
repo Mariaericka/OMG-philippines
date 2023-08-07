@@ -90,9 +90,9 @@ $select_categories->execute();
     </div> -->
 <div>
 </div>
-
+<!--
 <div class="loader">
-   <img src="images/loading.gif" alt="">
+   <img src="images/loading.gif" alt="">-->
 </div>
 <!-- footer section starts  -->
  <?php include 'components/footer.php'; ?> 

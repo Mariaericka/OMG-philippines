@@ -184,26 +184,26 @@ if ($select_products->rowCount() > 0) {
     </td>
     <td>
                         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_fruit_jelly">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_fruit_jelly">
             Extra Fruit Jelly (+₱10)
          </label>
     </td>
     <td>
          <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="crushed_oreos">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="crushed_oreos">
             Crushed Oreo (+₱10)
          </label>
     </td>
     <td>
          <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_pearls">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_pearls">
             Extra Pearls (+₱10)
          </label>
     </td>
     <td>
 
          <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_ice_cream">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_ice_cream">
             Extra Ice Cream (+₱10)
          </label>
     </td>
@@ -222,6 +222,8 @@ if ($select_products->rowCount() > 0) {
                         <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
                         <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
+   <!--ADD FETCH ADDONS IN THE ADD TO CART,ADD ALSO HERE IN THIS FORM THE ADDONS TO FETCH. ADD ALSO IN THE ADD TO CART PHP AND IN THE CART TO DISPLAY -->
+                   
                     </form>
                     <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
 
