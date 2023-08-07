@@ -116,6 +116,8 @@ margin-left: 25%;">
 <!-- The Modal -->
 
 <?php
+
+
 $category = $_GET['category'];
 $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
 $select_products->execute([$category]);
@@ -167,17 +169,21 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
+  <?php
+ // Fetch the addons for the current product from the database
+        $select_addons = $conn->prepare("SELECT * FROM `addons` INNER JOIN `product_addons` ON `addons`.`id` = `product_addons`.`addon_id` WHERE `product_addons`.`product_id` = ?");
+        $select_addons->execute([$fetch_products['id']]);
+        $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+ ?>
   <div class="modal-body" style="flex-direction: column;">
+
                    
   <tr>
     <td>
     <span class="modal-label">Add-ons:</span>
     </td>
     <td>
-         <label>
-         <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="<?= $addon['id']; ?>">
-                            <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)</label>
-                            <label>
+                        <label>
             <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_fruit_jelly">
             Extra Fruit Jelly (+₱10)
          </label>
