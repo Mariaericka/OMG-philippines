@@ -175,6 +175,9 @@ if ($select_products->rowCount() > 0) {
     </td>
     <td>
          <label>
+         <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="<?= $addon['id']; ?>">
+                            <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)</label>
+                            <label>
             <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_fruit_jelly">
             Extra Fruit Jelly (+₱10)
          </label>
