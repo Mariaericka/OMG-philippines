@@ -169,10 +169,13 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <tr>
+  <div class="modal-body" style="flex-direction: column;">
+
+                   
+<tr>
   <td>
-    <span class="modal-label">Add-ons:</span>
-    </td>
+  <span class="modal-label">Add-ons:</span>
+ 
     <?php
     // Fetch the addons for the current product from the database
     $select_addons = $conn->prepare("SELECT * FROM `addons`");
@@ -186,8 +189,11 @@ if ($select_products->rowCount() > 0) {
             <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
         </label>
     <?php } ?>
-</div>
     </td>
+    </tr>
+</div>
+   
+    
 
                 <div class="modal-footer">
 
@@ -232,4 +238,4 @@ if ($select_products->rowCount() > 0) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
-</html>
+</html> 
