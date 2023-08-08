@@ -169,47 +169,25 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <?php
- // Fetch the addons for the current product from the database
-        $select_addons = $conn->prepare("SELECT * FROM `addons` INNER JOIN `product_addons` ON `addons`.`id` = `product_addons`.`addon_id` WHERE `product_addons`.`product_id` = ?");
-        $select_addons->execute([$fetch_products['id']]);
-        $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
- ?>
-  <div class="modal-body" style="flex-direction: column;">
-
-                   
   <tr>
-    <td>
+  <td>
     <span class="modal-label">Add-ons:</span>
     </td>
-    <td>
-                        <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_fruit_jelly">
-            Extra Fruit Jelly (+₱10)
-         </label>
+    <?php
+    // Fetch the addons for the current product from the database
+    $select_addons = $conn->prepare("SELECT * FROM `addons`");
+    $select_addons->execute();
+    $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($addons as $addon) {
+        ?>
+        <label>
+            <input type="checkbox" name="add_ons[<?= $addon['id']; ?>][]"
+                   value="<?= $addon['name']; ?>">
+            <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+        </label>
+    <?php } ?>
+</div>
     </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="crushed_oreos">
-            Crushed Oreo (+₱10)
-         </label>
-    </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_pearls">
-            Extra Pearls (+₱10)
-         </label>
-    </td>
-    <td>
-
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_ice_cream">
-            Extra Ice Cream (+₱10)
-         </label>
-    </td>
-    </tr>
-   
-    </div>
 
                 <div class="modal-footer">
 
@@ -222,7 +200,6 @@ if ($select_products->rowCount() > 0) {
                         <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
                         <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
-   <!--ADD FETCH ADDONS IN THE ADD TO CART,ADD ALSO HERE IN THIS FORM THE ADDONS TO FETCH. ADD ALSO IN THE ADD TO CART PHP AND IN THE CART TO DISPLAY -->
                    
                     </form>
                     <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
