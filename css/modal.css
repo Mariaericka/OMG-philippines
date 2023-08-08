@@ -33,6 +33,7 @@
     padding:10px 50px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .modal-header {
     display: flex;
