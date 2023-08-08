@@ -61,9 +61,8 @@ include 'components/add_cart.php';
 
 </head>
 <body>
-
 <?php include 'components/user_header.php'; ?>
-<h3>Creamy goodness in a cup</h3>
+<h3 class="creamy">Creamy goodness in a cup</h3>
         <h3>Taste that would definitely make you go OMG!</h3>
        
         <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
@@ -75,19 +74,19 @@ include 'components/add_cart.php';
 
         <div class="content1">
         
-            <h1>OPEN FOR FRANCHISE NATIONWIDE!</h1>
+            <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
             <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
             <br><a href="franchise.php" class="button11">Franchise Now!</a>
        
         </div>
-        <a href="https://www.vecteezy.com/free-vector/philippines-map"></a>
+        <a href="https://www.vecteezy.com/free-vector/philippines-map" class="ph"></a>
     </div>
 
 </section>
 
 
-<section class="hero">
+<section class="hero flex" style="margin: 0px;">
    
 <a href="menu.php"><div class="babyruth">
 </div></a>
@@ -96,11 +95,11 @@ include 'components/add_cart.php';
    
 </section>
 
-<section class="hero">
-<a href="menu.php" class="button11">Buy 1 and Take 1</a>
-<a href="franchise.php" class="button12">Event Packages</a>
-<a href="menu.php" class="button13">Cheescake series</a>
-</section>
+<!-- <section class="hero">
+<a href="menu.php" class="button11 none">Buy 1 and Take 1</a>
+<a href="franchise.php" class="button12 none">Event Packages</a>
+<a href="menu.php" class="button13 none">Cheescake series</a>
+</section> -->
 
 <section class="hero">
 
@@ -217,15 +216,15 @@ include 'components/add_cart.php';
 
 
 
-<!--
-<div class="loader">
+
+<!-- <div class="loader">
    <img src="images/loading.gif" alt="">
-</div>
--->
+</div> -->
 
 
 
 
+<div></div>
 <?php include 'components/footer.php'; ?>
 
 
