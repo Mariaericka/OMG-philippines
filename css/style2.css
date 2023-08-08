@@ -12,7 +12,12 @@
    --red:rgb(155 8 8);
    --white:#ffff;
 }
-
+.headeropen{
+   width: 400px!important;
+}
+.creamy{
+   margin-top: 30px;
+}
 .second ul  {
    list-style-type: none;
    margin: 10;
@@ -1096,6 +1101,7 @@ p {
 /*---------------- footer starts here -----------------*/
 footer.footer{
    height: 100%;
+   width: 105%;
    color:black;
    background-color: #FFD93D;
    position: relative;
@@ -1352,12 +1358,21 @@ section{
    border-bottom: var(--border);
    background-color: white;
 }
-
+.flex{
+   display: flex;
+   flex-direction:row;
+   justify-content:center;
+   align-items:center;
+   
+   margin-left: 150px!important;
+}
 .header .flex{
    display: flex;
-   align-items: center;
+   align-items: flex-end;
    justify-content: space-between;
    position: relative;
+
+   width: 100%;
 }
 
 .header .flex .logo{
@@ -1754,6 +1769,7 @@ section{
    align-items: center;
    justify-content: space-between;
    margin-top: 1rem;
+   
  }
  
  .products .price {
@@ -2279,15 +2295,18 @@ h3 {
    /* babyruth 1 */
 position:relative;
 width: 324px;
- height: 300px;
+height: 300px;
 background-image: url(../images/babyruth.jpg);
 border: 5px solid #FF8400;
 box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
 background-repeat: round;
-right: 62px;
-    left: 20px;
+/* right: 62px;
+    left: 15px; */
+    margin: 0px 20px 0px 20px ;
+    /* top right bottom left */
+
 }
 .event{
    /* event */
@@ -2300,13 +2319,14 @@ box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
 background-repeat: round;
-right: 62px;
-    left: 51px;
+margin: 0px 20px 0px 20px ;
+/* right: 62px;
+    left: 51px; */
 }
 .series{
    /* series */
 position:relative;
-width: 400px;
+width: 350px;
  height: 300px;
 background-image: url(../images/cheescakeseries.jpg);
 border: 5px solid #FF8400;
@@ -2314,8 +2334,9 @@ box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
 background-repeat: round;
-right: 62px;
-    left: 80px;
+margin: 0px 20px 0px 20px ;
+/* right: 62px;
+    left: 80px; */
 }
 .button11{
   
@@ -2451,7 +2472,28 @@ border: 1px solid #000000;
 
 
 /* media queries  */
-
+@media (max-width:1150px){
+   .flex{
+      
+       margin-left: 20px!important;
+   }
+   .none {
+      display: none;
+   }
+   .event {
+      width: 260px;
+      height: 350px;
+      top:20px;}
+   .series{
+      width: 250px;
+       height: 237px;
+      top:38px;
+   }
+   .babyruth{
+      width: 250px;
+      height: 309px;
+   }
+}
 @media (max-width:991px) {
    
    html{
@@ -2462,8 +2504,38 @@ border: 1px solid #000000;
    }
 }
 
-@media (max-width:768px){
+@media (max-width:850px){
 
+   .flex{
+      display: flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      width: 100%;
+      margin-left: 0px!important;
+   }
+   .babyruth{
+ margin-left: 50px!important;
+ width: 40vh!important;
+ margin-top: 100px;
+   }
+   .event {
+      width: 45vh;
+      height: 450px;
+      top:20px;
+      left: -2px;
+   }
+   .series{
+      width: 45vh!important;
+       height: 237px;
+      top:38px;
+      left: 0px;
+   }
+ 
+   .headeropen{
+      width: 50% !important; ;
+      
+   }
    .contact-child.child1{
       width: 199px;
    }
@@ -2579,17 +2651,30 @@ a.button13{
    display:none;
 }
 .event {
-   width: 229px;
-   height: 309px;
-   top:20px;}
+   width: 40vh;
+   height: 350px;
+   top:20px;
+   left: 6px;
+
+   right: 0px!important;
+
+}
 .series{
-   width: 239px;
+   width: 40vh!important;
     height: 237px;
-   top:38px;
+   top:48px!important;
+   left:8px;
+   right: 0px;
+
 }
 .babyruth{
-   width: 259px;
+   width: 40vh!important;
    height: 309px;
+   /* margin-left:20px ; */
+   left: -10px;
+   right: 0px;
+   /* top right bottom left */
+
 }
 
 
