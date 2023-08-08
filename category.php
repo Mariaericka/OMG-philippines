@@ -50,7 +50,7 @@ include 'components/add_cart.php';
  
     <section>
  
-    <div class="container2" style="box-sizing: border-box;
+    <div class="container2" style="box-sizing: border-box; height:900px;
 
 margin-left: 25%;">
    
@@ -116,6 +116,8 @@ margin-left: 25%;">
 <!-- The Modal -->
 
 <?php
+
+
 $category = $_GET['category'];
 $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
 $select_products->execute([$category]);
@@ -167,34 +169,41 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <div class="modal-body">
+  <?php
+ // Fetch the addons for the current product from the database
+        $select_addons = $conn->prepare("SELECT * FROM `addons` INNER JOIN `product_addons` ON `addons`.`id` = `product_addons`.`addon_id` WHERE `product_addons`.`product_id` = ?");
+        $select_addons->execute([$fetch_products['id']]);
+        $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+ ?>
+  <div class="modal-body" style="flex-direction: column;">
+
                    
   <tr>
     <td>
     <span class="modal-label">Add-ons:</span>
     </td>
     <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_fruit_jelly">
+                        <label>
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_fruit_jelly">
             Extra Fruit Jelly (+₱10)
          </label>
     </td>
     <td>
          <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="crushed_oreos">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="crushed_oreos">
             Crushed Oreo (+₱10)
          </label>
     </td>
     <td>
          <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_pearls">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_pearls">
             Extra Pearls (+₱10)
          </label>
     </td>
     <td>
 
          <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_ice_cream">
+            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_ice_cream">
             Extra Ice Cream (+₱10)
          </label>
     </td>
@@ -213,6 +222,8 @@ if ($select_products->rowCount() > 0) {
                         <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
                         <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
+   <!--ADD FETCH ADDONS IN THE ADD TO CART,ADD ALSO HERE IN THIS FORM THE ADDONS TO FETCH. ADD ALSO IN THE ADD TO CART PHP AND IN THE CART TO DISPLAY -->
+                   
                     </form>
                     <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
 
@@ -224,7 +235,7 @@ if ($select_products->rowCount() > 0) {
         <?php
     }
 } else {
-    echo '<p class="empty">No drinks added yet!</p>';
+   
 }
 ?>
       
@@ -233,8 +244,10 @@ if ($select_products->rowCount() > 0) {
 
 </form>
 
-<?php include 'components/footer.php'; ?>
 
+
+
+<?php include 'components/footer.php'; ?>
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 

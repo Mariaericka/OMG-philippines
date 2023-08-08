@@ -217,11 +217,11 @@ include 'components/add_cart.php';
 
 
 
-
+<!--
 <div class="loader">
    <img src="images/loading.gif" alt="">
 </div>
-
+-->
 
 
 

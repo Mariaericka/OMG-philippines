@@ -1,7 +1,6 @@
 <?php
 
 include 'components/connect.php';
-
 session_start();
 
 if(isset($_SESSION['user_id'])){
@@ -91,9 +90,9 @@ $select_categories->execute();
     </div> -->
 <div>
 </div>
-
+<!--
 <div class="loader">
-   <img src="images/loading.gif" alt="">
+   <img src="images/loading.gif" alt="">-->
 </div>
 <!-- footer section starts  -->
  <?php include 'components/footer.php'; ?> 

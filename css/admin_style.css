@@ -42,11 +42,18 @@ body {
    background-color: white;
 }
 .login{
-   border: 4px solid rgb(255 249 54);
-   width: fit-content;
+   border: 2px solid red;
+   width: 90%;
+   height: 32rem;
    margin: 4% auto;
    padding: 10px;
-   display:block;
+   overflow: auto;
+   box-sizing: border-box;
+   border-radius: 25px;
+}
+.login-box{
+   position: relative;
+   left: 75%;
 }
 
 .col-4{
