@@ -61,8 +61,11 @@ $grand_total = 0;
 </div>
 
 <!-- shopping cart section starts  -->
+
+
 <section class="products">
    <div class="box-container">
+ 
 
       <?php
       // Fetch and display add-ons for each cart item
@@ -114,6 +117,7 @@ $grand_total = 0;
          <button type="submit" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
       </form>
       <a href="menu.php" class="btn">Continue Shopping</a>
+        
    </div>
 </section>
 
