@@ -59,38 +59,32 @@ if(isset($message)){
 }
 ?>
 
-<!-- admin login form section starts  -->
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../images/logo/logo.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
+      <form action="" method="POST">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example3" name="name" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+            <label class="form-label" for="form3Example3">Email address</label>
+          </div>
 
-<div class="login">
-<h1>OMG PH LOG IN</h1><br><br>
-
-   <form action="" method="POST" class="text-center">
-      <h3>login now</h3>
-      Username: <br><br>
-
-      <input type="text" name="name" maxlength="20" required placeholder="enter your username"  style="background-color: white;background-image: none; color: black; oninput="this.value = this.value.replace(/\s/g, '')">
-      <br><br>
-      Password: <br><br>
-
-      <input type="password" name="pass" maxlength="20" required placeholder="enter your password"  style="background-color: white;background-image: none; color: black;oninput="this.value = this.value.replace(/\s/g, '')">
-     <br><br>
-      <input type="submit" value="login now" name="submit" class="btn-primary"  style="background-image: none;padding: inherit;background-color: red;">
-  <br><br>
-   </form>
-   <p>Powered By - <a href="https://www.facebook.com/">S.E.I</a></p>
-
-</div>
-<!-- admin login form section ends -->
-
-
-
-
-
-
-
-
-
-
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example4" name="pass" class="form-control form-control-lg"
+              placeholder="Enter password" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg" name="submit"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+          </div>
 
 </body>
 </html>
