@@ -137,13 +137,13 @@ if ($select_products->rowCount() > 0) {
                     <table>
                         <tr>
                             <td>
-                                <span class="modal-label">Size:</span>
+                                <span class="modal-label">Price:</span>
                             </td>
                             <td>
                                 
                             <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
-    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
-    <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
+    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected> ₱<?= $fetch_products['price']; ?>.00</option>
+<!-- <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option> -->
 </select>
 
 
@@ -183,11 +183,16 @@ if ($select_products->rowCount() > 0) {
     $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
     foreach ($addons as $addon) {
         ?>
+      
+      
+        
         <label>
-            <input type="checkbox" name="add_ons[<?= $addon['id']; ?>][]"
-                   value="<?= $addon['name']; ?>">
-            <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
-        </label>
+    <input type="checkbox" name="add_ons[<?= $addon['id']; ?>][<?= $addon['name']; ?>][<?= $addon['price']; ?>]"
+           value="<?= $addon['name']; ?>">
+    <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+</label>
+<input type="hidden" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>][price]" value="<?= $addon['price']; ?>">
+
     <?php } ?>
     </td>
     </tr>
@@ -198,7 +203,7 @@ if ($select_products->rowCount() > 0) {
                 <div class="modal-footer">
 
                         <input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
-                
+
 
                         <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
                         <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">

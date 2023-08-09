@@ -35,6 +35,7 @@ if(isset($_POST['update_qty'])){
 }
 
 $grand_total = 0;
+  
 
 ?>
 
@@ -70,9 +71,10 @@ $grand_total = 0;
    <div class="box-container">
 
       <?php
-      $select_cart = $conn->prepare("SELECT c.*, p.priceR FROM `cart` c INNER JOIN `products` p ON c.pid = p.id WHERE c.user_id = ?");
-      $select_cart->execute([$user_id]);
       
+       // Fetch and display add-ons for each cart item
+       $select_cart = $conn->prepare("SELECT c.*, p.priceR, pa.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart` c INNER JOIN `products` p ON c.pid = p.id LEFT JOIN `product_addons` pa ON c.pid = pa.product_id LEFT JOIN `addons` a ON pa.addon_id = a.id WHERE c.user_id = ?");
+       $select_cart->execute([$user_id]);
        
          if ($select_cart->rowCount() > 0) {
             while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
@@ -83,7 +85,16 @@ $grand_total = 0;
                $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
                $sub_total = $price * $fetch_cart['quantity'];
                $grand_total += $sub_total;
-               
+                  // Display add-ons if available
+            if ($fetch_cart['addon_id']) {
+               echo '<div class="addons">';
+               echo '<p>Add-ons:</p>';
+               echo '<ul>';
+               echo '<li>' . $fetch_cart['addon_name'] . ' (+₱' . $fetch_cart['addon_price'] . ')</li>';
+               // ... you can loop through more add-ons here if needed
+               echo '</ul>';
+               echo '</div>';
+            }
 
       ?>
       
