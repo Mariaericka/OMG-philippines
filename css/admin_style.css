@@ -339,7 +339,7 @@ body {
 .header .flex .profile{
    position: absolute;
    top:97%; right:-1rem;
-   background-color:darkred;
+   background-color:#F6F1E9;
    box-shadow: var(--box-shadow);
    border:var(--border);
    border-radius: .5rem;

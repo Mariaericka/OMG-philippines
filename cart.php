@@ -1,5 +1,4 @@
 <?php
-
 include 'components/connect.php';
 
 session_start();
@@ -21,7 +20,6 @@ if(isset($_POST['delete'])){
 if(isset($_POST['delete_all'])){
    $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
    $delete_cart_item->execute([$user_id]);
-   // header('location:cart.php');
    $message[] = 'deleted all from cart!';
 }
 
@@ -35,8 +33,6 @@ if(isset($_POST['update_qty'])){
 }
 
 $grand_total = 0;
-  
-
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +49,6 @@ $grand_total = 0;
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
-
 </head>
 <body>
    
@@ -62,42 +57,29 @@ $grand_total = 0;
 <!-- header section ends -->
 
 <div class="heading">
-   <h3> Your Cart</h3>
+   <h3>Your Cart</h3>
 </div>
 
 <!-- shopping cart section starts  -->
-
 <section class="products">
    <div class="box-container">
 
       <?php
-      
-       // Fetch and display add-ons for each cart item
-       $select_cart = $conn->prepare("SELECT c.*, p.priceR, pa.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart` c INNER JOIN `products` p ON c.pid = p.id LEFT JOIN `product_addons` pa ON c.pid = pa.product_id LEFT JOIN `addons` a ON pa.addon_id = a.id WHERE c.user_id = ?");
-       $select_cart->execute([$user_id]);
-       
-         if ($select_cart->rowCount() > 0) {
-            while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
-               $size = $fetch_cart['size'];
-               $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
-               $select_product_price->execute([$fetch_cart['pid']]);
-               $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
-               $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
-               $sub_total = $price * $fetch_cart['quantity'];
-               $grand_total += $sub_total;
-                  // Display add-ons if available
-            if ($fetch_cart['addon_id']) {
-               echo '<div class="addons">';
-               echo '<p>Add-ons:</p>';
-               echo '<ul>';
-               echo '<li>' . $fetch_cart['addon_name'] . ' (+₱' . $fetch_cart['addon_price'] . ')</li>';
-               // ... you can loop through more add-ons here if needed
-               echo '</ul>';
-               echo '</div>';
-            }
+      // Fetch and display add-ons for each cart item
+      $select_cart = $conn->prepare("SELECT c.*, p.priceR, pa.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart` c INNER JOIN `products` p ON c.pid = p.id LEFT JOIN `product_addons` pa ON c.pid = pa.product_id LEFT JOIN `addons` a ON pa.addon_id = a.id WHERE c.user_id = ?");
+      $select_cart->execute([$user_id]);
 
+      if ($select_cart->rowCount() > 0) {
+         while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+            $size = $fetch_cart['size'];
+            $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
+            $select_product_price->execute([$fetch_cart['pid']]);
+            $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
+            $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
+            $sub_total = $price * $fetch_cart['quantity'];
+            $grand_total += $sub_total;
       ?>
-      
+
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
          <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('Delete this item?');"></button>
@@ -108,53 +90,36 @@ $grand_total = 0;
             <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
             <button type="submit" class="fas fa-edit" name="update_qty"></button>
          </div>
+         
          <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?>/-</span></div>
+
+       
       </form>
+
       <?php
-            }
-         } else {
-            echo '<p class="empty">Your cart is empty</p>';
          }
+      } else {
+         echo '<p class="empty">Your cart is empty</p>';
+      }
       ?>
-
-
    </div>
 
    <div class="cart-total">
-      <p>cart total : <span>₱<?= $grand_total; ?></span></p>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
+      <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>
+      <a href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
    </div>
 
    <div class="more-btn">
       <form action="" method="post">
-         <button type="submit" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" name="delete_all" onclick="return confirm('delete all from cart?');">delete all</button>
+         <button type="submit" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
       </form>
-      <a href="menu.php" class="btn">continue shopping</a>
+      <a href="menu.php" class="btn">Continue Shopping</a>
    </div>
-
 </section>
-
-<!-- shopping cart section ends -->
-
-
-
-
-
-
-
-
-
 
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
-
-
-
-
-
-
-
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
