@@ -57,11 +57,11 @@ margin-left: 25%;">
 
 
 
-<section class="products">
+<section class="productsbev">
 
   
 
-   <div class="box-container">
+   <div class="box1-container1">
 
       <?php
          $category = $_GET['category'];
@@ -70,7 +70,7 @@ margin-left: 25%;">
          if($select_products->rowCount() > 0){
             while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
       ?>
-     <form action="" method="post" class="box">
+     <form action="" method="post" class="box1">
          <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
          <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">

@@ -1732,6 +1732,47 @@ section{
 }
 */
 
+/*PRODUCTS IN CATEGORY*/
+.productsbev{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 1rem; 
+}
+.productsbev .box1-container1 {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 1.5rem;
+  
+ }
+ .productsbev .box1 {
+   border: var(--border);
+   padding: 1.5rem;
+   background-color: beige;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+   width: 300px;
+  
+
+ }
+ .productsbev .box1 img {
+   max-width: 100%;
+   height: auto;
+ }
+
+ .productsbev .name {
+   font-size: 1.2rem;
+   font-weight: bold;
+ }
+ .productsbev .flex {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 1rem;
+   
+ }
+
+
 .products {
    display: flex;
    flex-direction: column;
@@ -1743,7 +1784,8 @@ section{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
-   gap: 1.5rem;
+   gap: 0.5rem;
+   flex-direction: column;
  }
  
  .products .box {
@@ -1751,25 +1793,31 @@ section{
    padding: 1.5rem;
    background-color: beige;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
-   width: 300px;
+   width: 865px;
+   height:  84px;
+padding: 0.5rem;
+display:flex;
+justify-content: space-evenly;
  }
  
  .products .box img {
    max-width: 100%;
    height: auto;
+   width: 114px;
  }
  
  .products .name {
    font-size: 1.2rem;
    font-weight: bold;
+   display: contents;
  }
  
  .products .flex {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   margin-top: 1rem;
-   
+   margin-top: 4rem;
+   flex-direction: row;
  }
  
  .products .price {
@@ -1790,7 +1838,8 @@ section{
  .products .cart-total {
    font-size: 1.2rem;
    font-weight: bold;
-   margin-top: 1rem;
+   margin-top: 4rem;
+   padding-left: 15px;
  }
  
  .products .cart-total span {
@@ -1812,7 +1861,7 @@ section{
  }
  
  .products .delete-btn {
-   background-color: var(--red);
+   background-color: red;
    color: var(--white);
  }
  
