@@ -36,8 +36,16 @@ if (isset($_POST['add_to_cart'])) {
                             foreach ($add_ons[$i] as $addon_name => $addon_price) {
                                 $addon_name = filter_var($addon_name, FILTER_SANITIZE_STRING);
                                 $addon_price = filter_var($addon_price, FILTER_SANITIZE_STRING);
-                                $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_name, addon_price) VALUES (?, ?, ?, ?)");
-                                $insert_cart_addons->execute([$cart_id, $pid, $addon_name, $addon_price]);
+                                
+                                // Fetch the addon_id based on the addon_name
+                                $select_addon_id = $conn->prepare("SELECT id FROM `addons` WHERE name = ?");
+                                $select_addon_id->execute([$addon_name]);
+                                $addon_row = $select_addon_id->fetch(PDO::FETCH_ASSOC);
+                                $addon_id = $addon_row['id'];
+                                
+                                // Insert the cart add-on
+                                $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
+                                $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
                             }
                         }
 
