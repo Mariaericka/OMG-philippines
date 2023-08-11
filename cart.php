@@ -61,15 +61,11 @@ $grand_total = 0;
 </div>
 
 <!-- shopping cart section starts  -->
-
-
 <section class="products">
    <div class="box-container">
- 
-
       <?php
       // Fetch and display add-ons for each cart item
-      $select_cart = $conn->prepare("SELECT c.*, p.priceR, pa.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart` c INNER JOIN `products` p ON c.pid = p.id LEFT JOIN `product_addons` pa ON c.pid = pa.product_id LEFT JOIN `addons` a ON pa.addon_id = a.id WHERE c.user_id = ?");
+      $select_cart = $conn->prepare("SELECT c.*, p.priceR, ca.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart` c INNER JOIN `products` p ON c.pid = p.id LEFT JOIN `cart_addons` ca ON c.id = ca.cart_id LEFT JOIN `addons` a ON ca.addon_id = a.id WHERE c.user_id = ?");
       $select_cart->execute([$user_id]);
 
       if ($select_cart->rowCount() > 0) {
@@ -80,12 +76,24 @@ $grand_total = 0;
             $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
             $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
             $sub_total = $price * $fetch_cart['quantity'];
-            $grand_total += $sub_total;
+
+             // Display the selected add-ons
+      if ($fetch_cart['addon_id'] !== null) {
+         echo '<div class="addons">';
+         echo '<p>Selected Add-ons:</p>';
+         $select_addons = $conn->prepare("SELECT * FROM `cart_addons` ca INNER JOIN `addons` a ON ca.addon_id = a.id WHERE ca.cart_id = ?");
+         $select_addons->execute([$fetch_cart['id']]);
+         while ($addon = $select_addons->fetch(PDO::FETCH_ASSOC)) {
+            echo '<p>' . $addon['addon_name'] . ' (+₱' . $addon['addon_price'] . ')</p>';
+            $sub_total += $addon['addon_price']; // Calculate total add-ons price
+         }
+         echo '</div>';
+      }
       ?>
 
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <button type="submit" class="fa-solid  fa-trash-can fa-xl" style="color: #ed1e07;; background-color: beige;" name="delete" onclick="return confirm('Delete this item?');"></button>
+         <button type="submit" class="fa-solid  fa-trash-can fa-xl" style="color: #ed1e07; background-color: beige;" name="delete" onclick="return confirm('Delete this item?');"></button>
          <img src="images/<?= $fetch_cart['image']; ?>" alt="">
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
@@ -95,11 +103,10 @@ $grand_total = 0;
          </div>
          
          <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?>/-</span></div>
-
-       
       </form>
-
+      
       <?php
+            $grand_total += $sub_total;
          }
       } else {
          echo '<p class="empty">Your cart is empty</p>';
@@ -117,7 +124,6 @@ $grand_total = 0;
          <button type="submit" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
       </form>
       <a href="menu.php" class="btn">Continue Shopping</a>
-        
    </div>
 </section>
 
