@@ -181,16 +181,15 @@ if ($select_products->rowCount() > 0) {
     $select_addons = $conn->prepare("SELECT * FROM `addons`");
     $select_addons->execute();
     $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    
     foreach ($addons as $addon) {
         ?>
       
       
-        
-        <label>
-    <input type="checkbox" name="add_ons[<?= $addon['id']; ?>][<?= $addon['name']; ?>][<?= $addon['price']; ?>]"
-           value="<?= $addon['name']; ?>">
-    <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
-</label>
+      <label>
+            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>][price]" value="<?= $addon['price']; ?>">
+            <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+        </label>
 <input type="hidden" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>][price]" value="<?= $addon['price']; ?>">
 
     <?php } ?>
@@ -232,7 +231,12 @@ if ($select_products->rowCount() > 0) {
 
 </form>
 
-
+<script>
+function custom_add_to_cart(product_id) {
+    const form = document.querySelector(`#productForm${product_id}`);
+    form.submit();
+}
+</script>
 
 
 <?php include 'components/footer.php'; ?>

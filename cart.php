@@ -18,8 +18,13 @@ if(isset($_POST['delete'])){
 }
 
 if(isset($_POST['delete_all'])){
-   $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
-   $delete_cart_item->execute([$user_id]);
+ // Delete cart add-ons first
+ $delete_cart_addons = $conn->prepare("DELETE ca FROM `cart_addons` ca INNER JOIN `cart` c ON ca.cart_id = c.id WHERE c.user_id = ?");
+ $delete_cart_addons->execute([$user_id]);
+
+ // Now delete all cart items
+ $delete_cart_items = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+ $delete_cart_items->execute([$user_id]);
    $message[] = 'deleted all from cart!';
 }
 
