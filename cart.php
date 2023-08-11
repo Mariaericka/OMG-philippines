@@ -77,18 +77,7 @@ $grand_total = 0;
             $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
             $sub_total = $price * $fetch_cart['quantity'];
 
-             // Display the selected add-ons
-      if ($fetch_cart['addon_id'] !== null) {
-         echo '<div class="addons">';
-         echo '<p>Selected Add-ons:</p>';
-         $select_addons = $conn->prepare("SELECT * FROM `cart_addons` ca INNER JOIN `addons` a ON ca.addon_id = a.id WHERE ca.cart_id = ?");
-         $select_addons->execute([$fetch_cart['id']]);
-         while ($addon = $select_addons->fetch(PDO::FETCH_ASSOC)) {
-            echo '<p>' . $addon['addon_name'] . ' (+₱' . $addon['addon_price'] . ')</p>';
-            $sub_total += $addon['addon_price']; // Calculate total add-ons price
-         }
-         echo '</div>';
-      }
+
       ?>
 
       <form action="" method="post" class="box">
@@ -101,7 +90,20 @@ $grand_total = 0;
             <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
             <button type="submit" class="fas fa-edit" name="update_qty"></button>
          </div>
-         
+         <?php
+         // Display the selected add-ons
+      if ($fetch_cart['addon_id'] !== null) {
+         echo '<div class="addons">';
+         echo '<p>Selected Add-ons:</p>';
+         $select_addons = $conn->prepare("SELECT * FROM `cart_addons` ca INNER JOIN `addons` a ON ca.addon_id = a.id WHERE ca.cart_id = ?");
+         $select_addons->execute([$fetch_cart['id']]);
+         while ($addon = $select_addons->fetch(PDO::FETCH_ASSOC)) {
+            echo '<p>' . $addon['addon_name'] . ' (+₱' . $addon['addon_price'] . ')</p>';
+            $sub_total += $addon['addon_price']; // Calculate total add-ons price
+         }
+         echo '</div>';
+      }   
+      ?>    
          <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?>/-</span></div>
       </form>
       

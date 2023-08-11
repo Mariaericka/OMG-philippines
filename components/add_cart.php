@@ -47,6 +47,8 @@ if (isset($_POST['add_to_cart'])) {
                                 $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
                                 $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
                             }
+                            
+                            
                         }
 
                         $message[] = 'Product "' . $name . '" added to cart!';
