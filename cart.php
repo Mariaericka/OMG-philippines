@@ -85,7 +85,7 @@ $grand_total = 0;
 
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('Delete this item?');"></button>
+         <button type="submit" class="fa-solid  fa-trash-can fa-xl" style="color: #ed1e07;; background-color: beige;" name="delete" onclick="return confirm('Delete this item?');"></button>
          <img src="images/<?= $fetch_cart['image']; ?>" alt="">
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
