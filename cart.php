@@ -12,9 +12,16 @@ if(isset($_SESSION['user_id'])){
 
 if(isset($_POST['delete'])){
    $cart_id = $_POST['cart_id'];
-   $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE id = ?");
-   $delete_cart_item->execute([$cart_id]);
-   $message[] = 'cart item deleted!';
+
+    // Delete associated cart add-ons first
+    $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id = ?");
+    $delete_cart_addons->execute([$cart_id]);
+
+    // Now delete the cart item
+    $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE id = ?");
+    $delete_cart_item->execute([$cart_id]);
+
+    $message[] = 'Cart item deleted!';
 }
 
 if(isset($_POST['delete_all'])){

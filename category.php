@@ -169,13 +169,10 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <div class="modal-body" style="flex-direction: column;">
 
                    
-<tr>
-  <td>
-  <span class="modal-label">Add-ons:</span>
- 
+  <div class="modal-body" style="flex-direction: column;">
+    <span class="modal-label">Add-ons:</span>
     <?php
     // Fetch the addons for the current product from the database
     $select_addons = $conn->prepare("SELECT * FROM `addons`");
@@ -187,14 +184,13 @@ if ($select_products->rowCount() > 0) {
       
       
       <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>][price]" value="<?= $addon['price']; ?>">
-            <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
-        </label>
-<input type="hidden" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>][price]" value="<?= $addon['price']; ?>">
+    <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>]" value="<?= $addon['price']; ?>">
+    <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+</label>
+
 
     <?php } ?>
-    </td>
-    </tr>
+   
 </div>
    
     

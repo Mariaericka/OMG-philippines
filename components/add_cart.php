@@ -9,7 +9,7 @@ if (isset($_POST['add_to_cart'])) {
         $qtys = $_POST['qty'];
         $sizes = $_POST['size'];
         $price = $_POST['price'];
-        $add_ons = $_POST['add_ons'];
+        $add_ons = $_POST['add_ons']; // Nested array structure
 
         if (!empty($pids) && is_array($pids) && count($pids) > 0) {
             for ($i = 0; $i < count($pids); $i++) {
@@ -32,22 +32,24 @@ if (isset($_POST['add_to_cart'])) {
                     if ($insert_cart->rowCount() > 0) {
                         $cart_id = $conn->lastInsertId();
 
-                        if (isset($add_ons[$i]) && is_array($add_ons[$i])) {
-                            foreach ($add_ons[$i] as $addon_name => $addon_price) {
-                                $addon_name = filter_var($addon_name, FILTER_SANITIZE_STRING);
-                                $addon_price = filter_var($addon_price, FILTER_SANITIZE_STRING);
+                    // Handle add-ons
+    foreach ($add_ons[$pid] as $addon_id => $addon_price) {
+        // Fetch the addon_name based on the addon_id
+        $select_addon = $conn->prepare("SELECT name FROM `addons` WHERE id = ?");
+        $select_addon->execute([$addon_id]);
+        $addon_row = $select_addon->fetch(PDO::FETCH_ASSOC);
+        $addon_name = $addon_row['name'];
 
-                                // Fetch the addon_id based on the addon_name
-                                $select_addon_id = $conn->prepare("SELECT id FROM `addons` WHERE name = ?");
-                                $select_addon_id->execute([$addon_name]);
-                                $addon_row = $select_addon_id->fetch(PDO::FETCH_ASSOC);
-                                $addon_id = $addon_row['id'];
+        // Check if the add-on is already in the cart
+        $check_addon = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ? AND addon_id = ?");
+        $check_addon->execute([$cart_id, $addon_id]);
 
-                                // Insert the cart add-on
-                                $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
-                                $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
-                            }
-                        }
+        if ($check_addon->rowCount() === 0) {
+            // Insert the cart add-on
+            $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
+            $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
+        }
+    }
 
                         $message[] = 'Product "' . $name . '" added to cart!';
                     } else {
