@@ -12,7 +12,6 @@ if(isset($_SESSION['user_id'])){
 
 if(isset($_POST['delete'])){
    $cart_id = $_POST['cart_id'];
-
     // Delete associated cart add-ons first
     $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id = ?");
     $delete_cart_addons->execute([$cart_id]);
