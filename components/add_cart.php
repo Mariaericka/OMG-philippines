@@ -24,32 +24,37 @@ if (isset($_POST['add_to_cart'])) {
                 $check_cart->execute([$user_id, $pid]);
 
                 if ($check_cart->rowCount() > 0) {
-                    $message[] = 'Product "' . $name . '" already added to cart!';
+                    // Cart item already exists, update the quantity instead of duplicating
+                    $update_cart = $conn->prepare("UPDATE `cart` SET quantity = quantity + ? WHERE user_id = ? AND pid = ?");
+                    $update_cart->execute([$qty, $user_id, $pid]);
+
+                    $message[] = 'Quantity of product "' . $name . '" updated in cart!';
                 } else {
+                    // Cart item does not exist, insert it along with add-ons
                     $insert_cart = $conn->prepare("INSERT INTO `cart` (user_id, pid, name, price, quantity, image, size) VALUES (?, ?, ?, ?, ?, ?, ?)");
                     $insert_cart->execute([$user_id, $pid, $name, $selected_price, $qty, $image, $selected_size]);
 
                     if ($insert_cart->rowCount() > 0) {
                         $cart_id = $conn->lastInsertId();
 
-                    // Handle add-ons
-    foreach ($add_ons[$pid] as $addon_id => $addon_price) {
-        // Fetch the addon_name based on the addon_id
-        $select_addon = $conn->prepare("SELECT name FROM `addons` WHERE id = ?");
-        $select_addon->execute([$addon_id]);
-        $addon_row = $select_addon->fetch(PDO::FETCH_ASSOC);
-        $addon_name = $addon_row['name'];
+                        // Handle add-ons for this specific cart item
+                        foreach ($add_ons[$pid] as $addon_id => $addon_price) {
+                            // Fetch the addon_name based on the addon_id
+                            $select_addon = $conn->prepare("SELECT name FROM `addons` WHERE id = ?");
+                            $select_addon->execute([$addon_id]);
+                            $addon_row = $select_addon->fetch(PDO::FETCH_ASSOC);
+                            $addon_name = $addon_row['name'];
 
-        // Check if the add-on is already in the cart
-        $check_addon = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ? AND addon_id = ?");
-        $check_addon->execute([$cart_id, $addon_id]);
+                            // Check if the add-on is already in the cart add-ons table
+                            $check_addon = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ? AND addon_id = ?");
+                            $check_addon->execute([$cart_id, $addon_id]);
 
-        if ($check_addon->rowCount() === 0) {
-            // Insert the cart add-on
-            $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
-            $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
-        }
-    }
+                            if ($check_addon->rowCount() === 0) {
+                                // Insert the cart add-on
+                                $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
+                                $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
+                            }
+                        }
 
                         $message[] = 'Product "' . $name . '" added to cart!';
                     } else {
