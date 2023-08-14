@@ -1794,7 +1794,7 @@ section{
    background-color: beige;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
    width: 865px;
-   height:  90px;
+   height: 115px;
 padding: 0.5rem;
 display:flex;
 justify-content: space-evenly;
@@ -1803,7 +1803,7 @@ justify-content: space-evenly;
  .products .box img {
    max-width: 100%;
    height: auto;
-   width: 114px;
+   width: 165px;
  }
  
  .products .name {
@@ -2080,6 +2080,8 @@ justify-content: space-evenly;
    margin:1rem 0;
    line-height: 1.5;
    font-size: 2rem;
+   flex-wrap: wrap;
+
 }
 
 .checkout form .cart-items p .name{
@@ -2511,7 +2513,11 @@ border: 1px solid #000000;
    font-weight: bold;
 }
 
+.addons{
 
+    font-size: small;
+    color: #000;
+}
 
 
 
