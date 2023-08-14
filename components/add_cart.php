@@ -9,7 +9,7 @@ if (isset($_POST['add_to_cart'])) {
         $qtys = $_POST['qty'];
         $sizes = $_POST['size'];
         $price = $_POST['price'];
-        $add_ons = $_POST['add_ons']; // Nested array structure
+        $add_ons = isset($_POST['add_ons']) ? $_POST['add_ons'] : array(); // Initialize as empty array if not set
 
         if (!empty($pids) && is_array($pids) && count($pids) > 0) {
             for ($i = 0; $i < count($pids); $i++) {
@@ -20,17 +20,14 @@ if (isset($_POST['add_to_cart'])) {
                 $selected_size = filter_var($sizes[$i], FILTER_SANITIZE_STRING);
                 $selected_price = filter_var($price[$i], FILTER_SANITIZE_STRING);
 
-                $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND pid = ?");
+                // Check if the same cart item with the same add-ons already exists
+                $check_cart = $conn->prepare("SELECT c.id FROM `cart` c INNER JOIN `cart_addons` ca ON c.id = ca.cart_id WHERE c.user_id = ? AND c.pid = ?");
                 $check_cart->execute([$user_id, $pid]);
 
                 if ($check_cart->rowCount() > 0) {
-                    // Cart item already exists, update the quantity instead of duplicating
-                    $update_cart = $conn->prepare("UPDATE `cart` SET quantity = quantity + ? WHERE user_id = ? AND pid = ?");
-                    $update_cart->execute([$qty, $user_id, $pid]);
-
-                    $message[] = 'Quantity of product "' . $name . '" updated in cart!';
+                    $message[] = 'Product "' . $name . '" with these add-ons already added to cart!';
                 } else {
-                    // Cart item does not exist, insert it along with add-ons
+                    // Insert the cart item
                     $insert_cart = $conn->prepare("INSERT INTO `cart` (user_id, pid, name, price, quantity, image, size) VALUES (?, ?, ?, ?, ?, ?, ?)");
                     $insert_cart->execute([$user_id, $pid, $name, $selected_price, $qty, $image, $selected_size]);
 
@@ -38,18 +35,14 @@ if (isset($_POST['add_to_cart'])) {
                         $cart_id = $conn->lastInsertId();
 
                         // Handle add-ons for this specific cart item
-                        foreach ($add_ons[$pid] as $addon_id => $addon_price) {
-                            // Fetch the addon_name based on the addon_id
-                            $select_addon = $conn->prepare("SELECT name FROM `addons` WHERE id = ?");
-                            $select_addon->execute([$addon_id]);
-                            $addon_row = $select_addon->fetch(PDO::FETCH_ASSOC);
-                            $addon_name = $addon_row['name'];
+                        if (isset($add_ons[$pid]) && is_array($add_ons[$pid])) {
+                            foreach ($add_ons[$pid] as $addon_id => $addon_price) {
+                                // Fetch the addon_name based on the addon_id
+                                $select_addon = $conn->prepare("SELECT name FROM `addons` WHERE id = ?");
+                                $select_addon->execute([$addon_id]);
+                                $addon_row = $select_addon->fetch(PDO::FETCH_ASSOC);
+                                $addon_name = $addon_row['name'];
 
-                            // Check if the add-on is already in the cart add-ons table
-                            $check_addon = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ? AND addon_id = ?");
-                            $check_addon->execute([$cart_id, $addon_id]);
-
-                            if ($check_addon->rowCount() === 0) {
                                 // Insert the cart add-on
                                 $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
                                 $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
