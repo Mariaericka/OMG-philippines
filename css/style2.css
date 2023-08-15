@@ -2582,4 +2582,27 @@ height:200px;
    width: 269px;
    height: 620px;}
 
+.productsbev .box1-container1{
+      width: 181px;
+      margin-left: 84px;}
+      
+.second ul h1{
+      font-size: medium;
+          margin-top: -67px;}
+.modal{
+      width:237px;
+      margin-top:80px;
+      }
+.modal-header{
+      padding: 14px 11px;}
+      
+.modal-body{
+      padding: 4px;
+      }
+div.modal-body > table > tbody> tr> td{
+      padding: 3px;
+      }
+
+
 }
+
