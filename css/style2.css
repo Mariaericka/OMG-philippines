@@ -2467,7 +2467,8 @@ border: 1px solid #000000;
       width: 85px;
     height: 72px;
    }
-   
+   .tcpp{
+      padding:20px;}
 
 }
 
@@ -2510,7 +2511,8 @@ border: 1px solid #000000;
       display: none;
    }
    .form-signin {
-      padding-left: 2px;
+      width: fit-content;
+      padding-left:31px;
    }
 a.button11{
    display:none;
@@ -2576,10 +2578,8 @@ height:200px;
   
 }
 
-
-
-
-
-
+.frame {
+   width: 269px;
+   height: 620px;}
 
 }
