@@ -2589,19 +2589,6 @@ height:200px;
 .second ul h1{
       font-size: medium;
           margin-top: -67px;}
-.modal{
-      width:237px;
-      margin-top:80px;
-      }
-.modal-header{
-      padding: 14px 11px;}
-      
-.modal-body{
-      padding: 4px;
-      }
-div.modal-body > table > tbody> tr> td{
-      padding: 3px;
-      }
 
 
 }
