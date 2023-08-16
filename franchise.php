@@ -85,7 +85,7 @@ if(isset($_SESSION['user_id'])){
 <div class="franchise-packages">
     <img src="./images/picture 1.jpg" alt="franchise-picture">
     <h2>FRANCHISE PACKAGES</h2>
-    <h3>It's a 5 in 1 franchise!</h3>
+    <h3 style="display: inline-grid;">It's a 5 in 1 franchise!</h3>
     <p>Why settle for just one drink when you can have five of it</p>
 </div>
 
@@ -118,3 +118,7 @@ if(isset($_SESSION['user_id'])){
     <h3>The Outstanding Filipino 2019 Recognized</h3>
 </div> -->
 
+<script src="js/script.js"></script>
+<?php include 'components/footer.php'; ?>
+</body>
+</html>
