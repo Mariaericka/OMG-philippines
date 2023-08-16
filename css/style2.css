@@ -220,28 +220,54 @@ svg  {
    font-size: 1.5rem;
 }
 
-/* Franchise changes stars here*/
+/* Franchise changes by SHAMS stars here*/
 .video video {
-   margin-top: 50px;
-   padding: 100px 100px 200px 100px;
-   align-items: center;
-   justify-items: center;
-   border: 2px solid #000;
-   background: #FFBE00; 
+   height: 650px;
+   width: 1300px;
+   padding: 50px 10px 50px;
+   margin: 50px 150px 50px;
+   background-color: #FFD93D;
+   border: 2px solid #4F200D;
+   border-radius: 20px;
 }
 
-#OMG-brief-history {
-   height: 300px;
-   width: 700px;
-   text-align: left;
-   font-family: 'Inter', sans serif;
-   font-size: 25px;
-   border: 10px solid red;
-   border-radius: 50px;
+
+#history-box-1 {
+   font-size: 20px;
+   width: 400px;
+   margin: 100px;
+   padding: 70px;
+   border: 5px solid #FFD93D;
+   border-radius: 20px;
+   line-height: 50px;
 }
 
-Franchise-Now h4 {
-   color: #FF1607;
+#history-box-2 {
+   font-size: 16px;
+   width: 900px;
+   padding: 50px;
+   border: 5px solid #FFD93D;
+   border-radius: 20px;
+   line-height: 40px;
+   word-spacing: 1px;
+   letter-spacing: 0.5px;
+   position: absolute;
+   top: 900px;
+   right: 100px;
+}
+
+#history-box-3 {
+   font-size: 16px;
+   width: 900px;
+   padding: 50px;
+   border: 5px solid #FFD93D;
+   border-radius: 20px;
+   position: absolute;
+   top: 1300px;
+   right: 100px;
+}
+.Franchise-Now h4 {
+   color: red;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #000;
    text-align: center;
@@ -250,10 +276,40 @@ Franchise-Now h4 {
    font-style: normal;
    font-weight: 700;
    line-height: normal;
+   padding: 30px;
+   margin-top: 70px;
+}
+.franchise-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
-/* Franchise changes ends here*/
+.franchise-grid h3 {
+   font-size: 10px;
+   font-family: Inter;
+   font-style: normal;
+   padding: 80px 20px 80px;   
+   height: 200px;
+   width: 300px;
+   border-radius: 200px;
+   border: 2px solid #4F200D;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#follow, #food-panda, #fastest, #tofil {
+   background: #FFD93D;
+}
 
+#products, #franchise, #sales, #legit {
+   color: white;
+   background-color: #FF8400;
+}
+
+.franchise-packages img {
+   height: 500px;
+   width: 500px;
+}
+
+/* Franchise changes by SHAMS ends here*/
 .grid {
    display: grid;
    grid-template-columns: 25% 25% 25% 25%;
@@ -538,7 +594,6 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
 }
-
 /* BLOG START*/
 
 .header h1 {
