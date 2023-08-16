@@ -2642,9 +2642,58 @@ height:200px;
       margin-left: 84px;}
       
 .second ul h1{
-      font-size: medium;
-          margin-top: -67px;}
-
-
+font-size: medium;
+margin-top: -67px;}
+ .video video {
+            height: 223px;
+            width: 306px;
+            padding: 17px 4px 13px;
+            margin: 60px -1px 47px;
+            
+}
+            
+ #history-box-1 {
+            font-size: 14px;
+                width: 308px;
+                margin: -3px;
+                padding: 44px;
+            
+ }
+            
+ #history-box-2 {
+            width: 304px;
+            top: 27px;
+            right: 0px;
+            position: relative;
+            
+ }
+#history-box-3 {
+            font-size: 16px;
+                width: 304px;
+                padding: 30px;
+                position: relative;
+                top: 40px;
+                right: 0px;
+ }
+            
+.Franchise-Now h4 {
+            font-size: 48px;
+            
+}
+.franchise-grid {
+   padding-left: 20px;
+}        
+ .franchise-packages img{
+                width: 305px;
+               }
+.video{
+   padding-left: 20px;
+}
+.franchise-packages{
+   padding-left: 20px;
+}
+.OMG-brief-history{
+   padding-left: 20px;
+}
 }
 
