@@ -1394,7 +1394,7 @@ section{
 
 .empty{
    border:var(--border);
-   padding:1.5rem;
+   padding:23.5rem;
    text-align: center;
    width: 100%;
    font-size: 2rem;
@@ -2525,8 +2525,14 @@ border: 1px solid #000000;
    .tcpp{
       padding:20px;}
 
+ .second ul h1 {
+         text-align: center;
+         margin-top: -50px;
+         font-size: larger;   }
+ .second ul {
+       width: 27%;
 }
-
+}
 @media (max-width:450px) {
    
    html{
