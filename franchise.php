@@ -30,7 +30,7 @@ if(isset($_SESSION['user_id'])){
   
    <!-- custom css file link  -->
    <link rel="stylesheet" href="./css/style2.css">
-   <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css">-->
 
 
 </head>
