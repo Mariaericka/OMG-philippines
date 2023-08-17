@@ -50,7 +50,7 @@ include 'components/add_cart.php';
  
     <section>
  
-    <div class="container2" style="box-sizing: border-box; height:900px;
+    <div class="container2" style="box-sizing: border-box; ;
 
 margin-left: 25%;">
    
@@ -100,7 +100,7 @@ margin-left: 25%;">
       <?php
             }
          }else{
-            echo '<p class="empty">No drinks added yet!</p>';
+           
          }
       ?>
 
@@ -208,7 +208,7 @@ if ($select_products->rowCount() > 0) {
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
                    
                     </form>
-                    <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
+                        <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
 
                 </div>
             </div>
@@ -218,7 +218,8 @@ if ($select_products->rowCount() > 0) {
         <?php
     }
 } else {
-   
+     // Display a message when there are no products
+     echo '<p class="empty">No drinks added yet!</p>';
 }
 ?>
       
@@ -227,15 +228,6 @@ if ($select_products->rowCount() > 0) {
 
 </form>
 
-<script>
-function custom_add_to_cart(product_id) {
-    const form = document.querySelector(`#productForm${product_id}`);
-    form.submit();
-}
-</script>
-
-
-<?php include 'components/footer.php'; ?>
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
@@ -243,4 +235,6 @@ function custom_add_to_cart(product_id) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
+<?php include 'components/footer.php'; ?>
+
 </html> 

@@ -1420,7 +1420,7 @@ section{
 
 .empty{
    border:var(--border);
-   padding:1.5rem;
+   padding:23.5rem;
    text-align: center;
    width: 100%;
    font-size: 2rem;
@@ -2551,48 +2551,8 @@ border: 1px solid #000000;
    .tcpp{
       padding:20px;}
 
-      .video video {
-         height: 300px;
-             width: 400px;
-             padding: 30px 4px 20px;
-             margin: 60px 54px 50px;}
 
- #history-box-1 {
-               font-size: 17px;
-                   width: 369px;
-                   margin: 12px;
-                   margin-left: 64px;
-                   padding: 49px;}
-               
-   #history-box-2 {
-               width: 404px;
-               position: relative;
-               top: 44px;
-                   right: -49px;
-               }
-#history-box-3 {
-               width: 410px;
-               position: relative;
-                   top: 68px;
-                   right: -47px;
-               }
-               
-.Franchise-Now h4 {
-               font-size: xxx-large;
-               }
- .franchise-grid {
-               justify-items: center;
-               }
-  .franchise-grid h3 {
-
-font-size: 17px;
-  }
-               .franchise-packages .container .content1 {
-                  display: inline-block;
-                  padding-top: 0rem;
-               }
 }
-
 @media (max-width:450px) {
    
    html{

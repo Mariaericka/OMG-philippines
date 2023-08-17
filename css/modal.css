@@ -96,3 +96,21 @@ div.modal-body > table > tbody> tr> td{
     padding: 3px;
     }
 }
+@media (max-width:850px){
+
+    .modal{
+        width:300px;
+        margin-top:80px;
+        }
+    .modal-header{
+        padding: 14px 11px;}
+        
+    .modal-body{ 
+        padding: 4px;
+        }
+    div.modal-body > table > tbody> tr> td{
+        padding: 3px;
+        }
+
+
+}
