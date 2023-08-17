@@ -2454,6 +2454,28 @@ border: 1px solid #000000;
    .header .flex .profile .account{
       display: none;
    }
+
+   #history-box-2 {
+      width: 594px;
+      right: -4px;
+      }
+      
+      #history-box-3 {
+      width: 831px;
+      padding: 45px;
+      top: 1334px;
+          right: 18px;
+      }
+      
+      .Franchise-Now h4 {
+      font-size: 71px;
+      margin-top: 185px;}
+      
+      .franchise-packages .container .content1 {  
+      font-size: x-small;}
+
+      
+
 }
 
 @media (max-width:850px){
@@ -2550,6 +2572,48 @@ border: 1px solid #000000;
    }
    .tcpp{
       padding:20px;}
+      .video video {
+         height: 300px;
+             width: 400px;
+             padding: 30px 4px 20px;
+             margin: 60px 54px 50px;}
+
+ #history-box-1 {
+               font-size: 17px;
+                   width: 369px;
+                   margin: 12px;
+                   margin-left: 64px;
+                   padding: 49px;}
+               
+   #history-box-2 {
+               width: 404px;
+               position: relative;
+               top: 44px;
+                   right: -49px;
+               }
+#history-box-3 {
+               width: 410px;
+               position: relative;
+                   top: 68px;
+                   right: -47px;
+               }
+               
+.Franchise-Now h4 {
+               font-size: xxx-large;
+               }
+ .franchise-grid {
+               justify-items: center;
+               }
+  .franchise-grid h3 {
+
+font-size: 17px;
+  }
+               .franchise-packages .container .content1 {
+                  display: inline-block;
+                  padding-top: 0rem;
+               }
+
+
 
 
 }
