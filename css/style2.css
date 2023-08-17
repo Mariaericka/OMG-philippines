@@ -225,18 +225,17 @@ svg  {
    height: 650px;
    width: 1300px;
    padding: 50px 10px 50px;
-   margin: 50px 150px 50px;
+   margin: 75px 11px 49px;
    background-color: #FFD93D;
    border: 2px solid #4F200D;
    border-radius: 20px;
 }
 
-
 #history-box-1 {
    font-size: 20px;
-   width: 400px;
-   margin: 100px;
-   padding: 70px;
+   width: 328px;
+   margin: 21px;
+   padding: 58px;
    border: 5px solid #FFD93D;
    border-radius: 20px;
    line-height: 50px;
@@ -256,6 +255,7 @@ svg  {
    right: 100px;
 }
 
+
 #history-box-3 {
    font-size: 16px;
    width: 900px;
@@ -263,7 +263,7 @@ svg  {
    border: 5px solid #FFD93D;
    border-radius: 20px;
    position: absolute;
-   top: 1300px;
+   top: 1261px;
    right: 100px;
 }
 .Franchise-Now h4 {
@@ -277,18 +277,19 @@ svg  {
    font-weight: 700;
    line-height: normal;
    padding: 30px;
-   margin-top: 70px;
+   margin-top: 96px;
 }
 .franchise-grid {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   justify-items: center;
 }
 
 .franchise-grid h3 {
-   font-size: 10px;
+   font-size: 17px;
    font-family: Inter;
    font-style: normal;
-   padding: 80px 20px 80px;   
+   padding: 80px 20px 80px;
    height: 200px;
    width: 300px;
    border-radius: 200px;
@@ -299,7 +300,7 @@ svg  {
    background: #FFD93D;
 }
 
-#products, #franchise, #sales, #legit {
+#products, #franchise1, #sales, #legit {
    color: white;
    background-color: #FF8400;
 }
@@ -1130,6 +1131,25 @@ p {
 
 
 .franchise .container .content1 span {
+   font-size: 5rem;
+   font-family: 'Inter';
+   width: 50%;
+}
+
+
+.franchise-packages .container .content1 {
+   display: flexbox;
+   background: url('../images/picture 1.jpg');
+   background-repeat: no-repeat;
+   background-position: right 50%;
+   height: 579px;
+   padding-top: 9rem;
+   background-size: contain;
+  
+}
+
+
+.franchise-packages .container .content1 span {
    font-size: 5rem;
    font-family: 'Inter';
    width: 50%;
@@ -2525,6 +2545,46 @@ border: 1px solid #000000;
    .tcpp{
       padding:20px;}
 
+      .video video {
+         height: 300px;
+             width: 400px;
+             padding: 30px 4px 20px;
+             margin: 60px 54px 50px;}
+
+ #history-box-1 {
+               font-size: 17px;
+                   width: 369px;
+                   margin: 12px;
+                   margin-left: 64px;
+                   padding: 49px;}
+               
+   #history-box-2 {
+               width: 404px;
+               position: relative;
+               top: 44px;
+                   right: -49px;
+               }
+#history-box-3 {
+               width: 410px;
+               position: relative;
+                   top: 68px;
+                   right: -47px;
+               }
+               
+.Franchise-Now h4 {
+               font-size: xxx-large;
+               }
+ .franchise-grid {
+               justify-items: center;
+               }
+  .franchise-grid h3 {
+                   font-size: 17px;
+               }
+
+               .franchise-packages .container .content1 {
+                  display: inline-block;
+                  padding-top: 0rem;
+               }
 }
 
 @media (max-width:450px) {
@@ -2683,17 +2743,25 @@ margin-top: -67px;}
 .franchise-grid {
    padding-left: 20px;
 }        
- .franchise-packages img{
-                width: 305px;
-               }
+
 .video{
    padding-left: 20px;
 }
 .franchise-packages{
    padding-left: 20px;
+   font-size: medium;
 }
 .OMG-brief-history{
    padding-left: 20px;
 }
+.franchise-grid h3{
+   font-size: 21px;
+   }
+
+   .franchise-packages .container .content1 {
+      display: inline-block;
+      padding-top: 0rem;
+   }
+
 }
 
