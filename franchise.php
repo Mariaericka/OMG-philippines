@@ -73,7 +73,7 @@ if(isset($_SESSION['user_id'])){
 
 <div class="franchise-grid">
     <h3 id="follow">With 1.3 million followers in the food indistry</h3>
-    <h3 id="franchise">Franchise are multi-awarded in the field of customer service and training</h3>
+    <h3 id="franchise1">Franchise are multi-awarded in the field of customer service and training</h3>
     <h3 id="food-panda">Food panda integrated</h3>
     <h3 id="sales">Proven sales record</h3>
     <h3 id="products">Products are very affordable yet the ingredients are of the highest quality</h3>
@@ -82,14 +82,22 @@ if(isset($_SESSION['user_id'])){
     <h3 id="tofil">The Outstanding Filipino 2019 Recognized</h3>
 </div>
 
-<div class="franchise-packages">
-    <img src="./images/picture 1.jpg" alt="franchise-picture">
-    <h2>FRANCHISE PACKAGES</h2>
-    <h3 style="display: inline-grid;">It's a 5 in 1 franchise!</h3>
-    <p>Why settle for just one drink when you can have five of it</p>
-</div>
 
+        
+<section class="franchise-packages" id="franchise2">
 
+    <div class="container">
+
+        <div class="content1">
+        <h2>FRANCHISE PACKAGES</h2>
+
+            <h3 style="
+    text-align: inherit">It's a 5 in 1 franchise!</h3>
+            <p>Why settle for just one drink when you can have five of it</p>
+       
+        </div>
+
+</section>
 <!-- <div class="franchise">
     <h3>Franchise are multi-awarded in the field of customer service and training</h3>
 </div>
