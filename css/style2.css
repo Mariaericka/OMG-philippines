@@ -28,7 +28,7 @@
    height:500px;
    overflow:visible;
    font-size: large;
-   top: 130px;
+   top: 93px;
  }
  .second li a{
    display: block;
@@ -1428,7 +1428,7 @@ section{
 }
 p.empty1{
    border:var(--border);
-   padding:23.5rem;
+   padding:23.5rem!important;
    text-align: center;
    width: 100%;
    font-size: 2rem;

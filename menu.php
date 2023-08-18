@@ -35,7 +35,12 @@ $select_categories->execute();
    
 <!-- header section starts  -->
 <?php include 'components/user_header.php'; ?>
-<!-- header section ends -->
+<!-- header section ends 
+<div class="w3-content w3-section" style="max-width:1000px">
+  <img class="mySlides" src="images/egg drop.jpg" style="width:100%">
+  <img class="mySlides" src="images/korean dog.jpg" style="width:100%">
+  <img class="mySlides" src="images/rice bowl.jpg" style="width:100%">
+</div>-->
 
 <section class="category">
 
@@ -67,7 +72,7 @@ $select_categories->execute();
          <h3>Mango Series</h3>
       </a>
       <a href="category.php?category=cheese" class="box">
-         <img src="images/cheescakeseries.jpg" alt="">
+         <img src="images/cheesecake rocky.png" alt="">
          <h3>Cheesecake Series</h3>
       </a>
       <a href="category.php?category=promo" class="box">
@@ -102,6 +107,22 @@ $select_categories->execute();
  <?php include 'components/footer.php'; ?> 
 <!-- footer section ends -->
 <!-- custom js file link  -->
+<!--<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>-->
 <script src="js/script.js"></script>
 
 </body>
