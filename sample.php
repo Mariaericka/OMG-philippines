@@ -1,174 +1,32 @@
 <?php
-if (isset($_POST['add_to_cart'])) {
-    if ($user_id == '') {
-        header('location:login.php');
-    } else {
-        $pids = $_POST['pid'];
-        $names = $_POST['name'];
-        $images = $_POST['image'];
-        $qtys = $_POST['qty'];
-        $sizes = $_POST['size'];
-        $price = $_POST['price'];
-        $add_ons = $_POST['add_ons']; // Corrected key name for add-ons
-        
-        if (!empty($pids) && is_array($pids) && count($pids) > 0) {
-            for ($i = 0; $i < count($pids); $i++) {
-                $pid = filter_var($pids[$i], FILTER_SANITIZE_STRING);
-                $name = filter_var($names[$i], FILTER_SANITIZE_STRING);
-                $image = filter_var($images[$i], FILTER_SANITIZE_STRING);
-                $qty = filter_var($qtys[$i], FILTER_SANITIZE_STRING);
-                $selected_size = filter_var($sizes[$i], FILTER_SANITIZE_STRING);
-                $selected_price = filter_var($price[$i], FILTER_SANITIZE_STRING);
-                
-                $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND pid = ?");
-                $check_cart->execute([$user_id, $pid]);
 
-                if ($check_cart->rowCount() > 0) {
-                    $message[] = 'Product "' . $name . '" already added to cart!';
-                } else {
-                    $insert_cart = $conn->prepare("INSERT INTO `cart` (user_id, pid, name, price, quantity, image, size) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                    $insert_cart->execute([$user_id, $pid, $name, $selected_price, $qty, $image, $selected_size]);
-
-                    if ($insert_cart->rowCount() > 0) {
-                        $cart_id = $conn->lastInsertId();
-
-                        // Simulate adding one specific add-on
-                        $addon_name = "Crushed Oreo"; // Change this to an actual add-on name from your database
-                        $addon_price = 10; // Change this to the corresponding add-on price
-
-                        // Fetch the addon_id based on the addon_name
-                        $select_addon_id = $conn->prepare("SELECT id FROM `addons` WHERE name = ?");
-                        $select_addon_id->execute([$addon_name]);
-                        $addon_row = $select_addon_id->fetch(PDO::FETCH_ASSOC);
-                        $addon_id = $addon_row['id'];
-
-                        // Insert the cart add-on
-                        $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
-                        $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
-
-                        $message[] = 'Product "' . $name . '" added to cart!';
-                    } else {
-                        $message[] = 'Failed to add product "' . $name . '" to cart!';
-                    }
-                }
-            }
-        } else {
-            $message[] = 'No products selected!';
-        }
-    }
-}
-?>
-<?php
-if (isset($_POST['add_to_cart'])) {
-    if ($user_id == '') {
-        header('location:login.php');
-    } else {
-        $pids = $_POST['pid'];
-        $names = $_POST['name'];
-        $images = $_POST['image'];
-        $qtys = $_POST['qty'];
-        $sizes = $_POST['size'];
-        $price = $_POST['price'];
-        $add_ons = $_POST['add_ons']; // Nested array structure
-
-        if (!empty($pids) && is_array($pids) && count($pids) > 0) {
-            for ($i = 0; $i < count($pids); $i++) {
-                $pid = filter_var($pids[$i], FILTER_SANITIZE_STRING);
-                $name = filter_var($names[$i], FILTER_SANITIZE_STRING);
-                $image = filter_var($images[$i], FILTER_SANITIZE_STRING);
-                $qty = filter_var($qtys[$i], FILTER_SANITIZE_STRING);
-                $selected_size = filter_var($sizes[$i], FILTER_SANITIZE_STRING);
-                $selected_price = filter_var($price[$i], FILTER_SANITIZE_STRING);
-
-                $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND pid = ?");
-                $check_cart->execute([$user_id, $pid]);
-
-                if ($check_cart->rowCount() > 0) {
-                    $message[] = 'Product "' . $name . '" already added to cart!';
-                } else {
-                    $insert_cart = $conn->prepare("INSERT INTO `cart` (user_id, pid, name, price, quantity, image, size) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                    $insert_cart->execute([$user_id, $pid, $name, $selected_price, $qty, $image, $selected_size]);
-
-                    if ($insert_cart->rowCount() > 0) {
-                        $cart_id = $conn->lastInsertId();
-
-                    // Handle add-ons
-    foreach ($add_ons[$pid] as $addon_id => $addon_price) {
-        // Fetch the addon_name based on the addon_id
-        $select_addon = $conn->prepare("SELECT name FROM `addons` WHERE id = ?");
-        $select_addon->execute([$addon_id]);
-        $addon_row = $select_addon->fetch(PDO::FETCH_ASSOC);
-        $addon_name = $addon_row['name'];
-
-        // Check if the add-on is already in the cart
-        $check_addon = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ? AND addon_id = ?");
-        $check_addon->execute([$cart_id, $addon_id]);
-
-        if ($check_addon->rowCount() === 0) {
-            // Insert the cart add-on
-            $insert_cart_addons = $conn->prepare("INSERT INTO `cart_addons` (cart_id, product_id, addon_id, addon_name, addon_price) VALUES (?, ?, ?, ?, ?)");
-            $insert_cart_addons->execute([$cart_id, $pid, $addon_id, $addon_name, $addon_price]);
-        }
-    }
-
-                        $message[] = 'Product "' . $name . '" added to cart!';
-                    } else {
-                        $message[] = 'Failed to add product "' . $name . '" to cart!';
-                    }
-                }
-            }
-        } else {
-            $message[] = 'No products selected!';
-        }
-    }
-}
-?>
-<?php
-include 'components/connect.php';
+include '../components/connect.php';
 
 session_start();
 
-if(isset($_SESSION['user_id'])){
-   $user_id = $_SESSION['user_id'];
-}else{
-   $user_id = '';
-   header('location:index.php');
-};
+$admin_id = $_SESSION['admin_id'];
 
-if(isset($_POST['delete'])){
-   $cart_id = $_POST['cart_id'];
-    // Delete associated cart add-ons first
-    $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id = ?");
-    $delete_cart_addons->execute([$cart_id]);
-
-    // Now delete the cart item
-    $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE id = ?");
-    $delete_cart_item->execute([$cart_id]);
-
-    $message[] = 'Cart item deleted!';
+if (!isset($admin_id)) {
+   header('location:admin_login.php');
 }
 
-if(isset($_POST['delete_all'])){
- // Delete cart add-ons first
- $delete_cart_addons = $conn->prepare("DELETE ca FROM `cart_addons` ca INNER JOIN `cart` c ON ca.cart_id = c.id WHERE c.user_id = ?");
- $delete_cart_addons->execute([$user_id]);
+if (isset($_POST['update_payment'])) {
 
- // Now delete all cart items
- $delete_cart_items = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
- $delete_cart_items->execute([$user_id]);
-   $message[] = 'deleted all from cart!';
+   $order_id = $_POST['order_id'];
+   $payment_status = $_POST['payment_status'];
+   $update_status = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
+   $update_status->execute([$payment_status, $order_id]);
+   $message[] = 'Payment status updated!';
+
 }
 
-if(isset($_POST['update_qty'])){
-   $cart_id = $_POST['cart_id'];
-   $qty = $_POST['qty'];
-   $qty = filter_var($qty, FILTER_SANITIZE_STRING);
-   $update_qty = $conn->prepare("UPDATE `cart` SET quantity = ? WHERE id = ?");
-   $update_qty->execute([$qty, $cart_id]);
-   $message[] = 'cart quantity updated';
+if (isset($_GET['delete'])) {
+   $delete_id = $_GET['delete'];
+   $delete_order = $conn->prepare("DELETE FROM `orders` WHERE id = ?");
+   $delete_order->execute([$delete_id]);
+   header('location:placed_orders.php');
 }
 
-$grand_total = 0;
 ?>
 
 <!DOCTYPE html>
@@ -177,101 +35,75 @@ $grand_total = 0;
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>OMGPH CART</title>
-   <link rel="icon"  href="images/omg-logo.png">
+   <title>Placed Orders</title>
+   <link rel="icon" href="images/omg-logo.png">
 
-   <!-- font awesome cdn link  -->
+   <!-- font awesome cdn link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style2.css">
+   <!-- custom css file link -->
+   <link rel="stylesheet" href="../css/admin_style.css">
+
 </head>
 <body>
-   
-<!-- header section starts  -->
-<?php include 'components/user_header.php'; ?>
-<!-- header section ends -->
 
-<div class="heading">
-   <h3>Your Cart</h3>
-</div>
+<?php include '../components/admin_header.php' ?>
 
-<!-- shopping cart section starts  -->
-<section class="products">
+<!-- Placed orders section starts -->
+<section class="add-products">
+   <h1 class="heading">Placed Orders</h1>
    <div class="box-container">
       <?php
-      // Fetch and display add-ons for each cart item
-      $select_cart = $conn->prepare("SELECT c.*, p.priceR, ca.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart` c INNER JOIN `products` p ON c.pid = p.id LEFT JOIN `cart_addons` ca ON c.id = ca.cart_id LEFT JOIN `addons` a ON ca.addon_id = a.id WHERE c.user_id = ?");
-      $select_cart->execute([$user_id]);
+         $select_orders = $conn->prepare("SELECT * FROM `orders`");
+         $select_orders->execute();
 
-      if ($select_cart->rowCount() > 0) {
-         while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
-            $size = $fetch_cart['size'];
-            $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
-            $select_product_price->execute([$fetch_cart['pid']]);
-            $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
-            $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
-            $sub_total = $price * $fetch_cart['quantity'];
-
-
+         if ($select_orders->rowCount() > 0) {
+            while ($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)) {
+               $order_id = $fetch_orders['id'];
       ?>
+      <div class="box">
+         <p> User ID: <span><?= $fetch_orders['user_id']; ?></span></p>
+         <p> Placed On: <span><?= $fetch_orders['placed_on']; ?></span></p>
+         <!-- ... Other order details ... -->
 
-      <form action="" method="post" class="box">
-         <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <button type="submit" class="fa-solid  fa-trash-can fa-xl" style="color: #ed1e07; background-color: beige;" name="delete" onclick="return confirm('Delete this item?');"></button>
-         <img src="images/<?= $fetch_cart['image']; ?>" alt="">
-         <div class="name"><?= $fetch_cart['name']; ?></div>
-         <div class="flex">
-            <div class="price"><span>₱</span><?= $price; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
-            <button type="submit" class="fas fa-edit" name="update_qty"></button>
-         </div>
          <?php
-         // Display the selected add-ons
-      if ($fetch_cart['addon_id'] !== null) {
-         echo '<div class="addons">';
-         echo '<p>Selected Add-ons:</p>';
-         $select_addons = $conn->prepare("SELECT * FROM `cart_addons` ca INNER JOIN `addons` a ON ca.addon_id = a.id WHERE ca.cart_id = ?");
-         $select_addons->execute([$fetch_cart['id']]);
-         while ($addon = $select_addons->fetch(PDO::FETCH_ASSOC)) {
-            echo '<p>' . $addon['addon_name'] . ' (+₱' . $addon['addon_price'] . ')</p>';
-            $sub_total += $addon['addon_price']; // Calculate total add-ons price
-         }
-         echo '</div>';
-      }   
-      ?>    
-         <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?>/-</span></div>
-      </form>
-      
+            // Retrieve add-ons for the current order
+            $select_order_addons = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ?");
+            $select_order_addons->execute([$order_id]);
+         ?>
+
+         <?php if ($select_order_addons->rowCount() > 0) { ?>
+         <p> Add-ons:
+            <?php
+               while ($fetch_order_addons = $select_order_addons->fetch(PDO::FETCH_ASSOC)) {
+                  echo $fetch_order_addons['addon_name'] . ' (+₱' . $fetch_order_addons['addon_price'] . ') ';
+               }
+            ?>
+         </p>
+         <?php } ?>
+
+         <form action="" method="POST">
+            <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
+            <!-- ... Other form fields ... -->
+
+            <div class="flex-btn">
+               <input type="submit" value="Update" class="btn" name="update_payment">
+               <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Delete this order?');">Delete</a>
+            </div>
+         </form>
+      </div>
       <?php
-            $grand_total += $sub_total;
+            }
+         } else {
+            echo '<p class="empty">No orders placed yet!</p>';
          }
-      } else {
-         echo '<p class="empty">Your cart is empty</p>';
-      }
       ?>
-   </div>
-
-   <div class="cart-total">
-      <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
-   </div>
-
-   <div class="more-btn">
-      <form action="" method="post">
-         <button type="submit" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
-      </form>
-      <a href="menu.php" class="btn">Continue Shopping</a>
    </div>
 </section>
+<!-- Placed orders section ends -->
 
-<!-- footer section starts  -->
-<?php include 'components/footer.php'; ?>
-<!-- footer section ends -->
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-<script src="js/modal.js"></script>
+<!-- custom js file link -->
+<script src="../js/admin_script.js"></script>
 
 </body>
 </html>

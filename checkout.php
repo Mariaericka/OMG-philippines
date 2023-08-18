@@ -128,7 +128,7 @@ if (isset($_POST['submit'])) {
       <div class="cart-items">
          <h3>Cart Items</h3>
          <?php
-            $grand_total = 0;
+            $total_price = 0;
 
             $select_cart = $conn->prepare("SELECT c.*, p.priceR FROM `cart` c INNER JOIN `products` p ON c.pid = p.id WHERE c.user_id = ?");
             $select_cart->execute([$user_id]);
@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
                   $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
 
                   $sub_total += array_sum(array_column($addons, 'addon_price'));
-                  $grand_total += $sub_total;
+                  $total_price += $sub_total;
          ?>
                   <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">₱<?= $price; ?> x <?= $fetch_cart['quantity']; ?></span></p>
                   <?php if (!empty($addons)): ?>
@@ -166,13 +166,13 @@ if (isset($_POST['submit'])) {
                echo '<p class="empty">Your cart is empty!</p>';
             }
          ?>
-         <p class="grand-total"><span class="name">Grand Total:</span><span class="price">₱<?= $grand_total; ?></span></p>
+         <p class="grand-total"><span class="name">Grand Total:</span><span class="price">₱<?= $total_price; ?></span></p>
       </div>
 
       <a href="cart.php" class="btn">View Cart</a>
 
       <input type="hidden" name="total_products" value="<?= $total_products; ?>">
-      <input type="hidden" name="total_price" value="<?= $grand_total; ?>">
+      <input type="hidden" name="total_price" value="<?= $total_price; ?>">
       <input type="hidden" name="name" value="<?= $fetch_profile['name'] ?>">
       <input type="hidden" name="number" value="<?= $fetch_profile['number'] ?>">
       <input type="hidden" name="email" value="<?= $fetch_profile['email'] ?>">

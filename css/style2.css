@@ -1420,7 +1420,7 @@ section{
 
 .empty{
    border:var(--border);
-   padding:23.5rem;
+   /*padding:23.5rem;*/
    text-align: center;
    width: 100%;
    font-size: 2rem;
