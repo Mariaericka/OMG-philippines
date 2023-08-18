@@ -2481,8 +2481,7 @@ border: 1px solid #000000;
 @media (max-width:850px){
 
    .flex{
-      display: flex;
-      flex-direction:column;
+    
       justify-content:center;
       align-items:center;
       width: 100%;
@@ -2613,7 +2612,22 @@ font-size: 17px;
                   padding-top: 0rem;
                }
 
-
+               .products .box {
+                  width:479px;
+                  height:137px;
+                  }
+                  .fa-solid fa-trash-can fa-xl{
+                  margin-left:20px;
+                  }
+                  .addons{
+                  font-size:9px;
+                  
+                  }
+                  
+                  .products .flex{
+                  flex-direction: row-reverse;
+                  width:26px;
+                  }
 
 
 }
@@ -2792,6 +2806,30 @@ margin-top: -67px;}
       display: inline-block;
       padding-top: 0rem;
    }
+   .products .box {
+      width:348px;
+      height:127px;
+      }
+      
+      .fa-solid fa-trash-can fa-xl{
+      margin-left:3px;
+      }
+      
+      .products .box img {
+          height: 50px;
+          width: 107px;
+          margin-top: 20px;
+      }
+      .products .flex{
+      flex-direction: row-reverse;
+      width:20px;
+      }
+      
+      .addons{
+      font-size:8px;
+      
+      }
+      
 
 }
 
