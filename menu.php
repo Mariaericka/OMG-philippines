@@ -72,12 +72,16 @@ $select_categories->execute();
          <h3>Mango Series</h3>
       </a>
       <a href="category.php?category=cheese" class="box">
-         <img src="images/cheesecake rocky.png" alt="">
+         <img src="images/rocky.png" alt="">
          <h3>Cheesecake Series</h3>
       </a>
       <a href="category.php?category=promo" class="box">
          <img src="images/Buy 1 Take 1.jpg" alt="">
          <h3>Promos</h3>
+      </a>
+      <a href="category.php?category=ventea" class="box">
+         <img src="images/bb ventea.png" alt="">
+         <h3>Ventea</h3>
       </a>
    </div>
 

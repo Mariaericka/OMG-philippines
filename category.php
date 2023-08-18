@@ -44,6 +44,7 @@ include 'components/add_cart.php';
         <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
         <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
         <li><a href="category.php?category=cheese" class="button14">CHEESECAKE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=ventea" class="button14">VENTEA<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
 
         <li><a href="category.php?category=promo" class="button14">PROMO<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
   

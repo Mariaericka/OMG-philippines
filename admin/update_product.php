@@ -112,6 +112,7 @@ if(isset($_POST['update'])){
          <option value="milktea">Milktea series</option>
          <option value="mango">Mango series</option>
          <option value="cheese">Cheesecake series</option>
+         <option value="ventea">Ventea</option>
 
          <option value="promo">Promo series</option>
 

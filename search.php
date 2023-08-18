@@ -102,15 +102,7 @@ include 'components/add_cart.php';
 
 <!-- The Modal -->
 
-<?php
 
-
-$category = $_GET['category'];
-$select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
-$select_products->execute([$category]);
-if ($select_products->rowCount() > 0) {
-    while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
-        ?>
 
 <div id="costumizeOrderModal<?= $fetch_products['id']; ?>" class="backdrop">
 
@@ -193,13 +185,7 @@ if ($select_products->rowCount() > 0) {
 
 </div>
 
-<?php
-    }
-} else {
-     // Display a message when there are no products
-     echo '<p class="empty1">No drinks added yet!</p>';
-}
-?>
+
       
 
 
