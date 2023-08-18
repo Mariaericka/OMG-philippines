@@ -43,6 +43,8 @@ include 'components/add_cart.php';
         <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
         <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
         <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=cheese" class="button14">CHEESECAKE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+
         <li><a href="category.php?category=promo" class="button14">PROMO<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
   
     </ul>
@@ -219,7 +221,7 @@ if ($select_products->rowCount() > 0) {
     }
 } else {
      // Display a message when there are no products
-     echo '<p class="empty">No drinks added yet!</p>';
+     echo '<p class="empty1">No drinks added yet!</p>';
 }
 ?>
       

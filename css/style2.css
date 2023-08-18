@@ -1426,6 +1426,14 @@ section{
    font-size: 2rem;
    color:var(--red);
 }
+p.empty1{
+   border:var(--border);
+   padding:23.5rem;
+   text-align: center;
+   width: 100%;
+   font-size: 2rem;
+   color:var(--red);
+}
 
 .flex-btn{
    display: flex;

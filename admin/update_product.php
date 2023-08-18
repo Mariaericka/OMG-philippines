@@ -110,6 +110,11 @@ if(isset($_POST['update'])){
          <option value="yogurt">Yogurt series</option>
          <option value="choco">Choco series</option>
          <option value="milktea">Milktea series</option>
+         <option value="mango">Mango series</option>
+         <option value="cheese">Cheesecake series</option>
+
+         <option value="promo">Promo series</option>
+
       </select>
       <span style="color:black;font-size: 15px;">update image</span>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
