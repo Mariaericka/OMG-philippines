@@ -56,7 +56,6 @@ if(isset($_GET['delete'])){
    <tr>
       <th class="headers">NAME</th>
       <th class="headers">REG PRICE </th>
-      <th class="headers">LARGE PRICE </th>
 
       <th class="headers">CATEGORY</th>
       <th class="headers">IMAGE</th>
@@ -67,11 +66,10 @@ if(isset($_GET['delete'])){
       $show_products->execute();
       if($show_products->rowCount() > 0){
          while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){  
-   ?>   <br><br><br>
+   ?>  
      <tr class="table-content">
      <th><?= $fetch_products['name']; ?></th>
      <th><span>₱</span><?= $fetch_products['price']; ?></th>
-     <th><span>₱</span><?= $fetch_products['priceR']; ?></th>
 
         
      <th> <?= $fetch_products['category']; ?></td>

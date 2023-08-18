@@ -50,18 +50,18 @@ include 'components/add_cart.php';
  
     <section>
  
-    <div class="container2" style="box-sizing: border-box; height:900px;
+    <div class="container2" style="box-sizing: border-box; ;
 
 margin-left: 25%;">
    
 
 
 
-<section class="products">
+<section class="productsbev">
 
   
 
-   <div class="box-container">
+   <div class="box1-container1">
 
       <?php
          $category = $_GET['category'];
@@ -70,7 +70,7 @@ margin-left: 25%;">
          if($select_products->rowCount() > 0){
             while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
       ?>
-     <form action="" method="post" class="box">
+     <form action="" method="post" class="box1">
          <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
          <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
@@ -100,7 +100,7 @@ margin-left: 25%;">
       <?php
             }
          }else{
-            echo '<p class="empty">No drinks added yet!</p>';
+           
          }
       ?>
 
@@ -137,13 +137,13 @@ if ($select_products->rowCount() > 0) {
                     <table>
                         <tr>
                             <td>
-                                <span class="modal-label">Size:</span>
+                                <span class="modal-label">Price:</span>
                             </td>
                             <td>
                                 
                             <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
-    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
-    <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
+    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected> ₱<?= $fetch_products['price']; ?>.00</option>
+<!-- <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option> -->
 </select>
 
 
@@ -169,52 +169,36 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <?php
- // Fetch the addons for the current product from the database
-        $select_addons = $conn->prepare("SELECT * FROM `addons` INNER JOIN `product_addons` ON `addons`.`id` = `product_addons`.`addon_id` WHERE `product_addons`.`product_id` = ?");
-        $select_addons->execute([$fetch_products['id']]);
-        $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
- ?>
-  <div class="modal-body" style="flex-direction: column;">
 
                    
-  <tr>
-    <td>
+  <div class="modal-body" style="flex-direction: column;">
     <span class="modal-label">Add-ons:</span>
-    </td>
-    <td>
-                        <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_fruit_jelly">
-            Extra Fruit Jelly (+₱10)
-         </label>
-    </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="crushed_oreos">
-            Crushed Oreo (+₱10)
-         </label>
-    </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_pearls">
-            Extra Pearls (+₱10)
-         </label>
-    </td>
-    <td>
+    <?php
+    // Fetch the addons for the current product from the database
+    $select_addons = $conn->prepare("SELECT * FROM `addons`");
+    $select_addons->execute();
+    $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($addons as $addon) {
+        ?>
+      
+      
+      <label>
+    <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>]" value="<?= $addon['price']; ?>">
+    <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+</label>
 
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_addons['id']; ?>][]" value="extra_ice_cream">
-            Extra Ice Cream (+₱10)
-         </label>
-    </td>
-    </tr>
+
+    <?php } ?>
    
-    </div>
+</div>
+   
+    
 
                 <div class="modal-footer">
 
                         <input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
-                
+
 
                         <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
                         <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
@@ -222,10 +206,9 @@ if ($select_products->rowCount() > 0) {
                         <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
                         <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
-   <!--ADD FETCH ADDONS IN THE ADD TO CART,ADD ALSO HERE IN THIS FORM THE ADDONS TO FETCH. ADD ALSO IN THE ADD TO CART PHP AND IN THE CART TO DISPLAY -->
                    
                     </form>
-                    <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
+                        <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
 
                 </div>
             </div>
@@ -235,7 +218,8 @@ if ($select_products->rowCount() > 0) {
         <?php
     }
 } else {
-   
+     // Display a message when there are no products
+     echo '<p class="empty">No drinks added yet!</p>';
 }
 ?>
       
@@ -245,14 +229,12 @@ if ($select_products->rowCount() > 0) {
 </form>
 
 
-
-
-<?php include 'components/footer.php'; ?>
-
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
-</html>
+<?php include 'components/footer.php'; ?>
+
+</html> 
