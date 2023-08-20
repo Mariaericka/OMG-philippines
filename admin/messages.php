@@ -45,7 +45,7 @@ if(isset($_GET['delete'])){
 
    <h1 class="heading">messages</h1>
 
-   <div class="add-products">
+   <div class="box-container">
 
    <?php
       $select_messages = $conn->prepare("SELECT * FROM `messages`");
