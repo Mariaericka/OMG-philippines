@@ -318,8 +318,8 @@ body {
    background-color: #FFD93D;
    border-radius: .5rem;
    padding: 1rem;
-   transition: all .1s ease-in-out;
-   transform: scale(1.5);
+   transition:none;
+   transform:none;
 }
 
 .header .flex .icons > *{
@@ -657,6 +657,10 @@ body {
       margin:2rem;
    }
 
+   .header .flex .navbar a:hover{
+      transition:none;
+        transform:none;
+     }
 }
 
 @media (max-width:450px){
@@ -685,5 +689,9 @@ body {
    .accounts .box-container{
       grid-template-columns: 1fr;
    }
+   .header .flex .navbar a:hover{
+      transition:none;
+        transform:none;
+     }
 
 }
