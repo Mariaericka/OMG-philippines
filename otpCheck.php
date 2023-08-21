@@ -59,21 +59,23 @@ if (isset($_POST['resend'])) {
             $email = $row['email'];
         }
         $mail = new PHPMailer(true);
+
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'cecillesalon0@gmail.com';
-        $mail->Password = 'pxlwhdcgshaiqalr';
+        $mail->Username = 'omgphilippines123@gmail.com';
+        $mail->Password = 'qcdjmrfckncojvsy';
         $mail->SMTPSecure = 'ssl'; // Change 'ssl' to 'tls'
         $mail->Port = 465; // Change 465 to 587
 
-        $mail->setFrom('cecillesalon0@gmail.com');
+        $mail->setFrom('omgphilippines123@gmail.com');
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = "Account Verification Code";
         $message = "Here's the code to activate your account: " . $newotp;
         $mail->Body = "<p>$message</p>";
-        $mail -> send();
+
+        $mail->send();
     }
 }
 ?>

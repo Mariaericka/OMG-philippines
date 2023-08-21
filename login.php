@@ -10,25 +10,6 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
-// if(isset($_POST['submit'])){
-
-//    $email = $_POST['email'];
-//    $email = filter_var($email, FILTER_SANITIZE_STRING);
-//    $password = sha1($_POST['password']);
-//    $password = filter_var($password, FILTER_SANITIZE_STRING);
-
-//    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-//    $select_user->execute([$email, $password]);
-//    $row = $select_user->fetch(PDO::FETCH_ASSOC);
-
-//    if($select_user->rowCount() > 0){
-//       $_SESSION['user_id'] = $row['id'];
-//       header('location:index.php');
-//    }else{
-//       $message[] = 'incorrect username or password!';
-//    }
-
-// }
 
 ?>
 
@@ -58,6 +39,7 @@ if(isset($_SESSION['user_id'])){
 <div class="frame">
 <div class="nav1">
 <li class="signin-active"><a class="btn1">Sign in</a></li>
+
 <div class="form-signin">
 <label for="Email">Email</label>            
 <input type="text" class="form-styling" id="email" name="email" placeholder="Enter Email" maxlength="30"required="required" style="background-color: white;background-image: none; color: black;">
