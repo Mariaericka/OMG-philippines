@@ -48,7 +48,7 @@ if(isset($_SESSION['user_id'])){
 <input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn" >
 </div>
 
-<center><br><br><br><br><br><br><br><br><br><br> <p> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
+<center><br><br><br><br><br><br><br><br><br><br> <p class="tcpp"> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
 
 </div>
 </div>

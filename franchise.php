@@ -17,7 +17,7 @@ if(isset($_SESSION['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>OMG Philippines | Franchise</title>
+   <title>OMG Philippines | Franchise</title>   
    <link rel="icon"  href="images/omg-logo.png">
 
   <!-- font awesome cdn link  -->
@@ -30,7 +30,7 @@ if(isset($_SESSION['user_id'])){
   
    <!-- custom css file link  -->
    <link rel="stylesheet" href="./css/style2.css">
-   <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css">-->
 
 
 </head>
@@ -42,13 +42,14 @@ if(isset($_SESSION['user_id'])){
 <!--------------------- Franchising 1 ------------------>
 
 <div class="video">
-    <video src="images/OMG-video.mp4" autoplay muted loop height="90%" width="100%"></video>
+    <video src="images/OMG-video.mp4" autoplay muted loop></video>
 </div>
 
 <div class="OMG-brief-history">
-    <p id="OMG-brief-history">
+    <p id="history-box-1">
         OMG milktea, milkshake, and coffee started last three years, just when pandemic 2020 started.
-        <br><br>
+    </p>
+    <p id="history-box-2"> 
         Now that everybody are quarantined, they tried to know what the 
         netizens' are looking for and what they want. At first, they strive 
         to make their milktea, a popular beverage here in Philippines. 
@@ -57,131 +58,75 @@ if(isset($_SESSION['user_id'])){
         another beverages like Milkshake and coffee. Many people loved and 
         supported their continously upgrading beverages. Because of this, 
         they are slowly shining.
-        <br><br>
+    </p>
+    <p id="history-box-3"> 
         In growing their business, in just two years they managed to franchise
         in different parts in Laguna, even here in Manila, lastly, they are
-        now open for franchising nationwide.        
-    </p>
+        now open for franchising nationwide.    
+    </p>    
+
 </div>
 
 <div class="Franchise-Now">
     <h4>Franchise NOW!</h4>
 </div>
-<hr>
 
-
-<!-----------x---------- Franchising 1 ----------x---------->
-
-
-<!--------------------- Franchising 2 ------------------->
-
-
-
-<div class="grid">
-    <div>
-        <img src="images/logo/million.gif" height="300" width="400" alt="likes">
-        <h2>with 1.3 miliion followers in the food industry</h2>
-    </div>
-    
-    <div>
-        <img src="images/logo/award.webp" alt="award">
-        <h2>franchise are multi-awarded in the field of customer service and training</h2>
-    </div>
-
-    <div>
-        <img src="images/logo/foodpanda.gif" height="300" width="350" alt="delivery">
-        <h2>Food panda integrated</h2>
-    </div>
-
-    <div>
-        <img src="images/logo/proven.gif" height="300" width="400" alt="sales">
-        <h2>Proven sales record</h2>
-    </div>
-
-    <div>
-        <img src="images/logo/thumbs-up.gif" height="250" width="300" alt="products">
-        <h2>Products are very affordable yet ingredients are of the highest quality</h2>
-    </div>
-
-    <div>
-        <img src="images/growing.gif" height="250" width="350"alt="growing">
-        <h2>Fastest growing and trending franchise</h2>
-    </div>
-
-    <div>
-        <img src="images/hundred.gif" height="250" width="350" alt="legit">
-        <h2>Legit and promoted by VIPs</h2>
-    </div>
-
-    <div>
-        <img src="images/applause.gif" height="250" width="300"alt="recognized">
-        <h2>TOFIL The oustanding Filipino 2019 Recognized</h2>
-    </div>
-</div>
-<hr>
-
-
-<!-----------x---------- Franchising 2 ---------x--------->
-
-
-
-<!--------------------- Franchising 3 ------------------>
-
-
-<div class="header-grid-2">
-    <h1>It's a 5 in 1 franchise!</h1>
-    <h3>Why settle for just one drink when you can have five five of it!</h3>
+<div class="franchise-grid">
+    <h3 id="follow">With 1.3 million followers in the food indistry</h3>
+    <h3 id="franchise1">Franchise are multi-awarded in the field of customer service and training</h3>
+    <h3 id="food-panda">Food panda integrated</h3>
+    <h3 id="sales">Proven sales record</h3>
+    <h3 id="products">Products are very affordable yet the ingredients are of the highest quality</h3>
+    <h3 id="fastest">Fastest growing and trending franchise</h3>
+    <h3 id="legit">Legit and promoted but the VIPs</h3>
+    <h3 id="tofil">The Outstanding Filipino 2019 Recognized</h3>
 </div>
 
-<div class="grid-2">
 
-    <div>
-        <img src="images/twix.png" height="300" width="400" alt="choco">
-        <h1>creamy choco</h1>
-        <h3>twix choco</h3>
-    </div>
+        
+<section class="franchise-packages" id="franchise2">
 
-    <div>
-        <img src="images/classic milkteaq.png" height="300" width="400" alt="milktea">
-        <h1>creamy milktea</h1>
-        <h3>classic milktea</h3>
-    </div>
+    <div class="container">
 
-    <div>
-        <img src="images/coffee crumble4.png" height="300" width="400" alt="coffee">
-        <h1>creamy coffee</h1>
-        <h3>Coffee crumble</h3>
-    </div>
+        <div class="content1">
+        <h2>FRANCHISE PACKAGES</h2>
 
-    <div>
-        <img src="images/fresh fruit frappe.png" height="300" width="400" alt="frappe">
-        <h1>creamy frappe</h1>
-        <h3>Fresh fruit frappe</h3>
-    </div>
+            <h3 style="
+    text-align: inherit">It's a 5 in 1 franchise!</h3>
+            <p>Why settle for just one drink when you can have five of it</p>
+       
+        </div>
 
-    <div>
-        <img src="images/yogurt series.png" height="300" width="400" alt="yogurt">
-        <h1>creamy fruit yogurt</h1>
-        <h3>Yogurt mango</h3>
-    </div>
+</section>
+<!-- <div class="franchise">
+    <h3>Franchise are multi-awarded in the field of customer service and training</h3>
 </div>
 
-<!-----------x---------- Franchising 3 ---------x--------->
+<div class="food-panda">
+    <h3>Food panda integrated</h3>
+</div>
 
+<div class="sales">
+    <h3>Proven sales record</h3>
+</div>
 
-<!--------------------- Franchising 4 ------------------>
+<div class="products">
+    <h3>Products are very affordable yet the ingredients are of the highest quality</h3>
+</div>
 
+<div class="fastest">
+    <h3>Fastest growing and trending franchise</h3>
+</div>
 
-<h3>Franchise packages</h3>
+<div class="Legit">
+    <h3>Legit and promoted but the VIPs</h3>
+</div>
 
+<div class="TOFIL">
+    <h3>The Outstanding Filipino 2019 Recognized</h3>
+</div> -->
 
-
-
-<!-----------x---------- Franchising 4 ---------x--------->
-
-
-
-
-
-
-
+<script src="js/script.js"></script>
+<?php include 'components/footer.php'; ?>
+</body>
+</html>

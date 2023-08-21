@@ -45,11 +45,17 @@ if(isset($_GET['delete'])){
 
 <!-- user accounts section starts  -->
 
-<section class="accounts">
-
+<section >
+<div class="main-content">
+   <div class="wrapper">
    <h1 class="heading">users account</h1>
+   <table class="tbl-full">
+   <tr>
+      <th class="headers">USER ID</th>
+      <th class="headers">USERNAME </th>
 
-   <div class="add-products">
+      <th class="headers last" ></th>
+   </tr>
 
    <?php
       $select_account = $conn->prepare("SELECT * FROM `users`");
@@ -57,21 +63,24 @@ if(isset($_GET['delete'])){
       if($select_account->rowCount() > 0){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
    ?>
-   <div class="box">
-      <p> user id : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> username : <span><?= $fetch_accounts['name']; ?></span> </p>
-      <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">delete</a>
-   </div>
+     <tr class="table-content">
+     <th><?= $fetch_accounts['id']; ?></th>
+     <th><?= $fetch_accounts['name']; ?></th>
+   <th>  <a href="user_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this user?');"><img src="../images/icons/delete.png"/ class="manage-drink-icons-delete"/></a>
+     </th>
+         </tr>
+        </div>
    <?php
       }
    }else{
       echo '<p class="empty">no accounts available</p>';
    }
    ?>
-
+</table>
    </div>
+    </div>
 
-</section>
+    </section>
 
 <!-- user accounts section ends -->
 

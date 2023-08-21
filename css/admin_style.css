@@ -182,15 +182,16 @@ body {
    max-width: 1200px;
    margin:0 auto;
    background-color: var(--light-bg);
-   padding:2rem;
+   padding:1rem;
    display: flex;
    align-items: center;
    gap:1rem;
    justify-content: space-between;
+
 }
 
 .message span{
-   font-size: 2rem;
+   font-size: 1rem;
    color:var(--black);
 }
 
@@ -317,8 +318,8 @@ body {
    background-color: #FFD93D;
    border-radius: .5rem;
    padding: 1rem;
-   transition: all .1s ease-in-out;
-   transform: scale(1.5);
+   transition:none;
+   transform:none;
 }
 
 .header .flex .icons > *{
@@ -338,7 +339,7 @@ body {
 .header .flex .profile{
    position: absolute;
    top:97%; right:-1rem;
-   background-color:darkred;
+   background-color:#F6F1E9;
    box-shadow: var(--box-shadow);
    border:var(--border);
    border-radius: .5rem;
@@ -656,6 +657,10 @@ body {
       margin:2rem;
    }
 
+   .header .flex .navbar a:hover{
+      transition:none;
+        transform:none;
+     }
 }
 
 @media (max-width:450px){
@@ -684,5 +689,9 @@ body {
    .accounts .box-container{
       grid-template-columns: 1fr;
    }
+   .header .flex .navbar a:hover{
+      transition:none;
+        transform:none;
+     }
 
 }

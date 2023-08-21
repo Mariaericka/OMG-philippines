@@ -41,36 +41,45 @@ if(isset($_GET['delete'])){
 
 <!-- messages section starts  -->
 
-<section class="messages">
-
+<section>
+<div class="main-content">
+   <div class="wrapper">
    <h1 class="heading">messages</h1>
+   <table class="tbl-full">
+   <tr>
+      <th class="headers">NAME</th>
+      <th class="headers">NUMBER</th>
 
-   <div class="add-products">
-
+      <th class="headers">EMAIL</th>
+      <th class="headers">MESSAGE</th>
+      <th class="headers last" ></th>
+   </tr>
    <?php
       $select_messages = $conn->prepare("SELECT * FROM `messages`");
       $select_messages->execute();
       if($select_messages->rowCount() > 0){
          while($fetch_messages = $select_messages->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box">
-      <p> name : <span><?= $fetch_messages['name']; ?></span> </p>
-      <p> number : <span><?= $fetch_messages['number']; ?></span> </p>
-      <p> email : <span><?= $fetch_messages['email']; ?></span> </p>
-      <p> message : <span><?= $fetch_messages['message']; ?></span> </p>
-      <a href="messages.php?delete=<?= $fetch_messages['id']; ?>" class="delete-btn" onclick="return confirm('delete this message?');">delete</a>
-   </div>
+     <tr class="table-content">
+      <th> <?= $fetch_messages['name']; ?><th>
+      <th> <?= $fetch_messages['number']; ?><th>
+      <th><?= $fetch_messages['email']; ?><th>
+      <th> <?= $fetch_messages['message']; ?><th>
+      <th> <a href="messages.php?delete=<?= $fetch_messages['id']; ?>" onclick="return confirm('delete this message?');"><img src="../images/icons/delete.png"/ class="manage-drink-icons-delete"/></a>
+         </th>
+         </tr>
+        </div>
    <?php
          }
       }else{
          echo '<p class="empty">you have no messages</p>';
       }
    ?>
-
+</table>
    </div>
+    </div>
 
-</section>
-
+    </section>
 <!-- messages section ends -->
 
 
