@@ -24,10 +24,11 @@ if(isset($_POST['submit'])){
             $curr_time = time();
 			$real_time = $curr_time - $post_time;
 			$real_min = $real_time / 60;
+            $id = $row['id'];
         }
+        $_SESSION['user_id'] = $id;
         if($otpCheck == $otp){
             if($real_min < 1 && $real_min < 2){
-                $_SESSION['user_id'] = $row['id'];
                 $query = mysqli_query($conn, "UPDATE users SET isActivated = '1' WHERE otp_code = '$otp'") or die('query failed');
                 echo "<script> success('Your account has been activated');
                     </script>";
