@@ -66,7 +66,7 @@ if(isset($_GET['delete'])){
      <tr class="table-content">
      <th><?= $fetch_accounts['id']; ?></th>
      <th><?= $fetch_accounts['name']; ?></th>
-   <th>  <a href="user_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this user?');"><img src="../images/icons/delete.png"/ class="manage-drink-icons-delete"/></a>
+   <th>  <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this user?');"><img src="../images/icons/delete.png"/ class="manage-drink-icons-delete"/></a>
      </th>
          </tr>
         </div>
