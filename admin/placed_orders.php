@@ -65,13 +65,13 @@ if (isset($_GET['delete'])) {
                     <th class="headers">Email</th>
                     <th class="headers">Number</th>
                     <th class="headers">Address</th>
-                    <th class="headers">Add ons</th>
+                    <!--<th class="headers">Add ons</th>-->
 
                     <th class="headers">Total price</th>
                     <th class="headers">Payment Method</th>
                     <th class="headers">Payment Status</th>
                     <th class="headers">Cancellation Reason</th>
-                    <th class="headers last" colspan="2">Actions</th>
+                    <th class="headers last" colspan="3">Actions</th>
 
                 </tr>
    <?php
