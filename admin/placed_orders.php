@@ -50,12 +50,30 @@ if (isset($_GET['delete'])) {
 
 <!-- Placed orders section starts  -->
 
-<section class="add-products">
+<section class="main-content">
+<div class="wrapper">
 
    <h1 class="heading">Placed Orders</h1>
 
-   <div class="box-container">
+   <table class="tbl-full">
+   <tr>
+                    <th class="headers">User ID</th>
+                    <th class="headers">Placed On</th>
+                    <th class="headers">Order ID</th>
 
+                    <th class="headers">Name</th>
+                    <th class="headers">Email</th>
+                    <th class="headers">Number</th>
+                    <th class="headers">Address</th>
+                    <th class="headers">Add ons</th>
+
+                    <th class="headers">Total price</th>
+                    <th class="headers">Payment Method</th>
+                    <th class="headers">Payment Status</th>
+                    <th class="headers">Cancellation Reason</th>
+                    <th class="headers last" colspan="2">Actions</th>
+
+                </tr>
    <?php
       $select_orders = $conn->prepare("SELECT * FROM `orders`");
       $select_orders->execute();
@@ -73,62 +91,71 @@ if (isset($_GET['delete'])) {
             $total_price += $addon['addon_price'];
         }
    ?>
-   <div class="box">
-      <p> User ID: <span><?= $fetch_orders['user_id']; ?></span> </p>
-      <p> Placed On: <span><?= $fetch_orders['placed_on']; ?></span> </p>
-      <p> Name: <span><?= $fetch_orders['name']; ?></span> </p>
-      <p> Email: <span><?= $fetch_orders['email']; ?></span> </p>
-      <p> Number: <span><?= $fetch_orders['number']; ?></span> </p>
-      <p> Address: <span><?= $fetch_orders['address']; ?></span> </p>
-      <p> Total Products: <span><?= $fetch_orders['total_products']; ?></span> </p>
-      <p> Total Price: <span>₱<?= number_format($total_price, 2); ?>/-</span> </p>
-      <p> Payment Method: <span><?= $fetch_orders['method']; ?></span> </p>
-      <p> Payment Status: <span style="color:<?php if ($fetch_orders['payment_status'] == 'pending') {
-                  echo 'red';
-               } else {
-                  echo 'green';
-               }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
-      <p> Cancellation Reason: <span><?= $fetch_orders['cancel_reason']; ?></span> </p>
-      <?php
+                        <tr class="table-content">
+                        <td>  <?= $fetch_orders['user_id']; ?> </td>
+                        <td> <?= $fetch_orders['placed_on']; ?> </td>
+                        <td> <?= $fetch_orders['order_id']; ?> </td>
+
+                        <td><?= $fetch_orders['name']; ?> </td>
+                        <td><?= $fetch_orders['email']; ?> </td>
+                        <td><?= $fetch_orders['number']; ?> </td>
+                        <td><?= $fetch_orders['address']; ?> </td>
+   <?php
          // Retrieve add-ons for the current order
          $select_order_addons = $conn->prepare("SELECT * FROM `cart_addons` WHERE cart_id = ?");
          $select_order_addons->execute([$order_id]);
          ?>
 
          <?php if ($select_order_addons->rowCount() > 0) { ?>
-         <p> Add-ons:
+         
             <?php
                while ($fetch_order_addons = $select_order_addons->fetch(PDO::FETCH_ASSOC)) {
                   echo $fetch_order_addons['addon_name'] . ' (+₱' . $fetch_order_addons['addon_price'] . ') ';
                }
             ?>
-         </p>
+      
          <?php } ?>
-      <form action="" method="POST">
-         <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-         <select name="payment_status" class="drop-down">
-            <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
-            <option value="pending">pending</option>
-            <option value="completed">completed</option>
-            <option value="to be deliver">to be delivered</option>
-         </select>
-         <div class="flex-btn">
-            <input type="submit" value="Update" class="btn" name="update_payment">
-            <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Delete this order?');">Delete</a>
-         </div>
+         <td><?= number_format($total_price, 2); ?> </td>
+         <td><?= $fetch_orders['method']; ?> </td>
+         <td>
+                    <span style="color: <?= ($fetch_orders['payment_status'] == 'pending') ? 'red' : 'green'; ?>">
+                        <?= $fetch_orders['payment_status']; ?>
+                    </span>
+                </td>
+                <td><?= $fetch_orders['cancel_reason']; ?></td>
+                <td>
+                    <form action="" method="POST">
+                        <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
+                        <select name="payment_status" class="drop-down">
+                            <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
+                            <option value="pending">pending</option>
+                            <option value="completed">completed</option>
+                            <option value="to be delivered">to be delivered</option>
+                        </select>
+                </td>
+                <td>
+                    <input type="submit" value="Update" class="btn" name="update_payment">
+                    </form>
+                </td>
+                <td>
+                    <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>"
+                        onclick="return confirm('Delete this order?');">
+                        <img src="../images/icons/delete.png" class="manage-drink-icons-delete" alt="Delete Order">
+                    </a>
+                </td>
+            </tr>
       </form>
    </div>
    <?php
-      }
-   }else{
-      echo '<p class="empty">No orders placed yet!</p>';
-   }
-   ?>
-
-   </div>
-
+                    }
+                } else {
+                    echo '<tr><td colspan="5" class="empty">You have no order</td></tr>';
+                }
+                ?>
+        </table>
+        </div>
+    </div>
 </section>
-
 <!-- Placed orders section ends -->
 
 <!-- custom js file link  -->
