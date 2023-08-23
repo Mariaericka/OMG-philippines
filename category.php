@@ -84,7 +84,7 @@ margin-left: 25%;">
 
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)">
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)"/>
 
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
@@ -239,5 +239,8 @@ if ($select_products->rowCount() > 0) {
 <script src="js/modal.js"></script>
 </body>
 <?php include 'components/footer.php'; ?>
+<script>
+    
+</script>
 
 </html> 
