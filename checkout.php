@@ -29,7 +29,6 @@ if (isset($_POST['submit'])) {
     $address = $_POST['address'];
     $address = filter_var($address, FILTER_SANITIZE_STRING);
     $total_products = $_POST['total_products'];
-    $total_price = $_POST['total_price'];
 
     $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
     $check_cart->execute([$user_id]);
@@ -39,6 +38,8 @@ if (isset($_POST['submit'])) {
             $message[] = 'please add your address!';
         } else {
             $cart_items = array();
+            $total_price = 0;
+
             while ($fetch_cart = $check_cart->fetch(PDO::FETCH_ASSOC)) {
                 $size = $fetch_cart['size'];
                 $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
@@ -53,8 +54,8 @@ if (isset($_POST['submit'])) {
                 $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
 
                 $sub_total += array_sum(array_column($addons, 'addon_price'));
-
                 $total_price += $sub_total;
+
                 $cart_items[] = array(
                     'name' => $fetch_cart['name'],
                     'price' => $price,
@@ -77,8 +78,9 @@ if (isset($_POST['submit'])) {
             }
 
             if ($order_placed) {
-                $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
+                $cart_addons_json = json_encode($cart_items, JSON_UNESCAPED_UNICODE);
+                $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price, cart_addons) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $cart_addons_json]);
 
                 // Delete cart addons first
                 $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id IN (SELECT id FROM `cart` WHERE user_id = ?)");
@@ -95,6 +97,7 @@ if (isset($_POST['submit'])) {
         $message[] = 'Your cart is empty';
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -125,7 +128,7 @@ if (isset($_POST['submit'])) {
 
 <section class="checkout">
    <form action="" method="post" enctype="multipart/form-data">
-      <div class="cart-items">
+   <div class="cart-items">
          <h3>Cart Items</h3>
          <?php
             $total_price = 0;
