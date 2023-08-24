@@ -13,7 +13,6 @@ body {
    box-sizing: border-box;
    text-decoration: none;
    outline: none; border: none;
-   text-transform: capitalize;
    transition: all .2s linear;
    color: black;
    background-color: #F6F1E9;
