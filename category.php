@@ -43,6 +43,9 @@ include 'components/add_cart.php';
         <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
         <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
         <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=cheese" class="button14">CHEESECAKE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li><a href="category.php?category=ventea" class="button14">VENTEA<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+
         <li><a href="category.php?category=promo" class="button14">PROMO<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
   
     </ul>
@@ -50,18 +53,18 @@ include 'components/add_cart.php';
  
     <section>
  
-    <div class="container2" style="box-sizing: border-box;
+    <div class="container2" style="box-sizing: border-box; ;
 
 margin-left: 25%;">
    
 
 
 
-<section class="products">
+<section class="productsbev">
 
   
 
-   <div class="box-container">
+   <div class="box1-container1">
 
       <?php
          $category = $_GET['category'];
@@ -70,7 +73,7 @@ margin-left: 25%;">
          if($select_products->rowCount() > 0){
             while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
       ?>
-     <form action="" method="post" class="box">
+     <form action="" method="post" class="box1">
          <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
          <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
@@ -81,7 +84,7 @@ margin-left: 25%;">
 
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)">
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)"/>
 
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
@@ -100,7 +103,7 @@ margin-left: 25%;">
       <?php
             }
          }else{
-            echo '<p class="empty">No drinks added yet!</p>';
+           
          }
       ?>
 
@@ -116,6 +119,8 @@ margin-left: 25%;">
 <!-- The Modal -->
 
 <?php
+
+
 $category = $_GET['category'];
 $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
 $select_products->execute([$category]);
@@ -135,13 +140,13 @@ if ($select_products->rowCount() > 0) {
                     <table>
                         <tr>
                             <td>
-                                <span class="modal-label">Size:</span>
+                                <span class="modal-label">Price:</span>
                             </td>
                             <td>
                                 
                             <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
-    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected>Regular ₱<?= $fetch_products['price']; ?>.00</option>
-    <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option>
+    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected> ₱<?= $fetch_products['price']; ?>.00</option>
+<!-- <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option> -->
 </select>
 
 
@@ -167,45 +172,36 @@ if ($select_products->rowCount() > 0) {
                 </div>
 
   <!-- Add-ons section -->
-  <div class="modal-body">
-                   
-  <tr>
-    <td>
-    <span class="modal-label">Add-ons:</span>
-    </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_fruit_jelly">
-            Extra Fruit Jelly (+₱10)
-         </label>
-    </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="crushed_oreos">
-            Crushed Oreo (+₱10)
-         </label>
-    </td>
-    <td>
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_pearls">
-            Extra Pearls (+₱10)
-         </label>
-    </td>
-    <td>
 
-         <label>
-            <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][]" value="extra_ice_cream">
-            Extra Ice Cream (+₱10)
-         </label>
-    </td>
-    </tr>
+                   
+  <div class="modal-body" style="flex-direction: column;">
+    <span class="modal-label">Add-ons:</span>
+    <?php
+    // Fetch the addons for the current product from the database
+    $select_addons = $conn->prepare("SELECT * FROM `addons`");
+    $select_addons->execute();
+    $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($addons as $addon) {
+        ?>
+      
+      
+      <label>
+    <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>]" value="<?= $addon['price']; ?>">
+    <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+</label>
+
+
+    <?php } ?>
    
-    </div>
+</div>
+   
+    
 
                 <div class="modal-footer">
 
                         <input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
-                
+
 
                         <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
                         <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
@@ -213,8 +209,9 @@ if ($select_products->rowCount() > 0) {
                         <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
                         <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
                         <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
+                   
                     </form>
-                    <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
+                        <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
 
                 </div>
             </div>
@@ -224,7 +221,8 @@ if ($select_products->rowCount() > 0) {
         <?php
     }
 } else {
-    echo '<p class="empty">No drinks added yet!</p>';
+     // Display a message when there are no products
+     echo '<p class="empty1">No drinks added yet!</p>';
 }
 ?>
       
@@ -233,8 +231,6 @@ if ($select_products->rowCount() > 0) {
 
 </form>
 
-<?php include 'components/footer.php'; ?>
-
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
@@ -242,4 +238,9 @@ if ($select_products->rowCount() > 0) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
-</html>
+<?php include 'components/footer.php'; ?>
+<script>
+    
+</script>
+
+</html> 

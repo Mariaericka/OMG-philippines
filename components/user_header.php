@@ -1,4 +1,8 @@
 <?php
+// session_start();
+// error_reporting(0);
+// // $user_id = $_SESSION['user_id'];
+
 if(isset($message)){
    foreach($message as $message){
       echo '
@@ -23,7 +27,7 @@ if(isset($message)){
 
          <a href="blog.php">BLOG</a>
          <a href="franchise.php">FRANCHISE</a>
-         <a href="location.php">LOCATION</a>
+         <a href="location2.php">LOCATION</a>
          <a href="contact.php">CONTACT US</a>
       </nav>
 

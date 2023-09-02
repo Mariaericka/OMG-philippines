@@ -12,7 +12,12 @@
    --red:rgb(155 8 8);
    --white:#ffff;
 }
-
+.headeropen{
+   width: 400px!important;
+}
+.creamy{
+   margin-top: 30px;
+}
 .second ul  {
    list-style-type: none;
    margin: 10;
@@ -23,7 +28,7 @@
    height:500px;
    overflow:visible;
    font-size: large;
-   top: 130px;
+   top: 93px;
  }
  .second li a{
    display: block;
@@ -215,28 +220,54 @@ svg  {
    font-size: 1.5rem;
 }
 
-/* Franchise changes stars here*/
+/* Franchise changes by SHAMS stars here*/
 .video video {
-   margin-top: 50px;
-   padding: 100px 100px 200px 100px;
-   align-items: center;
-   justify-items: center;
-   border: 2px solid #000;
-   background: #FFBE00; 
+   height: 650px;
+   width: 1300px;
+   padding: 50px 10px 50px;
+   margin: 75px 11px 49px;
+   background-color: #FFD93D;
+   border: 2px solid #4F200D;
+   border-radius: 20px;
 }
 
-#OMG-brief-history {
-   height: 300px;
-   width: 700px;
-   text-align: left;
-   font-family: 'Inter', sans serif;
-   font-size: 25px;
-   border: 10px solid red;
-   border-radius: 50px;
+#history-box-1 {
+   font-size: 20px;
+   width: 328px;
+   margin: 21px;
+   padding: 58px;
+   border: 5px solid #FFD93D;
+   border-radius: 20px;
+   line-height: 50px;
 }
 
-Franchise-Now h4 {
-   color: #FF1607;
+#history-box-2 {
+   font-size: 16px;
+   width: 900px;
+   padding: 50px;
+   border: 5px solid #FFD93D;
+   border-radius: 20px;
+   line-height: 40px;
+   word-spacing: 1px;
+   letter-spacing: 0.5px;
+   position: absolute;
+   top: 900px;
+   right: 100px;
+}
+
+
+#history-box-3 {
+   font-size: 16px;
+   width: 900px;
+   padding: 50px;
+   border: 5px solid #FFD93D;
+   border-radius: 20px;
+   position: absolute;
+   top: 1261px;
+   right: 100px;
+}
+.Franchise-Now h4 {
+   color: red;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #000;
    text-align: center;
@@ -245,10 +276,47 @@ Franchise-Now h4 {
    font-style: normal;
    font-weight: 700;
    line-height: normal;
+   padding: 30px;
+   margin-top: 96px;
+}
+.franchise-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   justify-items: center;
 }
 
-/* Franchise changes ends here*/
+.franchise-grid h3 {
+   font-size: 17px;
+   font-family: Inter;
+   font-style: normal;
+   padding: 80px 20px 80px;
+   height: 200px;
+   width: 300px;
+   border-radius: 200px;
+   border: 2px solid #4F200D;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#follow, #food-panda, #fastest, #tofil {
+   background: #FFD93D;
+}
 
+#products, #franchise1, #sales, #legit {
+   color: white;
+   background-color: #FF8400;
+}
+
+.franchise-packages img {
+   height: 500px;
+   width: 500px;
+}
+.second ul h1 {
+   text-align: center;
+   margin-top: -2px;
+   font-size: larger;   }
+.second ul {
+ width: 27%;
+}
+/* Franchise changes by SHAMS ends here*/
 .grid {
    display: grid;
    grid-template-columns: 25% 25% 25% 25%;
@@ -533,7 +601,6 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
 }
-
 /* BLOG START*/
 
 .header h1 {
@@ -1075,6 +1142,25 @@ p {
    width: 50%;
 }
 
+
+.franchise-packages .container .content1 {
+   display: flexbox;
+   background: url('../images/picture 1.jpg');
+   background-repeat: no-repeat;
+   background-position: right 50%;
+   height: 579px;
+   padding-top: 9rem;
+   background-size: contain;
+  
+}
+
+
+.franchise-packages .container .content1 span {
+   font-size: 5rem;
+   font-family: 'Inter';
+   width: 50%;
+}
+
 .franchise .container .content1 h1 {
    margin-top: 2rem;
    font-size: 3rem;
@@ -1096,6 +1182,7 @@ p {
 /*---------------- footer starts here -----------------*/
 footer.footer{
    height: 100%;
+   width: 105%;
    color:black;
    background-color: #FFD93D;
    position: relative;
@@ -1333,7 +1420,15 @@ section{
 
 .empty{
    border:var(--border);
-   padding:1.5rem;
+   /*padding:23.5rem;*/
+   text-align: center;
+   width: 100%;
+   font-size: 2rem;
+   color:var(--red);
+}
+p.empty1{
+   border:var(--border);
+   padding:23.5rem!important;
    text-align: center;
    width: 100%;
    font-size: 2rem;
@@ -1352,12 +1447,20 @@ section{
    border-bottom: var(--border);
    background-color: white;
 }
-
+.flex{
+   display: flex;
+   flex-direction:row;
+   justify-content:center;
+   align-items:center;
+   
+}
 .header .flex{
    display: flex;
-   align-items: center;
+   align-items: flex-end;
    justify-content: space-between;
    position: relative;
+
+   width: 100%;
 }
 
 .header .flex .logo{
@@ -1535,187 +1638,48 @@ section{
 .category .box-container .box:hover h3{
    color:black;
 }
-/*
-.products .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
-   justify-content: center;
-   align-items: flex-start;
-   gap:1.5rem;
-}
 
-.products .box-container .box{
-   border:var(--border);
-   padding:1.5rem;
-   position: relative;
-   background-color: beige;
-   overflow: hidden;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
-}
-.products .box-container .box:hover{
-   transition: all .3s ease-in-out;
-      transform: scale(1.1)
-   
-}
 
-.products .box-container .box img{
-   
-   width: 100%;
-   
-   margin-bottom: 1rem;
-}
-
-.products .box-container .box .fa-eye,
-.products .box-container .box .fa-shopping-cart{
-   position: absolute;
-   top:1rem;
-   height: 4.5rem;
-   width: 4.5rem;
-   line-height: 4.3rem;
-   border:var(--border);
-   background-color: var(--white);
-   cursor: pointer;
-   font-size: 2rem;
-   color:var(--black);
-   transition: .2s linear;
-   text-align: center;
-}
-
-.products .box-container .box .fa-eye:hover,
-.products .box-container .box .fa-shopping-cart:hover{
-   background-color: var(--black);
-   color:var(--white);
-}
-
-.products .box-container .box .fa-eye{
-   left: -10rem;
-}
-
-.products .box-container .box .fa-shopping-cart{
-   right: -10rem;
-}
-
-.products .box-container .box:hover .fa-eye{
-   left: 1rem;
-}
-
-.products .box-container .box:hover .fa-shopping-cart{
-   right: 1rem;
-}
-
-.products .box-container .box .cat{
-   font-size: 1.8rem;
-   color:var(--light-color);
-   background-color: #FFD93D;
-}
-
-.products .box-container .box .cat:hover{
-   color:var(--black);
-}
-
-.products .box-container .box .name{
-   font-size: 2rem;
-   color:var(--black);
-   margin:1rem 0;
-}
-
-.products .box-container .box .flex{
+/*PRODUCTS IN CATEGORY*/
+.productsbev{
    display: flex;
+   flex-direction: column;
    align-items: center;
-   gap:1rem;
-   margin-top: 1.5rem;
+   padding: 1rem; 
 }
-
-.products .box-container .box .flex .price{
-   margin-right: auto;
-   font-size: 2.5rem;
-   color:var(--black);
-}
-
-.products .box-container .box .flex .price span{
-   color:var(--light-color);
-   font-size: 1.8rem;
-}
-
-.products .box-container .box .flex .qty{
-   padding:1rem;
-   border:var(--border);
-   font-size: 1.8rem;
-   color:var(--black);
-}
-
-.products .box-container .box .flex .fa-edit{
-   width: 5rem;
-   background-color: var(--yellow);
-   color:var(--black);
-   cursor: pointer;
-   font-size: 1.8rem;
-   height: 4.5rem;
-   border:var(--border);
-}
-
-.products .box-container .box .flex .fa-edit:hover{
-   background-color: var(--black);
-   color:var(--white);
-}
-
-.products .box-container .box .fa-times{
-   position: absolute;
-   top:1rem; right:1rem;
-   background-color: var(--red);
-   color:var(--white);
-   border:var(--border);
-   line-height:4rem;
-   height: 4.3rem;
-   width: 4.5rem;
-   cursor: pointer;
-   font-size: 2rem;
-}
-
-.products .box-container .box .fa-times:hover{
-   background-color: var(--black);
-   color:var(--white);
-}
-
-.products .box-container .box .sub-total{
-   margin-top: 1rem;
-   font-size: 1.8rem;
-   color:var(--light-color);
-}
-
-.products .box-container .box .sub-total span{
-   color:var(--red);
-}
-
-.products .more-btn{
-   margin-top: 1rem;
-   text-align: center;
-}
-
-.products .cart-total{
+.productsbev .box1-container1 {
    display: flex;
-   align-items: center;
-   gap:1.5rem;
    flex-wrap: wrap;
+   justify-content: center;
+   gap: 1.5rem;
+  
+ }
+ .productsbev .box1 {
+   border: var(--border);
+   padding: 1.5rem;
+   background-color: beige;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+   width: 300px;
+  
+
+ }
+ .productsbev .box1 img {
+   max-width: 100%;
+   height: auto;
+ }
+
+ .productsbev .name {
+   font-size: 1.2rem;
+   font-weight: bold;
+ }
+ .productsbev .flex {
+   display: flex;
+   align-items: center;
    justify-content: space-between;
-   margin-top: 3rem;
-   border:var(--border);
-   padding:1rem;
-}
+   margin-top: 1rem;
+   
+ }
 
-.products .cart-total p{
-   font-size: 2.5rem;
-   color:var(--light-color);
-}
-
-.products .cart-total p span{
-   color:var(--red);
-}
-
-.products .cart-total .btn{
-   margin-top: 0;
-}
-*/
 
 .products {
    display: flex;
@@ -1728,7 +1692,8 @@ section{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
-   gap: 1.5rem;
+   gap: 0.5rem;
+   flex-direction: column;
  }
  
  .products .box {
@@ -1736,24 +1701,31 @@ section{
    padding: 1.5rem;
    background-color: beige;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
-   width: 300px;
+   width: 865px;
+   height: 115px;
+padding: 0.5rem;
+display:flex;
+justify-content: space-evenly;
  }
  
  .products .box img {
    max-width: 100%;
    height: auto;
+   width: 165px;
  }
  
  .products .name {
    font-size: 1.2rem;
    font-weight: bold;
+   display: contents;
  }
  
  .products .flex {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   margin-top: 1rem;
+   margin-top: 4rem;
+   flex-direction: row;
  }
  
  .products .price {
@@ -1774,7 +1746,8 @@ section{
  .products .cart-total {
    font-size: 1.2rem;
    font-weight: bold;
-   margin-top: 1rem;
+   margin-top: 4rem;
+   padding-left: 15px;
  }
  
  .products .cart-total span {
@@ -1796,7 +1769,7 @@ section{
  }
  
  .products .delete-btn {
-   background-color: var(--red);
+   background-color: red;
    color: var(--white);
  }
  
@@ -2015,6 +1988,8 @@ section{
    margin:1rem 0;
    line-height: 1.5;
    font-size: 2rem;
+   flex-wrap: wrap;
+
 }
 
 .checkout form .cart-items p .name{
@@ -2270,6 +2245,7 @@ h3 {
    justify-content: center;
 }
 
+
 .loader img{
    width: 35rem;
 }
@@ -2278,15 +2254,18 @@ h3 {
    /* babyruth 1 */
 position:relative;
 width: 324px;
- height: 300px;
+height: 300px;
 background-image: url(../images/babyruth.jpg);
 border: 5px solid #FF8400;
 box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
 background-repeat: round;
-right: 62px;
-    left: 20px;
+/* right: 62px;
+    left: 15px; */
+    margin: 0px 20px 0px 20px ;
+    /* top right bottom left */
+
 }
 .event{
    /* event */
@@ -2299,13 +2278,14 @@ box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
 background-repeat: round;
-right: 62px;
-    left: 51px;
+margin: 0px 20px 0px 20px ;
+/* right: 62px;
+    left: 51px; */
 }
 .series{
    /* series */
 position:relative;
-width: 400px;
+width: 350px;
  height: 300px;
 background-image: url(../images/cheescakeseries.jpg);
 border: 5px solid #FF8400;
@@ -2313,8 +2293,9 @@ box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 display: inline-flex;
 background-repeat: round;
-right: 62px;
-    left: 80px;
+margin: 0px 20px 0px 20px ;
+/* right: 62px;
+    left: 80px; */
 }
 .button11{
   
@@ -2440,7 +2421,11 @@ border: 1px solid #000000;
    font-weight: bold;
 }
 
+.addons{
 
+    font-size: small;
+    color: #000;
+}
 
 
 
@@ -2450,7 +2435,25 @@ border: 1px solid #000000;
 
 
 /* media queries  */
-
+@media (max-width:1150px){
+  
+   .none {
+      display: none;
+   }
+   .event {
+      width: 260px;
+      height: 350px;
+      top:20px;}
+   .series{
+      width: 250px;
+       height: 237px;
+      top:38px;
+   }
+   .babyruth{
+      width: 250px;
+      height: 309px;
+   }
+}
 @media (max-width:991px) {
    
    html{
@@ -2459,10 +2462,61 @@ border: 1px solid #000000;
    .header .flex .profile .account{
       display: none;
    }
+
+   #history-box-2 {
+      width: 594px;
+      right: -4px;
+      }
+      
+      #history-box-3 {
+      width: 831px;
+      padding: 45px;
+      top: 1334px;
+          right: 18px;
+      }
+      
+      .Franchise-Now h4 {
+      font-size: 71px;
+      margin-top: 185px;}
+      
+      .franchise-packages .container .content1 {  
+      font-size: x-small;}
+
+      
+
 }
 
-@media (max-width:768px){
+@media (max-width:850px){
 
+   .flex{
+    
+      justify-content:center;
+      align-items:center;
+      width: 100%;
+      margin-left: 0px!important;
+   }
+   .babyruth{
+ margin-left: 50px!important;
+ width: 40vh!important;
+ margin-top: 100px;
+   }
+   .event {
+      width: 45vh;
+      height: 450px;
+      top:20px;
+      left: -2px;
+   }
+   .series{
+      width: 45vh!important;
+       height: 237px;
+      top:38px;
+      left: 0px;
+   }
+ 
+   .headeropen{
+      width: 50% !important; ;
+      
+   }
    .contact-child.child1{
       width: 199px;
    }
@@ -2523,10 +2577,68 @@ border: 1px solid #000000;
       width: 85px;
     height: 72px;
    }
-   
+   .tcpp{
+      padding:20px;}
+      .video video {
+         height: 300px;
+             width: 400px;
+             padding: 30px 4px 20px;
+             margin: 60px 54px 50px;}
+
+ #history-box-1 {
+               font-size: 17px;
+                   width: 369px;
+                   margin: 12px;
+                   margin-left: 64px;
+                   padding: 49px;}
+               
+   #history-box-2 {
+               width: 404px;
+               position: relative;
+               top: 44px;
+                   right: -49px;
+               }
+#history-box-3 {
+               width: 410px;
+               position: relative;
+                   top: 68px;
+                   right: -47px;
+               }
+               
+.Franchise-Now h4 {
+               font-size: xxx-large;
+               }
+ .franchise-grid {
+               justify-items: center;
+               }
+  .franchise-grid h3 {
+
+font-size: 17px;
+  }
+               .franchise-packages .container .content1 {
+                  display: inline-block;
+                  padding-top: 0rem;
+               }
+
+               .products .box {
+                  width:479px;
+                  height:137px;
+                  }
+                  .fa-solid fa-trash-can fa-xl{
+                  margin-left:20px;
+                  }
+                  .addons{
+                  font-size:9px;
+                  
+                  }
+                  
+                  .products .flex{
+                  flex-direction: row-reverse;
+                  width:26px;
+                  }
+
 
 }
-
 @media (max-width:450px) {
    
    html{
@@ -2566,7 +2678,8 @@ border: 1px solid #000000;
       display: none;
    }
    .form-signin {
-      padding-left: 2px;
+      width: fit-content;
+      padding-left:31px;
    }
 a.button11{
    display:none;
@@ -2578,17 +2691,30 @@ a.button13{
    display:none;
 }
 .event {
-   width: 229px;
-   height: 309px;
-   top:20px;}
+   width: 40vh;
+   height: 350px;
+   top:20px;
+   left: 6px;
+
+   right: 0px!important;
+
+}
 .series{
-   width: 239px;
+   width: 40vh!important;
     height: 237px;
-   top:38px;
+   top:48px!important;
+   left:8px;
+   right: 0px;
+
 }
 .babyruth{
-   width: 259px;
+   width: 40vh!important;
    height: 309px;
+   /* margin-left:20px ; */
+   left: -10px;
+   right: 0px;
+   /* top right bottom left */
+
 }
 
 
@@ -2619,10 +2745,99 @@ height:200px;
   
 }
 
+.frame {
+   width: 269px;
+   height: 620px;}
 
+.productsbev .box1-container1{
+      width: 181px;
+      margin-left: 84px;}
+      
+.second ul h1{
+font-size: medium;
+margin-top: -67px;}
+ .video video {
+            height: 223px;
+            width: 306px;
+            padding: 17px 4px 13px;
+            margin: 60px -1px 47px;
+            
+}
+            
+ #history-box-1 {
+            font-size: 14px;
+                width: 308px;
+                margin: -3px;
+                padding: 44px;
+            
+ }
+            
+ #history-box-2 {
+            width: 304px;
+            top: 27px;
+            right: 0px;
+            position: relative;
+            
+ }
+#history-box-3 {
+            font-size: 16px;
+                width: 304px;
+                padding: 30px;
+                position: relative;
+                top: 40px;
+                right: 0px;
+ }
+            
+.Franchise-Now h4 {
+            font-size: 48px;
+            
+}
+.franchise-grid {
+   padding-left: 20px;
+}        
 
+.video{
+   padding-left: 20px;
+}
+.franchise-packages{
+   padding-left: 20px;
+   font-size: medium;
+}
+.OMG-brief-history{
+   padding-left: 20px;
+}
+.franchise-grid h3{
+   font-size: 21px;
+   }
 
-
-
+   .franchise-packages .container .content1 {
+      display: inline-block;
+      padding-top: 0rem;
+   }
+   .products .box {
+      width:348px;
+      height:127px;
+      }
+      
+      .fa-solid fa-trash-can fa-xl{
+      margin-left:3px;
+      }
+      
+      .products .box img {
+          height: 50px;
+          width: 107px;
+          margin-top: 20px;
+      }
+      .products .flex{
+      flex-direction: row-reverse;
+      width:20px;
+      }
+      
+      .addons{
+      font-size:8px;
+      
+      }
+      
 
 }
+

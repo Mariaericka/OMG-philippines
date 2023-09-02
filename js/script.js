@@ -1,3 +1,4 @@
+
 navbar = document.querySelector('.header .flex .navbar');
 
 document.querySelector('#menu-btn').onclick = () =>{
@@ -17,9 +18,10 @@ window.onscroll = () =>{
    profile.classList.remove('active');
 }
 
-function loader(){
-   document.querySelector('.loader').style.display = 'none';
-}
+ function loader(){
+    document.querySelector('.loader').style.display = 'none';
+ }
+
 
 function fadeOut(){
    setInterval(loader, 2000);

@@ -13,7 +13,6 @@ body {
    box-sizing: border-box;
    text-decoration: none;
    outline: none; border: none;
-   text-transform: capitalize;
    transition: all .2s linear;
    color: black;
    background-color: #F6F1E9;
@@ -42,11 +41,18 @@ body {
    background-color: white;
 }
 .login{
-   border: 4px solid rgb(255 249 54);
-   width: fit-content;
+   border: 2px solid red;
+   width: 90%;
+   height: 32rem;
    margin: 4% auto;
    padding: 10px;
-   display:block;
+   overflow: auto;
+   box-sizing: border-box;
+   border-radius: 25px;
+}
+.login-box{
+   position: relative;
+   left: 75%;
 }
 
 .col-4{
@@ -175,15 +181,16 @@ body {
    max-width: 1200px;
    margin:0 auto;
    background-color: var(--light-bg);
-   padding:2rem;
+   padding:1rem;
    display: flex;
    align-items: center;
    gap:1rem;
    justify-content: space-between;
+
 }
 
 .message span{
-   font-size: 2rem;
+   font-size: 1rem;
    color:var(--black);
 }
 
@@ -310,8 +317,8 @@ body {
    background-color: #FFD93D;
    border-radius: .5rem;
    padding: 1rem;
-   transition: all .1s ease-in-out;
-   transform: scale(1.5);
+   transition:none;
+   transform:none;
 }
 
 .header .flex .icons > *{
@@ -331,7 +338,7 @@ body {
 .header .flex .profile{
    position: absolute;
    top:97%; right:-1rem;
-   background-color:darkred;
+   background-color:#F6F1E9;
    box-shadow: var(--box-shadow);
    border:var(--border);
    border-radius: .5rem;
@@ -649,6 +656,10 @@ body {
       margin:2rem;
    }
 
+   .header .flex .navbar a:hover{
+      transition:none;
+        transform:none;
+     }
 }
 
 @media (max-width:450px){
@@ -677,5 +688,9 @@ body {
    .accounts .box-container{
       grid-template-columns: 1fr;
    }
+   .header .flex .navbar a:hover{
+      transition:none;
+        transform:none;
+     }
 
 }
