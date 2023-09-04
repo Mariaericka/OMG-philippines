@@ -7,6 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
+require 'vendor/autoload.php';
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 } else {
@@ -37,37 +38,46 @@ if (isset($_POST['submit'])) {
 
     $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
     $check_cart->execute([$user_id]);
+
     if ($method === 'gcash') {
-      // GCash API integration code
-      require 'vendor/autoload.php';
-      \Xendit\Xendit::setApiKey('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4');
-
-      $external_id = "test_" . time();
-      $total_amount = $total_price;
-      $redirect_url = "http://localhost/OMG-philippines";
-
-      $params = [
-          'external_id' => $external_id,
-          'amount' => $total_amount,
-          'redirect_url' => $redirect_url,
-          'ewallet_type' => 'GCASH'
-      ];
-      try {
-         $response = \Xendit\EWallets::create($params);
-         if (isset($response['status']) && $response['status'] === 'PENDING') {
-             header('Location: ' . $response['actions']['desktop_web_checkout_url']);
-             exit();
-         } else {
-             error_log("Xendit Response: " . json_encode($response));
-         }
-     } catch (\Xendit\Exceptions\ApiException $e) {
-         error_log("Xendit API Error: " . $e->getMessage());
-         error_log("Xendit API Code: " . $e->getCode());
-         error_log("Xendit API Response: " . json_encode($e->getResponse()));
-     }
-     
-     
-  }
+        // GCash API integration code
+       
+        \Xendit\Xendit::setApiKey('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4'); // Replace with your actual API key
+    
+        $external_id = $user_id;
+        $total_amount = $total_price;
+        $redirect_url = "https://www.facebook.com/"; // Replace with your actual redirect URL
+    
+        $params = [
+            'external_id' => $external_id,
+            'amount' => $total_amount,
+            'redirect_url' => $redirect_url,
+            'ewallet_type' => 'GCASH'
+        ];
+    
+        try {
+            $response = \Xendit\EWallets::create($params);
+            if (isset($response['status']) && $response['status'] === 'PENDING') {
+                header('Location: ' . $response['actions']['desktop_web_checkout_url']);
+                exit();
+            } else {
+                error_log("Xendit Response: " . json_encode($response));
+            }
+        } catch (\Xendit\Exceptions\ApiException $e) {
+            $errorResponse = $e->getMessage();
+            $errorCode = $e->getCode();
+            error_log("Xendit API Error: " . $errorResponse);
+            error_log("Xendit API Code: " . $errorCode);
+        
+            // Extract HTTP response code from the error response message
+            preg_match('/HTTP response: (\d+)/', $errorResponse, $matches);
+            if (isset($matches[1])) {
+                $httpResponseCode = $matches[1];
+                if ($httpResponseCode === '400') {
+                    // Handle specific error for Bad Request (400) if needed
+                }
+            }}
+        }
 
 
 
@@ -106,13 +116,9 @@ if (isset($_POST['submit'])) {
 
             $order_id = generate_unique_order_id($user_id);
 
-            $order_placed = false;
 
-            if ($method === 'gcash' && !isset($_FILES['payment_screenshot'])) {
-                $message[] = 'Please upload the payment screenshot for GCash payment.';
-            } else {
                 $order_placed = true;
-            }
+            
 
             if ($order_placed) {
                  // Convert cart items with addons to JSON format
@@ -247,23 +253,7 @@ if (isset($_POST['submit'])) {
 <!-- custom js file link -->
 <script src="js/modal.js"></script>
 <script src="js/script.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const paymentMethodSelect = document.getElementById("payment-method");
-    const gcashQrCode = document.querySelector(".gcash-qr-code");
-    const paymentScreenshotInput = document.querySelector("[name='payment_screenshot']");
 
-    paymentMethodSelect.addEventListener("change", function() {
-        if (this.value === "gcash") {
-            gcashQrCode.style.display = "block";
-            paymentScreenshotInput.required = true;
-        } else {
-            gcashQrCode.style.display = "none";
-            paymentScreenshotInput.required = false;
-        }
-    });
-});
-</script>
 
 </body>
 </html>

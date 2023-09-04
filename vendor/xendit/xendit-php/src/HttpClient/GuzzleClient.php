@@ -163,11 +163,10 @@ class GuzzleClient implements ClientInterface
     private static function _handleAPIError($response)
     {
         $rbody = $response['body'];
-        
         $rhttp = strval($response['code']);
-        $message = $rbody['message'];
-        $rcode = $rbody['error_code'];
-
+        $message = isset($rbody['message']) ? $rbody['message'] : 'Unknown error';
+        $rcode = isset($rbody['error_code']) ? $rbody['error_code'] : 'Unknown code';
+    
         throw new ApiException($message, $rhttp, $rcode);
     }
 }
