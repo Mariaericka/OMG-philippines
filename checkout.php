@@ -2,7 +2,11 @@
 include 'components/connect.php';
 
 session_start();
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 } else {
@@ -33,6 +37,40 @@ if (isset($_POST['submit'])) {
 
     $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
     $check_cart->execute([$user_id]);
+    if ($method === 'gcash') {
+      // GCash API integration code
+      require 'vendor/autoload.php';
+      \Xendit\Xendit::setApiKey('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4');
+
+      $external_id = "test_" . time();
+      $total_amount = $total_price;
+      $redirect_url = "http://localhost/OMG-philippines";
+
+      $params = [
+          'external_id' => $external_id,
+          'amount' => $total_amount,
+          'redirect_url' => $redirect_url,
+          'ewallet_type' => 'GCASH'
+      ];
+      try {
+         $response = \Xendit\EWallets::create($params);
+         if (isset($response['status']) && $response['status'] === 'PENDING') {
+             header('Location: ' . $response['actions']['desktop_web_checkout_url']);
+             exit();
+         } else {
+             error_log("Xendit Response: " . json_encode($response));
+         }
+     } catch (\Xendit\Exceptions\ApiException $e) {
+         error_log("Xendit API Error: " . $e->getMessage());
+         error_log("Xendit API Code: " . $e->getCode());
+         error_log("Xendit API Response: " . json_encode($e->getResponse()));
+     }
+     
+     
+  }
+
+
+
 
     if ($check_cart->rowCount() > 0) {
         if ($address == '') {
@@ -197,14 +235,7 @@ if (isset($_POST['submit'])) {
         <option value="gcash">GCash</option>
         <option value="instore">In-store Pickup</option>
     </select>
-    <?php if (isset($_POST['submit']) && $_POST['method'] === 'gcash'): ?>
-        <div class="gcash-qr-code">
-            <!-- Add your GCash QR code image or HTML here -->
-            <img src="images\gcash qr code.jpg" alt="GCash QR Code" style="width: 242px;">
-        </div>
-        <label for="payment_screenshot">Upload Payment Screenshot:</label>
-        <input type="file" name="payment_screenshot" accept="image/*" required>
-    <?php endif; ?>
+    
     <input type="submit" value="Place Order" class="btn <?php if($fetch_profile['address'] == '' || (isset($_POST['method']) && $_POST['method'] === 'gcash')) { echo 'disabled'; } ?>" style="width: 100%; background: var(--red); color: var(--white);" name="submit">
    </form>
 </section>
@@ -236,3 +267,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+  
