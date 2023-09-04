@@ -22,6 +22,44 @@ function generate_unique_order_id($user_id)
     return $order_id;
 }
 
+
+// Initialize Xendit API and create GCash transaction
+// This should be inside the 'if (isset($_SESSION['user_id'])) { ... }' block
+// to ensure that the user is logged in.
+if (isset($_POST['submit']) && $_POST['method'] === 'gcash') {
+    // Replace 'your_xendit_secret_key' with your actual Xendit secret key
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/ewallets/charges');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+        'reference_id' => $order_id,
+        'currency' => 'PHP',
+        'amount' => $total_amount,  // Replace with the actual amount
+        'checkout_method' => 'ONE_TIME_PAYMENT',
+        'channel_code' => 'GCASH',
+        'redirect_success' => 'http://localhost/OMG-philippines/orders.php',
+        'redirect_failure' => 'http://localhost/OMG-philippines/checkout.php'
+    ]));
+    $headers = [
+        'Content-Type: application/json',
+        'Authorization: Basic ' . base64_encode('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4' . ':')
+    ];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $paymentData = json_decode($response, true);
+
+    // Redirect user for payment
+    if (isset($paymentData['id'])) {
+        header('Location: ' . $paymentData['actions']['desktop_web_checkout_url']);
+        exit();
+    } else {
+        // Handle error
+        echo "Payment could not be initialized. Please try again.";
+    }
+}
+
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $name = filter_var($name, FILTER_SANITIZE_STRING);
