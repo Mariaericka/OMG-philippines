@@ -8,12 +8,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require 'vendor/autoload.php';
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-} else {
-    $user_id = '';
-    header('location:index.php');
-}
 
 function generate_unique_order_id($user_id)
 {
@@ -21,163 +15,137 @@ function generate_unique_order_id($user_id)
     $order_id = $user_id . '-' . $timestamp;
     return $order_id;
 }
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $order_id = generate_unique_order_id($user_id);
+    $total_amount = 0; // Assume $total_amount is obtained from your cart logic
 
 
-// Initialize Xendit API and create GCash transaction
-// This should be inside the 'if (isset($_SESSION['user_id'])) { ... }' block
-// to ensure that the user is logged in.
-if (isset($_POST['submit']) && $_POST['method'] === 'gcash') {
-    // Replace 'your_xendit_secret_key' with your actual Xendit secret key
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/ewallets/charges');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
-        'reference_id' => $order_id,
-        'currency' => 'PHP',
-        'amount' => $total_amount,  // Replace with the actual amount
-        'checkout_method' => 'ONE_TIME_PAYMENT',
-        'channel_code' => 'GCASH',
-        'redirect_success' => 'http://localhost/OMG-philippines/orders.php',
-        'redirect_failure' => 'http://localhost/OMG-philippines/checkout.php'
-    ]));
-    $headers = [
-        'Content-Type: application/json',
-        'Authorization: Basic ' . base64_encode('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4' . ':')
-    ];
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    $response = curl_exec($ch);
-    curl_close($ch);
-    $paymentData = json_decode($response, true);
-
-    // Redirect user for payment
-    if (isset($paymentData['id'])) {
-        header('Location: ' . $paymentData['actions']['desktop_web_checkout_url']);
-        exit();
-    } else {
-        // Handle error
-        echo "Payment could not be initialized. Please try again.";
-    }
-}
-
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $number = $_POST['number'];
-    $number = filter_var($number, FILTER_SANITIZE_STRING);
-    $email = $_POST['email'];
-    $email = filter_var($email, FILTER_SANITIZE_STRING);
-    $method = $_POST['method'];
-    $method = filter_var($method, FILTER_SANITIZE_STRING);
-    $address = $_POST['address'];
-    $address = filter_var($address, FILTER_SANITIZE_STRING);
-    $total_products = $_POST['total_products'];
-    $total_price = $_POST['total_price'];
-
-    $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-    $check_cart->execute([$user_id]);
-
-    if ($method === 'gcash') {
-        // GCash API integration code
-       
-        \Xendit\Xendit::setApiKey('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4'); // Replace with your actual API key
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $number = $_POST['number'];
+        $number = filter_var($number, FILTER_SANITIZE_STRING);
+        $email = $_POST['email'];
+        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $method = $_POST['method'];
+        $method = filter_var($method, FILTER_SANITIZE_STRING);
+        $address = $_POST['address'];
+        $address = filter_var($address, FILTER_SANITIZE_STRING);
+        $total_products = $_POST['total_products'];
+        $total_price = $_POST['total_price'];
     
-        $external_id = $user_id;
-        $total_amount = $total_price;
-        $redirect_url = "https://www.facebook.com/"; // Replace with your actual redirect URL
-    
-        $params = [
-            'external_id' => $external_id,
-            'amount' => $total_amount,
-            'redirect_url' => $redirect_url,
-            'ewallet_type' => 'GCASH'
-        ];
-    
-        try {
-            $response = \Xendit\EWallets::create($params);
-            if (isset($response['status']) && $response['status'] === 'PENDING') {
-                header('Location: ' . $response['actions']['desktop_web_checkout_url']);
-                exit();
-            } else {
-                error_log("Xendit Response: " . json_encode($response));
-            }
-        } catch (\Xendit\Exceptions\ApiException $e) {
-            $errorResponse = $e->getMessage();
-            $errorCode = $e->getCode();
-            error_log("Xendit API Error: " . $errorResponse);
-            error_log("Xendit API Code: " . $errorCode);
+        $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+        $check_cart->execute([$user_id]);
+
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
         
-            // Extract HTTP response code from the error response message
-            preg_match('/HTTP response: (\d+)/', $errorResponse, $matches);
-            if (isset($matches[1])) {
-                $httpResponseCode = $matches[1];
-                if ($httpResponseCode === '400') {
-                    // Handle specific error for Bad Request (400) if needed
-                }
-            }}
+        $data = [
+            'reference_id' => $order_id,
+            'currency' => 'PHP',
+            'amount' => $total_amount,
+            'checkout_method' => 'ONE_TIME_PAYMENT',
+            'channel_code' => 'GCASH',
+            'redirect_success' => 'http://localhost/OMG-philippines/orders.php',
+            'redirect_failure' => 'http://localhost/OMG-philippines'
+        ];
+        
+        $headers = [
+            'Content-Type: application/json',
+            'Authorization: Basic ' . base64_encode('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4 ' . ':')
+        ];
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
         }
-
-
-
-
-    if ($check_cart->rowCount() > 0) {
-        if ($address == '') {
-            $message[] = 'please add your address!';
+        
+        curl_close($ch);
+        
+        $response_data = json_decode($result, true);
+        if (isset($response_data['status']) && $response_data['status'] === 'PENDING') {
+            header('Location: ' . $response_data['actions']['desktop_web_checkout_url']);
+            exit();
         } else {
-            $cart_items = array();
-            while ($fetch_cart = $check_cart->fetch(PDO::FETCH_ASSOC)) {
-                $size = $fetch_cart['size'];
-                $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
-                $select_product_price->execute([$fetch_cart['pid']]);
-                $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
-                $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
-                $sub_total = $price * $fetch_cart['quantity'];
-
-                // Consider add-ons in the total price calculation
-                $select_addons = $conn->prepare("SELECT addon_name, addon_price FROM cart_addons WHERE cart_id = ?");
-                $select_addons->execute([$fetch_cart['id']]);
-                $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
-
-                $sub_total += array_sum(array_column($addons, 'addon_price'));
-
-                $total_price += $sub_total;
-                $cart_items[] = array(
-                    'name' => $fetch_cart['name'],
-                    'price' => $price,
-                    'quantity' => $fetch_cart['quantity'],
-                    'addons' => $addons
-                );
-            }
-            $total_products = implode(' - ', array_map(function ($item) {
-                return $item['name'] . ' (' . $item['price'] . ' x ' . $item['quantity'] . ')';
-            }, $cart_items));
-
-            $order_id = generate_unique_order_id($user_id);
-
-
-                $order_placed = true;
-            
-
-            if ($order_placed) {
-                 // Convert cart items with addons to JSON format
-    $cart_addons_json = json_encode($cart_items, JSON_UNESCAPED_UNICODE);
-    $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price, cart_addons) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $cart_addons_json]);
-                // Delete cart addons first
-                $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id IN (SELECT id FROM `cart` WHERE user_id = ?)");
-                $delete_cart_addons->execute([$user_id]);
-
-                // Delete cart items
-                $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
-                $delete_cart->execute([$user_id]);
-
-                $message[] = 'Order placed successfully!';
-            }
+            // Handle the error
+            echo 'Payment could not be initialized. Please try again.';
         }
-    } else {
-        $message[] = 'Your cart is empty';
+        
+
+        if ($check_cart->rowCount() > 0) {
+            if ($address == '') {
+                $message[] = 'please add your address!';
+            } else {
+                $cart_items = array();
+                while ($fetch_cart = $check_cart->fetch(PDO::FETCH_ASSOC)) {
+                    $size = $fetch_cart['size'];
+                    $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
+                    $select_product_price->execute([$fetch_cart['pid']]);
+                    $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
+                    $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
+                    $sub_total = $price * $fetch_cart['quantity'];
+    
+                    // Consider add-ons in the total price calculation
+                    $select_addons = $conn->prepare("SELECT addon_name, addon_price FROM cart_addons WHERE cart_id = ?");
+                    $select_addons->execute([$fetch_cart['id']]);
+                    $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    
+                    $sub_total += array_sum(array_column($addons, 'addon_price'));
+    
+                    $total_price += $sub_total;
+                    $cart_items[] = array(
+                        'name' => $fetch_cart['name'],
+                        'price' => $price,
+                        'quantity' => $fetch_cart['quantity'],
+                        'addons' => $addons
+                    );
+                }
+                $total_products = implode(' - ', array_map(function ($item) {
+                    return $item['name'] . ' (' . $item['price'] . ' x ' . $item['quantity'] . ')';
+                }, $cart_items));
+    
+                $order_id = generate_unique_order_id($user_id);
+    
+    
+                    $order_placed = true;
+                
+    
+                if ($order_placed) {
+                     // Convert cart items with addons to JSON format
+        $cart_addons_json = json_encode($cart_items, JSON_UNESCAPED_UNICODE);
+        $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price, cart_addons) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $cart_addons_json]);
+                    // Delete cart addons first
+                    $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id IN (SELECT id FROM `cart` WHERE user_id = ?)");
+                    $delete_cart_addons->execute([$user_id]);
+    
+                    // Delete cart items
+                    $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+                    $delete_cart->execute([$user_id]);
+    
+                    $message[] = 'Order placed successfully!';
+                }
+            }
+        } else {
+            $message[] = 'Your cart is empty';
+        }
     }
+
+} else {
+    $user_id = '';
+    header('location:index.php');
 }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
