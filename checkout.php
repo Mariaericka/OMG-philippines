@@ -1,13 +1,16 @@
+
+
 <?php
 include 'components/connect.php';
 
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
-require 'vendor/autoload.php';
+
 
 function generate_unique_order_id($user_id)
 {
@@ -15,11 +18,12 @@ function generate_unique_order_id($user_id)
     $order_id = $user_id . '-' . $timestamp;
     return $order_id;
 }
+
+
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
     $order_id = generate_unique_order_id($user_id);
     $total_amount = 0; // Assume $total_amount is obtained from your cart logic
-
 
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
@@ -38,46 +42,55 @@ if (isset($_SESSION['user_id'])) {
         $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
         $check_cart->execute([$user_id]);
 
-
+        $total_amount = $total_price;  // gawa ko sakali 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co');
+        curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/ewallets/charges');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         
         $data = [
+            'external_id' => $order_id,
+            'amount' => intval($total_amount),
+            'ewallet_type' => 'GCASH',
             'reference_id' => $order_id,
-            'currency' => 'PHP',
-            'amount' => $total_amount,
             'checkout_method' => 'ONE_TIME_PAYMENT',
-            'channel_code' => 'GCASH',
-            'redirect_success' => 'http://localhost/OMG-philippines/orders.php',
-            'redirect_failure' => 'http://localhost/OMG-philippines'
+            'currency' => 'PHP',
+            'channel_code' => 'PH_GCASH',
+            'channel_properties' => [  // Add this section
+                'success_redirect_url' => 'http://localhost/OMG-philippines/orders.php',
+                'failure_redirect_url' => 'http://localhost/OMG-philippines'
+            ]
         ];
         
+        
+         
         $headers = [
             'Content-Type: application/json',
-            'Authorization: Basic ' . base64_encode('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4 ' . ':')
+            'Authorization: Basic ' . base64_encode('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4' . ':')
         ];
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         
         $result = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);  // Get the HTTP status code
+        
         if (curl_errno($ch)) {
             echo 'Error:' . curl_error($ch);
+        } else if ($httpcode >= 400) {
+            echo "HTTP Error: " . $httpcode . " - Response: " . $result;  // Handle HTTP errors with detailed response
+        } else {
+            $response_data = json_decode($result, true);
+            if (isset($response_data['status']) && $response_data['status'] === 'PENDING') {
+                header('Location: ' . $response_data['actions']['desktop_web_checkout_url']);
+                exit();
+            } else {
+                echo 'Payment could not be initialized. Please try again.';
+            }
         }
-        
         curl_close($ch);
         
-        $response_data = json_decode($result, true);
-        if (isset($response_data['status']) && $response_data['status'] === 'PENDING') {
-            header('Location: ' . $response_data['actions']['desktop_web_checkout_url']);
-            exit();
-        } else {
-            // Handle the error
-            echo 'Payment could not be initialized. Please try again.';
-        }
-        
+    
 
         if ($check_cart->rowCount() > 0) {
             if ($address == '') {
