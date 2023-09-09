@@ -43,6 +43,7 @@ if (isset($_SESSION['user_id'])) {
         $check_cart->execute([$user_id]);
 
         $total_amount = $total_price;  // gawa ko sakali 
+    
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/ewallets/charges');
@@ -57,17 +58,18 @@ if (isset($_SESSION['user_id'])) {
             'checkout_method' => 'ONE_TIME_PAYMENT',
             'currency' => 'PHP',
             'channel_code' => 'PH_GCASH',
-            'channel_properties' => [  // Add this section
+            'channel_properties' => [    
+                
                 'success_redirect_url' => 'http://localhost/OMG-philippines/orders.php',
                 'failure_redirect_url' => 'http://localhost/OMG-philippines'
-            ]
+            ],
+            
         ];
         
         
-         
         $headers = [
             'Content-Type: application/json',
-            'Authorization: Basic ' . base64_encode('xnd_development_BAdhFSIoIl9We02NcrWohsRlYHwi86dKfN2Y3I5UL7iOkbkZJ1RI6mJC5Ja4' . ':')
+            'Authorization: Basic ' . base64_encode('xnd_production_YwHU4qabeyVSp8AWxBCVzBjJFiTsG4PxzVUm40c7t9kEopFzGeW1iIO3GWBbHBD' . ':')
         ];
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
