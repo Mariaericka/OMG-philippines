@@ -43,6 +43,10 @@ if (isset($_SESSION['user_id'])) {
         $check_cart->execute([$user_id]);
 
         $total_amount = $total_price;  // gawa ko sakali 
+
+        $order_placed = false;
+         // For the GCash method
+         if ($method == 'gcash') {
     
         $ch = curl_init();
 
@@ -60,7 +64,7 @@ if (isset($_SESSION['user_id'])) {
             'channel_code' => 'PH_GCASH',
             'channel_properties' => [    
                 
-                'success_redirect_url' => 'http://localhost/OMG-philippines/orders.php',
+                'success_redirect_url' => 'http://localhost/OMG-philippines/success.php',
                 'failure_redirect_url' => 'http://localhost/OMG-philippines'
             ],
             
@@ -90,8 +94,18 @@ if (isset($_SESSION['user_id'])) {
                 echo 'Payment could not be initialized. Please try again.';
             }
         }
+        $response = curl_exec($ch);
+        $response_data = json_decode($response, true);
+
+        if ($response_data['status'] == 'success') {
+            $order_placed = true;
+        }
         curl_close($ch);
-        
+
+         // For the in-store pickup method
+        } elseif ($method == 'instore') {
+            $order_placed = true;
+        }
     
 
         if ($check_cart->rowCount() > 0) {
