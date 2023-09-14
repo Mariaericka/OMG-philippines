@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="5;url=orders.php">
+
 <?php
 include 'components/connect.php';
 
