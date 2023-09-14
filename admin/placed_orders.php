@@ -11,6 +11,7 @@ if (!isset($admin_id)) {
 
 function fetchAddonsForOrder($order_cart_items) {
     $addons = [];
+  
     foreach ($order_cart_items as $item) {
         if (isset($item['addons']) && is_array($item['addons'])) {
             foreach ($item['addons'] as $addon) {

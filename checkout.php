@@ -1,19 +1,16 @@
+
+
 <?php
 include 'components/connect.php';
+
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-} else {
-    $user_id = '';
-    header('location:index.php');
-}
 
 function generate_unique_order_id($user_id)
 {
@@ -22,127 +19,160 @@ function generate_unique_order_id($user_id)
     return $order_id;
 }
 
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $number = $_POST['number'];
-    $number = filter_var($number, FILTER_SANITIZE_STRING);
-    $email = $_POST['email'];
-    $email = filter_var($email, FILTER_SANITIZE_STRING);
-    $method = $_POST['method'];
-    $method = filter_var($method, FILTER_SANITIZE_STRING);
-    $address = $_POST['address'];
-    $address = filter_var($address, FILTER_SANITIZE_STRING);
-    $total_products = $_POST['total_products'];
 
-    $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-    $check_cart->execute([$user_id]);
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $order_id = generate_unique_order_id($user_id);
+    $total_amount = 0; // Assume $total_amount is obtained from your cart logic
 
-    if ($check_cart->rowCount() > 0) {
-        if ($address == '') {
-            $message[] = 'please add your address!';
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $number = $_POST['number'];
+        $number = filter_var($number, FILTER_SANITIZE_STRING);
+        $email = $_POST['email'];
+        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $method = $_POST['method'];
+        $method = filter_var($method, FILTER_SANITIZE_STRING);
+        $address = $_POST['address'];
+        $address = filter_var($address, FILTER_SANITIZE_STRING);
+        $total_products = $_POST['total_products'];
+        $total_price = $_POST['total_price'];
+    
+        $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+        $check_cart->execute([$user_id]);
+
+        $total_amount = $total_price;  // gawa ko sakali 
+
+        $order_placed = false;
+         // For the GCash method
+         if ($method == 'gcash') {
+    
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.xendit.co/ewallets/charges');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        
+        $data = [
+            'external_id' => $order_id,
+            'amount' => intval($total_amount),
+            'ewallet_type' => 'GCASH',
+            'reference_id' => $order_id,
+            'checkout_method' => 'ONE_TIME_PAYMENT',
+            'currency' => 'PHP',
+            'channel_code' => 'PH_GCASH',
+            'channel_properties' => [    
+                
+                'success_redirect_url' => 'http://localhost/OMG-philippines/success.php',
+                'failure_redirect_url' => 'http://localhost/OMG-philippines'
+            ],
+            
+        ];
+        
+        
+        $headers = [
+            'Content-Type: application/json',
+            'Authorization: Basic ' . base64_encode('xnd_production_YwHU4qabeyVSp8AWxBCVzBjJFiTsG4PxzVUm40c7t9kEopFzGeW1iIO3GWBbHBD' . ':')
+        ];
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        
+        $result = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);  // Get the HTTP status code
+        
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        } else if ($httpcode >= 400) {
+            echo "HTTP Error: " . $httpcode . " - Response: " . $result;  // Handle HTTP errors with detailed response
         } else {
-            $cart_items = array();
-            $total_price = 0;
-
-            while ($fetch_cart = $check_cart->fetch(PDO::FETCH_ASSOC)) {
-                $size = $fetch_cart['size'];
-                $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
-                $select_product_price->execute([$fetch_cart['pid']]);
-                $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
-                $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
-                $sub_total = $price * $fetch_cart['quantity'];
-
-                // Consider add-ons in the total price calculation
-                $select_addons = $conn->prepare("SELECT addon_name, addon_price FROM cart_addons WHERE cart_id = ?");
-                $select_addons->execute([$fetch_cart['id']]);
-                $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
-
-                $sub_total += array_sum(array_column($addons, 'addon_price'));
-                $total_price += $sub_total;
-
-                $cart_items[] = array(
-                    'name' => $fetch_cart['name'],
-                    'price' => $price,
-                    'quantity' => $fetch_cart['quantity'],
-                    'addons' => $addons
-                );
-            }
-            $total_products = implode(' - ', array_map(function ($item) {
-                return $item['name'] . ' (' . $item['price'] . ' x ' . $item['quantity'] . ')';
-            }, $cart_items));
-
-            $order_id = generate_unique_order_id($user_id);
-
-            $order_placed = false;
-
-            if ($method === 'gcash' && !isset($_FILES['payment_screenshot'])) {
-                $message[] = 'Please upload the payment screenshot for GCash payment.';
+            $response_data = json_decode($result, true);
+            if (isset($response_data['status']) && $response_data['status'] === 'PENDING') {
+                header('Location: ' . $response_data['actions']['desktop_web_checkout_url']);
+                exit();
             } else {
-                $order_placed = true;
-            }
-
-            if ($order_placed) {
-                $cart_addons_json = json_encode($cart_items, JSON_UNESCAPED_UNICODE);
-                $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price, cart_addons) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $cart_addons_json]);
-
-                // Delete cart addons first
-                $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id IN (SELECT id FROM `cart` WHERE user_id = ?)");
-                $delete_cart_addons->execute([$user_id]);
-
-                // Delete cart items
-                $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
-                $delete_cart->execute([$user_id]);
-
-                $message[] = 'Order placed successfully!';
-                  // Craft the email content for the receipt
-                  $email_subject = "Receipt for Your Order at OMG Philippines";
-                  $email_body = "<h2>Thank you for your order!</h2>";
-                  $email_body .= "<p><strong>Order ID:</strong> " . $order_id . "</p>";
-
-                  $email_body .= "<p><strong>Name:</strong> " . $name . "</p>";
-                  foreach ($cart_items as $item) {
-                    $email_body .= "<p>Product: " . $item['name'] . " - ₱" . $item['price'] . " x " . $item['quantity'] . "</p>";
-                    
-                    if (isset($item['addons']) && is_array($item['addons'])) {
-                        foreach ($item['addons'] as $addon) {
-                            $email_body .= "<p>Addon: " . $addon['addon_name'] . " - ₱" . $addon['addon_price'] . "</p>";
-                        }
-                    }
-                }
-                  $email_body .= "<p><strong>Total Products:</strong> " . $total_products . "</p>";
-                  $email_body .= "<p><strong>Total Price:</strong> ₱" . $total_price . "</p>";
-  
-                  // Send the email using PHPMailer
-                  $mail = new PHPMailer(true);
-  
-                  $mail->isSMTP();
-                  $mail->Host = 'smtp.gmail.com';
-                  $mail->SMTPAuth = true;
-                  $mail->Username = 'omgphilippines123@gmail.com';
-                  $mail->Password = 'qcdjmrfckncojvsy';
-                  $mail->SMTPSecure = 'ssl';
-                  $mail->Port = 465;
-  
-                  $mail->setFrom('omgphilippines123@gmail.com', 'OMG Philippines');
-                  $mail->addAddress($email);
-                  $mail->isHTML(true);
-                  $mail->Subject = $email_subject;
-                  $mail->Body = $email_body;
-  
-                  try {
-                      $mail->send();
-                  } catch (Exception $e) {
-                      $message[] = "Receipt email could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                    }
-                } else {
-                    $message[] = 'Your cart is empty';
-                }
-                }
+                echo 'Payment could not be initialized. Please try again.';
             }
         }
-  
+        $response = curl_exec($ch);
+        $response_data = json_decode($response, true);
+
+        if ($response_data['status'] == 'success') {
+            $order_placed = true;
+        }
+        curl_close($ch);
+
+         // For the in-store pickup method
+        } elseif ($method == 'instore') {
+            $order_placed = true;
+        }
+    
+
+        if ($check_cart->rowCount() > 0) {
+            if ($address == '') {
+                $message[] = 'please add your address!';
+            } else {
+                $cart_items = array();
+                while ($fetch_cart = $check_cart->fetch(PDO::FETCH_ASSOC)) {
+                    $size = $fetch_cart['size'];
+                    $select_product_price = $conn->prepare("SELECT price, priceR FROM products WHERE id = ?");
+                    $select_product_price->execute([$fetch_cart['pid']]);
+                    $product_price = $select_product_price->fetch(PDO::FETCH_ASSOC);
+                    $price = $size === 'large' ? $product_price['priceR'] : $product_price['price'];
+                    $sub_total = $price * $fetch_cart['quantity'];
+    
+                    // Consider add-ons in the total price calculation
+                    $select_addons = $conn->prepare("SELECT addon_name, addon_price FROM cart_addons WHERE cart_id = ?");
+                    $select_addons->execute([$fetch_cart['id']]);
+                    $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    
+                    $sub_total += array_sum(array_column($addons, 'addon_price'));
+    
+                    $total_price += $sub_total;
+                    $cart_items[] = array(
+                        'name' => $fetch_cart['name'],
+                        'price' => $price,
+                        'quantity' => $fetch_cart['quantity'],
+                        'addons' => $addons
+                    );
+                }
+                $total_products = implode(' - ', array_map(function ($item) {
+                    return $item['name'] . ' (' . $item['price'] . ' x ' . $item['quantity'] . ')';
+                }, $cart_items));
+    
+                $order_id = generate_unique_order_id($user_id);
+    
+    
+                    $order_placed = true;
+                
+    
+                if ($order_placed) {
+                     // Convert cart items with addons to JSON format
+        $cart_addons_json = json_encode($cart_items, JSON_UNESCAPED_UNICODE);
+        $insert_order = $conn->prepare("INSERT INTO `orders` (order_id, user_id, name, number, email, method, address, total_products, total_price, cart_addons) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $insert_order->execute([$order_id, $user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $cart_addons_json]);
+                    // Delete cart addons first
+                    $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id IN (SELECT id FROM `cart` WHERE user_id = ?)");
+                    $delete_cart_addons->execute([$user_id]);
+    
+                    // Delete cart items
+                    $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+                    $delete_cart->execute([$user_id]);
+    
+                    $message[] = 'Order placed successfully!';
+                }
+            }
+        } else {
+            $message[] = 'Your cart is empty';
+        }
+    }
+
+} else {
+    $user_id = '';
+    header('location:index.php');
+}
+
+
 
 
 ?>
@@ -175,7 +205,7 @@ if (isset($_POST['submit'])) {
 
 <section class="checkout">
    <form action="" method="post" enctype="multipart/form-data">
-   <div class="cart-items">
+      <div class="cart-items">
          <h3>Cart Items</h3>
          <?php
             $total_price = 0;
@@ -246,14 +276,7 @@ if (isset($_POST['submit'])) {
         <option value="gcash">GCash</option>
         <option value="instore">In-store Pickup</option>
     </select>
-    <?php if (isset($_POST['submit']) && $_POST['method'] === 'gcash'): ?>
-        <div class="gcash-qr-code">
-            <!-- Add your GCash QR code image or HTML here -->
-            <img src="images\gcash qr code.jpg" alt="GCash QR Code" style="width: 242px;">
-        </div>
-        <label for="payment_screenshot">Upload Payment Screenshot:</label>
-        <input type="file" name="payment_screenshot" accept="image/*" required>
-    <?php endif; ?>
+    
     <input type="submit" value="Place Order" class="btn <?php if($fetch_profile['address'] == '' || (isset($_POST['method']) && $_POST['method'] === 'gcash')) { echo 'disabled'; } ?>" style="width: 100%; background: var(--red); color: var(--white);" name="submit">
    </form>
 </section>
@@ -265,23 +288,8 @@ if (isset($_POST['submit'])) {
 <!-- custom js file link -->
 <script src="js/modal.js"></script>
 <script src="js/script.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const paymentMethodSelect = document.getElementById("payment-method");
-    const gcashQrCode = document.querySelector(".gcash-qr-code");
-    const paymentScreenshotInput = document.querySelector("[name='payment_screenshot']");
 
-    paymentMethodSelect.addEventListener("change", function() {
-        if (this.value === "gcash") {
-            gcashQrCode.style.display = "block";
-            paymentScreenshotInput.required = true;
-        } else {
-            gcashQrCode.style.display = "none";
-            paymentScreenshotInput.required = false;
-        }
-    });
-});
-</script>
 
 </body>
 </html>
+  

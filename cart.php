@@ -130,7 +130,7 @@ $grand_total = 0;
 
    <div class="cart-total">
       <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+      <a href="checkout.php" class="btn <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
    </div>
 
    <div class="more-btn">
