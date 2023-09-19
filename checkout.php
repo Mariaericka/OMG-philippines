@@ -269,7 +269,8 @@ if (isset($_SESSION['user_id'])) {
          <a href="update_address.php" class="btn">Update Address</a>
          <div class="delivery-info">
             <h3>Delivery Information</h3>
-            <p><strong>Note:</strong> Delivery is available within the Laguna area only. If you are outside the delivery range, please choose "In-store Pick-up" or "GCash" as your payment method and visit our stores or other franchise branches.</p>
+            <p><strong>Note:</strong> Delivery is available within the Laguna area only. If you are outside the delivery range, please choose "In-store Pick-up" as your payment method and visit our stores or other franchise branches. 
+        </p><p><strong> The delivery fee is not included in online payment and will be collected upon delivery.</strong></p>
          </div>
          <select name="method" class="box" id="payment-method" required>
         <option value="" disabled selected>Select Payment Method</option>
