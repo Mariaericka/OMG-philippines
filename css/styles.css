@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This will make the body take up the full viewport height */
+}
+
+.centered-div {
+    width: 300px; /* Set the width of the div as per your requirement */
+    height: 200px; /* Set the height of the div as per your requirement */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center; /* Optionally, center the content inside the div horizontally */
+}

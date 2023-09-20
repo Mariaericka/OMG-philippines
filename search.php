@@ -49,9 +49,9 @@ include 'components/add_cart.php';
 <!-- search form section ends -->
 
 
-<section class="products" style="min-height: 100vh; padding-top:0;">
+<section class="productsbev" style="min-height: 100vh; padding-top:0;">
 
-<div class="box-container">
+<div class="box1-container1">
 
       <?php
          if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
@@ -61,7 +61,7 @@ include 'components/add_cart.php';
          if($select_products->rowCount() > 0){
             while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
       ?>
-  <form action="" method="post" class="box">
+  <form action="" method="post" class="box1">
          <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
          <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
@@ -93,7 +93,7 @@ include 'components/add_cart.php';
       ?>
 
    </div>
-
+   </div>
 </section>
 
 
@@ -101,46 +101,96 @@ include 'components/add_cart.php';
 
 
 <!-- The Modal -->
-<div id="costumizeOrderModal" class="backdrop">
+
+
+
+<div id="costumizeOrderModal<?= $fetch_products['id']; ?>" class="backdrop">
 
   <!-- Modal content -->
   <div class="modal">
       <div class="modal-header">
-         <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close" onclick="closeModal(<?= $fetch_products['id']; ?>)">&times;</span>
       </div>
       <div class="modal-body">
          <table>
             <tr>
                <td>
-                  <span class="modal-label">Size:</span>
+               <span class="modal-label">Price:</span>
                </td>
                <td>
-                  <select class="input" id="size-dropdown">
-                     <option value="small" selected>Regular</option>
-                     <option value="large">Large</option>
-                  </select>
+                             
+               <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
+    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected> ₱<?= $fetch_products['price']; ?>.00</option>
+<!-- <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option> -->
+</select>
+
+
                </td>
                <tr>
                <td>
                   <span class="modal-label">Quantity:</span>
                </td>
+               <form action="" method="post" class="box">
+
                <td>
            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
            </td>
             </tr>
          </table>
       </div>
-      <div class="modal-footer">
-         <button class="btn confirm-btn" name="add_to_cart">ADD TO CART</button>
-         <button class="btn close-btn" onclick="closeModal()">CANCEL</button>
-      </div>
-  </div>
 
+  <!-- Add-ons section -->
+
+                   
+  <div class="modal-body" style="flex-direction: column;">
+    <span class="modal-label">Add-ons:</span>
+    <?php
+    // Fetch the addons for the current product from the database
+    $select_addons = $conn->prepare("SELECT * FROM `addons`");
+    $select_addons->execute();
+    $addons = $select_addons->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($addons as $addon) {
+        ?>
+      
+      
+      <label>
+    <input type="checkbox" name="add_ons[<?= $fetch_products['id']; ?>][<?= $addon['id']; ?>]" value="<?= $addon['price']; ?>">
+    <?= $addon['name']; ?> (+₱<?= $addon['price']; ?>)
+</label>
+
+
+    <?php } ?>
+   
+    </div>
+
+
+    <div class="modal-footer">
+
+<input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
+
+
+<input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
+<input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
+<input type="hidden" name="size[]" id="size<?= $fetch_products['id']; ?>" value="regular">
+<input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
+<input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
+<button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
+
+</form>
+<button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
+
+</div>
+</div>
 
 </div>
 
 
+      
 
+
+
+</form>
 
 
 

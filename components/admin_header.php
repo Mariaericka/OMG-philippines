@@ -24,7 +24,6 @@ if(isset($message)){
          <a href="admin_accounts.php">admins</a>
          <a href="users_accounts.php">users</a>
          <a href="messages.php">messages</a>
-         <a href="applicants.php">applicants</a>
 
       </nav>
 
@@ -39,12 +38,9 @@ if(isset($message)){
             $select_profile->execute([$admin_id]);
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
-         <p><?= $fetch_profile['name']; ?></p>
+         <p><?= $fetch_profile['fullname']; ?></p>
          <a href="update_profile.php" class="btn">update profile</a>
-         <div class="flex-btn">
-            <a href="admin_login.php" class="option-btn">login</a>
-            <a href="register_admin.php" class="option-btn">register</a>
-         </div>
+        
          <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
       </div>
 
