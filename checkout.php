@@ -159,7 +159,55 @@ if (isset($_SESSION['user_id'])) {
                     $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
                     $delete_cart->execute([$user_id]);
     
-                    $message[] = 'Order placed successfully!';
+                    $message[] = 'Order placed successfully! and an email confirmation has been sent to your email address.';
+                    $email_subject = "Receipt for Your Order at OMG Philippines";
+                   
+
+                    
+                
+                    $email_body = "<p>Thank you for placing your order with us. Your order details are as follows: </p>";
+                
+                    $email_body .= "<h2>Order Confirmation</h2>";
+                    $email_body .= "<p><strong>Order ID:</strong> " . $order_id . "</p>";
+                    $email_body .= "<p><strong>Name:</strong> " . $name . "</p>";
+                    foreach ($cart_items as $item) {
+                      $email_body .= "<p>Product: " . $item['name'] . " - ₱" . $item['price'] . " x " . $item['quantity'] . "</p>";
+                      
+                      if (isset($item['addons']) && is_array($item['addons'])) {
+                          foreach ($item['addons'] as $addon) {
+                              $email_body .= "<p>Addon: " . $addon['addon_name'] . " - ₱" . $addon['addon_price'] . "</p>";
+                          }
+                      }
+                  }
+                  $email_body .= "<p><strong>Payment Method:</strong> " . $method . "</p>";
+                
+                    $email_body .= "<p><strong>Total Products:</strong> " . $total_products . "</p>";
+                    $email_body .= "<p><strong>Total Price:</strong> ₱" . $total_price . "</p>";
+                
+                    $email_body .= "<p>Thank you for ordering! </p>";
+                 // Send the email using PHPMailer
+                 $mail = new PHPMailer(true);
+                  
+                 $mail->isSMTP();
+                 $mail->Host = 'smtp.gmail.com';
+                 $mail->SMTPAuth = true;
+                 $mail->Username = 'omgphilippines123@gmail.com';
+                 $mail->Password = 'qcdjmrfckncojvsy';
+                 $mail->SMTPSecure = 'ssl';
+                 $mail->Port = 465;
+                
+                 $mail->setFrom('omgphilippines123@gmail.com', 'OMG Philippines');
+                 $mail->addAddress($email);
+                 $mail->isHTML(true);
+                 $mail->Subject = $email_subject;
+                 $mail->Body = $email_body;
+                
+                 try {
+                     $mail->send();
+                 } catch (Exception $e) {
+                     $message[] = "Receipt email could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                   }
+
                 }
             }
         } else {

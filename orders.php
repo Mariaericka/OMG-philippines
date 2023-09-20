@@ -84,7 +84,7 @@ $orders = fetchOrders($conn, $user_id);
             <?php endif; ?>
         <?php endforeach; ?>
         <p>total price : <span>₱<?= number_format($total_price, 2); ?>/-</span></p>
-        <p>payment status : <span style="color:<?php if($order['payment_status'] == 'pending'){ echo 'red'; } else { echo 'green'; }; ?>"><?= $order['payment_status']; ?></span> </p>
+        <p>status : <span style="color:<?php if($order['payment_status'] == 'pending'){ echo 'red'; } else { echo 'green'; }; ?>"><?= $order['payment_status']; ?></span> </p>
         <br>
         <p>name : <span><?= $order['name']; ?></span></p>
         <p>email : <span><?= $order['email']; ?></span></p>
