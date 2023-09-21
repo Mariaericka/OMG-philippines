@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="5;url=orders.php">
+<meta http-equiv="refresh" content="5;url=index.php">
 
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
