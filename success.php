@@ -128,13 +128,19 @@ if ($is_payment_successful) {
 ?>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success!</title>
+    <link rel="icon"  href="images/omg-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style2.css">
   </head>
     <style>
       body {
         text-align: center;
         padding: 40px 0;
-        background: #EBF0F5;
+        background: darkgrey;
       }
         h1 {
           color: #88B04B;
@@ -156,7 +162,7 @@ if ($is_payment_successful) {
         margin-left:-15px;
       }
       .card {
-        background: white;
+        background: beige;
         padding: 60px;
         border-radius: 4px;
         box-shadow: 0 2px 3px #C8D0D8;
@@ -165,6 +171,7 @@ if ($is_payment_successful) {
       }
     </style>
     <body>
+        
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
         <i class="checkmark">✓</i>
@@ -175,5 +182,7 @@ if ($is_payment_successful) {
    Your order receipt will be emailed to you.</p>
 
       </div>
+
     </body>
+
 </html>
