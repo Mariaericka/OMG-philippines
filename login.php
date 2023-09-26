@@ -48,7 +48,7 @@ if(isset($_SESSION['user_id'])){
 <input type="password"  class="form-styling" id="password" name="password" placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;"><br><br>   
 <input type="submit" onclick="LoginBtn()" name="submit" value="Sign-in" class="btn" >
 </div>
-<center> <p>Forgot Password? <a href="otpCheck2.php">click here </a></p></center>
+<center> <p>Forgot Password? <a href="request_reset.php">click here </a></p></center>
 
 <center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
 <center> <p class="tcpp"> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>

@@ -14,3 +14,9 @@ body {
     border: 1px solid #ccc;
     text-align: center; /* Optionally, center the content inside the div horizontally */
 }
+.centered-div1 {
+    width: 300px; /* Set the width of the div as per your requirement */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center; /* Optionally, center the content inside the div horizontally */
+}
