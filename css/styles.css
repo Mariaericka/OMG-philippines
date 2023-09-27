@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* This will make the body take up the full viewport height */
+    height: 58vh; /* This will make the body take up the full viewport height */
 }
 
 .centered-div {
