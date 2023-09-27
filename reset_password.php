@@ -17,9 +17,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
    <title>Reset Password</title>
+   <link rel="icon"  href="images/omg-logo.png">
+
 </head>
-<body style="background: beige;padding:10% 39%;">
-<div class="centered-div1" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px;background: rgba(111,66,193,0.33);color: var(--bs-dark); padding:20px;width:350px;">
+<body style="background: url('images/home-background.png');padding:10% 39%;">
+<div class="centered-div1" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px;background:cornsilk; padding:20px;width:350px;">
 
    <form action="process_reset_password.php" method="post">
        <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
