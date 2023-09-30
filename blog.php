@@ -23,6 +23,8 @@ if(isset($_SESSION['user_id'])){
   <!-- font awesome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
    <!-- Own Carousel -->
    <link rel="stylesheet" href="css/owl.carousel.min.css">
