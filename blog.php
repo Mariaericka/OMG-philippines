@@ -82,8 +82,17 @@ if(isset($_SESSION['user_id'])){
 
 
 
-<!------------------- Blog Carousel ------------------->
 
+
+   <div class="fb-posts-container">
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0QjiMeKGdb63UozWgbYxU6d1EN7XLcyy8etyMV3E2DkRMRi8PnsnQ7XwB2iPZ2B83l&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0Eiw9tXbAXCHb3kwF1895fxwyn4BJeS21eqq5j1jAAXs7dMtMP85oyCY7vNnAxz3Ul&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid02W6rPnVcP5o7opcZUYja9St4DKM85zvBfAe5PmYqHS1PhAFWVc1gB9dzZd53BSueVl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0CrNwwqk5t1dGq46LvVaAopuqJtkVfABbXnwvYea13o9kmNE1UUXLKLie5rrxZg5tl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+    </div>
+<!------------------- Blog Carousel ------------------->
 
 <section>
       
@@ -123,25 +132,25 @@ if(isset($_SESSION['user_id'])){
       
           
       <div class="owl-carousel owl-theme blog-post">
-          <div class="blog-content1">
+          <div class="fb-posts-container">
           <img src="./images/picture 1.jpg" alt="Coming soon">
                         <div class="blog-title">
                   <h3>Coming Soon</h3>
               </div>
           </div>
-          <div class="blog-content1">
+          <div class="fb-posts-container">
           <img src="./images/picture 2.jpg" alt="Opening soon">
               <div class="blog-title">
                   <h3>Opening Soon</h3>
               </div>
           </div>
-          <div class="blog-content1">
+          <div class="fb-posts-container">
           <img src="./images/picture 3.jpg" alt="Customers">
               <div class="blog-title">
                   <h3>Customers!</h3>
               </div>
           </div>
-          <div class="blog-content1">
+          <div class="fb-posts-container">
           <img src="./images/picture 4.jpg" alt="New branch">
                         <div class="blog-title">
                   <h3>New Branch</h3>

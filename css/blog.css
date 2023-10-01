@@ -34,6 +34,12 @@ section .blog-content {
     box-shadow: 0 15px 20px rgba(0,0,0, 0.2);
     
 }
+.fb-posts-container {
+    display: flex;
+    justify-content: space-around;  /* Adjusts the spacing between the iframes */
+    flex-wrap: wrap;  /* Allows the iframes to wrap to the next line if the container is too narrow */
+}
+
 /*--------- Blog Carousel -------*/
 
 section .blog {
