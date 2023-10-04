@@ -23,25 +23,30 @@ if(isset($_SESSION['user_id'])){
   <!-- font awesome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
    <!-- Own Carousel -->
- <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 
   
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
-   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/blog.css">
+
 
 
 </head>
 <body>
 
 <?php include 'components/user_header.php'; ?>
-]
+
 
 <!-- BLOG NEW start-->
-
-<div class="header">
+<section class="site-title">
+<div class="header1">
     <h1>OMG</h1>
     <h2>is the best choice!</h2>
     <p>Overload goodness in cup</p>
@@ -51,9 +56,8 @@ if(isset($_SESSION['user_id'])){
     <img src="./images/OMG.jpg" alt="OMG-main">
 </div>
 
-<div class="background">
-   <img src="./images/Background (2).png" alt="Background">
-</div>
+</section>
+<!--<div class="owl-carousel owl-theme ">
 
 <div class="Price-rollback">
    <img src="./images/Price rollback sale.jpg" alt="Price rollback sale">
@@ -73,6 +77,95 @@ if(isset($_SESSION['user_id'])){
    <h2 class="April">April 4-9</h2>
 </div>
 
+</div>-->
+
+
+
+
+
+
+   <div class="fb-posts-container">
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0QjiMeKGdb63UozWgbYxU6d1EN7XLcyy8etyMV3E2DkRMRi8PnsnQ7XwB2iPZ2B83l&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0Eiw9tXbAXCHb3kwF1895fxwyn4BJeS21eqq5j1jAAXs7dMtMP85oyCY7vNnAxz3Ul&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid02W6rPnVcP5o7opcZUYja9St4DKM85zvBfAe5PmYqHS1PhAFWVc1gB9dzZd53BSueVl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0CrNwwqk5t1dGq46LvVaAopuqJtkVfABbXnwvYea13o9kmNE1UUXLKLie5rrxZg5tl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+    </div>
+<!------------------- Blog Carousel ------------------->
+
+<section>
+      
+          
+                <div class="owl-carousel owl-theme blog-post">
+                    <div class="blog-content">
+                    <img src="./images/Price rollback sale.jpg" alt="Price rollback sale">
+                        <div class="blog-title">
+                            <h3>Buy one take one milk shake for only 88 pesos!</h3>
+                            <button class="btn btn-blog">Milkshakes</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                    <img src="./images/Buy 1 take 1.jpg" alt="Buy 1 take 1">
+                        <div class="blog-title">
+                            <h3>Price rollback sale from P69 to P45!</h3>
+                            <button class="btn btn-blog">Coffees</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                    <img src="./images/Fruity yogurt.jpg" alt="Fruity yogurt">
+                        <div class="blog-title">
+                            <h3>Yogurt for only P88!</h3>
+                            <button class="btn btn-blog">Yogurts</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-navigation">
+                    <span class="owl-nav-prev"><i class="fa-solid fa-circle-chevron-left"></i></span>
+                    <span class="owl-nav-next"><i class="fa-solid fa-circle-chevron-right"></i></span>
+                </div>
+  
+   
+    </section>
+    
+<section>
+      
+          
+      <div class="owl-carousel owl-theme blog-post">
+          <div class="fb-posts-container">
+          <img src="./images/picture 1.jpg" alt="Coming soon">
+                        <div class="blog-title">
+                  <h3>Coming Soon</h3>
+              </div>
+          </div>
+          <div class="fb-posts-container">
+          <img src="./images/picture 2.jpg" alt="Opening soon">
+              <div class="blog-title">
+                  <h3>Opening Soon</h3>
+              </div>
+          </div>
+          <div class="fb-posts-container">
+          <img src="./images/picture 3.jpg" alt="Customers">
+              <div class="blog-title">
+                  <h3>Customers!</h3>
+              </div>
+          </div>
+          <div class="fb-posts-container">
+          <img src="./images/picture 4.jpg" alt="New branch">
+                        <div class="blog-title">
+                  <h3>New Branch</h3>
+              </div>
+          </div>
+      </div>
+    
+
+
+</section>
+
+
+
+    <!---------x---------- Blog Carousel----------x--------->
+    <!-- <section class="site-title1">
 <div class="Coming-soon">
       <img src="./images/picture 1.jpg" alt="Coming soon">
       <p class="Likes">Likes<br>Comments</p>
@@ -98,11 +191,24 @@ if(isset($_SESSION['user_id'])){
 <div class="New-branch">
    <img src="./images/picture 4.jpg" alt="New branch">
    <p class="Likes">Likes<br>Comments</p>
-</div>
+</div>-->
+</section>
 
-</body>
+<?php include 'components/footer.php'; ?>
 
 <!-- BLOG NEW end-->
+  <!-- Jquery Library file -->
+  <script src="JS/Jquery3.6.0.min.js"></script>
 
+<!-- Owl Carousel -->
+<script src="JS/owl.carousel.min.js"></script>
+<script src="JS/script2.js"></script>
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
 
 
