@@ -20,7 +20,7 @@
 
     <title>Request Password Reset</title>
 </head>
-<body style="background:  url('images/home1.png');padding:10% 39%;">
+<body style="background:bisque ;padding:10% 39%;">
 <div class="centered-div1" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px;background: orangered; padding:20px;width:350px;">
 
 <form action="send_reset_otp.php" method="post">
