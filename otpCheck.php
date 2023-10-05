@@ -104,12 +104,12 @@ if (isset($_POST['resend'])) {
 </head>
 </head>
 
-<body style="background: url('images/home1.png');padding:10% 39%;">
+<body style="background:#FFD93D; padding:10% 39%;">
     <?php
         include("navbar.php");
     ?>
     
-        <div class="centered-div" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px;background: coral; padding:20px;width:350px;">
+        <div class="centered-div" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px; background:rgba(111,66,193,0.33);color: var(--bs-dark);  padding:20px;width:350px;">
         <center>
             <h4>OTP code will expire in</h4> 
             <h1 id="countdown">2:00</h1>
