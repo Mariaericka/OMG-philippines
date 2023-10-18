@@ -6,7 +6,7 @@
             <a href="https://www.foodpanda.ph/" class="logo"><img src="images/foodpanda.png" style="   
      width: 153px;
     height: 123px;"></a> 
-    <h2>OTHER LINKS</h2>  
+    <h2></h2>  
     <a style="color: #4F200D" href="privacypolicy.php">Privacy Policy </a> |
     <a style="color: #4F200D" href="tc.php">Terms and Condition</a>
 
