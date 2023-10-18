@@ -67,22 +67,57 @@ include 'components/add_cart.php';
         <h3>Taste that would definitely make you go OMG!</h3>
        
         <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
-
         
-<section class="franchise" id="franchise">
+<section>
+   <div class="swiper-pagination"></div>
 
-    <div class="container">
+</div>
 
-        <div class="content1">
-        
-            <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
-            <h1>5 in 1 FRANCHISE</h1>
-            <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
-            <br><a href="franchise.php" class="button11">Franchise Now!</a>
-       
-        </div>
-        <a href="https://www.vecteezy.com/free-vector/philippines-map" class="ph"></a>
-    </div>
+
+
+<section class="hero">
+
+   <div class="swiper hero-slider">
+
+      <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Yogurt Series</span>
+               <h3>Creamy Fruity Melon</h3>
+               <a href="menu.php" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/creamy fruit melon1.png" alt="">
+            </div>
+         </div>
+
+
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Choco Series</span>
+               <h3>Choco Kisses</h3>
+               <a href="menu.php" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/kisses choco1.png" alt="">
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Choco Series</span>
+               <h3>Twix Choco</h3>
+               <a href="menu.php" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/twix choco.png" alt="">
+            </div>
+         </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+   </div>
 
 </section>
 
@@ -95,6 +130,27 @@ include 'components/add_cart.php';
 <a href="menu.php">  <div class="series"></div> </a>
    
 </section>
+        
+<section class="franchise" id="franchise">
+
+    <div class="container">
+
+        <div class="content1">
+        
+            <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
+            <h1>8 in 1 FRANCHISE</h1>
+            <p>With 30k initial stocks and equipments,3000 raffle promo, food panda application, freezer package,free mock up store design, free use of OMG's trademark,creation of page, extensive training and initial marketing included</p>
+
+            <br><a href="franchise.php" class="button11">Franchise Now!</a>
+       
+        </div>
+        <a href="https://www.vecteezy.com/free-vector/philippines-map" class="ph"></a>
+    </div>
+
+</section>
+
+
+
 
 <!-- <section class="hero">
 <a href="menu.php" class="button11 none">Buy 1 and Take 1</a>
@@ -153,59 +209,6 @@ include 'components/add_cart.php';
 
 </section>
 
-
-<section>
-   <div class="swiper-pagination"></div>
-
-</div>
-
-
-
-<section class="hero">
-
-   <div class="swiper hero-slider">
-
-      <div class="swiper-wrapper">
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Yogurt Series</span>
-               <h3>Creamy Fruity Melon</h3>
-               <a href="menu.php" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/creamy fruit melon1.png" alt="">
-            </div>
-         </div>
-
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Choco Series</span>
-               <h3>Choco Kisses</h3>
-               <a href="menu.php" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/kisses choco1.png" alt="">
-            </div>
-         </div>
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Choco Series</span>
-               <h3>Twix Choco</h3>
-               <a href="menu.php" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/twix choco.png" alt="">
-            </div>
-         </div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-
-   </div>
-
-</section>
 
 
 </section>
