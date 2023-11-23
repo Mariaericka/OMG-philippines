@@ -62,10 +62,8 @@ include 'components/add_cart.php';
 </head>
 <body>
 <?php include 'components/user_header.php'; ?>
-<h3 class="creamy">Creamy goodness in a cup</h3>
-        <h3>Taste that would definitely make you go OMG!</h3>
-       
-        <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
+
+        <img src="images\category\background.png" alt="background-image">
 
         
 <section class="franchise" id="franchise">
@@ -75,7 +73,7 @@ include 'components/add_cart.php';
         <div class="content1">
         
             <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
-            <h1>5 in 1 FRANCHISE</h1>
+            <h1>8 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
             <br><a href="franchise.php" class="button11">Franchise Now!</a>
        
