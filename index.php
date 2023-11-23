@@ -63,7 +63,12 @@ include 'components/add_cart.php';
 <body>
 <?php include 'components/user_header.php'; ?>
 
-        <img src="images\category\background.png" alt="background-image">
+
+        <img class="background-image" src="images\category\background.png" >
+
+        <div class="Tagline">
+         <h3> Creamy goodness in a cup. Taste that would definitely make you go OMG!</h3>
+        </div>
 
         
 <section class="franchise" id="franchise">
@@ -72,9 +77,7 @@ include 'components/add_cart.php';
 
         <div class="content1">
         
-            <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
-            <h1>8 in 1 FRANCHISE</h1>
-            <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
+            <h1 class="headeropen">5 branches nationwide!</h1>
             <br><a href="franchise.php" class="button11">Franchise Now!</a>
        
         </div>
@@ -96,52 +99,6 @@ include 'components/add_cart.php';
 
 <section class="hero">
 
-<!-- Contact us starts here -->
-
-<!-- <form action="" method="post" enctype="multipart/form-data">
-
-    <div class="container">
-        <div class="contact-parent">
-        
-        <div class="contact-child child2">
-            <div class="inside-contact">
-                <h2>Contact Us</h2>
-                <h3>
-                    <span id="confirm">
-                </h3>
-                <p>Name *</p>
-                <input id="txt_name" type="text" Required="required" name="name">
-                <p>Email *</p>
-                <input id="txt_email" type="text" Required="required" name="email">
-                <p>Phone *</p>
-                <input id="txt_phone" type="text" Required="required" name="number">
-                <p>Subject *</p>
-                <input id="txt_subject" type="text" Required="required" name="subject">
-                <p>Message *</p>
-                <textarea id="txt_message" rows="4" cols="20" Required="required" name="msg" ></textarea>
-                <input type="submit" id="btn_send" value="SUBMIT" name="send">
-            </div>
-        </div>
-        <div class="contact-child child1">
-            <p>
-                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
-                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
-                <br />
-                Laguna (Plaza, Near Munisipyo Of Alaminos)
-                </span>
-            </p>
-            <p>
-                <i class="fas fa-phone-alt"></i> Contact us <br />
-                <span> 09171675592</span>
-            </p>
-            <p>
-                <i class=" far fa-envelope"></i> Email <br />
-                <span>omgfranchising@gmail.com</span>
-            </p>
-        </div>
-        </div>
-    </div>   
-</form> -->
 
 </section>
 
