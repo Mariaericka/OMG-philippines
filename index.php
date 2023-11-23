@@ -75,7 +75,7 @@ include 'components/add_cart.php';
         <div class="content1">
         
             <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
-            <h1>87 in 1 FRANCHISE</h1>
+            <h1>5 in 1 FRANCHISE</h1>
             <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
             <br><a href="franchise.php" class="button11">Franchise Now!</a>
        
@@ -95,17 +95,12 @@ include 'components/add_cart.php';
    
 </section>
 
-<!-- <section class="hero">
-<a href="menu.php" class="button11 none">Buy 1 and Take 1</a>
-<a href="franchise.php" class="button12 none">Event Packages</a>
-<a href="menu.php" class="button13 none">Cheescake series</a>
-</section> -->
 
 <section class="hero">
 
 <!-- Contact us starts here -->
 
-<form action="" method="post" enctype="multipart/form-data">
+<!-- <form action="" method="post" enctype="multipart/form-data">
 
     <div class="container">
         <div class="contact-parent">
@@ -148,7 +143,7 @@ include 'components/add_cart.php';
         </div>
         </div>
     </div>   
-</form>
+</form> -->
 
 </section>
 
