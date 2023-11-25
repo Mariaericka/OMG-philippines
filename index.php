@@ -74,14 +74,13 @@ include 'components/add_cart.php';
 <section class="franchise" id="franchise">
 
     <div class="container">
-
+      <h1 class="five">5</h1>
+      <h1 class="branch">BRANCHES</h1>
+      <h1 class="nationwide">NATIONWIDE!</h1>
         <div class="content1">
-        
-            <h1 class="headeropen">5 branches nationwide!</h1>
-            <br><a href="franchise.php" class="button11">Franchise Now!</a>
-       
-        </div>
-        <a href="https://www.vecteezy.com/free-vector/philippines-map" class="ph"></a>
+            <a href="franchise.php" class="button11">Franchise Now!</a>
+         </div>
+      <img src="images\category\laguna.png" alt="laguna-map">
     </div>
 
 </section>
