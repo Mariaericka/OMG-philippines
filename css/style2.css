@@ -27,7 +27,7 @@
    font-size: 30px;
    padding: 20px;
    border-radius: 10px;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-family: 'Inter', sans-serif;
 }
 
 .second ul  {
@@ -62,7 +62,7 @@
 }
 
 .container{
-   padding-top: 100px;
+   padding-top: 200px;
    height: 600px;
    width: 500px;
    color: #4F200D;
@@ -70,44 +70,52 @@
 }
 
 .container h1 {
-   line-height: 80px;
+   line-height: 100px;
    text-align: center;
+}
+
+.container .Now {
+   font-size: 70px;
 }
 
 .container .five {
-   font-size: 80px;
+   font-size: 100px;
+   color: #FF8400;
 }
 
-.container .branch {
-   font-size: 40px;
-}
-
-.container .nationwide {
-   font-size: 60px;
+.container .branch{
+   font-size: 70px;
+   margin-bottom: 50px;
 }
 
 .content1 a{
-   margin-top: 100px;
+   border-top: 50px;
    text-align: center;
    font-style: normal;
    font-weight: 800;
-   font-size: 17px;
+   font-size: 30px;
+   background-color: #F6F1E9;
+   border: 2px solid #4F200D;
+   padding: 15px;
    color: #4F200D;
     transition: 0.2s;
 }
    
    
 .content1 a:hover{
-      color:#FF8400;
+      color: #F6F1E9;
+      background-color: #FF8400;
+      border: 2px solid #FF8400;
+      padding: 15px;
       transition:0.2s;
 }
 
 .laguna-map img{
    position: absolute;
-   top: 1000px;
-   right: 300px;
-   height: 400px;
-   width: 450px;
+   top: 980px;
+   right: 200px;
+   height: 500px;
+   width: 550px;
    border-radius: 300px;
    box-shadow: #000;
 }

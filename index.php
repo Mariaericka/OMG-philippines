@@ -74,9 +74,9 @@ include 'components/add_cart.php';
 <section class="franchise" id="franchise">
 
     <div class="container">
-      <h1 class="five">5</h1>
-      <h1 class="branch">BRANCHES</h1>
-      <h1 class="nationwide">NATIONWIDE!</h1>
+      <h1 class="Now">NOW IN</h1>
+      <h1 class="five">FIVE</h1>
+      <h1 class="branch">BRANCHES!</h1>
         <div class="content1">
             <a href="franchise.php" class="button11">Franchise Now!</a>
          </div>
