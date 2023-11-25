@@ -80,8 +80,11 @@ include 'components/add_cart.php';
         <div class="content1">
             <a href="franchise.php" class="button11">Franchise Now!</a>
          </div>
-      <img src="images\category\laguna.png" alt="laguna-map">
+         <div class="laguna-map">
+            <img src="images\category\laguna.png" alt="laguna-map">
+         </div>
     </div>
+
 
 </section>
 

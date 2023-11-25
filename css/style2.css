@@ -66,7 +66,6 @@
    height: 600px;
    width: 500px;
    color: #4F200D;
-   background-color: #FFD93D; 
    text-align: center;
 }
 
@@ -103,10 +102,14 @@
       transition:0.2s;
 }
 
-.laguna-map {
+.laguna-map img{
    position: absolute;
-   left: 100px;
-   border-radius: 50px;
+   top: 1000px;
+   right: 300px;
+   height: 400px;
+   width: 450px;
+   border-radius: 300px;
+   box-shadow: #000;
 }
 
 
@@ -1022,7 +1025,7 @@ footer.footer .move-up span:hover{
 
 *{
    font-family: 'Inter', sans-serif;
-  font-weight: 700;
+   font-weight: 700;
    margin: 0; padding: 0;
    box-sizing: border-box;
    text-decoration: none;
