@@ -88,21 +88,32 @@ include 'components/add_cart.php';
 
 </section>
 
-
-<section class="hero flex" style="margin: 0px;">
    
-<a href="menu.php"><div class="babyruth">
-</div></a>
-<a href="franchise.php"> <div class="event"></div></a>
-<a href="menu.php">  <div class="series"></div> </a>
+<div class="flex-box">
+   <a href="menu.php">
+      <div class="babyruth">
+         <img src="images\Babyruth.png" alt="babyruth-image">
+      </div>
+   </a>
+   <a href="franchise.php"> 
+      <div class="price-rollback">
+         <img src="images\Price rollback sale.png" alt="price-rollback-image">
+      </div>
+   </a>
+   <a href="menu.php">  
+      <div class="series">
+         <img src="images\Cheescakeseries.png" alt="cheesecake-series">
+      </div> 
+   </a>
+</div>
    
-</section>
+<!-- </section>
 
 
 <section class="hero">
 
 
-</section>
+</section> -->
 
 
 <section>
