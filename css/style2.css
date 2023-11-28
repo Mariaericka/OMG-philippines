@@ -13,10 +13,6 @@
    --white:#ffff;
 }
 
-.section {
-   margin: 20px;
-   max-width: 1200px;
-}
 
 .header{
    color: white;
@@ -25,6 +21,7 @@
    top:0; left:0; right:0;
    z-index: 1000;
    border-bottom: 3px solid black;
+   padding: 20px;
 }
 
 .flex{
@@ -32,12 +29,12 @@
    flex-direction:row;
    justify-content:center;
    align-items:center;
-   margin: 20px;
 }
+
 .header .flex{
    display: flex;
    align-items: flex-end;
-   justify-content: space-between;
+   justify-content: space-around;
    position: relative;
    width: 100%;
 }
@@ -48,7 +45,7 @@
 }
 
 .header .flex .navbar a{
-   font-size: 1.7rem;
+   font-size: 20px;
    border-radius: .5rem;
    color: black;
    margin:0 1rem;
@@ -56,7 +53,7 @@
 
 .header .flex .navbar a:hover{
    color:#FFD93D;
-   text-decoration: ;
+   text-decoration:;
 }
 
 .header .flex .icons > *{
@@ -67,7 +64,7 @@
 }
 
 .header .flex .icons > *:hover{
-   color: red;
+   color: #FFD93D;
 }
 
 .header .flex .icons span{
@@ -105,10 +102,12 @@
 }
 
 .header .flex .profile.active{
+   margin: 10px;
    display:grid;
    align-content: space-evenly;
    width: 20rem;
    height: 14rem;
+   border: 3px solid #4F200D;
 }
 
 @keyframes fadeIn {
@@ -122,7 +121,6 @@
    color:black;
    margin-bottom: .5rem;
 }
-
  
 .header .flex .profile .account{
    margin-top: 1.5rem;
@@ -139,13 +137,20 @@
    text-decoration: underline;
 }
 
+.logoup{
+   position: absolute;
+   margin-bottom: 0;
+   left: 100px;
+   width: 90px;
+   height: 90px;
+}
+
 .background-image {
    position: relative;
    left: 60px;
    width: 90%; 
    height: 90%;
 }
-
 
 .Tagline h3 {
    text-align: center;
@@ -188,7 +193,8 @@
 }
 
 .container{
-   padding-top: 100px;
+   padding-top: 130px;
+   margin-left: 150px;
    height: 600px;
    width: 500px;
    color: #4F200D;
@@ -227,7 +233,6 @@
     transition: 0.2s;
 }
    
-   
 .content1 a:hover{
    color: #F6F1E9;
    background-color: #FF8400;
@@ -245,7 +250,7 @@
 
 .laguna-map img{
    position: absolute;
-   top: 980px;
+   top: 930px;
    right: 200px;
    height: 500px;
    width: 550px;
@@ -259,11 +264,48 @@
 }
 
 .flex-box {
+   margin-top: 150px;
    display: flex;
    justify-content: space-around;
 }
 
+.hero .slide{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap-reverse;
+   gap:2rem;
+   margin-top: 100px;
+   margin-bottom: 4rem;
+}
 
+.hero .slide .image{
+   flex:1 1 40rem;
+}
+
+.hero .slide .image img{
+   width: 100%;
+}
+
+.hero .slide .content{
+   flex:1 1 40rem;
+   text-align: center;
+}
+
+.hero .slide .content span{
+   font-size: 2.5rem;
+   color:var(--light-color);
+}
+
+.hero .slide .content h3{
+   margin:1rem 0;
+   font-size: 6rem;
+   color:var(--black);
+   text-transform: capitalize;
+}
+
+.swiper-pagination-bullet-active{
+   background-color: yellow;
+}
 
 
 /* Franchise stars here*/
@@ -626,12 +668,6 @@ main .site-title h3 h1{
    text-align: center;
 }
 
-
-
-.btn:hover {
-   background: red;
-   letter-spacing: .1rem;
-}
 
 .text-gray {
     color: grey;
@@ -1212,8 +1248,6 @@ html{
     scroll-behavior: smooth;
 }
 
-
-
 .title{
    text-align: center;
    margin-bottom: 2.5rem;
@@ -1271,16 +1305,22 @@ html{
    width: 185px;
    margin: 10px 5px;
 }
+
 .btn.confirm-btn{
    margin: 10px 5px;
 }
+
 .btn{
    background-color: #FF8400;
-   color:white;
-   border-radius: 30px;
+   color:#F6F1E9;
    width: 185px;
-
 }
+
+.btn:hover {
+   background: #FFD93D;
+   color: #4F200D;
+}
+
 
 .delete-btn{
    background-color: var(--red);
@@ -1340,43 +1380,6 @@ html{
    gap:1rem;
 }
 
-
-.hero .slide{
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap-reverse;
-   gap:2rem;
-   margin-bottom: 4rem;
-}
-
-.hero .slide .image{
-   flex:1 1 40rem;
-}
-
-.hero .slide .image img{
-   width: 100%;
-}
-
-.hero .slide .content{
-   flex:1 1 40rem;
-   text-align: center;
-}
-
-.hero .slide .content span{
-   font-size: 2.5rem;
-   color:var(--light-color);
-}
-
-.hero .slide .content h3{
-   margin:1rem 0;
-   font-size: 6rem;
-   color:var(--black);
-   text-transform: capitalize;
-}
-
-.swiper-pagination-bullet-active{
-   background-color: yellow;
-}
 
 .category .box-container{
    display: grid;
@@ -1547,13 +1550,13 @@ justify-content: space-evenly;
  }
  
  .products .delete-btn {
-   background-color: red;
-   color: var(--white);
+   background-color: #FF8400;
+   color: #F6F1E9;
  }
  
  .products .btn {
-   background-color: var(--green);
-   color: var(--white);
+   background-color:  #FF8400;
+   color: #F6F1E9;
  }
  
  .products .disabled {
@@ -1992,13 +1995,6 @@ h3 {
     font-size: 20px;
 }
 
-
-
-
-
-
-
-
 .credit{
    padding:3rem 2rem;
    text-align: center;
@@ -2045,56 +2041,52 @@ h3 {
    padding: 1rem 3rem;
     left: 221px;
    }
-   .button12:hover{
+
+.button12:hover{
       background-color:#4F200D;
       color:white;
       transition:0.2s;
    }
-   .button13{
-  
-      position: relative; 
-      background: yellow;
-      border-radius: 25px;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 17px;
-      line-height: 58px;
-      text-align: center;
-      color:black;
-      border: 1px solid #000000;
-      padding: 1rem 3rem;
-      left: 404px;
-      }
-      .button13:hover{
-         background-color:#4F200D;
-         color:white;
-         transition:0.2s;
-      }
 
-      .button14{
-  
-         position: relative;
-         font-style: normal;
-         font-weight: 800;
-         font-size: 15px;
-         line-height: 30px;
-         text-align: center;
-         color: black;
-          transition: 0.2s;
-         }
-         .button14:hover{
-            background-color:#4F200D;
-            color:white;
-            transition:0.2s;
-         }
-
-.logoup{
-   position: absolute;
-   width: 117px;
-   height: 115px;
-   top: 0px;
-    left:-1px;
+.button13{
+   position: relative; 
+   background: yellow;
+   border-radius: 25px;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 17px;
+   line-height: 58px;
+   text-align: center;
+   color:black;
+   border: 1px solid #000000;
+   padding: 1rem 3rem;
+   left: 404px;
 }
+
+.button13:hover{
+   background-color:#4F200D;
+   color:white;
+   transition:0.2s;
+}
+
+.button14{
+   position: relative;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 15px;
+   line-height: 30px;
+   text-align: center;
+   color: black;
+      transition: 0.2s;
+}
+
+.button14:hover{
+   background-color:#4F200D;
+   color:white;
+      transition:0.2s;
+}
+
+
 
 /*location*/
 .containerloc{
