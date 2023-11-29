@@ -133,7 +133,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Yogurt Series</span>
                <h3>Creamy Fruity Melon</h3>
-               <a href="menu.php" class="btn">Order Now</a>
+               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
             </div>
             <div class="image">
                <img src="images/creamy fruit melon1.png" alt="">
@@ -145,7 +145,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Choco Series</span>
                <h3>Choco Kisses</h3>
-               <a href="menu.php" class="btn">Order Now</a>
+               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
             </div>
             <div class="image">
                <img src="images/kisses choco1.png" alt="">
@@ -155,7 +155,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Choco Series</span>
                <h3>Twix Choco</h3>
-               <a href="menu.php" class="btn">Order Now</a>
+               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
             </div>
             <div class="image">
                <img src="images/twix choco.png" alt="">

@@ -45,31 +45,6 @@ if(isset($_SESSION['user_id'])){
     <video src="images/OMG-video.mp4" autoplay muted loop></video>
 </div>
 
-<div class="OMG-brief-history">
-    <p id="history-box-1">
-        OMG milktea, milkshake, and coffee started last three years, just when pandemic 2020 started.
-    </p>
-    <p id="history-box-2"> 
-        Now that everybody are quarantined, they tried to know what the 
-        netizens' are looking for and what they want. At first, they strive 
-        to make their milktea, a popular beverage here in Philippines. 
-        It was a success for them because the netizens liked it, and 
-        it was also a stepping stone for them when they tried to make 
-        another beverages like Milkshake and coffee. Many people loved and 
-        supported their continously upgrading beverages. Because of this, 
-        they are slowly shining.
-    </p>
-    <p id="history-box-3"> 
-        In growing their business, in just two years they managed to franchise
-        in different parts in Laguna, even here in Manila, lastly, they are
-        now open for franchising nationwide.    
-    </p>    
-
-</div>
-
-<div class="Franchise-Now">
-    <h4>Franchise NOW!</h4>
-</div>
 
 <div class="franchise-grid">
     <h3 id="follow">With 1.3 million followers in the food indistry</h3>
@@ -98,33 +73,7 @@ if(isset($_SESSION['user_id'])){
         </div>
 
 </section>
-<!-- <div class="franchise">
-    <h3>Franchise are multi-awarded in the field of customer service and training</h3>
-</div>
 
-<div class="food-panda">
-    <h3>Food panda integrated</h3>
-</div>
-
-<div class="sales">
-    <h3>Proven sales record</h3>
-</div>
-
-<div class="products">
-    <h3>Products are very affordable yet the ingredients are of the highest quality</h3>
-</div>
-
-<div class="fastest">
-    <h3>Fastest growing and trending franchise</h3>
-</div>
-
-<div class="Legit">
-    <h3>Legit and promoted but the VIPs</h3>
-</div>
-
-<div class="TOFIL">
-    <h3>The Outstanding Filipino 2019 Recognized</h3>
-</div> -->
 
 <script src="js/script.js"></script>
 <?php include 'components/footer.php'; ?>

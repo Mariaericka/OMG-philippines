@@ -39,7 +39,6 @@ $select_categories->execute();
 
 <section class="category">
 
-   <h3 >Categories</h3>
 
    <div class="box-container">
 
@@ -65,10 +64,6 @@ $select_categories->execute();
       <a href="category.php?category=mango" class="box">
          <img src="images/mango fruit yogurt3.png" alt="">
          <h3>Mango Series</h3>
-      </a>
-      <a href="category.php?category=promo" class="box">
-         <img src="images/Buy 1 Take 1.jpg" alt="">
-         <h3>Promos</h3>
       </a>
    </div>
 

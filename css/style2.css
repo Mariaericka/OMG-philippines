@@ -187,6 +187,7 @@
    color: red;
 }
 
+
 .container{
    margin: 50px 30px 30px;
 
@@ -299,14 +300,35 @@
 .hero .slide .content h3{
    margin:1rem 0;
    font-size: 6rem;
-   color:var(--black);
+   color: #4F200D;
    text-transform: capitalize;
 }
 
 .swiper-pagination-bullet-active{
-   background-color: yellow;
+   background-color: #FFD93D;
 }
 
+.order-now-btn {
+   color: #FF8400;
+   text-align: center;
+   font-size: 20px;
+   padding: 20px;
+   background-color: #F6F1E9;
+   border: 2px solid #FF8400;
+   display: block; 
+   margin-left: 300px;
+   width: 200px;
+}
+
+.order-now-btn:hover {
+   color: #F6F1E9;
+   background-color: #4F200D;
+   border: 2px solid #4F200D;
+}
+
+.order-now-btn:active {
+   opacity: 1;
+}
 
 /* Franchise stars here*/
 .video video {
@@ -319,59 +341,7 @@
    border-radius: 20px;
 }
 
-#history-box-1 {
-   font-size: 20px;
-   width: 328px;
-   margin: 21px;
-   padding: 58px;
-   border: 5px solid #FFD93D;
-   border-radius: 20px;
-   line-height: 50px;
-}
 
-#history-box-2 {
-   font-size: 16px;
-   width: 900px;
-   padding: 50px;
-   border: 5px solid #FFD93D;
-   border-radius: 20px;
-   line-height: 40px;
-   word-spacing: 1px;
-   letter-spacing: 0.5px;
-   position: absolute;
-   top: 900px;
-   right: 100px;
-}
-
-
-#history-box-3 {
-   font-size: 16px;
-   width: 900px;
-   padding: 50px;
-   border: 5px solid #FFD93D;
-   border-radius: 20px;
-   position: absolute;
-   top: 1261px;
-   right: 100px;
-}
-.Franchise-Now h4 {
-   color: red;
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #000;
-   text-align: center;
-   font-size: 96px;
-   font-family: Inter;
-   font-style: normal;
-   font-weight: 700;
-   line-height: normal;
-   padding: 30px;
-   margin-top: 96px;
-}
-.franchise-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-   justify-items: center;
-}
 
 .franchise-grid h3 {
    font-size: 17px;
@@ -380,16 +350,8 @@
    padding: 80px 20px 80px;
    height: 200px;
    width: 300px;
-   border-radius: 200px;
    border: 2px solid #4F200D;
-   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-#follow, #food-panda, #fastest, #tofil {
-   background: #FFD93D;
-}
-
-#products, #franchise1, #sales, #legit {
-   color: white;
+   color: #F6F1E9;
    background-color: #FF8400;
 }
 
@@ -397,10 +359,13 @@
    height: 500px;
    width: 500px;
 }
+
 .second ul h1 {
    text-align: center;
    margin-top: -2px;
-   font-size: larger;   }
+   font-size: larger;   
+}
+
 .second ul {
  width: 27%;
 }
@@ -420,8 +385,6 @@
 .grid > div:nth-child(odd){
    background: gold;
 }
-
-
 
 .grid-2 {
    display: grid;
@@ -678,9 +641,9 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
 }
-/* BLOG START*/
 
-.header h1 {
+/* BLOG START*/
+.OMG h1 {
    color: rgb(255, 191, 0);
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #000;
@@ -692,7 +655,7 @@ p {
    left: 160px;
 }
 
-.header h2 {
+.OMG h2 {
    color: red;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #000;
@@ -705,7 +668,7 @@ p {
    left: 33px;
 }
 
-.header p {
+.OMG p {
    color: white;
    font-family: 'Inter', sans serif;
    text-align: center;
@@ -1327,10 +1290,6 @@ html{
    color:var(--white);
 }
 
-.btn:hover,
-.delete-btn:hover{
-   letter-spacing: .2rem;
-}
 
 .disabled{
    opacity: .5;
@@ -2139,25 +2098,7 @@ h3 {
 
 
 /* media queries  */
-@media (max-width:1150px){
-  
-   .none {
-      display: none;
-   }
-   .event {
-      width: 260px;
-      height: 350px;
-      top:20px;}
-   .series{
-      width: 250px;
-       height: 237px;
-      top:38px;
-   }
-   .babyruth{
-      width: 250px;
-      height: 309px;
-   }
-}
+
 @media (max-width:991px) {
    
    html{
@@ -2167,24 +2108,6 @@ h3 {
       display: none;
    }
 
-   #history-box-2 {
-      width: 594px;
-      right: -4px;
-      }
-      
-      #history-box-3 {
-      width: 831px;
-      padding: 45px;
-      top: 1334px;
-          right: 18px;
-      }
-      
-      .Franchise-Now h4 {
-      font-size: 71px;
-      margin-top: 185px;}
-      
-      .franchise-packages .container .content1 {  
-      font-size: x-small;}
 
       
 
@@ -2455,57 +2378,9 @@ height:200px;
       
 .second ul h1{
 font-size: medium;
-margin-top: -67px;}
- .video video {
-            height: 223px;
-            width: 306px;
-            padding: 17px 4px 13px;
-            margin: 60px -1px 47px;
-            
 }
             
- #history-box-1 {
-            font-size: 14px;
-                width: 308px;
-                margin: -3px;
-                padding: 44px;
-            
- }
-            
- #history-box-2 {
-            width: 304px;
-            top: 27px;
-            right: 0px;
-            position: relative;
-            
- }
-#history-box-3 {
-            font-size: 16px;
-                width: 304px;
-                padding: 30px;
-                position: relative;
-                top: 40px;
-                right: 0px;
- }
-            
-.Franchise-Now h4 {
-            font-size: 48px;
-            
-}
-.franchise-grid {
-   padding-left: 20px;
-}        
 
-.video{
-   padding-left: 20px;
-}
-.franchise-packages{
-   padding-left: 20px;
-   font-size: medium;
-}
-.OMG-brief-history{
-   padding-left: 20px;
-}
 .franchise-grid h3{
    font-size: 21px;
    }

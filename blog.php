@@ -41,7 +41,7 @@ if(isset($_SESSION['user_id'])){
 
 <!-- BLOG NEW start-->
 
-<div class="header">
+<div class="OMG">
     <h1>OMG</h1>
     <h2>is the best choice!</h2>
     <p>Overload goodness in cup</p>
