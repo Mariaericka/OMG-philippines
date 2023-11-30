@@ -1,7 +1,8 @@
+<?php header("Access-Control-Allow-Origin: *"); ?>
 <?php
 
 include 'components/connect.php';
-
+error_reporting(0);
 session_start();
 
 if(isset($_SESSION['user_id'])){
@@ -64,12 +65,47 @@ include 'components/add_cart.php';
 <?php include 'components/user_header.php'; ?>
 
 
+
         <img class="background-image" src="images\category\background.png" >
 
         <div class="Tagline">
          <h3> Creamy goodness in a cup. Taste that would definitely make you go OMG!</h3>
         </div>
 
+
+   <div class="swiper-pagination"></div>
+
+</div>
+
+
+
+<section class="hero">
+
+   <div class="swiper hero-slider">
+
+      <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide">
+            <div class="content">
+               <span>Yogurt Series</span>
+               <h3>Creamy Fruity Melon</h3>
+               <a href="menu.php" class="btn">Order Now</a>
+            </div>
+            <div class="image">
+               <img src="images/creamy fruit melon1.png" alt="">
+            </div>
+         </div>
+
+
+
+<section class="hero flex" style="margin: 0px;">
+   
+<a href="menu.php"><div class="babyruth">
+</div></a>
+<a href="franchise.php"> <div class="event"></div></a>
+<a href="menu.php">  <div class="series"></div> </a>
+   
+</section>
         
 <section class="franchise" id="franchise">
 
@@ -78,11 +114,13 @@ include 'components/add_cart.php';
       <h1 class="five">FIVE</h1>
       <h1 class="branch">BRANCHES!</h1>
         <div class="content1">
+
             <a href="franchise.php" class="button11">Franchise Now!</a>
          </div>
          <div class="laguna-map">
             <img src="images\category\laguna.png" alt="laguna-map">
          </div>
+
     </div>
 
 
@@ -109,11 +147,11 @@ include 'components/add_cart.php';
    
 <!-- </section>
 
-
 <section class="hero">
 
 
 </section> -->
+
 
 
 <section>
@@ -170,8 +208,6 @@ include 'components/add_cart.php';
 </section>
 
 
-</section>
-
 
 
 
@@ -209,6 +245,35 @@ var swiper = new Swiper(".hero-slider", {
 });
 
 </script>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
 
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "127927087067033");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v17.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 </body>
 </html>

@@ -38,15 +38,40 @@ if(!isset($admin_id)){
 <div class="wrapper">
    <h1 class="heading">dashboard</h1>
    <div class="col-4 text-center">
-      <?php
-         $total_pendings = 0;
-         $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_pendings->execute(['pending']);
-         while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
-            $total_pendings += $fetch_pendings['total_price'];
-         }
-      ?>
-      <h3><span>₱</span><?= $total_pendings; ?><span></span></h3>
+   <?php
+$total_pendings = 0;
+$select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+$select_pendings->execute(['pending']);
+
+while ($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)) {
+    // Parse the JSON string representing the order items and addons
+    $order_items = json_decode($fetch_pendings['cart_addons'], true);
+
+    // Calculate the total price for order items
+    $order_total = 0;
+    foreach ($order_items as $item) {
+        $item_price = isset($item['price']) ? $item['price'] : 0;
+        $item_quantity = isset($item['quantity']) ? $item['quantity'] : 1;
+        $order_total += $item_price * $item_quantity;
+        
+        // Calculate the total price for addons (if any)
+        if (isset($item['addons']) && is_array($item['addons'])) {
+            foreach ($item['addons'] as $addon) {
+                $addon_price = isset($addon['addon_price']) ? $addon['addon_price'] : 0;
+                $addon_quantity = isset($addon['quantity']) ? $addon['quantity'] : 1;
+                $order_total += $addon_price * $addon_quantity;
+            }
+        }
+    }
+
+    // Add the order total to the overall total_pendings
+    $total_pendings += $order_total;
+}
+?>
+
+<h3><span>₱</span><?= $total_pendings; ?><span></span></h3>
+
+
       <div class="dashboardicons"><img src="../images/icons/pending.png"><p>total pendings</p></div>
       <a href="placed_orders.php" class="btn">see orders</a>
    </div>

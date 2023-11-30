@@ -99,7 +99,7 @@ if(isset($_GET['delete'])){
       <input type="number" min="0" max="9999999999" required placeholder=" regular drink price " name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
       <input type="number" min="0" max="9999999999" required placeholder=" large drink price " name="priceR" onkeypress="if(this.value.length == 10) return false;" class="box">
 
-      <input type="text" min="0" max="9999999999" required placeholder="description" name="description" onkeypress="if(this.value.length == 25) return false;" class="box">
+      <input type="text" min="0" max="9999999999" required placeholder="description" name="description" onkeypress="if(this.value.length == 50) return false;" class="box">
       <select name="category" class="box" required>
          <option value="" disabled selected>select category --</option>
          <option value="coffee series">Coffee series</option>
@@ -107,6 +107,8 @@ if(isset($_GET['delete'])){
          <option value="choco">Choco series</option>
          <option value="milktea">Milktea series</option>
          <option value="mango">Mango series</option>
+         <option value="cheese">Cheesecake series</option>
+         <option value="ventea">Ventea</option>
          <option value="promo">Promo series</option>
 
 

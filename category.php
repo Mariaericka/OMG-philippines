@@ -37,6 +37,7 @@ include 'components/add_cart.php';
 <div class="second"><ul>
     <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
 
+
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
         <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</i></a></li>
         <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
@@ -80,7 +81,7 @@ margin-left: 25%;">
 
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
          <div class="omg-menu-img">
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)">
+         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)"/>
 
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
@@ -218,7 +219,7 @@ if ($select_products->rowCount() > 0) {
     }
 } else {
      // Display a message when there are no products
-     echo '<p class="empty">No drinks added yet!</p>';
+     echo '<p class="empty1">No drinks added yet!</p>';
 }
 ?>
       
@@ -235,5 +236,8 @@ if ($select_products->rowCount() > 0) {
 <script src="js/modal.js"></script>
 </body>
 <?php include 'components/footer.php'; ?>
+<script>
+    
+</script>
 
 </html> 

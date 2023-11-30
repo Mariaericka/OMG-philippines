@@ -26,17 +26,6 @@ if(isset($_POST['submit'])){
       $update_name->execute([$name, $user_id]);
    }
 
-   if(!empty($email)){
-      $select_email = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-      $select_email->execute([$email]);
-      if($select_email->rowCount() > 0){
-         $message[] = 'email already taken!';
-      }else{
-         $update_email = $conn->prepare("UPDATE `users` SET email = ? WHERE id = ?");
-         $update_email->execute([$email, $user_id]);
-      }
-   }
-
    if(!empty($number)){
       $select_number = $conn->prepare("SELECT * FROM `users` WHERE number = ?");
       $select_number->execute([$number]);
@@ -106,7 +95,7 @@ if(isset($_POST['submit'])){
    <form action="" method="post">
       <h3>update profile</h3>
       <input type="text" name="name" placeholder="<?= $fetch_profile['name']; ?>" class="box" maxlength="50">
-      <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" readonly>
       <input type="number" name="number" placeholder="<?= $fetch_profile['number']; ?>"" class="box" min="0" max="9999999999" maxlength="10">
       <input type="password" name="old_pass" placeholder="enter your old password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="new_pass" placeholder="enter your new password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
