@@ -6,8 +6,8 @@
 
     <div class="footer-box2">
         <h5>Follow us on our social media accounts!</h5>
-        <a href="https://www.facebook.com/omgmainbranch/" class="logo"><img src="images/fb.png"></a>    
-        <a href="https://www.instagram.com/omgmain.ph/" class="logo"><img src="images/ig.png"></a>   
+        <a href="https://www.facebook.com/omgmainbranch/" class="logo"><img src="images\icons\facebook.png"></a>    
+        <a href="https://www.instagram.com/omgmain.ph/" class="logo"><img src="images\icons\instagram.png"></a>   
     </div>
 
     <div class="footer-contact-us">
@@ -17,8 +17,8 @@
         <h5>123 Red Bldg. Sampaloc St. Lilyo, Laguna</h5>
     </div>
     <div class="copyright">
-        <a href="privacypolicy.php">Privacy Policy</a>
-        <a href="tc.php">Terms and Condition</a>
+        <a href="privacypolicy.php">Privacy Policy&nbsp;</a>
+        <a href="tc.php">&nbsp;Terms and Condition</a>
         <h5>OMG Milktea, Milkshake, and Coffee Copyright &copy; 2022</h5>
     </div>
 </footer>
