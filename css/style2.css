@@ -335,30 +335,30 @@
    height: 650px;
    width: 1300px;
    padding: 50px 10px 50px;
-   margin: 75px 11px 49px;
-   background-color: #FFD93D;
-   border: 2px solid #4F200D;
-   border-radius: 20px;
+   margin: 25px 11px 50px;
+   border: 20px solid #FFD93D;
 }
 
-
-
-.franchise-grid h3 {
-   font-size: 17px;
-   font-family: Inter;
-   font-style: normal;
-   padding: 80px 20px 80px;
-   height: 200px;
-   width: 300px;
-   border: 2px solid #4F200D;
-   color: #F6F1E9;
-   background-color: #FF8400;
+.franchise-grid {
+   margin: 50px;
+   display: grid;
+   grid-template-columns: 320px 320px 320px 320px;
+   gap: 70px;
 }
 
-.franchise-packages img {
-   height: 500px;
-   width: 500px;
+.franchise-grid img {
+   margin-left: 100px;
 }
+
+.franchise-grid h4 {
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
+   color: #FF8400;
+   text-align: center;
+   line-height: 40px;
+   letter-spacing: 2px;
+}
+
 
 .second ul h1 {
    text-align: center;
@@ -369,6 +369,7 @@
 .second ul {
  width: 27%;
 }
+
 /* Franchise changes by SHAMS ends here*/
 .grid {
    display: grid;
@@ -1091,7 +1092,60 @@ p {
 
 
 /*---------------- footer starts here -----------------*/
-footer.footer{
+
+.footer {
+   height: 170px;
+   background-color: #FFD93D;
+   display: grid;
+   grid-template-columns: 330px 330px 330px 330px;
+   gap: 30px;
+}
+
+.footer-box1 {
+   padding-top: 20px;
+   text-align: center;
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
+}
+
+.footer-box2 {
+   padding-top: 20px;
+   text-align: center;
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
+}
+
+.footer-contact-us {
+   padding-top: 20px;
+   justify-content: center;
+}
+
+.footer-contact-us h5 {
+   font-size: 20px;
+   font-family: 'Inter', Sans serif;
+   color: #4F200D;
+}
+
+.footer-contact-us h5 {
+   font-size: 15px;
+   line-height: 25px;
+}
+
+.foodpanda {
+   width: 130px;
+   height: 130px;
+}
+
+.copyright h5 {
+   font-size: 20px;
+   font-family: 'Inter', Sans serif;
+   /* position: relative;
+   top: 180px;
+   left: 500px; */
+}
+
+
+/* footer.footer{
    height: 100%;
    width: 105%;
    color:black;
@@ -1169,7 +1223,7 @@ footer.footer .move-up span{
 footer.footer .move-up span:hover{
    color: var(gold);
    cursor: pointer;
-}
+} */
 
 /*---------------- footer ends here -----------------*/
 
@@ -2150,7 +2204,6 @@ h3 {
       font-size: 12px;
    }
    .franchise .container .content1 {
-    
       height: 261px;
    }
    #menu-btn{
@@ -2206,47 +2259,14 @@ h3 {
          height: 300px;
              width: 400px;
              padding: 30px 4px 20px;
-             margin: 60px 54px 50px;}
+             margin: 60px 54px 50px;
+            }
 
- #history-box-1 {
-               font-size: 17px;
-                   width: 369px;
-                   margin: 12px;
-                   margin-left: 64px;
-                   padding: 49px;}
-               
-   #history-box-2 {
-               width: 404px;
-               position: relative;
-               top: 44px;
-                   right: -49px;
-               }
-#history-box-3 {
-               width: 410px;
-               position: relative;
-                   top: 68px;
-                   right: -47px;
-               }
-               
-.Franchise-Now h4 {
-               font-size: xxx-large;
-               }
- .franchise-grid {
-               justify-items: center;
-               }
-  .franchise-grid h3 {
-
-font-size: 17px;
-  }
-               .franchise-packages .container .content1 {
-                  display: inline-block;
-                  padding-top: 0rem;
-               }
-
-               .products .box {
-                  width:479px;
-                  height:137px;
-                  }
+  
+.products .box {
+   width:479px;
+   height:137px;
+}
                   .fa-solid fa-trash-can fa-xl{
                   margin-left:20px;
                   }
@@ -2345,10 +2365,7 @@ a.button13{
    width: 85px;
  height: 72px;
 }
-.franchise .container .content1 { 
-   height: 327px;
-   background: none;
-}
+
 .second ul h1 {
    font-size: larger;
  }
@@ -2381,14 +2398,7 @@ font-size: medium;
 }
             
 
-.franchise-grid h3{
-   font-size: 21px;
-   }
 
-   .franchise-packages .container .content1 {
-      display: inline-block;
-      padding-top: 0rem;
-   }
    .products .box {
       width:348px;
       height:127px;

@@ -39,7 +39,6 @@ if(isset($_SESSION['user_id'])){
 <?php include 'components/user_header.php'; ?>
   
 
-<!--------------------- Franchising 1 ------------------>
 
 <div class="video">
     <video src="images/OMG-video.mp4" autoplay muted loop></video>
@@ -47,33 +46,50 @@ if(isset($_SESSION['user_id'])){
 
 
 <div class="franchise-grid">
-    <h3 id="follow">With 1.3 million followers in the food indistry</h3>
-    <h3 id="franchise1">Franchise are multi-awarded in the field of customer service and training</h3>
-    <h3 id="food-panda">Food panda integrated</h3>
-    <h3 id="sales">Proven sales record</h3>
-    <h3 id="products">Products are very affordable yet the ingredients are of the highest quality</h3>
-    <h3 id="fastest">Fastest growing and trending franchise</h3>
-    <h3 id="legit">Legit and promoted but the VIPs</h3>
-    <h3 id="tofil">The Outstanding Filipino 2019 Recognized</h3>
+    <div class="followers">
+        <img src="images\icons\followers.png" alt="followers-image">
+        <h4>With 1.3 million followers in the food indistry</h4>
+    </div>
+
+    <div class="trophy">
+        <img src="images\icons\Award.png" alt="Award-image">
+        <h4>Franchise are multi-awarded in the field of customer service and training</h4>
+    </div>
+
+    <div class="motorbike">
+        <img src="images\icons\motorbike.png" alt="motorbike-image">
+        <h4>Food panda integrated</h4>
+    </div>
+
+    <div class="thumbs-up">
+        <img src="images\icons\thumb-up.png" alt="thumbs-up-image">
+        <h4>Products are very affordable yet the ingredients are of the highest quality</h4>
+    </div>
+
+    <div class="growing">
+        <img src="images\icons\growing.png" alt="growing-image">
+        <h4>Fastest growing and trending franchise</h4>
+    </div>
+
+    <div class="legit">
+        <img src="images\icons\legit.png" alt="legit-image">
+        <h4>Legit and promoted but the VIPs</h4>
+    </div>
+
+    <div class="outstanding">
+        <img src="images\icons\outsanding.png" alt="oustanding-image">
+        <h4>The Outstanding Filipino 2019 Recognized</h4>
+    </div>
+
+
 </div>
 
 
-        
-<section class="franchise-packages" id="franchise2">
 
-    <div class="container">
 
-        <div class="content1">
-        <h2>FRANCHISE PACKAGES</h2>
 
-            <h3 style="
-    text-align: inherit">It's a 5 in 1 franchise!</h3>
-            <p>Why settle for just one drink when you can have five of it</p>
-       
-        </div>
 
-</section>
-
+            <!-- <p>Why settle for just one drink when you can have five of it</p> -->
 
 <script src="js/script.js"></script>
 <?php include 'components/footer.php'; ?>
