@@ -12,12 +12,155 @@
    --red:rgb(155 8 8);
    --white:#ffff;
 }
-.headeropen{
-   width: 400px!important;
+
+
+.header{
+   color: white;
+   background: white;
+   position: sticky;
+   top:0; left:0; right:0;
+   z-index: 1000;
+   border-bottom: 3px solid black;
+   padding: 20px;
 }
-.creamy{
-   margin-top: 30px;
+
+.flex{
+   display: flex;
+   flex-direction:row;
+   justify-content:center;
+   align-items:center;
 }
+
+.header .flex{
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-around;
+   position: relative;
+   width: 100%;
+}
+
+.header .flex .logo{
+   font-size: 2.5rem;
+   color:var(--black);
+}
+
+.header .flex .navbar a{
+   font-size: 20px;
+   border-radius: .5rem;
+   color: black;
+   margin:0 1rem;
+}
+
+.header .flex .navbar a:hover{
+   color:#FFD93D;
+   text-decoration:;
+}
+
+.header .flex .icons > *{
+   margin-left: 1.5rem;
+   font-size: 2.5rem;
+   color:black;
+   cursor: pointer;
+}
+
+.header .flex .icons > *:hover{
+   color: #FFD93D;
+}
+
+.header .flex .icons span{
+   font-size: 2rem;
+}
+
+#menu-btn{
+   display: none;
+}
+
+.btnheader{
+   background-color: #FF8400;
+   color: white;
+   width: 50px;
+   margin-top: 1rem;
+   display: inline-block;
+   font-size: 1rem;
+   padding:1rem 0rem;
+   cursor: pointer;
+   text-transform: capitalize;
+
+}
+
+.header .flex .profile{
+   background-color:white;
+   border:var(--border);
+   padding: 12px 16px;
+   text-align: center;
+   position: absolute;
+   top:88%; right:0rem;
+   width: 12rem;
+   display: none;
+ height: 12rem;
+   animation: fadeIn .2s linear;
+}
+
+.header .flex .profile.active{
+   margin: 10px;
+   display:grid;
+   align-content: space-evenly;
+   width: 20rem;
+   height: 14rem;
+   border: 3px solid #4F200D;
+}
+
+@keyframes fadeIn {
+   0%{
+      transform: translateY(1rem);
+   }
+}
+
+.header .flex .profile .name{
+   font-size: 2rem;
+   color:black;
+   margin-bottom: .5rem;
+}
+ 
+.header .flex .profile .account{
+   margin-top: 1.5rem;
+   font-size: 2rem;
+   color:var(--light-color);
+}
+
+.header .flex .profile .account a{
+   color:var(--black);
+}
+
+.header .flex .profile .account a:hover{
+   color:var(--yellow); 
+   text-decoration: underline;
+}
+
+.logoup{
+   position: absolute;
+   margin-bottom: 0;
+   left: 100px;
+   width: 90px;
+   height: 90px;
+}
+
+.background-image {
+   position: relative;
+   left: 60px;
+   width: 90%; 
+   height: 90%;
+}
+
+.Tagline h3 {
+   text-align: center;
+   color: #FF8400;;
+   font-size: 30px;
+   padding: 20px;
+   border-radius: 10px;
+   font-family: 'Inter', sans-serif;
+}
+
 .second ul  {
    list-style-type: none;
    margin: 10;
@@ -28,12 +171,11 @@
    height:500px;
    overflow:visible;
    font-size: large;
-   top: 93px;
+   top: 130px;
  }
  .second li a{
    display: block;
    color: black;
-   
    text-decoration: none;
  }
  .second li a.active{
@@ -45,277 +187,189 @@
    color: red;
 }
 
-svg  {
-   margin-top: 9px;
-   position: relative;
-   left: 39px;
-} 
 
-#logo path:nth-child(1) {
-   stroke-dasharray: 1100px;
-   stroke-dashoffset: 1100px;
+.container{
+   margin: 50px 30px 30px;
+
 }
 
-#logo path:nth-child(2) {
-   stroke-dasharray: 500px;
-   stroke-dashoffset: 100px;
-} 
-
-#logo path:nth-child(3) {
-   stroke-dasharray: 200px;
-   stroke-dashoffset: 100px;
+.container{
+   padding-top: 130px;
+   margin-left: 150px;
+   height: 600px;
+   width: 500px;
+   color: #4F200D;
+   text-align: center;
 }
 
-#logo path:nth-child(4) {
-   stroke-dasharray: 20px;
-   stroke-dashoffset: 1100px;
+.container h1 {
+   line-height: 100px;
+   text-align: center;
 }
 
-#logo path:nth-child(5) {
-   stroke-dasharray: 20px;
-   stroke-dashoffset: 1100px;
+.container .Now {
+   font-size: 70px;
 }
 
-#logo path:nth-child(6) {
-   stroke-dasharray: 10px;
-   stroke-dashoffset: 1100px;
+.container .five {
+   font-size: 100px;
+   color: #FF8400;
 }
 
-#logo path:nth-child(7) {
-   stroke-dasharray: 10px;
+.container .branch{
+   font-size: 70px;
+   margin-bottom: 50px;
 }
 
-#logo path:nth-child(8) {
-   stroke-dasharray: 10px;
+.content1 a{
+   border-top: 50px;
+   text-align: center;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 30px;
+   background-color: #F6F1E9;
+   border: 2px solid #4F200D;
+   padding: 15px;
+   color: #4F200D;
+    transition: 0.2s;
+}
+   
+.content1 a:hover{
+   color: #F6F1E9;
+   background-color: #FF8400;
+   border: 2px solid #FF8400;
+   padding: 15px;
+   transition:0.2s;
 }
 
-#logo path:nth-child(9) {
-   stroke-dasharray: 10px;
+.content1 a:active{
+   background-color: #FF8400;   
+   border: 2px solid #FF8400;
+   opacity: 0.1;
+      transition: 0.2s;
 }
 
-#logo path:nth-child(10) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(11) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(12) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(13) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(14) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(15) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(16) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(17) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(18) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(19) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(20) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(21) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(22) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(23) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(24) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(25) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(26) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(27) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(28) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(29) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(30) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(31) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(32) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(33) {
-   stroke-dasharray: 10px;
-}
-
-#logo path:nth-child(34) {
-   stroke-dasharray: 10px;
-}
-
-
-
-
-.form {
-   top: 158px;
-   padding-left: 20%;
-   padding-right: 10%;
-   font-size: 2rem;
+.laguna-map img{
    position: absolute;
-   bottom: 250px;
-   left: 400px;
+   top: 930px;
+   right: 200px;
+   height: 500px;
+   width: 550px;
+   border-radius: 300px;
+   box-shadow: #000;
 }
 
-.input1 {
-    width: 100%; 
-    box-shadow: 0 0 4px; 
-    border: 3px solid #ddd; 
-   border-radius: .5rem; 
-    row-gap: 10%; 
+
+.flex-box img{ 
+   border: 5px solid #FF8400;
 }
 
-.column span {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   font-size: 1.5rem;
+.flex-box {
+   margin-top: 150px;
+   display: flex;
+   justify-content: space-around;
 }
 
-/* Franchise changes by SHAMS stars here*/
+.hero .slide{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap-reverse;
+   gap:2rem;
+   margin-top: 100px;
+   margin-bottom: 4rem;
+}
+
+.hero .slide .image{
+   flex:1 1 40rem;
+}
+
+.hero .slide .image img{
+   width: 100%;
+}
+
+.hero .slide .content{
+   flex:1 1 40rem;
+   text-align: center;
+}
+
+.hero .slide .content span{
+   font-size: 2.5rem;
+   color:var(--light-color);
+}
+
+.hero .slide .content h3{
+   margin:1rem 0;
+   font-size: 6rem;
+   color: #4F200D;
+   text-transform: capitalize;
+}
+
+.swiper-pagination-bullet-active{
+   background-color: #FFD93D;
+}
+
+.order-now-btn {
+   color: #FF8400;
+   text-align: center;
+   font-size: 20px;
+   padding: 20px;
+   background-color: #F6F1E9;
+   border: 2px solid #FF8400;
+   display: block; 
+   margin-left: 300px;
+   width: 200px;
+}
+
+.order-now-btn:hover {
+   color: #F6F1E9;
+   background-color: #4F200D;
+   border: 2px solid #4F200D;
+}
+
+.order-now-btn:active {
+   opacity: 1;
+}
+
+/* Franchise stars here*/
 .video video {
    height: 650px;
    width: 1300px;
    padding: 50px 10px 50px;
-   margin: 75px 11px 49px;
-   background-color: #FFD93D;
-   border: 2px solid #4F200D;
-   border-radius: 20px;
+   margin: 25px 11px 50px;
+   border: 20px solid #FFD93D;
 }
 
-#history-box-1 {
-   font-size: 20px;
-   width: 328px;
-   margin: 21px;
-   padding: 58px;
-   border: 5px solid #FFD93D;
-   border-radius: 20px;
-   line-height: 50px;
-}
-
-#history-box-2 {
-   font-size: 16px;
-   width: 900px;
-   padding: 50px;
-   border: 5px solid #FFD93D;
-   border-radius: 20px;
-   line-height: 40px;
-   word-spacing: 1px;
-   letter-spacing: 0.5px;
-   position: absolute;
-   top: 900px;
-   right: 100px;
-}
-
-
-#history-box-3 {
-   font-size: 16px;
-   width: 900px;
-   padding: 50px;
-   border: 5px solid #FFD93D;
-   border-radius: 20px;
-   position: absolute;
-   top: 1261px;
-   right: 100px;
-}
-.Franchise-Now h4 {
-   color: red;
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #000;
-   text-align: center;
-   font-size: 96px;
-   font-family: Inter;
-   font-style: normal;
-   font-weight: 700;
-   line-height: normal;
-   padding: 30px;
-   margin-top: 96px;
-}
 .franchise-grid {
+   margin: 50px;
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-   justify-items: center;
+   grid-template-columns: 320px 320px 320px 320px;
+   gap: 70px;
 }
 
-.franchise-grid h3 {
-   font-size: 17px;
-   font-family: Inter;
-   font-style: normal;
-   padding: 80px 20px 80px;
-   height: 200px;
-   width: 300px;
-   border-radius: 200px;
-   border: 2px solid #4F200D;
-   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-#follow, #food-panda, #fastest, #tofil {
-   background: #FFD93D;
+.franchise-grid img {
+   margin-left: 100px;
 }
 
-#products, #franchise1, #sales, #legit {
-   color: white;
-   background-color: #FF8400;
+.franchise-grid h4 {
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
+   color: #FF8400;
+   text-align: center;
+   line-height: 40px;
+   letter-spacing: 2px;
 }
 
-.franchise-packages img {
-   height: 500px;
-   width: 500px;
-}
+
 .second ul h1 {
    text-align: center;
    margin-top: -2px;
-   font-size: larger;   }
+   font-size: larger;   
+}
+
 .second ul {
  width: 27%;
 }
+
 /* Franchise changes by SHAMS ends here*/
 .grid {
    display: grid;
@@ -332,8 +386,6 @@ svg  {
 .grid > div:nth-child(odd){
    background: gold;
 }
-
-
 
 .grid-2 {
    display: grid;
@@ -581,17 +633,6 @@ main .site-title h3 h1{
 }
 
 
-
-.btn:hover {
-   background: red;
-   letter-spacing: .1rem;
-}
-
-.container {
-   margin: 0 5vw;
-   font-size: 1.5rem;
-}
-
 .text-gray {
     color: grey;
    font-size: larger;
@@ -601,9 +642,11 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
 }
-/* BLOG START*/
 
-.header1 h1 {
+
+/* BLOG START*/
+.OMG h1 {
+
    color: rgb(255, 191, 0);
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #000;
@@ -615,7 +658,9 @@ p {
  
 }
 
-.header1 h2 {
+
+.OMG h2 {
+
    color: red;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #000;
@@ -628,7 +673,8 @@ p {
    left: 33px;
 }
 
-.header1 p {
+
+.OMG p {
    color: white;
    font-family: 'Inter', sans serif;
    text-align: center;
@@ -1045,139 +1091,76 @@ p {
    opacity: 0;
  }
 
-.contact-parent{
-   background: #fff;
-   display:flex;
-   margin:80px 0;
-   border:3px solid #000;
-}
-.contact-child{
-   display:flex;
-   flex:1;
-   box-shadow:0px 0px 10px -2px rgba(0,0,0,0.75);
-}
-
-.child1{
-   background:#FFD93D;
-   background-size:580px;
-   background-repeat: no-repeat;
-   display:flex;
-   flex-direction:column;
-   justify-content:space-around;
-   color:rgb(255, 247, 247);
-   padding:100px 0;
-}
-.child1 p{
-   padding-left:37px;
-   font-size:20px;
-   color: red;
-}
-.child1 p span{
-   font-size:16px;
-   color:black;
-}
-.child2{
-   flex-direction:column;
-   justify-content:space-around;
-   align-items:center;
-   background: #FFD93D;
-}
-.inside-contact{
-   width:90%;
-   margin:0 auto;
-}
-.inside-contact h2{
-   text-transform:uppercase;
-   text-align:center;
-   margin-top:50px;
-}
-
-.inside-contact h3{
-   text-align:center;
-   font-size:16px;
-   color:#0085e2;
-}
-
-.inside-contact input, .inside-contact textarea{
-   width:100%;
-   background-color:lightgoldenrodyellow;
-   border:1px solid rgba(0,0,0,0.48);
-   padding:5px 10px;
-   margin-bottom:20px;
-}
-
-.inside-contact input[type=submit]{
-   background-color:#FF8400;
-   color:#000;
-   transition:0.2s;
-   
-}
-
-.inside-contact input[type=submit]:hover{
-   background-color:#4F200D;
-   color:#fff;
-   transition:0.2s;
-}
 
 
+/*---------------- footer starts here -----------------*/
 
-.franchise .container .content1 {
-   display: flexbox;
-   background: url('../images/phomg.png');
-   background-repeat: no-repeat;
-   background-position: right 50%;
-   height: 579px;
-   padding-top: 9rem;
-   background-size: contain;
-  
+.footer {
+   height: 170px;
+   background-color: #FFD93D;
+   display: grid;
+   grid-template-columns: repeat(4, 370px);
+   grid-gap: 30px;
+   align-items: center;
 }
 
-
-.franchise .container .content1 span {
-   font-size: 5rem;
-   font-family: 'Inter';
-   width: 50%;
+.footer h4, h5, a {
+   color: #4F200D;
 }
 
-
-.franchise-packages .container .content1 {
-   display: flexbox;
-   background: url('../images/picture 1.jpg');
-   background-repeat: no-repeat;
-   background-position: right 50%;
-   height: 579px;
-   padding-top: 9rem;
-   background-size: contain;
-  
+.footer-box1 {
+   align-items: center;
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
 }
 
-
-.franchise-packages .container .content1 span {
-   font-size: 5rem;
-   font-family: 'Inter';
-   width: 50%;
+.footer-box2 {
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
 }
 
-.franchise .container .content1 h1 {
-   margin-top: 2rem;
-   font-size: 3rem;
-   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.footer-box2 img {
+   margin: 10px;
+}
+.footer-box2 img:hover {
+   width: 33px;
+   height: 33px;
    color: #FF8400;
 }
 
-
-.franchise .container .content1 p {
-   text-align: left;
-   font-size: 1.5rem;
-   font-family: 'Andada Pro', sans-serif;
-   width: 50%;
+.footer-contact-us h4 {
+   font-size: 20px;
+   font-weight:900;
+   font-family: 'Inter', Sans serif;
 }
 
-.franchise .container .content1 a {
-   margin-top: 2rem;
+.footer-contact-us h5 {
+   font-size: 15px;
+   line-height: 25px;
 }
-/*---------------- footer starts here -----------------*/
-footer.footer{
+
+.foodpanda {
+   width: 130px;
+   height: 130px;
+}
+
+.copyright h5{
+   font-size: 18px;
+   font-family: 'Inter', Sans serif;
+   font-weight: 800;
+}
+
+.copyright a {
+   font-size: 15px;
+}
+
+.copyright a:hover {
+   color: #FF8400;
+   text-decoration: underline;
+   font-size: 16px;
+}
+
+/* footer.footer{
    height: 100%;
    width: 105%;
    color:black;
@@ -1255,7 +1238,7 @@ footer.footer .move-up span{
 footer.footer .move-up span:hover{
    color: var(gold);
    cursor: pointer;
-}
+} */
 
 /*---------------- footer ends here -----------------*/
 
@@ -1263,7 +1246,7 @@ footer.footer .move-up span:hover{
 
 *{
    font-family: 'Inter', sans-serif;
-  font-weight: 700;
+   font-weight: 700;
    margin: 0; padding: 0;
    box-sizing: border-box;
    text-decoration: none;
@@ -1297,12 +1280,6 @@ html{
     scroll-behavior: smooth;
 }
 
-section{
-   margin:0 auto;
-   max-width: 1200px;
-   padding:2rem;
-}
-
 .title{
    text-align: center;
    margin-bottom: 2.5rem;
@@ -1321,6 +1298,7 @@ section{
    flex-flow: column;
    background-color: #FF8400;
    min-height: 20rem;
+
 }
    
 .heading h3{
@@ -1360,26 +1338,28 @@ section{
    width: 185px;
    margin: 10px 5px;
 }
+
 .btn.confirm-btn{
    margin: 10px 5px;
 }
+
 .btn{
    background-color: #FF8400;
-   color:white;
-   border-radius: 30px;
+   color:#F6F1E9;
    width: 185px;
-
 }
+
+.btn:hover {
+   background: #FFD93D;
+   color: #4F200D;
+}
+
 
 .delete-btn{
    background-color: var(--red);
    color:var(--white);
 }
 
-.btn:hover,
-.delete-btn:hover{
-   letter-spacing: .2rem;
-}
 
 .disabled{
    opacity: .5;
@@ -1423,179 +1403,12 @@ section{
    font-size: 2rem;
    color:var(--red);
 }
-p.empty1{
-   border:var(--border);
-   padding:23.5rem!important;
-   text-align: center;
-   width: 100%;
-   font-size: 2rem;
-   color:var(--red);
-}
 
 .flex-btn{
    display: flex;
    gap:1rem;
 }
 
-.header{
-   position: sticky;
-   top:0; left:0; right:0;
-   z-index: 1000;
-   border-bottom: var(--border);
-   background-color: white;
-}
-.flex{
-   display: flex;
-   flex-direction:row;
-   justify-content:center;
-   align-items:center;
-   
-}
-.header .flex{
-   display: flex;
-   align-items: flex-end;
-   justify-content: space-between;
-   position: relative;
-
-   width: 100%;
-}
-
-.header .flex .logo{
-   font-size: 2.5rem;
-   color:var(--black);
-}
-
-.header .flex .navbar a{
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    color: black;
-   margin:0 1rem;
-}
-
-.header .flex .navbar a:hover{
-   color:red;
-   text-decoration: underline;
-}
-
-.header .flex .icons > *{
-   margin-left: 1.5rem;
-   font-size: 2.5rem;
-   color:black;
-   cursor: pointer;
-}
-
-.header .flex .icons > *:hover{
-   color: red;
-}
-
-.header .flex .icons span{
-   font-size: 2rem;
-}
-
-#menu-btn{
-   display: none;
-}
-
-.btnheader{
-   background-color: #FF8400;
-   color: white;
-   width: 50px;
-   margin-top: 1rem;
-   display: inline-block;
-   font-size: 1rem;
-   padding:1rem 0rem;
-   cursor: pointer;
-   text-transform: capitalize;
-
-}
-
-
-
-
-.header .flex .profile{
-   background-color:white;
-   border:var(--border);
-   padding: 12px 16px;
-   text-align: center;
-   position: absolute;
-   top:88%; right:0rem;
-   width: 12rem;
-   display: none;
- height: 12rem;
-   animation: fadeIn .2s linear;
-}
-
-.header .flex .profile.active{
-   display:grid;
-   align-content: space-evenly;
-   width: 20rem;
-   height: 14rem;
-}
-
-@keyframes fadeIn {
-   0%{
-      transform: translateY(1rem);
-   }
-}
-
-.header .flex .profile .name{
-   font-size: 2rem;
-   color:black;
-   margin-bottom: .5rem;
-}
-
- 
-.header .flex .profile .account{
-   margin-top: 1.5rem;
-   font-size: 2rem;
-   color:var(--light-color);
-}
-
-.header .flex .profile .account a{
-   color:var(--black);
-}
-
-.header .flex .profile .account a:hover{
-   color:var(--yellow); 
-   text-decoration: underline;
-}
-
-.hero .slide{
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap-reverse;
-   gap:2rem;
-   margin-bottom: 4rem;
-}
-
-.hero .slide .image{
-   flex:1 1 40rem;
-}
-
-.hero .slide .image img{
-   width: 100%;
-}
-
-.hero .slide .content{
-   flex:1 1 40rem;
-   text-align: center;
-}
-
-.hero .slide .content span{
-   font-size: 2.5rem;
-   color:var(--light-color);
-}
-
-.hero .slide .content h3{
-   margin:1rem 0;
-   font-size: 6rem;
-   color:var(--black);
-   text-transform: capitalize;
-}
-
-.swiper-pagination-bullet-active{
-   background-color: yellow;
-}
 
 .category .box-container{
    display: grid;
@@ -1766,13 +1579,13 @@ justify-content: space-evenly;
  }
  
  .products .delete-btn {
-   background-color: red;
-   color: var(--white);
+   background-color: #FF8400;
+   color: #F6F1E9;
  }
  
  .products .btn {
-   background-color: var(--green);
-   color: var(--white);
+   background-color:  #FF8400;
+   color: #F6F1E9;
  }
  
  .products .disabled {
@@ -2211,13 +2024,6 @@ h3 {
     font-size: 20px;
 }
 
-
-
-
-
-
-
-
 .credit{
    padding:3rem 2rem;
    text-align: center;
@@ -2247,76 +2053,10 @@ h3 {
    width: 35rem;
 }
 
-.babyruth{
-   /* babyruth 1 */
-position:relative;
-width: 324px;
-height: 300px;
-background-image: url(../images/babyruth.jpg);
-border: 5px solid #FF8400;
-box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
-border-radius: 25px;
-display: inline-flex;
-background-repeat: round;
-/* right: 62px;
-    left: 15px; */
-    margin: 0px 20px 0px 20px ;
-    /* top right bottom left */
 
-}
-.event{
-   /* event */
-position:relative;
-width: 324px;
- height: 416px;
-background-image: url(../images/event.jpg);
-border: 5px solid #FF8400;
-box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
-border-radius: 25px;
-display: inline-flex;
-background-repeat: round;
-margin: 0px 20px 0px 20px ;
-/* right: 62px;
-    left: 51px; */
-}
-.series{
-   /* series */
-position:relative;
-width: 350px;
- height: 300px;
-background-image: url(../images/cheescakeseries.jpg);
-border: 5px solid #FF8400;
-box-shadow: 0px 10px 4px 10px rgba(0, 0, 0, 0.25);
-border-radius: 25px;
-display: inline-flex;
-background-repeat: round;
-margin: 0px 20px 0px 20px ;
-/* right: 62px;
-    left: 80px; */
-}
-.button11{
-  
-position: relative;
-padding: 1rem 3rem;
-left: 67px;
-background: yellow;
-border-radius: 25px;
-font-style: normal;
-font-weight: 800;
-font-size: 17px;
-line-height: 58px;
-text-align: center;
-color: black;
-border: 1px solid #000000;
- transition: 0.2s;
-}
-.button11:hover{
-   background-color:#4F200D;
-   color:white;
-   transition:0.2s;
-}
-.button12{
-  
+
+
+.button12{  
    position: relative;
    background: yellow;
    border-radius: 25px;
@@ -2330,56 +2070,52 @@ border: 1px solid #000000;
    padding: 1rem 3rem;
     left: 221px;
    }
-   .button12:hover{
+
+.button12:hover{
       background-color:#4F200D;
       color:white;
       transition:0.2s;
    }
-   .button13{
-  
-      position: relative; 
-      background: yellow;
-      border-radius: 25px;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 17px;
-      line-height: 58px;
-      text-align: center;
-      color:black;
-      border: 1px solid #000000;
-      padding: 1rem 3rem;
-      left: 404px;
-      }
-      .button13:hover{
-         background-color:#4F200D;
-         color:white;
-         transition:0.2s;
-      }
 
-      .button14{
-  
-         position: relative;
-         font-style: normal;
-         font-weight: 800;
-         font-size: 15px;
-         line-height: 30px;
-         text-align: center;
-         color: black;
-          transition: 0.2s;
-         }
-         .button14:hover{
-            background-color:#4F200D;
-            color:white;
-            transition:0.2s;
-         }
-
-.logoup{
-   position: absolute;
-   width: 117px;
-   height: 115px;
-   top: 0px;
-    left:-1px;
+.button13{
+   position: relative; 
+   background: yellow;
+   border-radius: 25px;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 17px;
+   line-height: 58px;
+   text-align: center;
+   color:black;
+   border: 1px solid #000000;
+   padding: 1rem 3rem;
+   left: 404px;
 }
+
+.button13:hover{
+   background-color:#4F200D;
+   color:white;
+   transition:0.2s;
+}
+
+.button14{
+   position: relative;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 15px;
+   line-height: 30px;
+   text-align: center;
+   color: black;
+      transition: 0.2s;
+}
+
+.button14:hover{
+   background-color:#4F200D;
+   color:white;
+      transition:0.2s;
+}
+
+
 
 /*location*/
 .containerloc{
@@ -2432,25 +2168,7 @@ border: 1px solid #000000;
 
 
 /* media queries  */
-@media (max-width:1150px){
-  
-   .none {
-      display: none;
-   }
-   .event {
-      width: 260px;
-      height: 350px;
-      top:20px;}
-   .series{
-      width: 250px;
-       height: 237px;
-      top:38px;
-   }
-   .babyruth{
-      width: 250px;
-      height: 309px;
-   }
-}
+
 @media (max-width:991px) {
    
    html{
@@ -2460,24 +2178,6 @@ border: 1px solid #000000;
       display: none;
    }
 
-   #history-box-2 {
-      width: 594px;
-      right: -4px;
-      }
-      
-      #history-box-3 {
-      width: 831px;
-      padding: 45px;
-      top: 1334px;
-          right: 18px;
-      }
-      
-      .Franchise-Now h4 {
-      font-size: 71px;
-      margin-top: 185px;}
-      
-      .franchise-packages .container .content1 {  
-      font-size: x-small;}
 
       
 
@@ -2515,10 +2215,6 @@ border: 1px solid #000000;
       left: 0px;
    }
  
-   .headeropen{
-      width: 50% !important; ;
-      
-   }
    .contact-child.child1{
       width: 199px;
    }
@@ -2529,7 +2225,6 @@ border: 1px solid #000000;
       font-size: 12px;
    }
    .franchise .container .content1 {
-    
       height: 261px;
    }
    #menu-btn{
@@ -2585,47 +2280,14 @@ border: 1px solid #000000;
          height: 300px;
              width: 400px;
              padding: 30px 4px 20px;
-             margin: 60px 54px 50px;}
+             margin: 60px 54px 50px;
+            }
 
- #history-box-1 {
-               font-size: 17px;
-                   width: 369px;
-                   margin: 12px;
-                   margin-left: 64px;
-                   padding: 49px;}
-               
-   #history-box-2 {
-               width: 404px;
-               position: relative;
-               top: 44px;
-                   right: -49px;
-               }
-#history-box-3 {
-               width: 410px;
-               position: relative;
-                   top: 68px;
-                   right: -47px;
-               }
-               
-.Franchise-Now h4 {
-               font-size: xxx-large;
-               }
- .franchise-grid {
-               justify-items: center;
-               }
-  .franchise-grid h3 {
-
-font-size: 17px;
-  }
-               .franchise-packages .container .content1 {
-                  display: inline-block;
-                  padding-top: 0rem;
-               }
-
-               .products .box {
-                  width:479px;
-                  height:137px;
-                  }
+  
+.products .box {
+   width:479px;
+   height:137px;
+}
                   .fa-solid fa-trash-can fa-xl{
                   margin-left:20px;
                   }
@@ -2727,10 +2389,7 @@ a.button13{
    width: 85px;
  height: 72px;
 }
-.franchise .container .content1 { 
-   height: 327px;
-   background: none;
-}
+
 .second ul h1 {
    font-size: larger;
  }
@@ -2760,65 +2419,10 @@ height:200px;
       
 .second ul h1{
 font-size: medium;
-margin-top: -67px;}
- .video video {
-            height: 223px;
-            width: 306px;
-            padding: 17px 4px 13px;
-            margin: 60px -1px 47px;
-            
 }
             
- #history-box-1 {
-            font-size: 14px;
-                width: 308px;
-                margin: -3px;
-                padding: 44px;
-            
- }
-            
- #history-box-2 {
-            width: 304px;
-            top: 27px;
-            right: 0px;
-            position: relative;
-            
- }
-#history-box-3 {
-            font-size: 16px;
-                width: 304px;
-                padding: 30px;
-                position: relative;
-                top: 40px;
-                right: 0px;
- }
-            
-.Franchise-Now h4 {
-            font-size: 48px;
-            
-}
-.franchise-grid {
-   padding-left: 20px;
-}        
 
-.video{
-   padding-left: 20px;
-}
-.franchise-packages{
-   padding-left: 20px;
-   font-size: medium;
-}
-.OMG-brief-history{
-   padding-left: 20px;
-}
-.franchise-grid h3{
-   font-size: 21px;
-   }
 
-   .franchise-packages .container .content1 {
-      display: inline-block;
-      padding-top: 0rem;
-   }
    .products .box {
       width:348px;
       height:127px;

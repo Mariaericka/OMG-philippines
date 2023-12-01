@@ -20,7 +20,7 @@ $select_categories->execute();
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>menu</title>
+   <title>OMG | Menu</title>
    <link rel="icon"  href="images/omg-logo.png">
 
    <!-- font awesome cdn link  -->
@@ -44,7 +44,6 @@ $select_categories->execute();
 
 <section class="category">
 
-   <h3 >Categories</h3>
 
    <div class="box-container">
 
@@ -71,18 +70,8 @@ $select_categories->execute();
          <img src="images/mango fruit yogurt3.png" alt="">
          <h3>Mango Series</h3>
       </a>
-      <a href="category.php?category=cheese" class="box">
-         <img src="images/rocky.png" alt="">
-         <h3>Cheesecake Series</h3>
-      </a>
-      <a href="category.php?category=promo" class="box">
-         <img src="images/Buy 1 Take 1.jpg" alt="">
-         <h3>Promos</h3>
-      </a>
-      <a href="category.php?category=ventea" class="box">
-         <img src="images/bb ventea.png" alt="">
-         <h3>Ventea</h3>
-      </a>
+
+
    </div>
 
 </section>
