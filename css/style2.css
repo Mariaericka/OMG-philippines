@@ -13,6 +13,7 @@
    --white:#ffff;
 }
 
+/* HOME STARTS HERE */
 
 .header{
    color: white;
@@ -161,33 +162,6 @@
    font-family: 'Inter', sans-serif;
 }
 
-.second ul  {
-   list-style-type: none;
-   margin: 10;
-   padding: 2;
-   width: 25%;
-   background-color: white;
-   position:absolute;
-   height:500px;
-   overflow:visible;
-   font-size: large;
-   top: 130px;
- }
- .second li a{
-   display: block;
-   color: black;
-   text-decoration: none;
- }
- .second li a.active{
-   background-color: rgb(250, 235, 100);
-   color: rgb(7, 6, 6);
- }
-.second li:hover:not(:active){
-   background-color:transparent;
-   color: red;
-}
-
-
 .container{
    margin: 50px 30px 30px;
 
@@ -330,7 +304,82 @@
    opacity: 1;
 }
 
-/* Franchise stars here*/
+/* HOME ENDS HERE*/
+
+
+/* MENU STARTS HERE */
+
+
+.Menu {
+   display: grid;
+   grid-template-columns: 400px;
+   
+}
+
+.second ul  {
+   border: 2px solid #4F200D;
+   background-color: #F6F1E9;
+   margin: 50px;
+   line-height: 65px;
+   width: 300px;
+   height: 500px;
+   position: sticky;
+   padding-top: 80px;
+}
+
+
+.menu-series {
+   font-size: 18px;
+   color: #4F200D;
+   display: grid;
+   width: 296px;
+   text-align: center;
+ }
+
+.menu-series:hover {
+   background-color: #FF8400;
+   color:#F6F1E9;
+ }
+
+
+ .menu-series:focus{
+   background-color: #FF8400;
+   color:#F6F1E9;
+ }
+ 
+
+ /* .button14{
+   position: relative;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 15px;
+   line-height: 30px;
+   text-align: center;
+   color: black;
+      transition: 0.2s;
+}
+
+.button14:hover{
+   background-color:#4F200D;
+   color:white;
+      transition:0.2s;
+} */
+ 
+ /* .second li a.active{
+   background-color: rgb(250, 235, 100);
+   color: rgb(7, 6, 6);
+ }
+
+.second li:hover:not(:active){
+   background-color:transparent;
+   color: red;
+} */
+
+
+/* MENU ENDS HERE */
+
+
+/* FRANCHISE STARTS HERE */
 .video video {
    height: 650px;
    width: 1300px;
@@ -360,15 +409,6 @@
 }
 
 
-.second ul h1 {
-   text-align: center;
-   margin-top: -2px;
-   font-size: larger;   
-}
-
-.second ul {
- width: 27%;
-}
 
 /* Franchise changes by SHAMS ends here*/
 .grid {
@@ -986,16 +1026,7 @@ p {
    opacity: 0;
  }
  
- li {
-   padding-left: 10px; 
-    font-size: 18px;
-    display: inline;
-   text-align: left;
-   text-transform: uppercase;
-   padding-right: 10px;
-   color: #ffffff;
- }
- 
+
  
  .signin-active a {
    padding-bottom: 10px;
@@ -2095,22 +2126,7 @@ h3 {
    transition:0.2s;
 }
 
-.button14{
-   position: relative;
-   font-style: normal;
-   font-weight: 800;
-   font-size: 15px;
-   line-height: 30px;
-   text-align: center;
-   color: black;
-      transition: 0.2s;
-}
 
-.button14:hover{
-   background-color:#4F200D;
-   color:white;
-      transition:0.2s;
-}
 
 
 

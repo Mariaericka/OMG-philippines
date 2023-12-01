@@ -34,19 +34,19 @@ include 'components/add_cart.php';
 
 
 <?php include 'components/user_header.php'; ?>
-<div class="second"><ul>
-    <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
 
-        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
-        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</i></a></li>
-        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
-        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
-        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</li>
-        <li><a href="category.php?category=promo" class="button14">PROMO</a></li>
-  
-    </ul>
+<div class="Menu">
+    <div class="second">
+        <ul>
+            <a href="category.php?category=coffee series" class="menu-series">COFFEE SERIES</a>
+            <a href="category.php?category=yogurt" class="menu-series">YOGURT SERIES</i></a>
+            <a href="category.php?category=choco" class="menu-series">CHOCO SERIES</a>
+            <a href="category.php?category=milktea" class="menu-series">MILKTEA SERIES</a>
+            <a href="category.php?category=mango" class="menu-series">MANGO SERIES</a>
+    
+        </ul>
     </div>
- 
+</div>
     <section>
  
     <div class="container2" style="box-sizing: border-box; ;
