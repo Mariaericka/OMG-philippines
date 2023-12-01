@@ -63,16 +63,12 @@ include 'components/add_cart.php';
 </head>
 <body>
 <?php include 'components/user_header.php'; ?>
-
-
-
-        <img class="background-image" src="images\category\background.png" >
-
-        <div class="Tagline">
-         <h3> Creamy goodness in a cup. Taste that would definitely make you go OMG!</h3>
-        </div>
-
-
+<h3 class="creamy">Creamy goodness in a cup</h3>
+        <h3>Taste that would definitely make you go OMG!</h3>
+       
+        <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
+        
+<section>
    <div class="swiper-pagination"></div>
 
 </div>
@@ -97,93 +93,11 @@ include 'components/add_cart.php';
          </div>
 
 
-
-<section class="hero flex" style="margin: 0px;">
-   
-<a href="menu.php"><div class="babyruth">
-</div></a>
-<a href="franchise.php"> <div class="event"></div></a>
-<a href="menu.php">  <div class="series"></div> </a>
-   
-</section>
-        
-<section class="franchise" id="franchise">
-
-    <div class="container">
-      <h1 class="Now">NOW IN</h1>
-      <h1 class="five">FIVE</h1>
-      <h1 class="branch">BRANCHES!</h1>
-        <div class="content1">
-
-            <a href="franchise.php" class="button11">Franchise Now!</a>
-         </div>
-         <div class="laguna-map">
-            <img src="images\category\laguna.png" alt="laguna-map">
-         </div>
-
-    </div>
-
-
-</section>
-
-   
-<div class="flex-box">
-   <a href="menu.php">
-      <div class="babyruth">
-         <img src="images\Babyruth.png" alt="babyruth-image">
-      </div>
-   </a>
-   <a href="franchise.php"> 
-      <div class="price-rollback">
-         <img src="images\Price rollback sale.png" alt="price-rollback-image">
-      </div>
-   </a>
-   <a href="menu.php">  
-      <div class="series">
-         <img src="images\Cheescakeseries.png" alt="cheesecake-series">
-      </div> 
-   </a>
-</div>
-   
-<!-- </section>
-
-<section class="hero">
-
-
-</section> -->
-
-
-
-<section>
-   <div class="swiper-pagination"></div>
-
-</div>
-
-
-
-<section class="hero">
-
-   <div class="swiper hero-slider">
-
-      <div class="swiper-wrapper">
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Yogurt Series</span>
-               <h3>Creamy Fruity Melon</h3>
-               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
-            </div>
-            <div class="image">
-               <img src="images/creamy fruit melon1.png" alt="">
-            </div>
-         </div>
-
-
          <div class="swiper-slide slide">
             <div class="content">
                <span>Choco Series</span>
                <h3>Choco Kisses</h3>
-               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
+               <a href="menu.php" class="btn">Order Now</a>
             </div>
             <div class="image">
                <img src="images/kisses choco1.png" alt="">
@@ -193,7 +107,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Choco Series</span>
                <h3>Twix Choco</h3>
-               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
+               <a href="menu.php" class="btn">Order Now</a>
             </div>
             <div class="image">
                <img src="images/twix choco.png" alt="">
@@ -207,6 +121,97 @@ include 'components/add_cart.php';
 
 </section>
 
+
+<section class="hero flex" style="margin: 0px;">
+   
+<a href="menu.php"><div class="babyruth">
+</div></a>
+<a href="franchise.php"> <div class="event"></div></a>
+<a href="menu.php">  <div class="series"></div> </a>
+   
+</section>
+        
+<section class="franchise" id="franchise">
+
+    <div class="container">
+
+        <div class="content1">
+        
+            <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
+            <h1>8 in 1 FRANCHISE</h1>
+            <p>With 30k initial stocks and equipments,3000 raffle promo, food panda application, freezer package,free mock up store design, free use of OMG's trademark,creation of page, extensive training and initial marketing included</p>
+
+            <br><a href="franchise.php" class="button11">Franchise Now!</a>
+       
+        </div>
+        <a href="https://www.vecteezy.com/free-vector/philippines-map" class="ph"></a>
+    </div>
+
+</section>
+
+
+
+
+<!-- <section class="hero">
+<a href="menu.php" class="button11 none">Buy 1 and Take 1</a>
+<a href="franchise.php" class="button12 none">Event Packages</a>
+<a href="menu.php" class="button13 none">Cheescake series</a>
+</section> -->
+
+<section class="hero">
+
+<!-- Contact us starts here -->
+
+<form action="" method="post" enctype="multipart/form-data">
+
+    <div class="container">
+        <div class="contact-parent">
+        
+        <div class="contact-child child2">
+            <div class="inside-contact">
+                <h2>Contact Us</h2>
+                <h3>
+                    <span id="confirm">
+                </h3>
+                <p>Name *</p>
+                <input id="txt_name" type="text" Required="required" name="name">
+                <p>Email *</p>
+                <input id="txt_email" type="text" Required="required" name="email">
+                <p>Phone *</p>
+                <input id="txt_phone" type="text" Required="required" name="number">
+                <p>Subject *</p>
+                <input id="txt_subject" type="text" Required="required" name="subject">
+                <p>Message *</p>
+                <textarea id="txt_message" rows="4" cols="20" Required="required" name="msg" ></textarea>
+                <input type="submit" id="btn_send" value="SUBMIT" name="send">
+            </div>
+        </div>
+        <div class="contact-child child1">
+            <p>
+                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
+                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
+                <br />
+                Laguna (Plaza, Near Munisipyo Of Alaminos)
+                </span>
+            </p>
+            <p>
+                <i class="fas fa-phone-alt"></i> Contact us <br />
+                <span> 09171675592</span>
+            </p>
+            <p>
+                <i class=" far fa-envelope"></i> Email <br />
+                <span>omgfranchising@gmail.com</span>
+            </p>
+        </div>
+        </div>
+    </div>   
+</form>
+
+</section>
+
+
+
+</section>
 
 
 

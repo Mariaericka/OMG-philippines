@@ -44,8 +44,9 @@ if(isset($_SESSION['user_id'])){
 <?php include 'components/user_header.php'; ?>
 
 
-
-<div class="OMG">
+<!-- BLOG NEW start-->
+<section class="site-title">
+<div class="header1">
     <h1>OMG</h1>
     <h2>is the best choice!</h2>
     <p>Overload goodness in cup</p>
