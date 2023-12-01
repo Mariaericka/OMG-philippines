@@ -79,22 +79,6 @@ include 'components/add_cart.php';
 
 
 
-<section class="hero">
-
-   <div class="swiper hero-slider">
-
-      <div class="swiper-wrapper">
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>Yogurt Series</span>
-               <h3>Creamy Fruity Melon</h3>
-               <a href="menu.php" class="btn">Order Now</a>
-            </div>
-            <div class="image">
-               <img src="images/creamy fruit melon1.png" alt="">
-            </div>
-         </div>
 
 
 
