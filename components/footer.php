@@ -16,8 +16,8 @@
         <div class="Follow">
             <h2>FOLLOW US</h2>
             
-            <a href="https://www.facebook.com/omgmainbranch/" class="logo"><img src="images/fb.png"></a>    
-            <a href="https://www.instagram.com/omgmain.ph/" class="logo"><img src="images/ig.png"></a>    
+            <a href="https://www.facebook.com/omgmainbranch/" target="_blank" class="logo"><img src="images/fb.png"></a>    
+            <a href="https://www.instagram.com/omgmain.ph/" target="_blank" class="logo"><img src="images/ig.png"></a>    
             </div>
         </div>
     </div>
