@@ -43,7 +43,7 @@ if(isset($_SESSION['user_id'])){
          
       ?>
       <img src="images/user-icon3.png" alt="">
-      <p><i class="fas fa-user"></i><span><span><?= $fetch_profile['name']; ?></span></span></p>
+      <p><i class="fas fa-user"></i><span><span><?= $fetch_profile['name']; ?><?= $fetch_profile['lname']; ?></span></span></p>
       <p><i class="fas fa-phone"></i><span><?= $fetch_profile['number']; ?></span></p>
       <p><i class="fas fa-envelope"></i><span><?= $fetch_profile['email']; ?></span></p>
       <a href="update_profile.php" class="btn">update info</a>
