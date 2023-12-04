@@ -179,6 +179,7 @@ $('#password').on('keyup', function() {
 function signUpBtn() {
       
       const name = document.getElementById("name").value;
+      const lname = document.getElementById("lname").value;
       const email = document.getElementById("email").value;
       const number = document.getElementById("number").value;
       const password = document.getElementById("password").value;
@@ -195,6 +196,7 @@ function signUpBtn() {
          //  Proceed with form submission using AJAX
           const formData = new FormData();
           formData.append("name", name);
+          formData.append("lname", lname);
           formData.append("email", email);
           formData.append("number", number);
           formData.append("password", password);

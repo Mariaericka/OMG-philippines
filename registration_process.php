@@ -15,6 +15,8 @@ if ($conn->connect_error) {
 // Check if the email exists in the database
 if (isset($_POST["email"])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $number = mysqli_real_escape_string($conn, $_POST['number']);
     $password = mysqli_real_escape_string($conn, md5($_POST['password']));
@@ -41,8 +43,8 @@ if (isset($_POST["email"])) {
         $time = time();
         $newotp = rand(1111, 9999);
 
-        mysqli_query($conn, "INSERT INTO `users`(name, email, number, password, date, otp_code, regAtime, isActivated) 
-                    VALUES('$name', '$email', '$number', '$password', NOW(), '$newotp', '$time', '$activated')") or die('query failed');
+        mysqli_query($conn, "INSERT INTO `users`(name, lname, email, number, password, date, otp_code, regAtime, isActivated) 
+                    VALUES('$name', '$lname', '$email', '$number', '$password', NOW(), '$newotp', '$time', '$activated')") or die('query failed');
 
         $mail = new PHPMailer(true);
 

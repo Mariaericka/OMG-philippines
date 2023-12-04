@@ -909,7 +909,7 @@ p {
    
  
  .frame {
-   height: 603px;
+   height: 706px;
    width: 430px;
    background:#FFD93D;
    background-size: cover;
@@ -995,7 +995,7 @@ p {
      font-weight: 300;
    padding-left: 37px;
    padding-right: 37px;
-   padding-top: 55px;
+   padding-top: 24px;
    transition: opacity .5s ease, transform .5s ease;
  }
  
