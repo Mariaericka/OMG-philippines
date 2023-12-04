@@ -24,24 +24,29 @@
 
 /* Modal */
 .modal {
+    display: grid;
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
     width: 33%;
 }
-.modal-body{
-    padding:10px 50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 
-}
 .modal-header {
     display: flex;
     margin: auto;
     padding: 5px 10px;
     justify-content: flex-end;
 }
+
+.modal-body{
+    padding: 10px 50px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
 .modal-label{
     color:black;
     font-size: 14px;

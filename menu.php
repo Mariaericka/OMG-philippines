@@ -39,11 +39,12 @@ $select_categories->execute();
 
 <section class="category">
 
+<img src="images\Bevarages\Milktea Series\Okinawa-milktea.png" alt="">
 
    <div class="box-container">
 
       <a href="category.php?category=coffee series" class="box">
-         <img src="images/caramel macchiato1.png" alt="">
+         <img src="images\caramel macchiato1.png" alt="">
          <h3>Coffee Series</h3>
       </a>
 

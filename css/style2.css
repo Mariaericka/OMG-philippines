@@ -312,7 +312,7 @@
 
 .Menu {
    display: grid;
-   grid-template-columns: 400px;
+   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))x;
    
 }
 
@@ -342,38 +342,12 @@
  }
 
 
- .menu-series:focus{
-   background-color: #FF8400;
-   color:#F6F1E9;
+ .menu-series:target{
+   background-color: #4F200D;
+   color: #F6F1E9;
  }
  
 
- /* .button14{
-   position: relative;
-   font-style: normal;
-   font-weight: 800;
-   font-size: 15px;
-   line-height: 30px;
-   text-align: center;
-   color: black;
-      transition: 0.2s;
-}
-
-.button14:hover{
-   background-color:#4F200D;
-   color:white;
-      transition:0.2s;
-} */
- 
- /* .second li a.active{
-   background-color: rgb(250, 235, 100);
-   color: rgb(7, 6, 6);
- }
-
-.second li:hover:not(:active){
-   background-color:transparent;
-   color: red;
-} */
 
 
 /* MENU ENDS HERE */
@@ -1485,22 +1459,30 @@ html{
    align-items: center;
    padding: 1rem; 
 }
+
+
 .productsbev .box1-container1 {
-   display: flex;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: 300px 300px;
+   grid-template-rows: 300px 300px;
    justify-content: center;
    gap: 1.5rem;
   
  }
+
  .productsbev .box1 {
    border: var(--border);
    padding: 1.5rem;
    background-color: beige;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
    width: 300px;
-  
-
  }
+
+ .productsbev .box1:hover {
+   cursor: pointer;
+ }
+
+
  .productsbev .box1 img {
    max-width: 100%;
    height: auto;
