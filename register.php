@@ -35,12 +35,16 @@ if(isset($_SESSION['user_id'])){
 <li class="signin-active"><a class="btn1">Sign up</a></li>
 
 <div class="form-signin">
-<label for="fullname">Fullname</label>           
-<input type="text" class="form-styling" id="name" name="name"  maxlength="50"placeholder="Enter Full name" required="required" style="background-color: white;background-image: none; color: black;">
+<label for="fullname">First Name</label>           
+<input type="text" class="form-styling" id="name" name="name"  maxlength="50"placeholder="Enter First Name" required="required" style="background-color: white;background-image: none; color: black;">
+
+<label for="fullname">Last Name</label>           
+<input type="text" class="form-styling" id="lname" name="lname"  maxlength="50"placeholder="Enter Last name" required="required" style="background-color: white;background-image: none; color: black;">
+
 <label for="email">Email</label>           
-<input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter e-mail" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter E-mail" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="number">Number</label>           
-<input type="text" class="form-styling" id="number" name="number" maxlength="12"placeholder="Enter number" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="text" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter Number" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Password</label>  
 <input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Confirm Your Password</label>  
@@ -48,7 +52,6 @@ if(isset($_SESSION['user_id'])){
 <input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn" >
 </div>
 
-<center><br><br><br><br><br><br><br><br><br><br> <p class="tcpp"> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
 
 </div>
 </div>
