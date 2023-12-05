@@ -1,7 +1,7 @@
 <?php
 
 include 'components/connect.php';
-
+error_reporting(0);
 session_start();
 
 if(isset($_SESSION['user_id'])){
@@ -10,25 +10,6 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
-// if(isset($_POST['submit'])){
-
-//    $email = $_POST['email'];
-//    $email = filter_var($email, FILTER_SANITIZE_STRING);
-//    $password = sha1($_POST['password']);
-//    $password = filter_var($password, FILTER_SANITIZE_STRING);
-
-//    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-//    $select_user->execute([$email, $password]);
-//    $row = $select_user->fetch(PDO::FETCH_ASSOC);
-
-//    if($select_user->rowCount() > 0){
-//       $_SESSION['user_id'] = $row['id'];
-//       header('location:index.php');
-//    }else{
-//       $message[] = 'incorrect username or password!';
-//    }
-
-// }
 
 ?>
 
@@ -58,6 +39,7 @@ if(isset($_SESSION['user_id'])){
 <div class="frame">
 <div class="nav1">
 <li class="signin-active"><a class="btn1">Sign in</a></li>
+
 <div class="form-signin">
 <label for="Email">Email</label>            
 <input type="text" class="form-styling" id="email" name="email" placeholder="Enter Email" maxlength="30"required="required" style="background-color: white;background-image: none; color: black;">
@@ -66,8 +48,9 @@ if(isset($_SESSION['user_id'])){
 <input type="password"  class="form-styling" id="password" name="password" placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;"><br><br>   
 <input type="submit" onclick="LoginBtn()" name="submit" value="Sign-in" class="btn" >
 </div>
+<center> <p>Forgot Password? <a href="request_reset.php">click here </a></p></center>
+
 <center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
-<center> <p class="tcpp"> <a href="tc.php" style="color:black">Terms And Condition </a>  <a href="privacypolicy.php" style="color:black"> | Privacy Policy </a></p></center>
 
 </div>
 </div>

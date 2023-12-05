@@ -24,10 +24,12 @@ if(isset($_POST['submit'])){
             $curr_time = time();
 			$real_time = $curr_time - $post_time;
 			$real_min = $real_time / 60;
-            $_SESSION['user_id'] = $row['id'];
+            $id = $row['id'];
         }
+        $_SESSION['user_id'] = $id;
         if($otpCheck == $otp){
             if($real_min < 1 && $real_min < 2){
+                $_SESSION['user_id'] = $id;
                 $query = mysqli_query($conn, "UPDATE users SET isActivated = '1' WHERE otp_code = '$otp'") or die('query failed');
                 echo "<script> success('Your account has been activated');
                     </script>";
@@ -59,21 +61,23 @@ if (isset($_POST['resend'])) {
             $email = $row['email'];
         }
         $mail = new PHPMailer(true);
+
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'cecillesalon0@gmail.com';
-        $mail->Password = 'pxlwhdcgshaiqalr';
+        $mail->Username = 'omgphilippines123@gmail.com';
+        $mail->Password = 'qcdjmrfckncojvsy';
         $mail->SMTPSecure = 'ssl'; // Change 'ssl' to 'tls'
         $mail->Port = 465; // Change 465 to 587
 
-        $mail->setFrom('cecillesalon0@gmail.com');
+        $mail->setFrom('omgphilippines123@gmail.com');
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = "Account Verification Code";
         $message = "Here's the code to activate your account: " . $newotp;
         $mail->Body = "<p>$message</p>";
-        $mail -> send();
+
+        $mail->send();
     }
 }
 ?>
@@ -94,16 +98,18 @@ if (isset($_POST['resend'])) {
     <link rel="stylesheet" href="css/Login-Form-Clean.css">
     <link rel="stylesheet" href="css/Navigation-with-Button.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"  href="images/omg-logo.png">
+
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 </head>
 
-<body style="background: #FFD93D;padding:10% 39%;">
+<body style="background:#FFD93D; padding:10% 39%;">
     <?php
         include("navbar.php");
     ?>
     
-        <div class="centered-div" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px;background: rgba(111,66,193,0.33);color: var(--bs-dark); padding:20px;width:350px;">
+        <div class="centered-div" style="box-shadow: 1px 2px 9px 0px #00000;border-radius: 20px; background:rgba(111,66,193,0.33);color: var(--bs-dark);  padding:20px;width:350px;">
         <center>
             <h4>OTP code will expire in</h4> 
             <h1 id="countdown">2:00</h1>

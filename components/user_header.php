@@ -1,4 +1,8 @@
 <?php
+// session_start();
+// error_reporting(0);
+// // $user_id = $_SESSION['user_id'];
+
 if(isset($message)){
    foreach($message as $message){
       echo '
