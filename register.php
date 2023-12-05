@@ -44,7 +44,7 @@ if(isset($_SESSION['user_id'])){
 <label for="email">Email</label>           
 <input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter E-mail" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="number">Number</label>           
-<input type="text" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter Number" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter Number" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Password</label>  
 <input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Confirm Your Password</label>  
@@ -184,7 +184,7 @@ function signUpBtn() {
       const number = document.getElementById("number").value;
       const password = document.getElementById("password").value;
       const cpass = document.getElementById("cpass").value;
-      
+
  // Validate the first name and last name fields
  const nameRegex = /^[a-zA-Z]+$/;
     if (!name.match(nameRegex) || !lname.match(nameRegex)) {
@@ -244,6 +244,16 @@ function signUpBtn() {
          alert("Password Doesn't Match!");
       }
     }
+
+    // Use jQuery to restrict the input to numbers only
+$(document).ready(function () {
+    $('#number').on('input', function () {
+        // Remove non-numeric characters from the input value
+        $(this).val(function (index, value) {
+            return value.replace(/\D/g, '');
+        });
+    });
+});
 </script>
 
 </body>
