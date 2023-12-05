@@ -184,6 +184,14 @@ function signUpBtn() {
       const number = document.getElementById("number").value;
       const password = document.getElementById("password").value;
       const cpass = document.getElementById("cpass").value;
+      
+ // Validate the first name and last name fields
+ const nameRegex = /^[a-zA-Z]+$/;
+    if (!name.match(nameRegex) || !lname.match(nameRegex)) {
+        alert("First name and last name must not contain numbers.");
+        return; // Stop form submission if the names contain numbers
+    }
+
       if (number.trim() === "") {
         alert("Please enter your phone number.");
         return; // Stop form submission if the phone number is not entered
