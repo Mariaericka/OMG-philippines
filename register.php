@@ -184,7 +184,10 @@ function signUpBtn() {
       const number = document.getElementById("number").value;
       const password = document.getElementById("password").value;
       const cpass = document.getElementById("cpass").value;
-      
+      if (number.trim() === "") {
+        alert("Please enter your phone number.");
+        return; // Stop form submission if the phone number is not entered
+    }
 
       let strength = getStrength();
       let message = getMessage();
