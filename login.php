@@ -75,6 +75,7 @@ function LoginBtn() {
                 if (xhr.status === 200) {
                     const response = xhr.responseText;
                     if (response === "success") {
+                        alert("You are now logged in!");
                         // Login success, redirect to the dashboard or any other page
                         window.location.href = "index.php";
                     } else if (response === "failed") {
