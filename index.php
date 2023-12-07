@@ -49,7 +49,7 @@ include 'components/add_cart.php';
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMG Philippines</title>
-<link rel="icon"  href="images/omg-logo.png">
+   <link rel="icon"  href="images/omg-logo.png">
    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
    <!-- font awesome cdn link  -->
@@ -58,7 +58,6 @@ include 'components/add_cart.php';
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
    
-
 
 </head>
 <body>

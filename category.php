@@ -34,19 +34,15 @@ include 'components/add_cart.php';
 
 
 <?php include 'components/user_header.php'; ?>
-<div class="second"><ul>
-    <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
-
-
+<div class="second">
+    <ul>
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
         <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</i></a></li>
         <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
         <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
         <li><a href="category.php?category=mango" class="button14">MANGO SERIES</li>
-        <li><a href="category.php?category=promo" class="button14">PROMO</a></li>
-  
     </ul>
-    </div>
+</div>
  
     <section>
  
@@ -85,13 +81,11 @@ margin-left: 25%;">
 
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
-         <h4 style="font-size: initial; background-color: #FFD93D;"> Starts at <span>₱</span><?= $fetch_products['price']; ?>.00</h4>
+         <h4 style="font-size: initial; background-color: #FFD93D;"><span>₱</span><?= $fetch_products['price']; ?>.00</h4>
           
          <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
             <p class="omg-detail">
-                            <div class="omg-menu-desc">
-                            <?= $fetch_products['description']; ?>
-                                    </p></div>
+
                  
         <!-- <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button> -->
 
@@ -141,7 +135,7 @@ if ($select_products->rowCount() > 0) {
                             </td>
                             <td>
                                 
-                            <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
+                            <!-- <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)"> -->
     <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected> ₱<?= $fetch_products['price']; ?>.00</option>
 <!-- <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option> -->
 </select>

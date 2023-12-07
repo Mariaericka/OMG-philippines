@@ -19,18 +19,20 @@ if(isset($message)){
 
    <section class="flex">
 
-   <a href="index.php" class="logo"><img src="images/omg-logo.png" class="logoup"></a>
 
-   <div class="header-main">
+   
       <nav class="navbar">
-         <a href="index.php">HOME</a>
-         <a href="menu.php">MENU</a>
-         <a href="blog.php">BLOG</a>
-         <a href="franchise.php">FRANCHISE</a>
-         <a href="location2.php">LOCATION</a>
-         <a href="contact.php">CONTACT US</a>
+         <a href="index.php" class="logo"><img src="images/omg-logo.png" class="logoup"></a>
+         <div class="header-main">
+            <a href="index.php">HOME</a>
+            <a href="menu.php">MENU</a>
+            <a href="blog.php">BLOG</a>
+            <a href="franchise.php">FRANCHISE</a>
+            <a href="location2.php">LOCATION</a>
+            <a href="contact.php">CONTACT US</a>
+         </div>
+   
       </nav>
-   </div>
    
 
       <div class="icons">

@@ -48,26 +48,26 @@ $select_categories->execute();
    <div class="box-container">
 
       <a href="category.php?category=coffee series" class="box">
-         <img src="images/caramel macchiato1.png" alt="">
+         <img src="images\caramel macchiato1.png" alt="Coffee-Series" id="Coffee-Series">
          <h3>Coffee Series</h3>
       </a>
 
       <a href="category.php?category=yogurt" class="box">
-         <img src="images/strawberry yogurt2.png" alt="">
+         <img src="images/strawberry yogurt2.png" alt="Yogurt-Series" id="Yogurt-Series">
          <h3>Yogurt Series</h3>
       </a>
 
       <a href="category.php?category=choco" class="box">
-         <img src="images/kisses choco1.png" alt="">
+         <img src="images/kisses choco1.png" alt="Choco-Series" id="Choco-Series">
          <h3>Choco Series</h3>
       </a>
 
       <a href="category.php?category=milktea" class="box">
-         <img src="images/okinawa milktea.png" alt="">
+         <img src="images/okinawa milktea.png" alt="Milktea-Series" id="Milktea-Series">
          <h3>Milktea Series</h3>
       </a>
       <a href="category.php?category=mango" class="box">
-         <img src="images/mango fruit yogurt3.png" alt="">
+         <img src="images/mango fruit yogurt3.png" alt="Mango-Series" id="ango-Series">
          <h3>Mango Series</h3>
       </a>
 

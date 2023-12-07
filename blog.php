@@ -43,155 +43,107 @@ if(isset($_SESSION['user_id'])){
 
 <?php include 'components/user_header.php'; ?>
 
-
-
-<div class="OMG">
-    <h1>OMG</h1>
-    <h2>is the best choice!</h2>
-    <p>Overload goodness in cup</p>
-</div>
-
-<div class="OMG-main">
-    <img src="./images/OMG.jpg" alt="OMG-main">
-</div>
-
-</section>
-<!--<div class="owl-carousel owl-theme ">
-
-<div class="Price-rollback">
-   <img src="./images/Price rollback sale.jpg" alt="Price rollback sale">
-   <h2 class="From">From 69 pesos</h2>
-   <h2 class="Now">Now 45 pesos</h2>
-</div>
-
-<div class="Buy-1-take-1">
-   <img src="./images/Buy 1 take 1.jpg" alt="Buy 1 take 1">
-   <h2 class="Enjoy">Enjoy two drinks</h2>
-   <h2 class="Only">for only 88 pesos</h2>
-</div>
-
-<div class="Fruity-yogurt">
-   <img src="./images/Fruity yogurt.jpg" alt="Fruity yogurt">
-   <h2 class="Get">Get only from</h2>
-   <h2 class="April">April 4-9</h2>
-</div>
-
-</div>-->
-
-
-
-
-
-
-   <div class="fb-posts-container">
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0QjiMeKGdb63UozWgbYxU6d1EN7XLcyy8etyMV3E2DkRMRi8PnsnQ7XwB2iPZ2B83l&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0Eiw9tXbAXCHb3kwF1895fxwyn4BJeS21eqq5j1jAAXs7dMtMP85oyCY7vNnAxz3Ul&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid02W6rPnVcP5o7opcZUYja9St4DKM85zvBfAe5PmYqHS1PhAFWVc1gB9dzZd53BSueVl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0CrNwwqk5t1dGq46LvVaAopuqJtkVfABbXnwvYea13o9kmNE1UUXLKLie5rrxZg5tl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <script async defer crossorigin="anonymous" 
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
-    </div>
-<!------------------- Blog Carousel ------------------->
-
-<section>
-      
-          
-                <div class="owl-carousel owl-theme blog-post">
-                    <div class="blog-content">
-                    <img src="./images/Price rollback sale.jpg" alt="Price rollback sale">
-                        <div class="blog-title">
-                            <h3>Buy one take one milk shake for only 88 pesos!</h3>
-                            <button class="btn btn-blog">Milkshakes</button>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                    <img src="./images/Buy 1 take 1.jpg" alt="Buy 1 take 1">
-                        <div class="blog-title">
-                            <h3>Price rollback sale from P69 to P45!</h3>
-                            <button class="btn btn-blog">Coffees</button>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                    <img src="./images/Fruity yogurt.jpg" alt="Fruity yogurt">
-                        <div class="blog-title">
-                            <h3>Yogurt for only P88!</h3>
-                            <button class="btn btn-blog">Yogurts</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-navigation">
-                    <span class="owl-nav-prev"><i class="fa-solid fa-circle-chevron-left"></i></span>
-                    <span class="owl-nav-next"><i class="fa-solid fa-circle-chevron-right"></i></span>
-                </div>
-  
+<div class="brief-history">
    
-    </section>
-    
-<section>
-      
-          
-      <div class="owl-carousel owl-theme blog-post">
-          <div class="fb-posts-container">
-          <img src="./images/picture 1.jpg" alt="Coming soon">
-                        <div class="blog-title">
-                  <h3>Coming Soon</h3>
-              </div>
-          </div>
-          <div class="fb-posts-container">
-          <img src="./images/picture 2.jpg" alt="Opening soon">
-              <div class="blog-title">
-                  <h3>Opening Soon</h3>
-              </div>
-          </div>
-          <div class="fb-posts-container">
-          <img src="./images/picture 3.jpg" alt="Customers">
-              <div class="blog-title">
-                  <h3>Customers!</h3>
-              </div>
-          </div>
-          <div class="fb-posts-container">
-          <img src="./images/picture 4.jpg" alt="New branch">
-                        <div class="blog-title">
-                  <h3>New Branch</h3>
-              </div>
-          </div>
+   <h6 class="about-OMG">
+   During the pandemic, as online shopping soared, OMG emerged 
+   a year later, transforming quarantine cravings into a nationwide 
+   sensation. Starting from Alaminos, Laguna, they've expanded to 
+   five branches, captivating a thirst-quenching niche in the tropical 
+   Philippines. Their journey, marked by trial and error, now stands 
+   as a testament to entrepreneurial resilience and taste bud triumphs.
+   </h6>
+
+   <img src="images\logo\logo.png" class="blog-logo">
+</div>
+
+
+
+<div class="blog">
+   <div class="blog-box-1">
+      <h5 class="blog-omg">OMG</h5>
+
+      <div class="best">
+         <h3 class="is">is the</h3>
+         <h3 class="best-choice">best choice!</h3>
       </div>
-    
-
-
-</section>
-
-
-
-    <!---------x---------- Blog Carousel----------x--------->
-    <!-- <section class="site-title1">
-<div class="Coming-soon">
-      <img src="./images/picture 1.jpg" alt="Coming soon">
-      <p class="Likes">Likes<br>Comments</p>
-
-   <div class="Coming-soon-icons">
-      <img src="./images/icons/heart.png" id="Heart-icon" alt="Heart-icon">
-      <img src="./images/icons/comment.png" id="Comment-icon" alt="Comment-icon">
-
    </div>
 
+   <div class="blog-box-2">
+      <div class="facebook-box-1">
+         <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0QjiMeKGdb63UozWgbYxU6d1EN7XLcyy8etyMV3E2DkRMRi8PnsnQ7XwB2iPZ2B83l&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" class="facebook-img"></iframe>
+      </div>
+
+      <div class="facebook-box-2">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0W1DFdsZ87yoxyHn558gzZ92dnLkTJF7xNChk7oQ3jp9bdr2QHNfw4hkMrHzeKZrfl&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" class="facebook-img"></iframe>
+      </div>
+         <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+   </div>
 </div>
 
-<div class="Opening-soon">
-   <img src="./images/picture 2.jpg" alt="Opening soon">
-   <p class="Likes">Likes<br>Comments</p>
-</div>
+<div class="blog-box-3">
+   <div class="franchise-grid">
+      <div class="growing">
+         <img src="images\icons\growing.png" alt="growing-image">
+         <h4>Fastest growing and trending franchise</h4>
+      </div>
 
-<div class="Customers">
-   <img src="./images/picture 3.jpg" alt="Customers">
-   <p class="Likes">Likes<br>Comments</p>
-</div>
+      <div class="legit">
+         <img src="images\icons\legit.png" alt="legit-image">
+         <h4>Legit and promoted but the VIPs</h4>
+      </div>
 
-<div class="New-branch">
-   <img src="./images/picture 4.jpg" alt="New branch">
-   <p class="Likes">Likes<br>Comments</p>
-</div>-->
-</section>
+      <div class="motorbike">
+         <img src="images\icons\motorbike.png" alt="motorbike-image">
+         <h4>Food panda <br> integrated</h4>
+      </div>
+
+      <div class="Halal">
+         <img src="images\icons\halal.png" alt="halal-image">
+         <h4 class="Halal">Halal <br> Certified</h4>
+      </div>
+
+      <div class="followers">
+         <img src="images\icons\followers.png" alt="followers-image">
+         <h4>With 1.3 million followers in the food indistry</h4>
+      </div>
+
+      <div class="trophy">
+         <img src="images\icons\Award.png" alt="Award-image">
+         <h4>Franchise are multi-awarded in the field of customer service and training</h4>
+      </div>
+            
+      <div class="outstanding">
+         <img src="images\icons\outsanding.png" alt="oustanding-image">
+         <h4>The Outstanding Filipino 2019 Recognized</h4>
+      </div>
+
+
+      <div class="thumbs-up">
+         <img src="images\icons\thumb-up.png" alt="thumbs-up-image">
+         <h4>Products are very affordable yet the ingredients are of the highest quality</h4>
+      </div>
+   </div>
+
+    <!-- <div class="fb-posts-container">
+          <a href="https://www.facebook.com/omgmainbranch/posts/pfbid0fMSVG7p9UdKsYHRoFktKmsUXLxViihd8T3p7CmVfsn5oKNhxgidcVRhhABscNS5Dl" target="_blank" class="caption">
+            Tikman ang pinakamasarap na mas pinamura! 
+         </a>
+         <img src="images\Blog-facebook.jpg" class="facebook-1">
+
+
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0QjiMeKGdb63UozWgbYxU6d1EN7XLcyy8etyMV3E2DkRMRi8PnsnQ7XwB2iPZ2B83l&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0Eiw9tXbAXCHb3kwF1895fxwyn4BJeS21eqq5j1jAAXs7dMtMP85oyCY7vNnAxz3Ul&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid02W6rPnVcP5o7opcZUYja9St4DKM85zvBfAe5PmYqHS1PhAFWVc1gB9dzZd53BSueVl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomgmainbranch%2Fposts%2Fpfbid0CrNwwqk5t1dGq46LvVaAopuqJtkVfABbXnwvYea13o9kmNE1UUXLKLie5rrxZg5tl&show_text=true&width=500" width="500" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            
+        <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+    </div> -->
+
+
+
 
 <?php include 'components/footer.php'; ?>
 

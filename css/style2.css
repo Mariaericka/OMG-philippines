@@ -21,35 +21,31 @@
    top:0; left:0; right:0;
    z-index: 1000;
    border-bottom: 3px solid black;
-   padding: 20px;
+   padding: 5px 20px;
 }
 
-.flex{
-   display: flex;
-   flex-direction:row;
-   justify-content:center;
-   align-items:center;
-}
+
 
 .header .flex{
    display: flex;
-   align-items: flex-end;
-   justify-content: space-around;
+   align-items: center;
+   justify-content: center;
    position: relative;
-   width: 100%;
+   width: 100%; 
 }
 
-.header .flex .logo{
-   font-size: 2.5rem;
-   color:var(--black);
+
+.navbar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .header .flex .navbar a{
    font-size: 20px;
-   border-radius: .5rem;
    color: black;
    margin:0 1rem;
-}
+} 
 
 .header .flex .navbar a:hover{
    color:#FFD93D;
@@ -138,11 +134,8 @@
 }
 
 .logoup{
-   position: absolute;
-   margin-bottom: 0;
-   left: 100px;
-   width: 90px;
-   height: 90px;
+   width: 65px;
+   height: 65px; 
 }
 
 .background-image {
@@ -166,7 +159,6 @@
    margin: 10;
    padding: 2;
    width: 25%;
-   background-color: white;
    position:absolute;
    height:500px;
    overflow:visible;
@@ -645,34 +637,116 @@ p {
 
 
 /* BLOG START*/
-.OMG h1 {
 
-   color: rgb(255, 191, 0);
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #000;
+.brief-history {
+   display: grid;
+   grid-template-columns: 700px 500px;
+   column-gap: 50px;
+   height: 600px;
+}
+
+.about-OMG {
+   background-color: #f6f1e9;
+   margin: 150px 0px 0px 130px;
+   height: 400px;
+   width: 700px;
+   padding: 50px;
+   font-family: 'Inter', Sans Serif;
+   font-size: 20px;
+   text-align: justify;
+   line-height: 40px;
+   color: #4F200D;
+}
+
+.blog-logo {
+
+   margin: 80px 0px 0px 150px
+}
+
+.blog {
+   height: 700px;
+   padding: 80px 0px  0px 100px;
+   display: grid;
+   grid-template-columns: 400px 930px;
+   column-gap: 50px;
+}
+
+   /* OMG PART */
+.blog-box-1{
+   margin-top: 100px;
+   width: 300px;
+   height: 300px; 
+   text-align: left;
+}
+
+.blog-omg {
    font-size: 150px;
-   font-family: 'Inter', sans serif;
-   font-weight: 800;
-   position: absolute;
-   top: 150px;
- 
+   color: #4F200D;
 }
 
-
-.OMG h2 {
-
-   color: red;
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #000;
-   font-size: 70px;
-   font-family: 'Inter', sans serif;
-   font-weight: bold;
-   text-shadow: 2px 2px 2px rgb(165, 164, 164);
-   position: absolute;
-   top: 320px;
-   left: 33px;
+.best {
+   display: grid;
+   grid-template-columns: 110px 270px; 
 }
 
+.is {
+   padding-top: 5px;
+   font-size: 40px;
+   justify-content: baseline;
+   text-align: left;
+}
+
+.best-choice {
+   width: 300px;
+   font-size: 45px;
+   color: #FF8400;
+   text-decoration: underline;
+}
+
+   /* OMG PART */
+
+   /* FACEBOOK LINKS PART */
+
+.blog-box-2 {
+   padding: 20px;
+   display: grid;
+   grid-template-columns: 443px 443px;
+   column-gap: 30px;
+}
+
+.facebook-box-1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 75%; 
+}
+
+.facebook-box-2 {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+   padding-top: 75%; 
+ }
+
+.facebook-img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   width: 90%;
+   height: 90%;
+}
+
+.facebook-img:hover {
+   opacity: 0.7;
+}
+
+.blog-box-3 {
+   height: 1000px;
+}
+
+/* FACEBOOK LINKS PART */
 
 .OMG p {
    color: white;
@@ -683,16 +757,7 @@ p {
    left: 10px;
 }
 
-.OMG-main img {
-   width: 800px;
-   height: 600px;
-   position: absolute;
-   top: 130px;
-   left: 700px;
-   border: 5px solid black;
-   border-radius: 20px;
-   box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.25);
-}
+
 
 .Price-rollback img {
    height: 350px;
@@ -1411,29 +1476,53 @@ html{
 
 
 .category .box-container{
+   padding: 30px 150px;
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   grid-template-columns: 400px 400px 400px;
+   grid-auto-rows: minmax(300px, auto);
+   grid-template-areas: 
+   "header header"
+   "sidebar content"
+   "sidebar content"
+
+}
+
+   /* grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
    gap:1.5rem;
-   align-items: flex-start;
+   /* align-items: flex-start;  */
+
+#Coffee-Series {
+   grid-area: sidebar;
 }
 
 .category .box-container .box{
    border:var(--border);
-   padding:2rem;
    text-align: center;
 }
 
-.category .box-container .box img{
-   width: 100%;
-   height: 10rem;
+.category .box-container .box img { 
+   width: 350px;
+   height: 250px;
    object-fit: contain;
 }
 
+#Coffee-Series, #Yogurt-Series {
+   margin-left: 40px;
+}
+
+#Choco-Series, #Milktea-Series, #Mango-Series {
+   margin: 10px;
+}
+
+#Choco-Series, #Milktea-Series {
+   width: 350px;
+   height: 250px;
+}
 .category .box-container .box h3{
-   font-size: 2rem;
-   margin-top: 1.5rem;
+   font-size: 18px;
    color:black;
-   text-transform: capitalize;
+   text-transform: uppercase;
+   text-align: center;
 }
 
 .category .box-container .box:hover{
@@ -2099,19 +2188,20 @@ h3 {
 }
 
 .button14{
-   position: relative;
-   font-style: normal;
-   font-weight: 800;
-   font-size: 15px;
-   line-height: 30px;
+   font-size: 18px;
+   line-height: 50px;
    text-align: center;
-   color: black;
+   align-items: left;
+   
+   color: #4F200D;
       transition: 0.2s;
 }
 
 .button14:hover{
-   background-color:#4F200D;
-   color:white;
+   margin-left: 5px;
+   height: 50px;
+   background-color:#FF8400;
+   color: #F6F1E9;
       transition:0.2s;
 }
 
@@ -2242,7 +2332,7 @@ h3 {
    }
 
    .header .flex .navbar a{
-      display: block;
+      display: flex;
       margin:2rem;
    }
 
@@ -2269,11 +2359,8 @@ h3 {
       left:  20px;
       top:30px;
       width: 335px;
-   }
-   .logoup{
-      width: 85px;
-    height: 72px;
-   }
+   } 
+   
    .tcpp{
       padding:20px;}
       .video video {
@@ -2316,9 +2403,6 @@ h3 {
       font-size: 3rem;
    }
 
-   .header .flex .logo{
-      font-size: 2rem;
-   }
 
    .hero .slide .content h3{
       font-size: 5rem;
@@ -2385,10 +2469,7 @@ a.button13{
 }
 
 
-.logoup{
-   width: 85px;
- height: 72px;
-}
+
 
 .second ul h1 {
    font-size: larger;
