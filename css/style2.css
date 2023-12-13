@@ -322,45 +322,245 @@
    opacity: 1;
 }
 
-/* Franchise stars here*/
-.video video {
-   height: 650px;
-   width: 1300px;
-   padding: 50px 10px 50px;
-   margin: 25px 11px 50px;
-   border: 20px solid #FFD93D;
+/* Franchise starts here*/
+
+.franchise {
+   position: relative;
+}
+
+.franchise-box-1 {
+   padding: 250px 100px 0px;
+   position: sticky;
+   top: 83px;
+}
+
+.franchise-box-1 h1{
+   font-size: 100px;
+   color: #4F200D;
+   text-align: center;
+}
+
+.franchise-box-1 p {
+   padding: 0px 0px 280px;
+   font-size: 40px;
+   color: #4F200D;
+   text-align: center;
+   font-family: 'Inter', Sans serif;
+}
+
+
+.franchise-slider{
+   width: 100%;
+   background-color: #F6F1E9;
+   height: 700px;
+   position: sticky;
+   top: 83px;
+   display: grid;
+   grid-template-columns: 600px 900px;
+   gap: 10px;
+}
+
+
+
+.slide {
+   display: grid;
+   grid-template-rows: 200px 200px 200px; 
+   margin: 70px 70px;
+
+}
+
+
+.slider h1 {
+   font-size: px;
+   text-align: center;
+   justify-content: center;
+   padding: 23px 10px;
+}
+
+.slider-1 {
+   background-color: #4F200D;
+   color: #F6F1E9;
+}
+
+.slider-2 {
+   background-color: #FF8400;
+   color: #F6F1E9;
+}
+
+.slider-3 {
+   background-color: #FFD93D;
+   color: #4F200D;
+}
+
+form {
+   margin: 50px 0px 0px 100px;
+}
+
+form h5 {
+   color: #4F200D;
+   font-family: 'Inter', Sans serif;
+   font-size: 30px;
+   text-align: justify;
+}
+
+.field {
+   display: flex;
+   flex-direction: row;
+   margin: 100px;
+}
+
+.fill-out {
+   display: flex;
+   flex-direction: column;
+   row-gap: 40px;
+   font-family: 'Inter', Sans serif;
+   font-size: 20px;
+   width: 200px;
+}
+
+.fill-out-box input {
+   font-size: 15px;
+   font-family: 'Inter', Sans serif;
+   height: 50px;
+   width: 300px;
+}
+
+
+
+
+/* .franchise-premium {
+   display: grid;
+   grid-template-columns: 620px 850px;
+   margin-bottom: 20px;
+}
+
+.franchise-box-2 .OMG-Main{
+   display: grid;
+   font-size: 70px;
+   align-items: center;
+   text-align: center;
+   margin: 100px 50px;
+   width: 500px;
+   height: 530px;
+   background-color: #FFD93D;
+   color: #4F200D;
+}
+
+.main-box-2 {
+   display: grid;
+   grid-template-rows: 400px 200px;
+}
+
+.Premium h1 {
+   display: grid;
+   font-size: 50px;
+   align-items: center;
+   text-align: center;
+   margin: 50px;
+   padding: 250px 50px 0px;
+   color: #FF8400;
+}
+
+.Alaminos-Laguna {
+   padding-top: 10px;
+   font-size: 20px;
+   text-align: center;
+   color: #4F200D;
+   font-family: 'Inter', Sans serif;
 }
 
 .franchise-grid {
-   margin: 50px;
    display: grid;
-   grid-template-columns: 320px 320px 320px 320px;
-   gap: 70px;
+   grid-template-columns: 620px 850px;
 }
 
-.franchise-grid img {
-   margin-left: 100px;
+.main-box-2 {
+   display: grid;
+   grid-template-rows: 400px 250px;
 }
 
-.franchise-grid h4 {
-   font-size: 25px;
-   font-family: 'Inter', Sans serif;
-   color: #FF8400;
+.main-box-3 {
+   margin-top: 20px;
+   display: grid;
+   grid-template-rows: 400px 200px;
+   margin-bottom: 200px;
+}
+
+.OMG-Main-2 {
+   display: grid;
+   font-size: 70px;
+   align-items: center;
    text-align: center;
-   line-height: 40px;
-   letter-spacing: 2px;
+   margin: 130px 50px;
+   width: 500px;
+   height: 530px;
+   background-color: #FF8400;
+   color: #F6F1E9;
 }
 
+.Alaminos-Laguna-2 {
+   padding-top: 35px;
+   font-size: 20px;
+   text-align: center;
+   color: #F6F1E9;
+   font-family: 'Inter', Sans serif;
+}
 
-.second ul h1 {
+.offers {
+   display: grid;
+   font-size: 50px;
+   align-items: center;
+   text-align: center;
+   
+   padding: 170px 50px 0px;
+   color: #4F200D;
+}
+
+.OMG-Main-3 {
+   display: grid;
+   font-size: 70px;
+   align-items: center;
+   text-align: center;
+   margin: 150px 50px;
+   width: 500px;
+   height: 530px;
+   background-color: #FFD93D;
+   color: #4F200D;
+}
+
+.Alaminos-Laguna-3 {
+   padding-top: 55px;
+   font-size: 20px;
+   text-align: center;
+   color: #4F200D;
+   font-family: 'Inter', Sans serif;
+}
+
+.Best h1{
+   display: grid;
+   font-size: 50px;
+   align-items: center;
+   text-align: center;
+   
+   padding: 170px 50px 0px;
+   color: #FF8400;
+}
+
+.franchise2 {
+   display: flex;
+} */
+
+/* .second ul h1 {
    text-align: center;
    margin-top: -2px;
    font-size: larger;   
 }
 
+
+
 .second ul {
  width: 27%;
-}
+} */
 
 /* Franchise changes by SHAMS ends here*/
 .grid {
@@ -385,6 +585,7 @@
    grid-gap: 3rem;
    padding: 15rem;
 }
+
 
 .grid-2> div {
    background: #eee;
@@ -636,7 +837,7 @@ p {
 }
 
 
-/* BLOG START*/
+/* BLOG START HERE*/
 
 .brief-history {
    display: grid;
@@ -747,6 +948,29 @@ p {
 }
 
 /* FACEBOOK LINKS PART */
+
+.blog-grid {
+   margin: 50px;
+   display: grid;
+   grid-template-columns: 320px 320px 320px 320px;
+   gap: 70px;
+}
+
+.blog-grid img {
+   margin-left: 100px;
+}
+
+.blog-grid h4 {
+   font-size: 25px;
+   font-family: 'Inter', Sans serif;
+   color: #FF8400;
+   text-align: center;
+   line-height: 40px;
+   letter-spacing: 2px;
+}
+
+/* BLOG ENDS HERE*/
+
 
 .OMG p {
    color: white;

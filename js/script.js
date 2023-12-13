@@ -35,3 +35,5 @@ document.querySelectorAll('input[type="number"]').forEach(numberInput => {
    };
 });
 
+
+

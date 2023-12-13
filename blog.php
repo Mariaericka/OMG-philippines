@@ -83,7 +83,7 @@ if(isset($_SESSION['user_id'])){
 </div>
 
 <div class="blog-box-3">
-   <div class="franchise-grid">
+   <div class="blog-grid">
       <div class="growing">
          <img src="images\icons\growing.png" alt="growing-image">
          <h4>Fastest growing and trending franchise</h4>
@@ -124,6 +124,10 @@ if(isset($_SESSION['user_id'])){
          <img src="images\icons\thumb-up.png" alt="thumbs-up-image">
          <h4>Products are very affordable yet the ingredients are of the highest quality</h4>
       </div>
+   </div>
+
+   <div class="comments">
+      Comment here!
    </div>
 
     <!-- <div class="fb-posts-container">
