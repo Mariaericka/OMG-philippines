@@ -185,12 +185,22 @@ function signUpBtn() {
       const password = document.getElementById("password").value;
       const cpass = document.getElementById("cpass").value;
 
+      if (name.trim() === "") {
+        alert("Missing first name.");
+        return; // Stop form submission if the first name is missing
+    }
+
+    if (lname.trim() === "") {
+        alert("Missing last name.");
+        return; // Stop form submission if the last name is missing
+    }
  // Validate the first name and last name fields
  const nameRegex = /^[a-zA-Z]+$/;
     if (!name.match(nameRegex) || !lname.match(nameRegex)) {
         alert("First name and last name must not contain numbers.");
         return; // Stop form submission if the names contain numbers
     }
+  
 
       if (number.trim() === "") {
         alert("Please enter your phone number.");
