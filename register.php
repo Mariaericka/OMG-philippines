@@ -43,8 +43,8 @@ if(isset($_SESSION['user_id'])){
 
 <label for="email">Email</label>           
 <input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter E-mail" required="required" style="background-color: white;background-image: none; color: black;">
-<label for="number">Number</label>           
-<input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter Number" required="required" style="background-color: white;background-image: none; color: black;">
+<label for="number"> Phone Number</label>           
+<input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter Phone Number" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Password</label>  
 <input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Confirm Your Password</label>  
