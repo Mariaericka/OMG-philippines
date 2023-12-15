@@ -1,32 +1,91 @@
-.parent{  
-    height: 100vh;
-    margin-bottom: 1000px!important;
+
+.location {
+  display: grid;
+  grid-template-columns: 500px 700px;
+
 }
-.ex1 {
+
+.branch-locations {
+  padding: 30px;
+  border-right: 3px solid #4F200D;
+  background-color: #F6F1E9;
+  height: 670px;
   display: flex;
   flex-direction: column;
+  gap: 50px;
   justify-content: center;
-  align-items: center;
-
 }
-.card {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+
+.branches h4 {
+  font-family: 'Inter', Sans serif;
+  color: #4F200D;
+  font-size: 25px;
+}
+
+.branches p {
+  font-family: 'Inter', Sans serif;
+  color: #4F200D;
+  font-weight: 300;
+  font-size: 15px;
   
-  width: 50%!important;
- margin-top: 50px;
- margin-left: 100px;
+}
+
+.branches:hover {
+  padding: 15px;
+  cursor: pointer;
+  color: #F6F1E9;
+  background-color: #FF8400;
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* .card h3 {
+  font-size: 25px;
+  color: #FF8400;
+  font-family: 'Inter', Sans serif;
 }
-.map{
-    margin-top: 5px!important;
-    width: 100%!important;
+
+.card h2 {
+  font-size: 20px;
+  color: #4F200D;
+  font-family: 'Inter', Sans serif;
 }
-.text{
-    text-align: left;
+
+
+
+.parent{  
+  height: 100vh;
+  margin: 50px 200px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 300px 300px 300px;
+  gap: 30px;
 }
+
+.ex1 {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.column iframe{
+  margin: 30px;
+  width: 300px;
+  height: 300px;
+} */
+
 @media only screen and (max-width: 768px) {
 
   .ex1 {

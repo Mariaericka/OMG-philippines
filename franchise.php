@@ -39,28 +39,21 @@ if(isset($_SESSION['user_id'])){
 <?php include 'components/user_header.php'; ?>
   
 <div class="franchise">
-
-   
-   <div class="franchise-box-1">
-      <h1 class="main-box-1">OMG-Main</h1>
-      <p class="alaminos">Alaminos Laguna</p>
-            
-   </div>
-
-   <div class="franchise-slider">
-      <div class="slide">
-         <div class="slider">
-            <h1 class="slider-1"> Provides the ultimate bevarage experience</h1>
+   <div class="franchise-sticky">
+      <div class="stick">
+         <div class="sticky">
+            <h1 class="sticky-1"> Provides the ultimate bevarage experience</h1>
          </div>
          
-         <div class="slider">
-            <h1 class="slider-2">Accessible excellence for your indulgence.</h1>   
+         <div class="sticky">
+            <h1 class="sticky-2">Accessible excellence for your indulgence.</h1>   
          </div>
             
-         <div class="slider">
-            <h1 class="slider-3"> Offering top-quality ingredients at an affordable price</h1>
+         <div class="sticky">
+            <h1 class="sticky-3"> Offering top-quality ingredients at an affordable price</h1>
          </div>
       </div>
+   
 
 
 
@@ -73,23 +66,29 @@ if(isset($_SESSION['user_id'])){
 
             <div class="field">
                <div class="fill-out">
-                  <h4>Name</h4>
+                  <h4>First name</h4>
+                  <h4>Last name</h4>
                   <h4>Contact number</h4>
-                  <h4>Email Address</h4>
-                  <h4>Target Location</h4>
+                  <h4>Email address</h4>
+                  <h4>Target location</h4>
                </div>
 
                <div class="fill-out-box">
-                  <div class="name">
+                  <div class="first-name">
+                     <label for="first-name">
+                        <input type="text" name="first-name" id="first-name" placeholder=" Enter your first name" required>
+                     </label>
+                  </div>
 
-                     <label for="name">
-                        <input type="text" name="name" id="name" placeholder=" Enter your name" required>
+                  <div class="last-name">
+                     <label for="last-name">
+                        <input type="text" name="last-name" id="last-name" placeholder=" Enter your last name" required>
                      </label>
                   </div>
 
                   <div class="contact-number">
                      <label>
-                        <input type="number" name="number" id="number" placeholder=" Enter your phone number" max="11" required>
+                        <input type="tel" name="number" id="number" placeholder=" Enter your phone number" max="11" required>
                      </label>
                   </div>
 
@@ -100,65 +99,19 @@ if(isset($_SESSION['user_id'])){
                   </div>
 
                   <div class="target-space-location">
-
-                     
                      <label>
                         <input type="text" name="location" id="location" placeholder=" Enter your target location" required>
                      </label>
                   </div>
                </div>
             </div>
-            <button type="reset">Reset</button>
-            <button type="submit" >Submit</button>
+            
+            <div class="franchise-form-btn">
+               <button class="submit">Submit</button>
+            </div>
          </div>
       </form>
    </div>
-
-
-
-
-   
-
-
-   <!-- <div class="franchise-Offers">
-
-   <div class="franchise2">
-      <div class="franchise-grid">
-         <div class="main-box-2">
-               <h1 class="OMG-Main-2">OMG-Main</h1>
-               <p class="Alaminos-Laguna-2">Alaminos Laguna</p>
-         </div>
-
-
-         <div class="series">
-            <div class="Choco">
-               <h3 class="series-1">Creamy Choco Series</h3>
-               <p class="mini-description">Creamy Chocolate drink</p>
-            </div>
-
-            <div class="Milktea">
-               <h3 class="series-2">Milktea Series</h3>
-               <p>100% tea-based drinks</p>
-            </div>
-
-            <div class="Yogurt">
-               <h3 class="series-3">Fruit Yogurt Series</h3>
-               <p>Yakult inspired drink</p>
-            </div>
-
-            <div class="Coffee"></div>
-            <h3 class="series-3">Creamy Coffe Series</h3>
-            <p>Creamy coffee drink</p>
-         </div>
-      
-
-
-
-
-            
-      </div>
-   </div> -->
-
 </div>
 
 
