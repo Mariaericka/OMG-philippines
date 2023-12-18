@@ -36,19 +36,19 @@ if(isset($_SESSION['user_id'])){
 
 <div class="form-signin">
 <label for="fullname">First Name</label>           
-<input type="text" class="form-styling" id="name" name="name"  maxlength="50"placeholder="Enter First Name" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="text" class="form-styling" id="name" name="name"  maxlength="50"placeholder="Enter first name" required="required" style="background-color: white;background-image: none; color: black;">
 
 <label for="fullname">Last Name</label>           
-<input type="text" class="form-styling" id="lname" name="lname"  maxlength="50"placeholder="Enter Last name" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="text" class="form-styling" id="lname" name="lname"  maxlength="50"placeholder="Enter last name" required="required" style="background-color: white;background-image: none; color: black;">
 
 <label for="email">Email</label>           
-<input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter E-mail" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter e-mail" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="number"> Phone Number</label>           
-<input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter Phone Number" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter phone number" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Password</label>  
-<input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter password" required="required" style="background-color: white;background-image: none; color: black;">
 <label for="Password">Confirm Your Password</label>  
-<input type="password"  class="form-styling" id="cpass" name="cpass" placeholder="Confirm Password" required="required" style="background-color: white;background-image: none; color: black;">
+<input type="password"  class="form-styling" id="cpass" name="cpass" placeholder="Confirm password" required="required" style="background-color: white;background-image: none; color: black;">
 <input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn" >
 </div>
 
