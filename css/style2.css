@@ -12,6 +12,10 @@
    --red:rgb(155 8 8);
    --white:#ffff;
 }
+.error-message {
+   color: red;
+   margin-top: -19px;}
+
 .headeropen{
    width: 400px!important;
 }

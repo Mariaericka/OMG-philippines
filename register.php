@@ -35,20 +35,32 @@ if(isset($_SESSION['user_id'])){
 <li class="signin-active"><a class="btn1">Sign up</a></li>
 
 <div class="form-signin">
+
 <label for="fullname">First Name</label>           
 <input type="text" class="form-styling" id="name" name="name"  maxlength="50"placeholder="Enter first name" required="required" style="background-color: white;background-image: none; color: black;">
+<div id="nameError" class="error-message"></div>
 
 <label for="fullname">Last Name</label>           
 <input type="text" class="form-styling" id="lname" name="lname"  maxlength="50"placeholder="Enter last name" required="required" style="background-color: white;background-image: none; color: black;">
+<div id="lnameError" class="error-message"></div>
+
 
 <label for="email">Email</label>           
 <input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter e-mail" required="required" style="background-color: white;background-image: none; color: black;">
-<label for="number"> Phone Number</label>           
+<div id="emailError" class="error-message"></div>
+
+<label for="number"> Phone Number</label>    
 <input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter phone number" required="required" style="background-color: white;background-image: none; color: black;">
+<div id="numberError" class="error-message"></div>
+
 <label for="Password">Password</label>  
 <input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter password" required="required" style="background-color: white;background-image: none; color: black;">
+<div id="passwordError" class="error-message"></div>
+
 <label for="Password">Confirm Your Password</label>  
 <input type="password"  class="form-styling" id="cpass" name="cpass" placeholder="Confirm password" required="required" style="background-color: white;background-image: none; color: black;">
+<div id="cpassError" class="error-message"></div>
+
 <input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn" >
 </div>
 
@@ -186,14 +198,18 @@ function signUpBtn() {
       const cpass = document.getElementById("cpass").value;
 
       if (name.trim() === "") {
-        alert("Missing first name.");
-        return; // Stop form submission if the first name is missing
-    }
+        document.getElementById("nameError").innerText = "Missing first name.";
+         return;
+      } else {
+         document.getElementById("nameError").innerText = "";
+      }
 
     if (lname.trim() === "") {
-        alert("Missing last name.");
-        return; // Stop form submission if the last name is missing
-    }
+      document.getElementById("lnameError").innerText = "Missing last name.";
+         return;
+      } else {
+         document.getElementById("lnameError").innerText = "";
+      }
  // Validate the first name and last name fields
  const nameRegex = /^[a-zA-Z]+$/;
     if (!name.match(nameRegex) || !lname.match(nameRegex)) {
@@ -203,9 +219,11 @@ function signUpBtn() {
   
 
       if (number.trim() === "") {
-        alert("Please enter your phone number.");
-        return; // Stop form submission if the phone number is not entered
-    }
+        document.getElementById("numberError").innerText = "Please enter your number";
+         return;
+      } else {
+         document.getElementById("numberError").innerText = "";
+      }
 
       let strength = getStrength();
       let message = getMessage();
