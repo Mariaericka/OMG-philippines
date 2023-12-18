@@ -76,7 +76,7 @@ if(isset($_SESSION['user_id'])){
                <div class="fill-out-box">
                   <div class="first-name">
                      <label for="first-name">
-                        <input type="text" name="first-name" id="first-name" placeholder=" Enter your first name" required>
+                        <input type="text" name="first-name" id="first-name" placeholder=" Enter your first name" required="required">
                      </label>
                   </div>
 
@@ -88,7 +88,7 @@ if(isset($_SESSION['user_id'])){
 
                   <div class="contact-number">
                      <label>
-                        <input type="tel" name="number" id="number" placeholder=" Enter your phone number" max="11" required>
+                        <input type="number" name="number" id="number" placeholder=" Enter your phone number" max="11" required>
                      </label>
                   </div>
 

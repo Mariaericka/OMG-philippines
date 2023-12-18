@@ -128,13 +128,6 @@ include 'components/add_cart.php';
    </a>
 </div>
    
-<!-- </section>
-
-<section class="hero">
-
-
-</section> -->
-
 
 
 <section>
@@ -189,14 +182,6 @@ include 'components/add_cart.php';
    </div>
 
 </section>
-
-
-
-
-
-
-
-
 
 
  <div class="loader">

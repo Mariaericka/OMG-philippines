@@ -45,16 +45,20 @@ if(isset($_SESSION['user_id'])){
 
 <div class="brief-history">
    
-   <h6 class="about-OMG">
-   During the pandemic, as online shopping soared, OMG emerged 
-   a year later, transforming quarantine cravings into a nationwide 
-   sensation. Starting from Alaminos, Laguna, they've expanded to 
-   five branches, captivating a thirst-quenching niche in the tropical 
-   Philippines. Their journey, marked by trial and error, now stands 
-   as a testament to entrepreneurial resilience and taste bud triumphs.
-   </h6>
+   <div class="history-animate">
+      <h6 class="animation-1" id="about-OMG">
+      During the pandemic, as online shopping soared, OMG emerged 
+      a year later, transforming quarantine cravings into a nationwide 
+      sensation. Starting from Alaminos, Laguna, they've expanded to 
+      five branches, captivating a thirst-quenching niche in the tropical 
+      Philippines. Their journey, marked by trial and error, now stands 
+      as a testament to entrepreneurial resilience and taste bud triumphs.
+      </h6>
+   </div>
 
-   <img src="images\logo\logo.png" class="blog-logo">
+   <div class="history-animate">
+   <img src="images\logo\logo.png" class="animation-1" id="blog-logo">
+   </div>
 </div>
 
 

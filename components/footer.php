@@ -1,16 +1,16 @@
 <footer class="footer">
-    <div class="footer-box1">
+    <div class="footer-box1" id="footer">
         <h5>OUR DELIVERY PARTNER</h5>
         <a href="https://www.foodpanda.ph/" class="foodpanda"><img class="foodpanda" src="images/foodpanda.png"></a> 
     </div>
 
-    <div class="footer-box2">
+    <div class="footer-box2" id="footer">
         <h5>Follow us on our social media accounts!</h5>
         <a href="https://www.facebook.com/omgmainbranch/" class="logo"><img src="images\icons\facebook.png"></a>    
         <a href="https://www.instagram.com/omgmain.ph/" class="logo"><img src="images\icons\instagram.png"></a>   
     </div>
 
-    <div class="footer-contact-us">
+    <div class="footer-contact-us" id="footer">
         <h4>Contact us</h4>
         <h5>Bryan Hernandez</h5>
         <h5>+63 912345678</h5>

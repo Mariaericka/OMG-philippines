@@ -24,19 +24,22 @@
    padding: 5px 20px;
 }
 
+.icons {
+   margin-left: 120px;
+}
 
 
 .header .flex{
-   display: flex;
-   align-items: center;
-   justify-content: center;
    position: relative;
    width: 100%; 
 }
 
 
 .navbar {
-   display: flex;
+   display: grid;
+   grid-template-columns: 300px 700px 300px;
+   column-gap: 30px;
+   align-items: center;
    justify-content: center;
    align-items: center;
 }
@@ -57,6 +60,7 @@
    font-size: 2.5rem;
    color:black;
    cursor: pointer;
+
 }
 
 .header .flex .icons > *:hover{
@@ -103,7 +107,7 @@
    align-content: space-evenly;
    width: 20rem;
    height: 14rem;
-   border: 3px solid #4F200D;
+   border: 3px solid #F6F1E9;
 }
 
 @keyframes fadeIn {
@@ -700,32 +704,29 @@ p {
 }
 
 
-/* BLOG START HERE*/
+/* BLOG STARTS HERE*/
 
 .brief-history {
+   margin-top: 50px;
    display: grid;
-   grid-template-columns: 700px 500px;
+   grid-template-columns: 850px 600px;
    column-gap: 50px;
-   height: 600px;
+   justify-content: center;
+   align-items: center;
+   height: 700px;
 }
 
-.about-OMG {
+#about-OMG {
    background-color: #f6f1e9;
-   margin: 150px 0px 0px 130px;
-   height: 400px;
-   width: 700px;
    padding: 50px;
    font-family: 'Inter', Sans Serif;
-   font-size: 20px;
+   font-size: 25px;
    text-align: justify;
-   line-height: 40px;
+   line-height: 70px;
    color: #4F200D;
 }
 
-.blog-logo {
 
-   margin: 80px 0px 0px 150px
-}
 
 .blog {
    height: 700px;
@@ -1249,27 +1250,27 @@ p {
 /*---------------- footer starts here -----------------*/
 
 .footer {
-   height: 170px;
+   height: 250px;
    background-color: #FFD93D;
    display: grid;
    grid-template-columns: repeat(4, 370px);
    grid-gap: 30px;
    align-items: center;
+   justify-content: center;
 }
 
 .footer h4, h5, a {
    color: #4F200D;
 }
 
-.footer-box1 {
-   align-items: center;
+
+#footer {
    font-size: 25px;
    font-family: 'Inter', Sans serif;
 }
 
-.footer-box2 {
-   font-size: 25px;
-   font-family: 'Inter', Sans serif;
+.footer-box1 {
+   padding: 50px 0px 0px 50px;
 }
 
 .footer-box2 img {
@@ -1293,8 +1294,8 @@ p {
 }
 
 .foodpanda {
-   width: 130px;
-   height: 130px;
+   width: 120px;
+   height: 120px;
 }
 
 .copyright h5{
