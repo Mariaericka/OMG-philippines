@@ -9,6 +9,7 @@ if(isset($_SESSION['user_id'])){
 }else{
    $user_id = '';
 };
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,7 @@ if(isset($_SESSION['user_id'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMGPH SIGN UP</title>
    <link rel="icon"  href="images/omg-logo.png">
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -181,9 +183,7 @@ $('#password').on('keyup', function() {
       }
    });
 function signUpBtn() {
-       // Disable the Sign-up button to prevent multiple submissions
-    document.getElementById("signupButton").disabled = true;
-    
+
       const name = document.getElementById("name").value;
       const lname = document.getElementById("lname").value;
       const email = document.getElementById("email").value;
@@ -201,7 +201,12 @@ function signUpBtn() {
         alert("Please fill out all the required fields.");
         return; // Stop form submission
     }
-
+ 
+ // Validate phone number length
+ if (number.length !== 11) {
+        alert("Phone number must be exactly 11 digits.");
+        return;
+    }
   // Validate email format using a regular expression
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (emailPattern.test(email)) {
@@ -222,11 +227,7 @@ function signUpBtn() {
 
           xhr.open("POST", url, true);
           xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-            // Re-enable the Sign-up button
-            document.getElementById("signupButton").disabled = false;
-
-            if (xhr.status === 200) {
+           if (xhr.readyState === 4 && xhr.status === 200) {
                 const response = xhr.responseText;
                 if (response === "exists") {
                     alert("Email already exists in the database. Please use a different email.");
@@ -235,13 +236,13 @@ function signUpBtn() {
                     alert("Email is available. Proceeding with form submission...");
                     window.location.href = "otpCheck.php";
                 }
-            } else {
+            }
+            else {
                 console.log("Error occurred while checking email existence.");
             }
-        }
-    };
-    xhr.send(formData);
-
+          };
+          xhr.send(formData);
+   
         } else if (strength >= 3) {
           alert("Password strength: Moderate" + message);
           // You can handle passwords with moderate strength as needed
