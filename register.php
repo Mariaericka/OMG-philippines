@@ -42,13 +42,18 @@ if(isset($_SESSION['user_id'])){
                <input type="text" class="form-styling" id="email" name="email" title="Enter a valid email address" maxlength="30" placeholder="E-mail address" required="required" style="background-color: white;background-image: none; color: black;">
                
 
-               <input type="tel" class="form-styling" id="number" name="number" title="Enter your 11-digit phone number" maxlength="11" placeholder="Phone number" required="required" style="background-color: white;background-image: none; color: black;">
+               <input type="tel" class="form-styling" id="number" name="number" title="Enter your 11-digit phone number starting with 0" maxlength="11" placeholder="Phone number" required="required" style="background-color: white;background-image: none; color: black;">
              
 
-               <input type="password" class="form-styling" id="password" name="password" title="At least 8 characters long, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character" placeholder="Password" required="required" style="background-color: white;background-image: none; color: black;">
-
+               <div style="position: relative;">
+    <input type="password" class="form-styling" id="password" name="password" title="At least 8 characters long, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character" placeholder="Password" required="required" style="background-color: white; background-image: none; color: black; padding-right: 30px;">
+    <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 33%; right: 10px; transform: translateY(-50%); cursor: pointer;"></i>
+</div>
+              
+<div style="position: relative;">
                <input type="password" class="form-styling" id="cpass" name="cpass"title="Confirm your password" placeholder="Confirm password" required="required" style="background-color: white;background-image: none; color: black;">
-
+               <i class="far fa-eye" id="toggleCpass" style="position: absolute; top: 33%; right: 10px; transform: translateY(-50%); cursor: pointer;"></i>
+</div>
                <input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn">
             </div>
          </div>
@@ -57,6 +62,7 @@ if(isset($_SESSION['user_id'])){
 <?php include 'components/footer.php'; ?>
 <script src="js/script.js"></script>
 <script>
+
 
 $(document).ready(function () {
     new jBox('Tooltip', {
@@ -175,7 +181,9 @@ $('#password').on('keyup', function() {
       }
    });
 function signUpBtn() {
-      
+       // Disable the Sign-up button to prevent multiple submissions
+    document.getElementById("signupButton").disabled = true;
+    
       const name = document.getElementById("name").value;
       const lname = document.getElementById("lname").value;
       const email = document.getElementById("email").value;
@@ -188,7 +196,15 @@ function signUpBtn() {
 
       let strength = getStrength();
       let message = getMessage();
+      // Check if any of the form fields are empty
+    if (name.trim() === '' || lname.trim() === '' || email.trim() === '' || number.trim() === '' || password.trim() === '' || cpass.trim() === '') {
+        alert("Please fill out all the required fields.");
+        return; // Stop form submission
+    }
 
+  // Validate email format using a regular expression
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (emailPattern.test(email)) {
       if (password === cpass) {
         if (strength === 5) {
          console.log("success");
@@ -206,7 +222,11 @@ function signUpBtn() {
 
           xhr.open("POST", url, true);
           xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
+            if (xhr.readyState === 4) {
+            // Re-enable the Sign-up button
+            document.getElementById("signupButton").disabled = false;
+
+            if (xhr.status === 200) {
                 const response = xhr.responseText;
                 if (response === "exists") {
                     alert("Email already exists in the database. Please use a different email.");
@@ -215,12 +235,13 @@ function signUpBtn() {
                     alert("Email is available. Proceeding with form submission...");
                     window.location.href = "otpCheck.php";
                 }
-            }
-            else {
+            } else {
                 console.log("Error occurred while checking email existence.");
             }
-          };
-          xhr.send(formData);
+        }
+    };
+    xhr.send(formData);
+
         } else if (strength >= 3) {
           alert("Password strength: Moderate" + message);
           // You can handle passwords with moderate strength as needed
@@ -232,6 +253,10 @@ function signUpBtn() {
       } else {
          alert("Password Doesn't Match!");
       }
+   } else {
+        alert("Invalid email format. Please enter a valid email address.");
+    }
+
     }
      // Use jQuery to restrict the input to numbers only
 $(document).ready(function () {
@@ -240,6 +265,20 @@ $(document).ready(function () {
         $(this).val(function (index, value) {
             return value.replace(/\D/g, '');
         });
+    });
+});
+$(document).ready(function () {
+    $('#togglePassword').click(function () {
+        const passwordInput = $('#password');
+        const type = passwordInput.attr('type') === 'password' ? 'text' : 'password';
+        passwordInput.attr('type', type);
+    });
+});
+$(document).ready(function () {
+    $('#toggleCpass').click(function () {
+        const cpassInput = $('#cpass');
+        const type = cpassInput.attr('type') === 'password' ? 'text' : 'password';
+        cpassInput.attr('type', type);
     });
 });
 </script>
