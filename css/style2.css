@@ -12,9 +12,6 @@
    --red:rgb(155 8 8);
    --white:#ffff;
 }
-.error-message {
-   color: red;
-   margin-top: -19px;}
 
 .headeropen{
    width: 400px!important;
@@ -913,7 +910,7 @@ p {
    
  
  .frame {
-   height: 706px;
+   height: 505px;
    width: 430px;
    background:#FFD93D;
    background-size: cover;

@@ -28,46 +28,32 @@ if(isset($_SESSION['user_id'])){
 </head>
 <body>
 <?php include 'components/user_header.php'; ?>
-
 <div class="container1">
-<div class="frame">
-<div class="nav1">
-<li class="signin-active"><a class="btn1">Sign up</a></li>
+      <div class="frame">
+         <div class="nav1">
+            <li class="signin-active"><a class="btn1">Sign up</a></li>
+            <div class="form-signin">
+               <input type="text" class="form-styling" id="name" name="name"title="Enter your First name" maxlength="50" placeholder="First name" required="required" style="background-color: white;background-image: none; color: black;">
+               
 
-<div class="form-signin">
+               <input type="text" class="form-styling" id="lname" name="lname" title="Enter your last name"maxlength="50" placeholder="Last name" required="required" style="background-color: white;background-image: none; color: black;">
+             
 
-<label for="fullname">First Name</label>           
-<input type="text" class="form-styling" id="name" name="name"  maxlength="50"placeholder="Enter first name" required="required" style="background-color: white;background-image: none; color: black;">
-<div id="nameError" class="error-message"></div>
+               <input type="text" class="form-styling" id="email" name="email" title="Enter a valid email address" maxlength="30" placeholder="E-mail address" required="required" style="background-color: white;background-image: none; color: black;">
+               
 
-<label for="fullname">Last Name</label>           
-<input type="text" class="form-styling" id="lname" name="lname"  maxlength="50"placeholder="Enter last name" required="required" style="background-color: white;background-image: none; color: black;">
-<div id="lnameError" class="error-message"></div>
+               <input type="tel" class="form-styling" id="number" name="number" title="Enter your 11-digit phone number" maxlength="11" placeholder="Phone number" required="required" style="background-color: white;background-image: none; color: black;">
+             
 
+               <input type="password" class="form-styling" id="password" name="password" title="At least 8 characters long, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character" placeholder="Password" required="required" style="background-color: white;background-image: none; color: black;">
 
-<label for="email">Email</label>           
-<input type="text" class="form-styling" id="email" name="email"maxlength="30" placeholder="Enter e-mail" required="required" style="background-color: white;background-image: none; color: black;">
-<div id="emailError" class="error-message"></div>
+               <input type="password" class="form-styling" id="cpass" name="cpass"title="Confirm your password" placeholder="Confirm password" required="required" style="background-color: white;background-image: none; color: black;">
 
-<label for="number"> Phone Number</label>    
-<input type="tel" class="form-styling" id="number" name="number" maxlength="11"placeholder="Enter phone number" required="required" style="background-color: white;background-image: none; color: black;">
-<div id="numberError" class="error-message"></div>
-
-<label for="Password">Password</label>  
-<input type="password"  class="form-styling" id="password" name="password"  placeholder="Enter password" required="required" style="background-color: white;background-image: none; color: black;">
-<div id="passwordError" class="error-message"></div>
-
-<label for="Password">Confirm Your Password</label>  
-<input type="password"  class="form-styling" id="cpass" name="cpass" placeholder="Confirm password" required="required" style="background-color: white;background-image: none; color: black;">
-<div id="cpassError" class="error-message"></div>
-
-<input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn" >
-</div>
-
-
-</div>
-</div>
-</div>
+               <input type="submit" onclick="signUpBtn()" name="submit" value="Sign-up" class="btn">
+            </div>
+         </div>
+      </div>
+   </div>
 <?php include 'components/footer.php'; ?>
 <script src="js/script.js"></script>
 <script>
@@ -196,34 +182,9 @@ function signUpBtn() {
       const number = document.getElementById("number").value;
       const password = document.getElementById("password").value;
       const cpass = document.getElementById("cpass").value;
+      
+ 
 
-      if (name.trim() === "") {
-        document.getElementById("nameError").innerText = "Missing first name.";
-         return;
-      } else {
-         document.getElementById("nameError").innerText = "";
-      }
-
-    if (lname.trim() === "") {
-      document.getElementById("lnameError").innerText = "Missing last name.";
-         return;
-      } else {
-         document.getElementById("lnameError").innerText = "";
-      }
- // Validate the first name and last name fields
- const nameRegex = /^[a-zA-Z]+$/;
-    if (!name.match(nameRegex) || !lname.match(nameRegex)) {
-        alert("First name and last name must not contain numbers.");
-        return; // Stop form submission if the names contain numbers
-    }
-  
-
-      if (number.trim() === "") {
-        document.getElementById("numberError").innerText = "Please enter your number";
-         return;
-      } else {
-         document.getElementById("numberError").innerText = "";
-      }
 
       let strength = getStrength();
       let message = getMessage();
@@ -265,15 +226,14 @@ function signUpBtn() {
           // You can handle passwords with moderate strength as needed
         } else {
           alert("Password strength: Weak");
-          alert(message);
+        
           // You may display an error message to the user or take other actions for weak passwords
         }
       } else {
          alert("Password Doesn't Match!");
       }
     }
-
-    // Use jQuery to restrict the input to numbers only
+     // Use jQuery to restrict the input to numbers only
 $(document).ready(function () {
     $('#number').on('input', function () {
         // Remove non-numeric characters from the input value
