@@ -57,7 +57,7 @@ if(isset($_SESSION['user_id'])){
 
 
 
-      <form action="thank" method="GET">
+      <form class="franchise-form" action="thank" method="GET">
          <div class="franchise-form">
             <div class="greet">
                <h5> We appreciate your enthusiasm! Kindly provide the necessary details below 
@@ -88,7 +88,7 @@ if(isset($_SESSION['user_id'])){
 
                   <div class="contact-number">
                      <label>
-                        <input type="number" name="number" id="number" placeholder=" Enter your phone number" max="11" required>
+                        <input type="tel" name="number" id="number" placeholder=" Enter your phone number" max="11" required>
                      </label>
                   </div>
 

@@ -45,3 +45,4 @@ window.onclick = function(event) {
 window.onload = function() {
   openModal('locationModal');
 };
+

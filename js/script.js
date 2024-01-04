@@ -36,4 +36,22 @@ document.querySelectorAll('input[type="number"]').forEach(numberInput => {
 });
 
 
+// Branches modal in location
+const openButtons = document.querySelectorAll("[data-open-modal]");
+const modals = document.querySelectorAll("[data-modal]");
+
+openButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    modals[index].show();
+  });
+});
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal || event.target.getAttribute("data-close-modal") !== null) {
+      modal.close();
+    }
+  });
+});
+
 

@@ -2,13 +2,12 @@
 .location {
   display: grid;
   grid-template-columns: 500px 700px;
-
 }
 
 .branch-locations {
   padding: 30px;
   border-right: 3px solid #4F200D;
-  background-color: #F6F1E9;
+  /* background-color: #F6F1E9; */
   height: 670px;
   display: flex;
   flex-direction: column;
@@ -16,29 +15,55 @@
   justify-content: center;
 }
 
+.branch-locations button {
+  background: none;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
 
-.branches h4 {
+.branch-locations button{
   font-family: 'Inter', Sans serif;
   color: #4F200D;
   font-size: 25px;
 }
 
-.branches p {
+.address {
   font-family: 'Inter', Sans serif;
-  color: #4F200D;
-  font-weight: 300;
-  font-size: 15px;
-  
+  color: #FF8400;
+  font-size: 20px;
 }
 
-.branches:hover {
+.branch-locations button:hover {
   padding: 15px;
   cursor: pointer;
   color: #F6F1E9;
   background-color: #FF8400;
 }
 
+dialog {
+  position: absolute;
+  left: 500px;
+  top: 80px;
+}
 
+.dialog-content {
+  font-size: 20px;
+  color: #F6F1E9;
+  padding: 20px;
+  text-align: center;
+  background-color: #4F200D;
+}
+.map{
+  width: 1200px;
+  height: 600px;
+}
+
+
+.branches:focus {
+  background-color: #FF8400;
+  color: #F6F1E9;
+}
 
 
 

@@ -43,12 +43,9 @@ $select_categories->execute();
 </div>-->
 
 <section class="category">
-
-
    <div class="box-container">
-
       <a href="category.php?category=coffee series" class="box">
-         <img src="images\caramel macchiato1.png" alt="Coffee-Series" id="Coffee-Series">
+         <img src="images\caramel macchiato.png" alt="Coffee-Series" id="Coffee-Series">
          <h3>Coffee Series</h3>
       </a>
 
@@ -70,11 +67,10 @@ $select_categories->execute();
          <img src="images/mango fruit yogurt3.png" alt="Mango-Series" id="ango-Series">
          <h3>Mango Series</h3>
       </a>
-
-
    </div>
-
 </section>
+
+
 <!-- menu section starts  -->
 <!-- <div class="second"><ul>
     <h1>Categories</h1> <br>

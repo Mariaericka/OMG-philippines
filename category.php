@@ -34,75 +34,85 @@ include 'components/add_cart.php';
 
 
 <?php include 'components/user_header.php'; ?>
-<div class="second">
-    <ul>
-        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
-        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</i></a></li>
-        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
-        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
-        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</li>
-    </ul>
-</div>
+
+<div class="category">
+    <div class="second">
+        <ul>
+            <li> 
+                <a href="category.php?category=coffee series" class="button14" alt="series-button">COFFEE SERIES</a> 
+            </li>
+
+            <li> 
+                <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a> 
+            </li>
+
+            <li> 
+                <a href="category.php?category=choco" class="button14">CHOCO SERIES</a> 
+            </li>
+
+            <li> 
+                <a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a> 
+            </li>
+
+            <li> 
+                <a href="category.php?category=mango" class="button14">MANGO SERIES</a> 
+            </li>
+        </ul>
+    </div>
+
  
     <section>
  
-    <div class="container2" style="box-sizing: border-box; ;
-
-margin-left: 25%;">
+    <div class="container2" style="box-sizing: border-box; ; margin-left: 25%;">
    
 
 
 
-<section class="productsbev">
+    <section class="productsbev">
+        <div class="box1-container1">
 
-  
+            <?php
+                $category = $_GET['category'];
+                $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
+                $select_products->execute([$category]);
+                if($select_products->rowCount() > 0){
+                    while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
+            ?>
+                <form action="" method="post" class="box1">
+                    <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+                    <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
+                    <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
+                    <input type="hidden" name="size" value="<?= $fetch_products['size']; ?>">
 
-   <div class="box1-container1">
-
-      <?php
-         $category = $_GET['category'];
-         $select_products = $conn->prepare("SELECT * FROM `products` WHERE category = ?");
-         $select_products->execute([$category]);
-         if($select_products->rowCount() > 0){
-            while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
-      ?>
-     <form action="" method="post" class="box1">
-         <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-         <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
-         <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
-         <input type="hidden" name="size" value="<?= $fetch_products['size']; ?>">
-
-         <input type="hidden" name="priceR" value="<?= $fetch_products['description']; ?>">
+                    <input type="hidden" name="priceR" value="<?= $fetch_products['description']; ?>">
 
 
-         <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-         <div class="omg-menu-img">
-         <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)"/>
+                    <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+                    <div class="omg-menu-img">
+                    <img src="images/<?= $fetch_products['image']; ?>" alt="" class="img1" onclick="openModal(<?= $fetch_products['id']; ?>)"/>
 
+                    </div>
+                    <div class="cat"><?= $fetch_products['name']; ?></div>
+                    <h4 style="font-size: 20px; background-color: #FFD93D; text-align:center"><span>₱</span><?= $fetch_products['price']; ?>.00</h4>
+                    
+                    <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
+                        <p class="omg-detail">
+
+                            
+                    <!-- <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button> -->
+
+                    
+                </form>
+                <?php
+                        }
+                    }else{
+                    
+                    }
+                ?>
+            </div>
         </div>
-         <div class="cat"><?= $fetch_products['name']; ?></div>
-         <h4 style="font-size: initial; background-color: #FFD93D;"><span>₱</span><?= $fetch_products['price']; ?>.00</h4>
-          
-         <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
-            <p class="omg-detail">
-
-                 
-        <!-- <button type="submit" name="add_to_cart" class="btn">ADD TO CART</button> -->
-
-         
-      </form>
-      <?php
-            }
-         }else{
-           
-         }
-      ?>
-
-   </div>
-   </div>
- 
-
-</section>
+    </section>
+</div>
 
 
 

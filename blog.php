@@ -130,9 +130,6 @@ if(isset($_SESSION['user_id'])){
       </div>
    </div>
 
-   <div class="comments">
-      Comment here!
-   </div>
 
     <!-- <div class="fb-posts-container">
           <a href="https://www.facebook.com/omgmainbranch/posts/pfbid0fMSVG7p9UdKsYHRoFktKmsUXLxViihd8T3p7CmVfsn5oKNhxgidcVRhhABscNS5Dl" target="_blank" class="caption">

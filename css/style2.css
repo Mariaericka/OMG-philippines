@@ -13,7 +13,7 @@
    --white:#ffff;
 }
 
-
+/* HEADER STARTS HERE */
 .header{
    color: white;
    background: white;
@@ -28,12 +28,10 @@
    margin-left: 120px;
 }
 
-
 .header .flex{
    position: relative;
    width: 100%; 
 }
-
 
 .navbar {
    display: grid;
@@ -52,7 +50,10 @@
 
 .header .flex .navbar a:hover{
    color:#FFD93D;
-   text-decoration:;
+}
+
+.header .flex .navbar a:focus {
+   color:#FFD93D;
 }
 
 .header .flex .icons > *{
@@ -142,6 +143,11 @@
    height: 65px; 
 }
 
+/* HEADER ENDS HERE */
+
+
+/* HOME STATRS HERE */
+
 .background-image {
    position: relative;
    left: 60px;
@@ -158,31 +164,19 @@
    font-family: 'Inter', sans-serif;
 }
 
-.second ul  {
-   list-style-type: none;
-   margin: 10;
-   padding: 2;
-   width: 25%;
-   position:absolute;
-   height:500px;
-   overflow:visible;
-   font-size: large;
-   top: 130px;
- }
-
- .second li a.active{
-   background-color: rgb(250, 235, 100);
-   color: rgb(7, 6, 6);
- }
-.second li:hover:not(:active){
-   background-color:transparent;
-   color: red;
-}
-
-
 .container{
    margin: 50px 30px 30px;
 
+}
+
+@keyframes slideInLeft {
+   from {
+      transform: translate(-200px);
+   }
+
+   to {
+      transform: translate(0);
+   }
 }
 
 .container{
@@ -362,7 +356,7 @@
    color: #4F200D;
 }
 
-form {
+.franchise-form {
    margin: 50px 0px 0px 100px;
 }
 
@@ -1143,8 +1137,8 @@ p {
  
  li {
    padding-left: 10px; 
-    font-size: 18px;
-    display: inline;
+   font-size: 18px;
+   display: inline;
    text-align: left;
    text-transform: uppercase;
    padding-right: 10px;
@@ -1486,9 +1480,8 @@ html{
 }
 
 .btn.close-btn{
-   background-color: black;
-   color:white;
-   border-radius: 30px;
+   background-color: #FF8400;
+   color: #F6F1E9;
    width: 185px;
    margin: 10px 5px;
 }
@@ -1551,7 +1544,6 @@ html{
 
 .empty{
    border:var(--border);
-   /*padding:23.5rem;*/
    text-align: center;
    width: 100%;
    font-size: 2rem;
@@ -1569,16 +1561,8 @@ html{
    display: grid;
    grid-template-columns: 400px 400px 400px;
    grid-auto-rows: minmax(300px, auto);
-   grid-template-areas: 
-   "header header"
-   "sidebar content"
-   "sidebar content"
-
+   
 }
-
-   /* grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-   gap:1.5rem;
-   /* align-items: flex-start;  */
 
 #Coffee-Series {
    grid-area: sidebar;
@@ -1594,6 +1578,8 @@ html{
    height: 250px;
    object-fit: contain;
 }
+
+
 
 #Coffee-Series, #Yogurt-Series {
    margin-left: 40px;
@@ -1628,149 +1614,180 @@ html{
 }
 
 
-/*PRODUCTS IN CATEGORY*/
-.productsbev{
+/* Products in category starts here */
+
+.category {
+  height: 700px;
+}
+
+.second ul  {
    display: flex;
    flex-direction: column;
-   align-items: center;
-   padding: 1rem; 
-}
-.productsbev .box1-container1 {
-   display: flex;
-   flex-wrap: wrap;
+   position: fixed;
+   top: 83px;
+   height: 500px;
+   width: 400px;
    justify-content: center;
-   gap: 1.5rem;
-  
- }
- .productsbev .box1 {
+   line-height: 70px;
+   border-right: 3px solid #4F200D;
+}
+
+.second li{
+   font-size: 25px;
+   margin: 50px 10px;
+}
+
+.second li:hover {
+   background-color: #FFD93D;
+   color: blue;
+}
+
+.productsbev{
+   justify-items: center;
+   align-items: center;
+}
+
+.productsbev .box1-container1 {
+   display: grid;
+   grid-template-columns: 400px 400px;
+   justify-items: center;
+   gap: 50px;
+   margin: 50px 170px;
+}
+
+.productsbev .box1 {
    border: var(--border);
    padding: 1.5rem;
    background-color: beige;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+   width: 350px;
+
+
+}
+
+.productsbev .box1 img {
    width: 300px;
-  
+   max-height: 300px;
+   align-items: center;
+   justify-content: center;
+}
 
- }
- .productsbev .box1 img {
-   max-width: 100%;
-   height: auto;
- }
 
- .productsbev .name {
+.productsbev .name {
    font-size: 1.2rem;
    font-weight: bold;
- }
- .productsbev .flex {
+}
+
+.productsbev .flex {
    display: flex;
    align-items: center;
    justify-content: space-between;
    margin-top: 1rem;
-   
- }
 
+}
 
 .products {
    display: flex;
    flex-direction: column;
    align-items: center;
    padding: 1rem;
- }
+}
  
- .products .box-container {
+.products .box-container {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    gap: 0.5rem;
    flex-direction: column;
- }
- 
- .products .box {
+}
+
+.products .box {
    border: var(--border);
    padding: 1.5rem;
    background-color: beige;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
    width: 865px;
    height: 115px;
-padding: 0.5rem;
-display:flex;
-justify-content: space-evenly;
- }
- 
- .products .box img {
+   padding: 0.5rem;
+   display:flex;
+   justify-content: space-evenly;
+}
+
+.products .box img {
    max-width: 100%;
    height: auto;
    width: 165px;
- }
- 
- .products .name {
-   font-size: 1.2rem;
+}
+
+.products .name {
+   font-size: 1.rem;
    font-weight: bold;
    display: contents;
- }
- 
- .products .flex {
+}
+
+.products .flex {
    display: flex;
    align-items: center;
    justify-content: space-between;
    margin-top: 4rem;
    flex-direction: row;
- }
- 
- .products .price {
+}
+
+.products .price {
    font-size: 1rem;
    color: var(--red);
- }
- 
- .products .qty {
+}
+
+.products .qty {
    width: 50px;
    text-align: center;
- }
- 
- .products .sub-total {
+}
+
+.products .sub-total {
    font-size: 1rem;
    margin-top: 1rem;
- }
- 
- .products .cart-total {
+}
+
+.products .cart-total {
    font-size: 1.2rem;
    font-weight: bold;
    margin-top: 4rem;
    padding-left: 15px;
- }
- 
- .products .cart-total span {
-   color: var(--red);
- }
- 
- .products .more-btn {
+}
+
+.products .cart-total span {
+color: var(--red);
+}
+
+.products .more-btn {
    display: flex;
    justify-content: space-between;
    margin-top: 1rem;
- }
- 
- .products .delete-btn,
- .products .btn {
+}
+
+.products .delete-btn,
+.products .btn {
    padding: 0.5rem 1rem;
    border: none;
    border-radius: 4px;
    cursor: pointer;
- }
- 
- .products .delete-btn {
+}
+
+.products .delete-btn {
    background-color: #FF8400;
    color: #F6F1E9;
- }
- 
- .products .btn {
+}
+
+.products .btn {
    background-color:  #FF8400;
    color: #F6F1E9;
- }
- 
- .products .disabled {
+}
+
+.products .disabled {
    pointer-events: none;
    opacity: 0.5;
- }
- 
+}
+
 .about .row{
    display: flex;
    align-items: center;
@@ -2550,10 +2567,8 @@ a.button13{
 .second ul h1 {
    font-size: larger;
  }
- .button14{
-   font-size: 11px;
-   line-height: 18px;
- }
+
+
 .containerloc2 h3{
    font-size: small;
 }
