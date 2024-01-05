@@ -70,9 +70,7 @@ include 'components/add_cart.php';
         <div class="Tagline">
          <h3> Creamy goodness in a cup. Taste that would definitely make you go OMG!</h3>
         </div>
-
-
-   <div class="swiper-pagination"></div>
+   <!-- <div class="swiper-pagination"></div>
 
 </div>
 
@@ -88,45 +86,40 @@ include 'components/add_cart.php';
 <a href="franchise.php"> <div class="event"></div></a>
 <a href="menu.php">  <div class="series"></div> </a>
    
-</section>
+</section> -->
         
 <section class="franchise" id="franchise">
-
-    <div class="container">
-      
+   <div class="container">
       <h1 class="Now">NOW IN</h1>
       <h1 class="five">FIVE</h1>
       <h1 class="branch">BRANCHES!</h1>
 
-        <div class="content1">
-            <a href="franchise.php" class="button11">Franchise Now!</a>
-         </div>
+      <div class="content1">
+         <a href="franchise.php" class="button11">Franchise Now!</a>
+      </div>
+   </div>
 
-         <div class="laguna-map">
-            <img src="images\category\laguna.png" alt="laguna-map">
-         </div>
-
-    </div>
-
-
+   <div class="laguna-map">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247429.8901587682!2d121.09690321319233!3d14.30608505778764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd600ea02bf27d%3A0xd19ea6f21743ff24!2sLaguna!5e0!3m2!1sen!2sph!4v1704358865188!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
 </section>
 
    
 <div class="flex-box">
-   <a href="menu.php">
-      <div class="babyruth">
-         <img src="images\Babyruth.png" alt="babyruth-image">
-      </div>
-   </a>
-   <a href="franchise.php"> 
-      <div class="price-rollback">
-         <img src="images\Price rollback sale.png" alt="price-rollback-image">
-      </div>
-   </a>
+   <div class="babyruth">
+      <img src="images\Babyruth.png" alt="babyruth-image">
+   </div>
+
+   
+   <div class="series">
+      <img src="images\Cheescakeseries.png" alt="cheesecake-series">
+   </div> 
+
+
    <a href="menu.php">  
-      <div class="series">
-         <img src="images\Cheescakeseries.png" alt="cheesecake-series">
-      </div> 
+      <div id="buy1-take1">
+         <h1>Buy one <br> take one!</h1>
+      </div>
    </a>
 </div>
    

@@ -199,25 +199,20 @@ if ($select_products->rowCount() > 0) {
    
     
 
-                <div class="modal-footer">
+        <div class="modal-footer">
+                <input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
+                <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
+                <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
+                <input type="hidden" name="size[]" id="size<?= $fetch_products['id']; ?>" value="regular">
+                <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
+                <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
 
-                        <input type="hidden" name="pid[]" value="<?= $fetch_products['id']; ?>">
-
-
-                        <input type="hidden" name="name[]" value="<?= $fetch_products['name']; ?>">
-                        <input type="hidden" name="price[]" value="<?= $fetch_products['price']; ?>">
-                        <input type="hidden" name="size[]" id="size<?= $fetch_products['id']; ?>" value="regular">
-                        <input type="hidden" name="priceR[]" value="<?= $fetch_products['description']; ?>">
-                        <input type="hidden" name="image[]" value="<?= $fetch_products['image']; ?>">
-                        <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
-                   
-                    </form>
-                        <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
-
-                </div>
-            </div>
-
+                <button class="btn confirm-btn" name="add_to_cart" onclick="submitForm(<?= $fetch_products['id']; ?>)">ADD TO CART</button>
+                <button class="btn close-btn" onclick="closeModal(<?= $fetch_products['id']; ?>)">CANCEL</button>
         </div>
+    </div>
+
+</div>
 
         <?php
     }
@@ -239,7 +234,7 @@ if ($select_products->rowCount() > 0) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
-<?php include 'components/footer.php'; ?>
+<!-- <?php include 'components/footer.php'; ?> -->
 <script>
     
 </script>

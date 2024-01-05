@@ -146,7 +146,7 @@
 /* HEADER ENDS HERE */
 
 
-/* HOME STATRS HERE */
+/* HOME STARTS HERE */
 
 .background-image {
    position: relative;
@@ -162,6 +162,11 @@
    padding: 20px;
    border-radius: 10px;
    font-family: 'Inter', sans-serif;
+}
+
+.franchise {
+   display: grid ;
+   grid-template-columns: 700px 700px;
 }
 
 .container{
@@ -235,14 +240,17 @@
       transition: 0.2s;
 }
 
-.laguna-map img{
-   position: absolute;
-   top: 930px;
-   right: 200px;
-   height: 500px;
-   width: 550px;
-   border-radius: 300px;
-   box-shadow: #000;
+.laguna-map {
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   padding: 200px 0px;
+}
+
+.laguna-map iframe {
+   height: 400px;
+   width: 700px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -251,10 +259,32 @@
 }
 
 .flex-box {
-   margin-top: 150px;
+   margin: 150px 100px;
    display: flex;
-   justify-content: space-around;
+   gap: 30px;
 }
+
+.flex-box a {
+   width: 450px;
+   color: #FF8400;
+   font-size: 20px;
+   font-family: 'Inter', sans-serif;
+   text-align: center;
+   padding: 30px 30px 30px 0px;
+   display: grid;
+   align-content: center;
+}
+
+#buy1-take1 h1{
+   padding: 0px 30px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#buy1-take1 h1:hover {
+   background-color: #FF8400;
+   color: #F6F1E9; 
+}
+
 
 .hero .slide{
    display: flex;
@@ -1098,19 +1128,13 @@ p {
    }
    
  
- .frame {
+.frame {
    height: 603px;
    width: 430px;
-   background:#FFD93D;
-   background-size: cover;
-   margin-left: auto;
-   margin-right: auto;
-   border-top: solid 1px rgba(255,255,255,.5);
-   border-radius: 5px;
+   margin: 100px;
    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
-   overflow: hidden;
-   transition: all .5s ease;
- }
+   background-color: #FFD93D;
+}
  
  .frame-long {
    height: 615px;
@@ -1146,39 +1170,39 @@ p {
  }
  
  
- .signin-active a {
+.signin-active a {
    padding-bottom: 10px;
    color: #4F200D;
+   font-size: 25px;
    text-decoration: none;
-   border-bottom: solid 2px #1059FF;
    transition: all .25s ease;
    cursor: pointer;
- }
+}
  
- .signin-inactive a {
+.signin-inactive a {
    padding-bottom: 0;
    color: rgba(255,255,255,.3);
    text-decoration: none;
    border-bottom: none;
    cursor: pointer;
- }
- 
- .signup-active a {
+}
+
+.signup-active a {
    cursor: pointer;
    color: #ffffff;
    text-decoration: none;
    border-bottom: solid 2px #1059FF;
    padding-bottom: 10px;
- }
- 
- .signup-inactive a {
+}
+
+.signup-inactive a {
    cursor: pointer;
    color: rgba(255,255,255,.3);
    text-decoration: none;
    transition: all .25s ease;
- }
- 
- .form-signin {
+}
+
+.form-signin {
    width: 430px;
    height: 375px;
    font-size: 16px;
@@ -1187,14 +1211,14 @@ p {
    padding-right: 37px;
    padding-top: 55px;
    transition: opacity .5s ease, transform .5s ease;
- }
- 
- .form-signin-left {
+}
+
+.form-signin-left {
    transform: translateX(-400px);
    opacity: .0;
- }
- 
- .form-signup {
+}
+
+.form-signup {
    width: 430px;
    height: 375px;
    font-size: 16px;
@@ -1207,37 +1231,57 @@ p {
    left: 400px;
    opacity: 0;
    transition: all .5s ease;
- }
- .form-styling {
+}
+
+.form-styling {
    width: 100%;
    height: 35px;
-     padding-left: 15px;
-     border: none;
-     border-radius: 20px;
+   padding-left: 15px;
+   border: none;
    margin-bottom: 20px;
-   background: rgba(255,255,255,.2);
- }
+   background: #F6F1E9;
+}
+
+.sign-in-btn {
+   color: #4F200D;
+   font-size: 20px;
+   font-family: 'Inter', sans-serif;
+   background-color: #F6F1E9;
+   border: none;
+   width: 100px;
+   padding: 10px;
+}
+
+.sign-in-btn:hover {
+   cursor: pointer;
+   color: #F6F1E9;
+   background-color: #4F200D;
+}
+
+.click-here-btn:hover .sign-up-btn {
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+
  
- label {
+label {
    font-weight: 400;
    text-transform: uppercase;
-   font-size: 13px;
-   padding-left: 15px;
-   padding-bottom: 10px;
-   color: black;
+   font-size: 20px;
+   color: #4F200D;
    display: block;
- }
+}
  
- 
- .form-signup-left {
+.form-signup-left {
    transform: translateX(-399px);
    opacity: 1;
- }
- 
- .form-signup-down {
+}
+
+.form-signup-down {
    top: 0px;
    opacity: 0;
- }
+}
 
 
 
@@ -1469,7 +1513,7 @@ html{
    color:var(--white);
 }
 
-.btn,
+
 .delete-btn{
    margin-top: 1rem;
    display: inline-block;
@@ -1479,27 +1523,37 @@ html{
    text-transform: capitalize;
 }
 
-.btn.close-btn{
-   background-color: #FF8400;
-   color: #F6F1E9;
+/* buttons in adding to cart only but it also affect other buttons*/ 
+.btn { 
+   background: none;
+   border: 2px solid #ff8400;
+   color: #FF8400;
    width: 185px;
    margin: 10px 5px;
-}
-
-.btn.confirm-btn{
-   margin: 10px 5px;
-}
-
-.btn{
-   background-color: #FF8400;
-   color:#F6F1E9;
-   width: 185px;
+   font-size: 15px;
+   padding: 10px;
 }
 
 .btn:hover {
-   background: #FFD93D;
-   color: #4F200D;
+   background-color: #FF8400;
+   border: 2px solid #FF8400;
+   color: #F6F1E9;
+   cursor: pointer;
 }
+
+.btn:active {
+   opacity: 0.1;
+}
+
+.confirm-btn {
+   background-color: #ff8400e3;
+   color: #f6f1e9e4;
+}
+
+.confirm-btn:active {
+   opacity: 0.5 3s;
+}
+/* buttons in adding to cart */
 
 
 .delete-btn{
@@ -1659,10 +1713,13 @@ html{
    border: var(--border);
    padding: 1.5rem;
    background-color: beige;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.112), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
    width: 350px;
+}
 
-
+.productsbev .box1:hover {
+   cursor: pointer;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.31), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
 }
 
 .productsbev .box1 img {
@@ -1671,7 +1728,6 @@ html{
    align-items: center;
    justify-content: center;
 }
-
 
 .productsbev .name {
    font-size: 1.2rem;
@@ -1683,17 +1739,16 @@ html{
    align-items: center;
    justify-content: space-between;
    margin-top: 1rem;
-
 }
 
 .products {
-   display: flex;
-   flex-direction: column;
+   display: grid;
+   grid-template-columns: 700px 700px;
    align-items: center;
    padding: 1rem;
 }
  
-.products .box-container {
+/* .products .box-container {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
@@ -1786,7 +1841,7 @@ color: var(--red);
 .products .disabled {
    pointer-events: none;
    opacity: 0.5;
-}
+} */
 
 .about .row{
    display: flex;

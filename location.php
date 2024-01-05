@@ -52,7 +52,7 @@ if(isset($_SESSION['user_id'])){
     <div class="containerloc" id="alaminos">
         <ul class="column">
             <h2 style="color:red;">Alaminos Laguna Branch</h2>
-         <h3>JP Rizal St. Brgy I- Poblacion, Alaminos, Laguna (Plaza, Near Munisipyo of Alaminos)</h3>
+            <h3>JP Rizal St. Brgy I- Poblacion, Alaminos, Laguna (Plaza, Near Munisipyo of Alaminos)</h3>
         
         </ul>
         <div class="column">

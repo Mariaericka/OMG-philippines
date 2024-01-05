@@ -67,12 +67,14 @@ $grand_total = 0;
 <?php include 'components/user_header.php'; ?>
 <!-- header section ends -->
 
-<div class="heading">
-   <h3>Your Cart</h3>
-</div>
+
 
 <!-- shopping cart section starts -->
 <section class="products">
+   <div class="heading">
+      <h3>Your Cart</h3>
+   </div>
+
    <div class="box-container">
       <?php
       // Fetch and display cart items

@@ -46,11 +46,10 @@ if(isset($_SESSION['user_id'])){
 <br><br>
 <label for="Password">Password</label>  
 <input type="password"  class="form-styling" id="password" name="password" placeholder="Enter Password" required="required" style="background-color: white;background-image: none; color: black;"><br><br>   
-<input type="submit" onclick="LoginBtn()" name="submit" value="Sign-in" class="btn" >
+<input type="submit" onclick="LoginBtn()" name="submit" value="Sign-in" class="sign-in-btn">
 </div>
-<center> <p>Forgot Password? <a href="request_reset.php">click here </a></p></center>
-
-<center> <p>You don't have account? <a href="register.php">SIGN UP </a></p></center>
+<center> <p class="click-here-btn">Forgot Password? <a href="request_reset.php">click here </a></p></center>
+<center> <p class="sign-up-btn">You don't have account? <a href="register.php">SIGN UP </a></p></center>
 
 </div>
 </div>
