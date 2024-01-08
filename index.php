@@ -49,7 +49,7 @@ include 'components/add_cart.php';
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMG Philippines</title>
-<link rel="icon"  href="images/omg-logo.png">
+   <link rel="icon"  href="images/omg-logo.png">
    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
    <!-- font awesome cdn link  -->
@@ -59,32 +59,24 @@ include 'components/add_cart.php';
    <link rel="stylesheet" href="css/style2.css">
    
 
-
 </head>
 <body>
 <?php include 'components/user_header.php'; ?>
-<h3 class="creamy">Creamy goodness in a cup</h3>
-        <h3>Taste that would definitely make you go OMG!</h3>
-       
-        <video src="images/background_3.mp4" autoplay muted loop height="100%" width="100%"></video>
 
-        
-<section class="franchise" id="franchise">
 
-    <div class="container">
 
-        <div class="content1">
-        
-            <h1 class="headeropen">OPEN FOR FRANCHISE NATIONWIDE!</h1>
-            <h1>5 in 1 FRANCHISE</h1>
-            <p>With initial stocks and initial equipments, food panda application, creation of page, extensive training and initial marketing included</p>
-            <br><a href="franchise.php" class="button11">Franchise Now!</a>
-       
+        <img class="background-image" src="images\category\background.png" >
+
+        <div class="Tagline">
+         <h3> Creamy goodness in a cup. Taste that would definitely make you go OMG!</h3>
         </div>
-        <a href="https://www.vecteezy.com/free-vector/philippines-map" class="ph"></a>
-    </div>
+   <!-- <div class="swiper-pagination"></div>
 
-</section>
+</div>
+
+
+
+
 
 
 <section class="hero flex" style="margin: 0px;">
@@ -94,64 +86,43 @@ include 'components/add_cart.php';
 <a href="franchise.php"> <div class="event"></div></a>
 <a href="menu.php">  <div class="series"></div> </a>
    
-</section>
-
-<!-- <section class="hero">
-<a href="menu.php" class="button11 none">Buy 1 and Take 1</a>
-<a href="franchise.php" class="button12 none">Event Packages</a>
-<a href="menu.php" class="button13 none">Cheescake series</a>
 </section> -->
-
-<section class="hero">
-
-<!-- Contact us starts here -->
-
-<form action="" method="post" enctype="multipart/form-data">
-
-    <div class="container">
-        <div class="contact-parent">
         
-        <div class="contact-child child2">
-            <div class="inside-contact">
-                <h2>Contact Us</h2>
-                <h3>
-                    <span id="confirm">
-                </h3>
-                <p>Name *</p>
-                <input id="txt_name" type="text" Required="required" name="name">
-                <p>Email *</p>
-                <input id="txt_email" type="text" Required="required" name="email">
-                <p>Phone *</p>
-                <input id="txt_phone" type="text" Required="required" name="number">
-                <p>Subject *</p>
-                <input id="txt_subject" type="text" Required="required" name="subject">
-                <p>Message *</p>
-                <textarea id="txt_message" rows="4" cols="20" Required="required" name="msg" ></textarea>
-                <input type="submit" id="btn_send" value="SUBMIT" name="send">
-            </div>
-        </div>
-        <div class="contact-child child1">
-            <p>
-                <i class="fas fa-map-marker-alt"></i> Main Branch Address <br />
-                <span> JP Rizal St. Brgy I- Poblacion, Alaminos
-                <br />
-                Laguna (Plaza, Near Munisipyo Of Alaminos)
-                </span>
-            </p>
-            <p>
-                <i class="fas fa-phone-alt"></i> Contact us <br />
-                <span> 09171675592</span>
-            </p>
-            <p>
-                <i class=" far fa-envelope"></i> Email <br />
-                <span>omgfranchising@gmail.com</span>
-            </p>
-        </div>
-        </div>
-    </div>   
-</form>
+<section class="franchise" id="franchise">
+   <div class="container">
+      <h1 class="Now">NOW IN</h1>
+      <h1 class="five">FIVE</h1>
+      <h1 class="branch">BRANCHES!</h1>
 
+      <div class="content1">
+         <a href="franchise.php" class="button11">Franchise Now!</a>
+      </div>
+   </div>
+
+   <div class="laguna-map">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247429.8901587682!2d121.09690321319233!3d14.30608505778764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd600ea02bf27d%3A0xd19ea6f21743ff24!2sLaguna!5e0!3m2!1sen!2sph!4v1704358865188!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
 </section>
+
+   
+<div class="flex-box">
+   <div class="babyruth">
+      <img src="images/Babyruth.png" alt="babyruth-image">
+   </div>
+
+   
+   <div class="series">
+      <img src="images/Cheesecake.png"alt="cheesecake-series">
+   </div> 
+
+
+   <a href="menu.php">  
+      <div id="buy1-take1">
+         <h1>Buy one <br> take one!</h1>
+      </div>
+   </a>
+</div>
+   
 
 
 <section>
@@ -171,7 +142,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Yogurt Series</span>
                <h3>Creamy Fruity Melon</h3>
-               <a href="menu.php" class="btn">Order Now</a>
+               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
             </div>
             <div class="image">
                <img src="images/creamy fruit melon1.png" alt="">
@@ -183,7 +154,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Choco Series</span>
                <h3>Choco Kisses</h3>
-               <a href="menu.php" class="btn">Order Now</a>
+               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
             </div>
             <div class="image">
                <img src="images/kisses choco1.png" alt="">
@@ -193,7 +164,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>Choco Series</span>
                <h3>Twix Choco</h3>
-               <a href="menu.php" class="btn">Order Now</a>
+               <a href="menu.php" class="order-now-btn">ORDER HERE</a>
             </div>
             <div class="image">
                <img src="images/twix choco.png" alt="">
@@ -206,16 +177,6 @@ include 'components/add_cart.php';
    </div>
 
 </section>
-
-
-</section>
-
-
-
-
-
-
-
 
 
  <div class="loader">
