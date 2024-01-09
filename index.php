@@ -184,7 +184,7 @@ include 'components/add_cart.php';
 </div> 
 
 
-
+   </section>
 
 <div></div>
 <?php include 'components/footer.php'; ?>

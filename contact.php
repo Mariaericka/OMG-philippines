@@ -76,7 +76,7 @@ if(isset($_POST['send'])){
 
 <form action="" method="post" enctype="multipart/form-data">
 
-    <div class="container">
+    <div class="container5">
         <div class="contact-parent">
        
         <div class="contact-child child2">
