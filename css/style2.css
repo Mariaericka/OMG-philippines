@@ -99,20 +99,18 @@
    
    .icons {
    margin-left: 120px;
+   padding-top: 15px;
    }
    
    .header .flex{
    position: relative;
    width: 100%;
+   display: flex;
+    justify-content: space-around;
    }
    
    .navbar {
-   display: grid;
-   grid-template-columns: 300px 700px 300px;
-   column-gap: 30px;
-   align-items: center;
-   justify-content: center;
-   align-items: center;
+      padding-top: 20px;
    }
    
    .header .flex .navbar a{
@@ -239,7 +237,7 @@
    
    .franchise {
    display: grid ;
-   grid-template-columns: 700px 700px;
+   grid-template-columns: 631px 700px;
    }
    
    .container{
@@ -267,7 +265,8 @@
 
    .container{
    padding-top: 130px;
-   margin-left: 150px;
+   margin-left: 59px;
+   
    height: 600px;
    width: 500px;
    color: #4F200D;
@@ -339,9 +338,9 @@
    }
    
    .flex-box {
-   margin: 150px 100px;
-   display: flex;
-   gap: 30px;
+      margin: 100px 100px;
+      display: flex;
+      gap: 24px;
    }
    
    .flex-box a {
@@ -411,7 +410,7 @@
    background-color: #F6F1E9;
    border: 2px solid #FF8400;
    display: block;
-   margin-left: 300px;
+   margin-left: 239px;
    width: 200px;
    }
    

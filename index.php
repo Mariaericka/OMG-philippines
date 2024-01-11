@@ -104,7 +104,7 @@ include 'components/add_cart.php';
    </div>
 </section>
 
-   
+   <section>
 <div class="flex-box">
    <div class="babyruth">
       <img src="images/Babyruth.png" alt="babyruth-image">
@@ -122,7 +122,7 @@ include 'components/add_cart.php';
       </div>
    </a>
 </div>
-   
+   </section>
 
 
 <section>
