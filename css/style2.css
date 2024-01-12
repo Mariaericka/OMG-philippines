@@ -1567,7 +1567,7 @@
    }
    
    .category .box-container{
-   padding: 30px 150px;
+      padding: 1px 94px;
    display: grid;
    grid-template-columns: 400px 400px 400px;
    grid-auto-rows: minmax(300px, auto);
@@ -1584,8 +1584,8 @@
    }
    
    .category .box-container .box img {
-   width: 350px;
-   height: 250px;
+      width: 314px;
+      height: 179px;
    object-fit: contain;
    }
    
@@ -1639,10 +1639,11 @@
    border-right: 3px solid #4F200D;
    }
    
-   .second li{
-   font-size: 25px;
-   margin: 50px 10px;
-   }
+   .second li {
+      font-size: 23px;
+      margin: 15px 10px;
+  }
+  
    
    .second li:hover {
    background-color: #FFD93D;

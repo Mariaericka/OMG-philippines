@@ -38,15 +38,12 @@ include 'components/add_cart.php';
     <br> <h1>Categories</h1>
     <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
 
-        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        <li><a href="category.php?category=mango" class="button14">MANGO SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        <li><a href="category.php?category=cheese" class="button14">CHEESECAKE SERIES<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-        <li><a href="category.php?category=ventea" class="button14">VENTEA<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-
-        <li><a href="category.php?category=promo" class="button14">PROMO<i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+        <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
+        <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
+        <li> <a href="category.php?category=choco" class="button14">CHOCO SERIES</a></li>
+        <li><a href="category.php?category=milktea" class="button14">MILKTEA SERIES</a></li>
+        <li><a href="category.php?category=mango" class="button14">MANGO SERIES</a></li>
+       
   
     </ul>
     </div>
