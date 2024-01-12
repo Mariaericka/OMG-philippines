@@ -3,11 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap');
 / Font links */
+#buy1-take1 {
+   width: 227px;
+
+}
 .contact-parent{
    background: #fff;
    display:flex;
    margin:80px 0;
    border:3px solid #000;
+   margin-top: 54px;
 }
 .contact-child{
    display:flex;
@@ -256,7 +261,7 @@
    }
    .container5{
       padding-top: 1px;
-      margin-left: 120px;
+      margin-left: 246px;
       height: 600px;
       width: 779px;
       color: #4F200D;
@@ -1330,8 +1335,8 @@
    height: 250px;
    background-color: #FFD93D;
    display: grid;
-   grid-template-columns: repeat(4, 370px);
-   grid-gap: 30px;
+   grid-template-columns: repeat(4, 357px);
+   grid-gap: 5px;
    align-items: center;
    justify-content: center;
    }
@@ -1375,7 +1380,7 @@
    }
    
    .copyright h5{
-   font-size: 18px;
+   font-size: 17px;
    font-family: 'Inter', Sans serif;
    font-weight: 800;
    }
