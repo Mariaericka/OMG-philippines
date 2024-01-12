@@ -1632,16 +1632,16 @@
    flex-direction: column;
    position: fixed;
    top: 83px;
-   height: 500px;
+  
    width: 400px;
    justify-content: center;
-   line-height: 70px;
+   background-color: white;
    border-right: 3px solid #4F200D;
    }
    
    .second li {
       font-size: 23px;
-      margin: 15px 10px;
+      margin: 17px 10px;
   }
   
    
