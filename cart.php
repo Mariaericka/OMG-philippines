@@ -1,7 +1,9 @@
 <?php
 include 'components/connect.php';
 
+
 session_start();
+
 
 if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
@@ -10,29 +12,35 @@ if(isset($_SESSION['user_id'])){
    header('location:index.php');
 };
 
+
 if(isset($_POST['delete'])){
    $cart_id = $_POST['cart_id'];
    // Delete associated cart add-ons first
    $delete_cart_addons = $conn->prepare("DELETE FROM `cart_addons` WHERE cart_id = ?");
    $delete_cart_addons->execute([$cart_id]);
 
+
    // Now delete the cart item
    $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE id = ?");
    $delete_cart_item->execute([$cart_id]);
 
+
    $message[] = 'Cart item deleted!';
 }
+
 
 if(isset($_POST['delete_all'])){
    // Delete cart add-ons first
    $delete_cart_addons = $conn->prepare("DELETE ca FROM `cart_addons` ca INNER JOIN `cart` c ON ca.cart_id = c.id WHERE c.user_id = ?");
    $delete_cart_addons->execute([$user_id]);
 
+
    // Now delete all cart items
    $delete_cart_items = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
    $delete_cart_items->execute([$user_id]);
    $message[] = 'deleted all from cart!';
 }
+
 
 if(isset($_POST['update_qty'])){
    $cart_id = $_POST['cart_id'];
@@ -43,8 +51,10 @@ if(isset($_POST['update_qty'])){
    $message[] = 'cart quantity updated';
 }
 
+
 $grand_total = 0;
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,8 +65,10 @@ $grand_total = 0;
    <title>OMGPH CART</title>
    <link rel="icon" href="images/omg-logo.png">
 
+
    <!-- font awesome cdn link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 
    <!-- custom css file link -->
    <link rel="stylesheet" href="css/style2.css">
@@ -67,17 +79,40 @@ $grand_total = 0;
 <?php include 'components/user_header.php'; ?>
 <!-- header section ends -->
 
-<div class="heading">
-   <h3>Your Cart</h3>
-</div>
+
+
+
+
 
 <!-- shopping cart section starts -->
 <section class="products">
+   <div class="center-heading">
+      <div class="sticky-heading">
+         <h3>Your Cart</h3>
+         <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>  
+   
+         <div class="more-btn">
+            <form action="" method="post">
+               <button type="submit" class="delete-all-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
+            </form>
+
+
+            <a href="menu.php" class="continue-btn">Continue Shopping</a>
+            <a href="checkout.php" class="checkout-btn" <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+         </div>
+      </div>
+
+
+   </div>
+
+
+   
    <div class="box-container">
       <?php
       // Fetch and display cart items
       $select_cart = $conn->prepare("SELECT c.*, p.priceR FROM `cart` c INNER JOIN `products` p ON c.pid = p.id WHERE c.user_id = ?");
       $select_cart->execute([$user_id]);
+
 
       if ($select_cart->rowCount() > 0) {
          while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
@@ -89,16 +124,24 @@ $grand_total = 0;
             $sub_total = $price * $fetch_cart['quantity'];
       ?>
 
+
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <button type="submit" class="fa-solid fa-trash-can fa-xl" style="color: #ed1e07; background-color: beige;" name="delete" onclick="return confirm('Delete this item?');"></button>
-         <img src="images/<?= $fetch_cart['image']; ?>" alt="">
+         <button type="submit" class="fa-solid fa-trash-can fa-xl" style="background-color: #FFD93D;" name="delete" onclick="return confirm('Delete this item?');"></button>
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
             <div class="price"><span>₱</span><?= $price; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
-            <button type="submit" class="fas fa-edit" name="update_qty"></button>
+            <span class="minus">-</span>
+            <span class="num">1</span>
+            <span class="plus">+</span>
          </div>
+
+
+
+
+<!-- <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2"> -->
+
+
          <?php
          // Display the selected add-ons
          $select_addons = $conn->prepare("SELECT ca.addon_id, a.name AS addon_name, a.price AS addon_price FROM `cart_addons` ca INNER JOIN `addons` a ON ca.addon_id = a.id WHERE ca.cart_id = ?");
@@ -107,18 +150,18 @@ $grand_total = 0;
          if ($select_addons->rowCount() > 0) {
             echo '<div class="addons">';
             echo '<p>Selected Add-ons:</p>';
-            
+           
             while ($addon = $select_addons->fetch(PDO::FETCH_ASSOC)) {
                echo '<p>' . $addon['addon_name'] . ' (+₱' . $addon['addon_price'] . ')</p>';
                $sub_total += $addon['addon_price']; // Calculate total add-ons price
             }
-            
+           
             echo '</div>';
          }
          ?>    
-         <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?>/-</span></div>
+         <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?></span></div>
       </form>
-      
+     
       <?php
             $grand_total += $sub_total;
          }
@@ -128,26 +171,56 @@ $grand_total = 0;
       ?>
    </div>
 
-   <div class="cart-total">
-      <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>
-      <a href="checkout.php" class="btn <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
-   </div>
+
+
+
+   <!-- <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>  
+
+
+
 
    <div class="more-btn">
       <form action="" method="post">
          <button type="submit" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
       </form>
-      <a href="menu.php" class="btn">Continue Shopping</a>
-   </div>
+
+
+         <a href="menu.php" class="continue-btn">Continue Shopping</a>
+         <a href="checkout.php" class="checkout-btn" <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+   </div> -->
+
+
+
+
 </section>
+
 
 <!-- footer section starts -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
 
+
 <!-- custom js file link -->
-<script src="js/script.js"></script>
+<script src="js\script.js"></script>
 <script src="js/modal.js"></script>
+
+
+<script>
+   const plus = document.querySelector(".plus"),
+   minus =document.querySelector(".minus"),
+   num = document.querySelector(".num");
+
+
+   let a = 1;
+
+
+   plus.addEventListener("click", ()=>{
+      a++;
+      num.innerText = a;
+      console.log(a);
+   });
+</script>
+
 
 </body>
 </html>
