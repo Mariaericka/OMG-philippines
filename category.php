@@ -140,16 +140,8 @@ if ($select_products->rowCount() > 0) {
                                 <span class="modal-label">Price:</span>
                             </td>
                             <td>
-                                
-                            <select class="input" id="size-dropdown<?= $fetch_products['id']; ?>" name="size[]"onchange="updateSize(<?= $fetch_products['id']; ?>)">
-    <option value="regular" data-price="<?= $fetch_products['price']; ?>" selected> ₱<?= $fetch_products['price']; ?>.00</option>
-<!-- <option value="large" data-price="<?= $fetch_products['priceR']; ?>">Large ₱<?= $fetch_products['priceR']; ?>.00</option> -->
-</select>
-
-
-
-
-                            </td>
+    <input type="text" class="input" id="size-input<?= $fetch_products['id']; ?>" name="size[]" value="₱<?= $fetch_products['price']; ?>.00" readonly>
+</td>
                         </tr>
                         <tr> 
                             <td>
@@ -235,7 +227,6 @@ if ($select_products->rowCount() > 0) {
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
 </body>
-<?php include 'components/footer.php'; ?>
 <script>
     
 </script>
