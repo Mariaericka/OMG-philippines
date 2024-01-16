@@ -145,7 +145,7 @@ if(isset($_SESSION['user_id'])){
          <h4>Products are very affordable yet the ingredients are of the highest quality</h4>
       </div>
    </div>
-
+      </div>
 
 
 
@@ -174,8 +174,8 @@ if(isset($_SESSION['user_id'])){
 
 
 
-<?php include 'components/footer.php'; ?>
-
+    <?php include 'components/footer.php'; ?>
+   
 
 <!-- BLOG NEW end-->
   <!-- Jquery Library file -->
@@ -194,6 +194,7 @@ if(isset($_SESSION['user_id'])){
 
 
 </body>
-</html>
 
+
+</html>
 

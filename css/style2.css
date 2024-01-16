@@ -804,11 +804,12 @@
    text-align: justify;
    line-height: 70px;
    color: #4F200D;
+   margin-left: 96px;
    }
    
    .blog {
    height: 700px;
-   padding: 80px 0px 0px 100px;
+   padding: 80px 0px 0px 53px;
    display: grid;
    grid-template-columns: 400px 930px;
    column-gap: 50px;
@@ -887,6 +888,8 @@
    
    .blog-box-3 {
    height: 1000px;
+   margin-left: -58px;
+   
    }
    
    /* FACEBOOK LINKS PART */
@@ -894,8 +897,8 @@
    .blog-grid {
    margin: 50px;
    display: grid;
-   grid-template-columns: 320px 320px 320px 320px;
-   gap: 70px;
+   grid-template-columns: 332px 320px 320px 240px;
+   gap: 48px;
    }
    
    .blog-grid img {
@@ -1178,11 +1181,12 @@
    }
    
    .frame {
-   height: 603px;
+   height: 530px;
    width: 430px;
-   margin: 100px;
+   margin: 12px;
    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
    background-color: #FFD93D;
+   margin-left: 463px;
    }
    
    .frame-long {
@@ -1252,7 +1256,7 @@
    
    .form-signin {
    width: 430px;
-   height: 375px;
+   height: 320px;
    font-size: 16px;
    font-weight: 300;
    padding-left: 37px;
