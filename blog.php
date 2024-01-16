@@ -26,10 +26,12 @@ if(isset($_SESSION['user_id'])){
 <!-- Owl Carousel JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+
    <!-- Own Carousel -->
    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
- 
+
+
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style2.css">
    <link rel="stylesheet" href="css/blog.css">
@@ -193,3 +195,5 @@ if(isset($_SESSION['user_id'])){
 
 </body>
 </html>
+
+
