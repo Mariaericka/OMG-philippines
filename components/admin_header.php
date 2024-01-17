@@ -24,6 +24,8 @@ if(isset($message)){
          <a href="admin_accounts.php">admins</a>
          <a href="users_accounts.php">users</a>
          <a href="messages.php">messages</a>
+         <a href="franchise_requests.php">franchise</a>
+
 
       </nav>
 

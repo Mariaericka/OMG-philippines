@@ -12,6 +12,27 @@ if(isset($_SESSION['user_id'])){
 }else{
    $user_id = '';
 };
+if(isset($_POST['franchise_submit'])){
+
+   $first_name = $_POST['first-name'];
+   $first_name = filter_var($first_name, FILTER_SANITIZE_STRING);
+   $last_name = $_POST['last-name'];
+   $last_name = filter_var($last_name, FILTER_SANITIZE_STRING);
+   $contact_number = $_POST['number'];
+   $contact_number = filter_var($contact_number, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $target_location = $_POST['location'];
+   $target_location = filter_var($target_location, FILTER_SANITIZE_STRING);
+
+   // Use prepared statement to prevent SQL injection
+   $insert_franchise = $conn->prepare("INSERT INTO `franchise_requests` (user_id, first_name, last_name, contact_number, email, target_location) VALUES (?,?,?,?,?,?)");
+   $insert_franchise->execute([$user_id, $first_name, $last_name, $contact_number, $email, $target_location]);
+
+   $message[] = 'Franchise request submitted successfully!';
+}
+
+
 ?>
 
 
@@ -23,26 +44,13 @@ if(isset($_SESSION['user_id'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>OMG Philippines | Franchise</title>  
    <link rel="icon"  href="images/omg-logo.png">
-
-
   <!-- font awesome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-
    <!-- Own Carousel -->
  <link rel="stylesheet" href="css/owl.carousel.min.css">
-
-
-
-
- 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="./css/style2.css">
   <!-- <link rel="stylesheet" href="css/bootstrap.css">-->
-
-
-
-
 </head>
 <body>
 
@@ -69,6 +77,7 @@ if(isset($_SESSION['user_id'])){
 
 
 
+      <form class="franchise-form" action="" method="post" enctype="multipart/form-data">
 
 
       <form class="franchise-form" action="thank" method="GET">
@@ -127,7 +136,7 @@ if(isset($_SESSION['user_id'])){
             </div>
            
             <div class="franchise-form-btn">
-               <button class="submit">Submit</button>
+            <button class="submit" type="submit" name="franchise_submit">Submit</button>
             </div>
          </div>
       </form>
