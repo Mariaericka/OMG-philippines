@@ -35,6 +35,8 @@ if (isset($_SESSION['user_id'])) {
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $lname = $_POST['lname'];
+        $lname = filter_var($name, FILTER_SANITIZE_STRING);
         $number = $_POST['number'];
         $number = filter_var($number, FILTER_SANITIZE_STRING);
         $email = $_POST['email'];
@@ -259,6 +261,8 @@ if (isset($_SESSION['user_id'])) {
    <!-- font awesome cdn link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+<!-- Include jQuery for AJAX -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
    <!-- custom css file link -->
    <link rel="stylesheet" href="css/style2.css">
@@ -334,6 +338,8 @@ if (isset($_SESSION['user_id'])) {
                 <input type="hidden" name="total_products" value="<?= $total_products; ?>">
                 <input type="hidden" name="total_price" value="<?= $total_price; ?>">
                 <input type="hidden" name="name" value="<?= $fetch_profile['name'] ?>">
+                <input type="hidden" name="lname" value="<?= $fetch_profile['lname'] ?>">
+
                 <input type="hidden" name="number" value="<?= $fetch_profile['number'] ?>">
                 <input type="hidden" name="email" value="<?= $fetch_profile['email'] ?>">
                 <input type="hidden" name="address" value="<?= $fetch_profile['address'] ?>">
@@ -348,20 +354,53 @@ if (isset($_SESSION['user_id'])) {
        
             <div class="user-info">
                 <h3>Your Info</h3>
-                <p><i class="fas fa-user"></i>Name: <span><?= $fetch_profile['name'] ?></span><span><?= $fetch_profile['lname'] ?></span></p>
+                <p><i class="fas fa-user"></i>Name: <span><?= $fetch_profile['name'] ?></span> <span><?= $fetch_profile['lname'] ?></span></p>
                 <p><i class="fas fa-phone"></i>Contact number: <span><?= $fetch_profile['number'] ?></span></p>
                 <p><i class="fas fa-envelope"></i>Email: <span><?= $fetch_profile['email'] ?></span></p>
-                <a href="update_profile.php" class="update-info-btn">Change Info</a>
+                <button id="edit-info-btn" class="btn">Edit Info</button>
+<!-- Edit user info form -->
+<div id="edit-info-form" style="display: none;">
+    <h3>Edit Your Info</h3>
+    <form id="edit-info-form">
+        <input type="text" id="edit-name" placeholder="Enter your name">
+        <input type="text" id="edit-lname" placeholder="Enter your last name" >
+
+
+
+        <input type="tel" id="edit-number" name="number"placeholder="Enter your number"  pattern="\d*" inputmode="numeric">
+        <button id="update-info-btn" class="btn">Update Info</button>
+    </form>
+</div>
+
+
+
                 <h3>Delivery Address</h3>
                 <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'Please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
-                <a href="update_address.php" class="change-address-btn">Change Address</a>
+                <button id="edit-address-btn" class="btn">Edit Address</button>
+<!-- Edit address form -->
+<div id="edit-address-form" style="display: none;">
+    <h3>Edit Delivery Address</h3>
+    <form id="edit-address-form">
+        <input type="text" id="edit-number" placeholder="Enter your number">
+        <input type="text" id="edit-street" placeholder="Enter street name">
+        <input type="text" id="edit-brgy" placeholder="Enter barangay">
+        <input type="text" id="edit-province" placeholder="Enter province">
+        <input type="text" id="edit-city" placeholder="Enter city">
+        <input type="text" id="edit-region" placeholder="Enter region">
+        <input type="tel" id="edit-postal" placeholder="Enter postal code">
+        <input type="text" id="edit-country" placeholder="Enter country">
+        <button id="update-address-btn" class="btn">Update Address</button>
+    </form>
+</div>
+
+
+
                 <div class="delivery-info">
                     <h3>Delivery Information</h3>
                     <p><strong>Note:</strong> Delivery is available within the Laguna area only. If you are outside the delivery range, please choose "In-store Pick-up" as your payment method and visit our stores or other franchise branches.
                 </p><p><strong> The delivery fee is not included in online payment and will be collected upon delivery.</strong></p>
                 </div>
-
-
+      
                 <div class="Payment-method">
                     <h3>Select Payment method</h4>
                     <select name="method" class="box" id="payment-method" required>
@@ -370,12 +409,13 @@ if (isset($_SESSION['user_id'])) {
                         <option value="instore">In-store Pickup</option>
                     </select>
                 </div>
+                <input type="submit" value="Place Order" class="btn <?php if($fetch_profile['address'] == '' || (isset($_POST['method']) && $_POST['method'] === 'gcash')) { echo 'disabled'; } ?>" style="width: 100%; background: #FF8400; color: #F6F1E9 ;" name="submit">
+
             </div>
 
 
 
-
-        <input type="submit" value="Place Order" class="btn <?php if($fetch_profile['address'] == '' || (isset($_POST['method']) && $_POST['method'] === 'gcash')) { echo 'disabled'; } ?>" style="width: 100%; background: #FF8400; color: #F6F1E9 ;" name="submit">
+   
         </form>
     </section>
 </div>
@@ -392,7 +432,91 @@ if (isset($_SESSION['user_id'])) {
 <script src="js/modal.js"></script>
 <script src="js/script.js"></script>
 
+<script>
+  
+    $(document).ready(function () {
+        // Edit user info
+        $("#edit-info-btn").click(function () {
+            $("#user-info").hide();
+            $("#edit-info-form").show();
+        });
 
+        // Update user info using AJAX
+        $("#update-info-btn").click(function (e) {
+            e.preventDefault();
+
+            var name = $("#edit-name").val();
+            var lname = $("#edit-lname").val();
+            var number = $("#edit-number").val();
+
+            $.ajax({
+                type: "POST",
+                url: "update_profile.php",
+                data: {
+                    submit: true,
+                    name: name,
+                    lname: lname,
+                    number: number
+                },
+                success: function (response) {
+                    // Handle success, you may display a success message
+                    alert("User info updated successfully!");
+                    location.reload(); // Reload the page to reflect changes
+                },
+                error: function (error) {
+                    // Handle error, you may display an error message
+                    alert("Error updating user info: " + error.responseText);
+                }
+            });
+        });
+
+        // Edit address
+        $("#edit-address-btn").click(function () {
+            $("#user-address").hide();
+            $("#edit-address-form").show();
+        });
+
+        // Update address using AJAX
+        $("#update-address-btn").click(function (e) {
+            e.preventDefault();
+
+            var number = $("#edit-number").val();
+            var street = $("#edit-street").val();
+            var brgy = $("#edit-brgy").val();
+            var province = $("#edit-province").val();
+            var city = $("#edit-city").val();
+            var region = $("#edit-region").val();
+            var postal = $("#edit-postal").val();
+            var country = $("#edit-country").val();
+
+            $.ajax({
+                type: "POST",
+                url: "update_address.php",
+                data: {
+                    submit: true,
+                    number: number,
+                    street: street,
+                    brgy: brgy,
+                    province: province,
+                    city: city,
+                    region: region,
+                    postal: postal,
+                    country: country
+                },
+                success: function (response) {
+                    // Handle success, you may display a success message
+                    alert("Address updated successfully!");
+                    location.reload(); // Reload the page to reflect changes
+                },
+                error: function (error) {
+                    // Handle error, you may display an error message
+                    alert("Error updating address: " + error.responseText);
+                }
+            });
+        });
+    });
+ 
+</script>
 
 
 </body>

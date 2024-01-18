@@ -15,15 +15,22 @@ if(isset($_POST['submit'])){
 
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $lname = $_POST['lname'];
+   $lname = filter_var($lname, FILTER_SANITIZE_STRING);
 
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
    $number = $_POST['number'];
-   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $number = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+   
 
    if(!empty($name)){
       $update_name = $conn->prepare("UPDATE `users` SET name = ? WHERE id = ?");
       $update_name->execute([$name, $user_id]);
+   }
+   if(!empty($lname)){
+      $update_lname = $conn->prepare("UPDATE `users` SET lname = ? WHERE id = ?");
+      $update_lname->execute([$lname, $user_id]);
    }
 
    if(!empty($number)){
@@ -94,9 +101,11 @@ if(isset($_POST['submit'])){
 
    <form action="" method="post">
       <h3>update profile</h3>
-      <input type="text" name="name" placeholder="<?= $fetch_profile['name']; ?>" class="box" maxlength="50">
+      <input type="text" name="name" placeholder="<?= $fetch_profile['name']; ?>" class="box" maxlength="50">\
+      <input type="text" name="lname" placeholder="<?= $fetch_profile['lname']; ?>" class="box" maxlength="50">
+
       <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" readonly>
-      <input type="number" name="number" placeholder="<?= $fetch_profile['number']; ?>"" class="box" min="0" max="9999999999" maxlength="10">
+      <input type="tel" name="number" placeholder="<?= $fetch_profile['number']; ?>" class="box" pattern="\d*" inputmode="numeric" size="11">
       <input type="password" name="old_pass" placeholder="enter your old password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="new_pass" placeholder="enter your new password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="confirm_pass" placeholder="confirm your new password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">

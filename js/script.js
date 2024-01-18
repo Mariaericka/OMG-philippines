@@ -55,3 +55,10 @@ modals.forEach((modal) => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+   var numberInput = document.querySelector('input[name="number"]');
+
+   numberInput.addEventListener('input', function() {
+       this.value = this.value.replace(/\D/g, ''); // Allow only numeric digits
+   });
+});
