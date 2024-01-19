@@ -88,18 +88,11 @@ $grand_total = 0;
 <section class="products">
    <div class="center-heading">
       <div class="sticky-heading">
-         <h3>Your Cart</h3>
-         <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>  
+         
+        
+       
    
-         <div class="more-btn">
-            <form action="" method="post">
-               <button type="submit" class="delete-all-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
-            </form>
-
-
-            <a href="menu.php" class="continue-btn">Continue Shopping</a>
-            <a href="checkout.php" class="checkout-btn" <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
-         </div>
+        
       </div>
 
 
@@ -127,15 +120,16 @@ $grand_total = 0;
 
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
+         <input type="hidden" name="qty" value="<?= $fetch_cart['quantity']; ?>">
+
          <button type="submit" class="fa-solid fa-trash-can fa-xl" style="background-color: #FFD93D;" name="delete" onclick="return confirm('Delete this item?');"></button>
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
             <div class="price"><span>₱</span><?= $price; ?></div>
-            <span class="minus">-</span>
-            <span class="num">1</span>
-            <span class="plus">+</span>
+            <span class="minus" onclick="updateQuantity('<?= $fetch_cart['id']; ?>', 'subtract', <?= $price; ?>)">-</span>
+            <span class="num" id="quantity_<?= $fetch_cart['id']; ?>"><?= $fetch_cart['quantity']; ?></span>
+            <span class="plus" onclick="updateQuantity('<?= $fetch_cart['id']; ?>', 'add', <?= $price; ?>)">+</span>
          </div>
-
 
 
 
@@ -159,7 +153,8 @@ $grand_total = 0;
             echo '</div>';
          }
          ?>    
-         <div class="sub-total">Sub total: <span>₱<?= $sub_total; ?></span></div>
+         <div class="sub-total">Sub total: <span id="subTotal_<?= $fetch_cart['id']; ?>">₱<?= $sub_total; ?></span></div>
+
       </form>
      
       <?php
@@ -170,12 +165,10 @@ $grand_total = 0;
       }
       ?>
    </div>
-
-
-
-
-   <!-- <p>Cart Total: <span>₱<?= $grand_total; ?></span></p>  
-
+   <div class="sticky-heading">
+   <h3>Your Cart</h3>
+  <p>Cart Total:<span id="cartTotal">₱<?= $grand_total; ?></span></p>  
+   
 
 
 
@@ -183,12 +176,14 @@ $grand_total = 0;
       <form action="" method="post">
          <button type="submit" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>" name="delete_all" onclick="return confirm('Delete all from cart?');">Delete All</button>
       </form>
+      <a href="menu.php" class="continue-btn">Continue Shopping</a>
+            <a href="checkout.php" class="checkout-btn" <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+      </div>
+   </div> 
 
 
-         <a href="menu.php" class="continue-btn">Continue Shopping</a>
-         <a href="checkout.php" class="checkout-btn" <?= ($grand_total > 0) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
-   </div> -->
 
+ 
 
 
 
@@ -204,21 +199,47 @@ $grand_total = 0;
 <script src="js\script.js"></script>
 <script src="js/modal.js"></script>
 
-
 <script>
-   const plus = document.querySelector(".plus"),
-   minus =document.querySelector(".minus"),
-   num = document.querySelector(".num");
+   function updateQuantity(cartId, action, price) {
+      const quantityElement = document.getElementById('quantity_' + cartId);
+      let quantity = parseInt(quantityElement.innerText);
 
+      if (action === 'add') {
+         quantity++;
+      } else if (action === 'subtract' && quantity > 1) {
+         quantity--;
+      }
+   
 
-   let a = 1;
+      // Update the quantity on the page
+      quantityElement.innerText = quantity;
 
+      // Calculate and update subtotal
+      const subTotalElement = document.getElementById('subTotal_' + cartId);
+      const subTotal = quantity * price;
+      subTotalElement.innerText = '₱' + subTotal;
 
-   plus.addEventListener("click", ()=>{
-      a++;
-      num.innerText = a;
-      console.log(a);
-   });
+      // Update the grand total and Cart Total at the bottom
+      updateGrandTotal();
+
+      // Store the updated quantity in a hidden input field
+      const quantityInput = document.getElementById('input_quantity_' + cartId);
+      quantityInput.value = quantity;
+   }
+
+   function updateGrandTotal() {
+      let grandTotal = 0;
+
+      // Loop through all subtotals and sum them up
+      const subTotalElements = document.querySelectorAll('[id^="subTotal_"]');
+      subTotalElements.forEach(element => {
+         grandTotal += parseFloat(element.innerText.replace('₱', ''));
+      });
+
+      // Update the grand total at the top and bottom
+      document.getElementById('cartTotal').innerText = '₱' + grandTotal;
+      document.getElementById('cartTotalBottom').innerText = '₱' + grandTotal;
+   }
 </script>
 
 

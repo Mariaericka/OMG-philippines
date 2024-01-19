@@ -2,6 +2,8 @@
 
 <?php
 include 'components/connect.php';
+// Add this at the beginning of your checkout.php file
+ // Check if qty is received
 
 
 session_start();
