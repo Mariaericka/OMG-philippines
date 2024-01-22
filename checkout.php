@@ -38,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $lname = $_POST['lname'];
-        $lname = filter_var($name, FILTER_SANITIZE_STRING);
+        $lname = filter_var($lname, FILTER_SANITIZE_STRING);
         $number = $_POST['number'];
         $number = filter_var($number, FILTER_SANITIZE_STRING);
         $email = $_POST['email'];
