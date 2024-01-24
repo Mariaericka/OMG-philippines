@@ -262,7 +262,6 @@ if (isset($_SESSION['user_id'])) {
 
    <!-- font awesome cdn link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
 <!-- Include jQuery for AJAX -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -519,6 +518,7 @@ if (isset($_SESSION['user_id'])) {
     });
  
 </script>
+<script src="js/cart.js"></script>
 
 
 </body>

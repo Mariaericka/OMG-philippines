@@ -120,17 +120,19 @@ $grand_total = 0;
 
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-         <input type="hidden" name="qty" value="<?= $fetch_cart['quantity']; ?>">
+         <input type="hidden" name="quantity[]" id="input_quantity_<?= $fetch_cart['id']; ?>" value="<?= $fetch_cart['quantity']; ?>">
+
 
          <button type="submit" class="fa-solid fa-trash-can fa-xl" style="background-color: #FFD93D;" name="delete" onclick="return confirm('Delete this item?');"></button>
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
-            <div class="price"><span>₱</span><?= $price; ?></div>
+         <div class="price"><span>₱</span><?= $price; ?></div>
             <span class="minus" onclick="updateQuantity('<?= $fetch_cart['id']; ?>', 'subtract', <?= $price; ?>)">-</span>
             <span class="num" id="quantity_<?= $fetch_cart['id']; ?>"><?= $fetch_cart['quantity']; ?></span>
             <span class="plus" onclick="updateQuantity('<?= $fetch_cart['id']; ?>', 'add', <?= $price; ?>)">+</span>
-         </div>
+          
 
+         </div>
 
 
 <!-- <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2"> -->
@@ -198,49 +200,11 @@ $grand_total = 0;
 <!-- custom js file link -->
 <script src="js\script.js"></script>
 <script src="js/modal.js"></script>
+<!-- Add this before your cart.js script tag -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<script>
-   function updateQuantity(cartId, action, price) {
-      const quantityElement = document.getElementById('quantity_' + cartId);
-      let quantity = parseInt(quantityElement.innerText);
 
-      if (action === 'add') {
-         quantity++;
-      } else if (action === 'subtract' && quantity > 1) {
-         quantity--;
-      }
-   
-
-      // Update the quantity on the page
-      quantityElement.innerText = quantity;
-
-      // Calculate and update subtotal
-      const subTotalElement = document.getElementById('subTotal_' + cartId);
-      const subTotal = quantity * price;
-      subTotalElement.innerText = '₱' + subTotal;
-
-      // Update the grand total and Cart Total at the bottom
-      updateGrandTotal();
-
-      // Store the updated quantity in a hidden input field
-      const quantityInput = document.getElementById('input_quantity_' + cartId);
-      quantityInput.value = quantity;
-   }
-
-   function updateGrandTotal() {
-      let grandTotal = 0;
-
-      // Loop through all subtotals and sum them up
-      const subTotalElements = document.querySelectorAll('[id^="subTotal_"]');
-      subTotalElements.forEach(element => {
-         grandTotal += parseFloat(element.innerText.replace('₱', ''));
-      });
-
-      // Update the grand total at the top and bottom
-      document.getElementById('cartTotal').innerText = '₱' + grandTotal;
-      document.getElementById('cartTotalBottom').innerText = '₱' + grandTotal;
-   }
-</script>
+<script src="js/cart.js"></script>
 
 
 </body>
