@@ -36,29 +36,29 @@ document.querySelectorAll('input[type="number"]').forEach(numberInput => {
 });
 
 //branches modal in location
-const openButtons = document.querySelectorAll("[data-open-modal]");
-const modals = document.querySelectorAll("[data-modal]");
 
 
-openButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    modals[index].show();
-  });
-});
+document.addEventListener("DOMContentLoaded", function () {
+   const openButtons = document.querySelectorAll("[data-open-modal]");
+   const modals = document.querySelectorAll("[data-modal]");
 
+   openButtons.forEach((button, index) => {
+       button.addEventListener("click", () => {
+           // Hide all modals first
+           modals.forEach((modal) => {
+               modal.classList.remove("show");
+           });
 
-modals.forEach((modal) => {
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal || event.target.getAttribute("data-close-modal") !== null) {
-      modal.close();
-    }
-  });
-});
+           // Show the selected modal
+           modals[index].classList.add("show");
+       });
+   });
 
-document.addEventListener('DOMContentLoaded', function() {
-   var numberInput = document.querySelector('input[name="number"]');
-
-   numberInput.addEventListener('input', function() {
-       this.value = this.value.replace(/\D/g, ''); // Allow only numeric digits
+   modals.forEach((modal) => {
+       modal.addEventListener("click", (event) => {
+           if (event.target === modal || event.target.getAttribute("data-close-modal") !== null) {
+               modal.classList.remove("show");
+           }
+       });
    });
 });
