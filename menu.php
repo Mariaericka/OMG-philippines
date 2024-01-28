@@ -72,7 +72,9 @@ $select_categories->execute();
       </a>
    
    </div>
-
+<!-- footer section starts  -->
+<?php include 'components/footer.php'; ?> 
+<!-- footer section ends -->
 </section>
 <!-- menu section starts  -->
 <!-- <div class="second"><ul>
@@ -91,13 +93,10 @@ $select_categories->execute();
     </div> -->
 <div>
 </div>
-<!--
 <div class="loader">
-   <img src="images/loading.gif" alt="">-->
+   <img src="images/loading.gif" alt="">
 </div>
-<!-- footer section starts  -->
- <?php include 'components/footer.php'; ?> 
-<!-- footer section ends -->
+
 <!-- custom js file link  -->
 <!--<script>
 var myIndex = 0;
