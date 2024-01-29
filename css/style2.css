@@ -2527,7 +2527,8 @@
   }
 .franchise {
    grid-template-columns: none;
-   display: grid}
+   display: grid;
+   margin-top: -155px;}
 .container {
     margin-left: 129px;
    height: 288px;}
@@ -2612,7 +2613,7 @@
  
    
    .products .box {
-   width:479px;
+   margin-left: -128px;
    height:137px;
    }
    .fa-solid fa-trash-can fa-xl{
@@ -2629,7 +2630,8 @@
      }
                   
    .second ul {
-     width: 334px;}
+     width: 334px;
+     border-right: 0px solid #4F200D;}
    label {
       font-size: 15px;}
     .productsbev .box1-container1 {
@@ -2683,10 +2685,32 @@
       width: 100%!important;;
      
    }       
-   .container5 {
-      margin-left: 0px;}
-      .frame {
-         margin-left: 166px;}
+ .container5 {
+margin-left: 0px;}
+.frame {
+  margin-left: 166px;}
+ .sticky-heading {
+ position: relative;
+ top: 0px;}
+.center-heading {
+  grid-template-rows: 0px;}
+            
+.greet{
+  margin-left: 63px;}
+  .history-animate{
+   margin-left: -60px;}
+  .contact-parent {
+ margin-left: 93px;}
+ .products{
+   grid-template-columns: none;
+   margin-left: 164px;}
+   .checkout-grid {
+      grid-template-columns: 291px 450px;}
+      
+      .checkout form .user-info .box {
+      width: fit-content;}
+      
+   
 }
    @media (max-width:450px) {
    .loader img {
@@ -2697,118 +2721,266 @@
    font-size: 50%;
    }
    
-   .title{
-   font-size: 3rem;
-   }
+   .header .flex {
+      width: max-content;}
+      .header {
+      width: max-content;
+      padding: 4px 3px;}
+      .header .flex .profile.active {
+      width: max-content;}
+      .delete-btn {
+      margin-left: 0px;}
+      .background-image {
+      width: 146%;}
+      
+      .Tagline h3 {
+      width: max-content;
+      font-size: 17px;
+       padding: 19px;}
+    
+      .container {
+         margin-left: -150px;
+     }
+      .container .Now {
+         font-size: 18px;
+     }
+     .content1 a {
+      font-size: 15px;}
+.container h1 {
+   line-height: 34px;
+}
+      .container .five {
+         font-size: 34px;
+     }
+     .container .branch {
+      font-size: 23px;
+  }
+      .franchise {
+         grid-template-columns: 215px 231px;
+     }
+      .laguna-map{
+      padding: 194px;}
    
-   .hero .slide .content h3{
-   font-size: 5rem;
+.laguna-map iframe {
+   height: 197px;
+   width: 171px;
+}
+
+      
+      .babyruth{
+      height: max-content;
+      margin-top: -24px;
+      margin-left: 20px!important;}
+      .series {
+          margin-left: 23px;
+      }
+      #buy1-take1 {
+      width: 297px;
+      margin-left: 101px;
+          margin-top: 218px;}
+          #footer {
+            font-size: 12px!important;}
+           
+            
+            .footer-box1 {
+                padding: 0px;}
+            .footer-contact-us h4 {
+            font-size: 14px;}
+            
+            .footer-contact-us h5 {
+                font-size: 13px;
+                line-height: 19px;
+            }
+            .copyright a {
+                font-size: 14px;
+            }
+            .copyright h5 {
+                font-size: 14px;}
+            
+            #footer h5{
+            margin-left: 20px;}      
    }
+   @media (max-width: 600px){
+      #footer {
+      font-size: 13px;}
+      .footer-contact-us h4 {
+      font-size: 16px;}
+      .footer-contact-us h5 {
+          font-size: 13px;
+          line-height: 21px;
+      }
+      .copyright a {
+          font-size: 14px;
+      }
+      .copyright h5 {
+      font-size: 12px;}
+      .icons {
+          margin-left: 223px;
+      }
+      .order-now-btn {
+          margin-left: 168px;
+      }
+      .container .Now {
+         font-size: 40px;
+         width: max-content;}
+     .container .five{
+       width: max-content;
+       font-size: 50px;}
+     
+     .container .branch{
+       width: max-content;
+       font-size: 40px;}
+     .franchise .container .content1 {
+     width: max-content;}
+     .container h1 {
+      line-height: 50px;
+      
+  }
+  .laguna-map {
+   padding: 120px 0px;
+}
+.babyruth {
+   margin-left: -69px!important;
+ 
+}
+.series {
+   margin-left: -69px!important;
+}
+#buy1-take1 {
+   margin-left: 47px;
+}
+.frame {
+   margin-left: 34px;
+}
+.franchise {
+   margin-top: 0px;}
+   .sticky h1 {
+   padding: 23px 10px;
+   }
+   .stick {grid-template-rows: 92px 99px 102px;
+       margin: 35px 26px;
+   width: 56%;}
+   form h5 {
+   font-size: 15px;}
+   .franchise-form {
+      margin: 0px 5px 0px 0px;
+      margin-left: -26px;
+      width: 86%;
+  }
+  .field {
+   margin: 30px;}
+.fill-out {
+font-size: 15px;
+row-gap: 24px;
+width: 320px;}
+.franchise-form-btn button {
+   left: 257px;
+    bottom: 1px;
+}
+.container5 {
+   margin-left: 0px;
+   width: auto;
+}
+.contact-parent {
+   margin-left: auto;
+}
+#about-OMG {
+   line-height: 38px;
+   font-size: 16px;}
+   .brief-history {
+       margin-top: 176px;}
+img#blog-logo.animation-1{
+   width: 364px;}
+   .history-animate {
+      margin-left: -84px;
+  }
+  .blog-box-1 {
+   margin-top: 9px;
+   margin-left: -1px;
+}
+.blog-box-3 {
+
+   margin-left: -208px;
+}
+.blog-grid {
+   margin: 36px;
+   gap: 32px;  }
+.blog-grid h4 {
+   margin-left: 184px
+}
+.branch-locations {
+   gap: 26px;
    
-   .products .box-container{
-   grid-template-columns: 1fr;
-   }
-   
-   .heading h3{
-   font-size: 3.5rem;
-   }
-   
-   .flex-btn{
-   flex-flow: column;
-   gap:0;
-   }
-   .contact-child.child1{
-   display: none;
-   }
-   .form-signin {
-   width: fit-content;
-   padding-left:31px;
-   }
-   a.button11{
-   display:none;
-   }
-   a.button12{
-   display:none;
-   }
-   a.button13{
-   display:none;
-   }
-   .event {
-   width: 40vh;
-   height: 350px;
-   top:20px;
-   left: 6px;
-   
-   right: 0px!important;
-   
-   }
-   .series{
-   width: 40vh!important;
-   height: 237px;
-   top:48px!important;
-   left:8px;
-   right: 0px;
-   
-   }
-   .babyruth{
-   width: 40vh!important;
-   height: 309px;
-   /* margin-left:20px ; /
-   left: -10px;
-   right: 0px;
-   / top right bottom left */
-   
-   }
-   
-   .second ul h1 {
-   font-size: larger;
-   }
-   
-   .containerloc2 h3{
-   font-size: small;
-   }
-   .containerloc h3{
-   font-size: small;
-   }
-   .map{
-   width:300px;
-   height:200px;
-   
-   }
-   
-   .frame {
-   width: 269px;
-   height: 620px;}
-   
-   .productsbev .box1-container1{
-   width: 181px;
-   margin-left: 84px;}
-   
-   .second ul h1{
-   font-size: medium;
-   }
-   
+   padding: 7px;
+   width: 176px;
+   height: 526px!important;
+}
+.branch-locations button {
+   font-size: 16px!important;
+}
+.map {
+   height: 437px;
+}
+dialog {
+   left: 178px!important;
+}
+.dialog-content {
+   font-size: 12px;}
    .products .box {
-   width:348px;
-   height:127px;
-   }
+ 
+      width: 483px;
    
-     .fa-solid fa-trash-can fa-xl{
-     margin-left:3px;
-     }
-     
-     .products .box img {
-         height: 50px;
-         width: 107px;
-         margin-top: 20px;
-     }
-     .products .flex{
-     flex-direction: row-reverse;
-     width:20px;
-     }
-     
-     .addons{
-     font-size:8px;
-     
-     }
+      grid-template-columns: repeat(5, 82px);
+    
+      column-gap: 16px;
+  }
+  .products .flex {
+      width: 61px;
+  }
+  .sticky-heading h3 {
+  font-size: 36px;}
+  .sticky-heading {
+      margin-left: -155px;
+  }
+  .products {
+   margin-left: 105px;
+
    }
+   .delete-btn {
+      margin-left: -1px;}
+      .more-btn {
+      grid-template-columns: 87px 193px 200px;
+   
+          column-gap: 2px;}
+
+          .header .flex .profile.active {
+            width: 24rem;}
+            .checkout-grid {
+               grid-template-columns: 146px 257px;
+           column-gap: 33px;
+           }
+           .checkout form .cart-items {
+           padding: 1rem;
+           }
+           .checkout form .cart-items .grand-total {
+           font-size: 15px;}
+           .back-to-cart-btn {
+           padding: 15.8px;}
+           .second ul {
+            width: 176px;
+        }
+        .productsbev .box1-container1 {
+        gap: 23px;
+            margin: 19px 116px;}
+        .productsbev .box1 {
+            padding: 0.5rem;
+            width: 251px;
+        }
+        .cat{
+        font-size: medium;}
+        .second li {
+            font-size: 17px;
+         
+        }
+}
+            
