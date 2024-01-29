@@ -57,7 +57,7 @@ if(isset($_POST['franchise_submit'])){
 
 <?php include 'components/user_header.php'; ?>
  
-<div class="franchise">
+<div class="franchise" id="fra2">
    <div class="franchise-sticky">
       <div class="stick">
          <div class="sticky">

@@ -2727,19 +2727,21 @@ margin-left: 0px;}
       width: max-content;
       padding: 4px 3px;}
       .header .flex .profile.active {
-      width: max-content;}
+      width: max-content!important;}
       .delete-btn {
       margin-left: 0px;}
       .background-image {
-      width: 146%;}
+      width: 100%;}
       
       .Tagline h3 {
       width: max-content;
-      font-size: 17px;
+      font-size: 12px;
        padding: 19px;}
     
       .container {
-         margin-left: -150px;
+         margin-left: 21px;
+         height: 284px;
+         padding-top: 67px;
      }
       .container .Now {
          font-size: 18px;
@@ -2756,7 +2758,12 @@ margin-left: 0px;}
       font-size: 23px;
   }
       .franchise {
-         grid-template-columns: 215px 231px;
+         /*grid-template-columns: 450px 263px;*/
+         grid-template-columns: 229px 263px;
+         margin-top: -80px;
+     }
+     .franchise#fra2 {
+      grid-template-columns: 450px 263px ;
      }
       .laguna-map{
       padding: 194px;}
@@ -2765,7 +2772,10 @@ margin-left: 0px;}
    height: 197px;
    width: 171px;
 }
-
+.franchise-form { 
+   margin-left: -41px!important;
+  
+}
       
       .babyruth{
       height: max-content;
@@ -2776,8 +2786,8 @@ margin-left: 0px;}
       }
       #buy1-take1 {
       width: 297px;
-      margin-left: 101px;
-          margin-top: 218px;}
+      margin-left: -15px!important;
+          margin-top: -33px;}
           #footer {
             font-size: 12px!important;}
            
@@ -2798,7 +2808,54 @@ margin-left: 0px;}
                 font-size: 14px;}
             
             #footer h5{
-            margin-left: 20px;}      
+            margin-left: 20px;}     
+            .flex-box {
+               margin: -17px 100px;
+               
+           }    
+           .flex-box img {
+            width: 271px;
+            margin-left: 63px;
+        } 
+        .second ul {
+         width: 140px!important;
+     }
+     
+     .productsbev .box1-container1 {
+        
+         margin: 92px 24px!important;
+     }    
+     .blog-grid {
+      margin: 13px;
+     
+  }
+  .blog-grid h4 {
+   line-height: 23px;
+  font-size: 12px;}
+  .blog-box-3 {
+      height: 1670px;
+  } 
+  .blog-omg {
+   font-size: 96px;
+  
+}
+.order-now-btn {
+   margin-left: 126px!important;
+}
+.continue-btn {
+   width: auto;
+}
+.checkout-btn {
+   width: auto;
+}
+.more-btn {
+   grid-template-columns: 82px 148px 200px!important;
+ 
+}
+.products .box {
+   width: 426px!important;
+   
+}
    }
    @media (max-width: 600px){
       #footer {
