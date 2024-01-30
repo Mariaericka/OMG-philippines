@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
    $update_address = $conn->prepare("UPDATE `users` set address = ? WHERE id = ?");
    $update_address->execute([$address, $user_id]);
 
-   $message[] = 'address saved!';
+   $message[] = 'Address saved!';
 
 }
 
@@ -49,15 +49,15 @@ if(isset($_POST['submit'])){
 
    <form action="" method="post">
       <h3>your address</h3>
-      <input type="text" class="box" placeholder="unit no/house no./building no." required maxlength="50" name="number">
-      <input type="text" class="box" placeholder="street name" required maxlength="50" name="street">
-      <input type="text" class="box" placeholder="barangay" required maxlength="50" name="brgy">
-      <input type="text" class="box" placeholder="province" required maxlength="50" name="province">
-      <input type="text" class="box" placeholder="city" required maxlength="50" name="city">
-      <input type="text" class="box" placeholder="region" required maxlength="50" name="region">
-      <input type="number" class="box" placeholder="postal code" required max="999999" min="0" maxlength="6" name="postal">
-      <input type="text" class="box" placeholder="country" required maxlength="50" name="country">
-      <input type="submit" value="save address" name="submit" class="btn">
+      <input type="text" class="box" placeholder="Unit no/house no./building no." required maxlength="50" name="number">
+      <input type="text" class="box" placeholder="Street name" required maxlength="50" name="street">
+      <input type="text" class="box" placeholder="Barangay" required maxlength="50" name="brgy">
+      <input type="text" class="box" placeholder="Province" required maxlength="50" name="province">
+      <input type="text" class="box" placeholder="City" required maxlength="50" name="city">
+      <input type="text" class="box" placeholder="Region" required maxlength="50" name="region">
+      <input type="number" class="box" placeholder="Postal code" required max="999999" min="0" maxlength="6" name="postal">
+      <input type="text" class="box" placeholder="Country" required maxlength="50" name="country">
+      <input type="submit" value="Save address" name="submit" class="btn">
    </form>
 
 </section>

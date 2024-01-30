@@ -149,7 +149,7 @@ if (isset($_GET['delete'])) {
                     <?php
                 }
             } else {
-                echo '<tr><td colspan="5" class="empty">You have no order</td></tr>';
+                echo '<tr><td colspan="14" class="empty">You have no order</td></tr>';
             }
             ?>
         </table>

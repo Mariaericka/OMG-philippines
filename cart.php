@@ -89,7 +89,7 @@ $grand_total = 0;
    <div class="center-heading">
       <div class="sticky-heading">
          
-        
+      <h3>Your Cart</h3>
        
    
         
@@ -168,7 +168,7 @@ $grand_total = 0;
       ?>
    </div>
    <div class="sticky-heading">
-   <h3>Your Cart</h3>
+   
   <p>Cart Total:<span id="cartTotal">₱<?= $grand_total; ?></span></p>  
    
 

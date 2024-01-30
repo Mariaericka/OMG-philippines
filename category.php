@@ -35,7 +35,10 @@ include 'components/add_cart.php';
 
 <?php include 'components/user_header.php'; ?>
 <div class="second"><ul>
-    <br> 
+    <br> <h1 style="margin-left: 23px;
+    color: #FFD93D;
+    font-size: x-large; text-transform:uppercase;
+">Categories</h1>
     
 
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>

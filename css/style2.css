@@ -183,7 +183,7 @@
    margin: 10px;
    display:grid;
    align-content: space-evenly;
-   width: 20rem;
+   width: 23rem;
    height: 14rem;
    border: 3px solid #F6F1E9;
    }
@@ -802,7 +802,7 @@
    background-color: #f6f1e9;
    padding: 50px;
    font-family: 'Inter', Sans Serif;
-   font-size: 25px;
+   font-size: 20px;
    text-align: justify;
    line-height: 70px;
    color: #4F200D;
@@ -856,8 +856,8 @@
    .blog-box-2 {
    padding: 20px;
    display: grid;
-   grid-template-columns: 443px 443px;
-   column-gap: 30px;
+   grid-template-columns: 395px 365px;
+   column-gap: 1px;
    }
    
    .facebook-box-1 {
@@ -889,26 +889,26 @@
    }
    
    .blog-box-3 {
-   height: 1000px;
+ 
    margin-left: -58px;
    
    }
    
    /* FACEBOOK LINKS PART */
-   
+  
    .blog-grid {
-   margin: 50px;
-   display: grid;
-   grid-template-columns: 332px 320px 320px 240px;
-   gap: 48px;
-   }
-   
+      margin: 104px;
+      display: grid;
+      grid-template-columns: 263px 281px 281px 240px;
+      gap: 48px;
+  }
    .blog-grid img {
    margin-left: 100px;
+   width: 88px;
    }
    
    .blog-grid h4 {
-   font-size: 25px;
+   font-size: 20px;
    font-family: 'Inter', Sans serif;
    color: #FF8400;
    text-align: center;
@@ -1341,8 +1341,8 @@
    height: 250px;
    background-color: #FFD93D;
    display: grid;
-   grid-template-columns: repeat(4, 357px);
-   grid-gap: 5px;
+   grid-template-columns: repeat(4, 300px);
+   grid-gap: 30px;
    align-items: center;
    justify-content: center;
    }
@@ -1523,7 +1523,7 @@
    .delete-btn{
    background-color: var(--red);
    color:var(--white);
-   margin-left: -20px;
+   margin-left: 1px;
    }
    
    .disabled{
@@ -1645,11 +1645,13 @@
    background-color: white;
    }
    
-   .second li {
-      font-size: 23px;
-      margin: 17px 10px;
-  }
+
+  .second li {
+   font-size: 18px;
+   margin: 12px 10px;
+}
   
+
    
    .second li:hover {
    background-color: #FFD93D;
@@ -1701,13 +1703,13 @@
    margin-top: 1rem;
    }
    
-   .center-heading {
+   /*.center-heading {
    display: grid;
    grid-template-rows: 300px 300px;
-   }
+   }*/
    
    .sticky-heading {
-   position: fixed;
+   
    top: 113px;
    padding: 20px;
    
@@ -1723,12 +1725,13 @@
    color: #4F200D;
    font-size: 30px;
    font-family: 'Inter', sans serif;
+   text-align: center;
    }
    
   
 .products {
    display: grid;
-   grid-template-columns: 583px 700px;
+   /*grid-template-columns: 583px 700px;*/
    align-items: center;
    padding: 30px;
    column-gap: 4px;
@@ -1738,7 +1741,7 @@
    flex-wrap: wrap;
    justify-content: center;
    gap: 0.5rem;
-   flex-direction: column;
+   flex-direction: row;
    }
    .sub-total {
       font-size: 13px;
@@ -1818,9 +1821,9 @@
    
    .more-btn {
       display: grid;
-      grid-template-columns: 82px 200px 200px;
+      grid-template-columns: 100px 200px 200px;
       column-gap: 15px;
-      margin: 10px;
+      margin: 23px 23px 23px 350px;
       width: 112px;
       height: 50px;
   }
