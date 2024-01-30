@@ -16,7 +16,7 @@
     <div class="footer-contact-us" id="footer">
         <h4>Contact us</h4>
         <h5>Bryan Hernandez</h5>
-        <h5>+63 912345678</h5>
+        <h5>0917 167 5592</h5>
         <h5>123 Red Bldg. Sampaloc St. Lilyo, Laguna</h5>
     </div>
     <div class="copyright">
