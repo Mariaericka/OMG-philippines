@@ -1727,7 +1727,11 @@
    font-family: 'Inter', sans serif;
    text-align: center;
    }
-   
+   #edit-name,#edit-lname,#edit-number,#edit-street,#edit-brgy,#edit-province,#edit-city,#edit-region,#edit-postal,#edit-country{
+      border: none;
+  border-bottom: 1.5px solid #4F200D; /* Border-bottom for supporting browsers */
+  border-bottom: 1.5px solid rgba(79, 32, 13, 0.7); /* Fallback for older browsers */
+   }
   
 .products {
    display: grid;

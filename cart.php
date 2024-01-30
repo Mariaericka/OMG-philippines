@@ -172,6 +172,10 @@ $grand_total = 0;
   <p>Cart Total:<span id="cartTotal">₱<?= $grand_total; ?></span></p>  
    
 
+<!-- Timer display -->
+<div id="timer" style="font-size: 18px; color: #FF0000;text-align: center;"></div>
+<div id="timerMessage" style="font-size: 16px; color: #666;text-align: center;"></div>
+
 
 
    <div class="more-btn">
@@ -205,7 +209,52 @@ $grand_total = 0;
 
 
 <script src="js/cart.js"></script>
+<script>
+  // Set the timer duration in seconds
+  const timerDuration = 300; // 5 minutes in this example
+  let remainingTime = timerDuration;
+// Display initial timer message
+document.getElementById('timerMessage').innerHTML = 'Your cart will be cleared in 5 minutes.';
+  // Update the timer every second
+  const timerInterval = setInterval(updateTimer, 1000);
 
+  function updateTimer() {
+    // Display the remaining time
+    document.getElementById('timer').innerHTML = `Time remaining: ${formatTime(remainingTime)}`;
+
+    // If time runs out, remove cart items and stop the timer
+    if (remainingTime <= 0) {
+      clearCart();
+      clearInterval(timerInterval);
+      // Reload the page after clearing the cart
+      location.reload();
+    }
+
+    remainingTime--;
+  }
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  }
+
+  function clearCart() {
+    // Use AJAX to call the PHP script that deletes cart items
+    $.ajax({
+      url: 'clear_cart.php', // Replace with the actual URL of your PHP script
+      type: 'POST',
+      data: { clear_cart: true }, // Additional data if needed
+      success: function (response) {
+        console.log(response); // Log the response for debugging
+        // You can update the UI or redirect the user as needed
+      },
+      error: function (error) {
+        console.error(error); // Log any errors for debugging
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

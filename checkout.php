@@ -363,8 +363,8 @@ if (isset($_SESSION['user_id'])) {
 <div id="edit-info-form" style="display: none;">
     <h3>Edit Your Info</h3>
     <form id="edit-info-form">
-        <input type="text" id="edit-name" placeholder="Enter your name">
-        <input type="text" id="edit-lname" placeholder="Enter your last name" >
+        <input type="text" id="edit-name" placeholder="Enter your name" >
+        <input type="text" id="edit-lname" placeholder="Enter your last name"  >
 
 
 
