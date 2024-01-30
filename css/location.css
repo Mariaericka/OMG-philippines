@@ -54,14 +54,14 @@ dialog {
 
 
 .dialog-content {
-  font-size: 20px;
+  font-size: 13px;
   color: #F6F1E9;
   padding: 20px;
   text-align: center;
   background-color: #4F200D;
 }
 .map{
-  width: 1200px;
+  width: 864px;
   height: 600px;
 }
 
