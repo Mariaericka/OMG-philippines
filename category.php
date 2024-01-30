@@ -35,8 +35,8 @@ include 'components/add_cart.php';
 
 <?php include 'components/user_header.php'; ?>
 <div class="second"><ul>
-    <br> <h1>Categories</h1>
-    <li> <a href="menu.php" class="button14"><i class="fa fa-long-arrow-left" style=""></i> Go Back</a></li>
+    <br> 
+    
 
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
         <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
@@ -85,7 +85,7 @@ margin-left: 25%;">
 
         </div>
          <div class="cat"><?= $fetch_products['name']; ?></div>
-         <h4 style="font-size: initial; background-color: #FFD93D;"> Starts at <span>₱</span><?= $fetch_products['price']; ?>.00</h4>
+         <h4 style="font-size: initial; background-color: #FFD93D;"> <span>₱</span><?= $fetch_products['price']; ?>.00</h4>
           
          <!-- Qty <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"> -->
             <p class="omg-detail">
@@ -222,7 +222,7 @@ if ($select_products->rowCount() > 0) {
 
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
+<?php include 'components/footer.php'; ?>
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>
