@@ -40,6 +40,7 @@ include 'components/add_cart.php';
     font-size: x-large; text-transform:uppercase;
 ">Categories</h1>
     
+   <!-- <div id="menu-btn" class="fas fa-bars"></div>-->
 
         <li> <a href="category.php?category=coffee series" class="button14">COFFEE SERIES</a></li>
         <li> <a href="category.php?category=yogurt"  class="button14">YOGURT SERIES</a></li>
