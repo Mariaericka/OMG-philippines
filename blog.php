@@ -50,9 +50,9 @@ if(isset($_SESSION['user_id'])){
       <h6 class="animation-1" id="about-OMG">
       During the pandemic, as online shopping soared, OMG emerged
       a year later, transforming quarantine cravings into a nationwide
-      sensation. Starting from Alaminos, Laguna, they've expanded to
+      sensation. Starting from Alaminos, Laguna, We expanded to
       five branches, captivating a thirst-quenching niche in the tropical
-      Philippines. Their journey, marked by trial and error, now stands
+      Philippines. Our journey, marked by trial and error, now stands
       as a testament to entrepreneurial resilience and taste bud triumphs.
       </h6>
    </div>
